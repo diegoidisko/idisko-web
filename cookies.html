@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a0a1a" />
+<title>Cookies — iDisko</title>
+<meta name="description" content="iDisko cookies policy — politique de gestion des cookies." />
+<meta name="robots" content="noindex, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --bg: #0a0a1a;
+  --bg-2: #14092a;
+  --ink: #f4eaff;
+  --ink-dim: #b8a8d6;
+  --ink-faint: #7a6a99;
+  --violet: #9b4dff;
+  --violet-bright: #c084fc;
+  --magenta: #ff2e93;
+  --line: rgba(244, 234, 255, 0.08);
+  --line-strong: rgba(244, 234, 255, 0.14);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(155, 77, 255, 0.15), transparent 60%),
+    radial-gradient(ellipse 40% 30% at 90% 30%, rgba(255, 46, 147, 0.08), transparent 60%);
+}
+
+a { color: var(--violet-bright); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--magenta); }
+
+.container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.logo-link img { height: 32px; width: auto; display: block; }
+.logo-link .fallback-i { color: var(--violet-bright); }
+
+.lang-switch {
+  display: flex;
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(244, 234, 255, 0.04);
+  border: 1px solid var(--line-strong);
+  border-radius: 100px;
+  padding: 3px;
+}
+
+.lang-btn {
+  padding: 6px 12px;
+  border-radius: 100px;
+  color: var(--ink-faint);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.lang-btn.active {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.lang-btn:not(.active):hover { color: var(--ink); }
+
+.back-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-dim);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-link:hover { color: var(--violet-bright); }
+
+main { padding: 60px 0 100px; }
+
+.doc-header {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.doc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(155, 77, 255, 0.1);
+  border: 1px solid rgba(155, 77, 255, 0.3);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--violet-bright);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.doc-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--violet-bright);
+  box-shadow: 0 0 8px var(--violet-bright);
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.doc-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.doc-content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--violet-bright);
+  margin-top: 48px;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.doc-content p {
+  margin-bottom: 16px;
+  color: var(--ink-dim);
+  font-size: 15px;
+}
+
+.doc-content ul {
+  margin: 16px 0 20px 24px;
+  color: var(--ink-dim);
+  font-size: 15px;
+}
+
+.doc-content li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.doc-content strong { color: var(--ink); font-weight: 600; }
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(155, 77, 255, 0.08), rgba(196, 132, 252, 0.04));
+  border: 1px solid rgba(155, 77, 255, 0.25);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin: 32px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--violet-bright), var(--magenta));
+}
+
+.highlight-box p {
+  font-size: 16px;
+  color: var(--ink);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.highlight-box p + p { margin-top: 12px; }
+
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--violet-bright);
+  color: var(--bg);
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 10px;
+  vertical-align: middle;
+  font-family: var(--font-mono);
+}
+
+.simple-list {
+  list-style: none;
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+.simple-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  padding-left: 0 !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.simple-list li:last-child { border-bottom: none; }
+
+.simple-list .bullet {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--violet-bright);
+  margin-top: 9px;
+  box-shadow: 0 0 12px rgba(196, 132, 252, 0.6);
+}
+
+.simple-list .content {
+  flex: 1;
+}
+
+.simple-list strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.simple-list span {
+  color: var(--ink-dim);
+  font-size: 14px;
+}
+
+.legal-disclaimer {
+  margin-top: 60px;
+  padding: 24px;
+  background: rgba(255, 46, 147, 0.04);
+  border: 1px solid rgba(255, 46, 147, 0.2);
+  border-radius: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink-dim);
+}
+
+.legal-disclaimer strong { color: var(--magenta); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.lang-content { display: none; }
+.lang-content.active { display: block; }
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  margin-top: 60px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.footer-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { color: var(--ink-faint); }
+.footer-links a:hover { color: var(--violet-bright); }
+
+@media (max-width: 640px) {
+  .nav-inner { flex-wrap: wrap; gap: 12px; }
+  .back-link { display: none; }
+  h1 { font-size: 28px; }
+  .doc-content h2 { font-size: 18px; margin-top: 36px; }
+  .highlight-box { padding: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link">
+      <img src="logo.png" alt="iDisko" onerror="this.style.display='none'" />
+      <span><span class="fallback-i">i</span>Disko</span>
+    </a>
+
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+    </div>
+
+    <a href="index.html" class="back-link">← <span data-i18n="back">volver al inicio</span></a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <div class="doc-header">
+      <div class="doc-tag" data-i18n="tag">Legal · Cookies</div>
+      <h1 data-i18n="title">Política de Cookies</h1>
+      <div class="doc-meta">
+        <span data-i18n="updated">Última actualización</span>: 19/04/2026
+      </div>
+    </div>
+
+    <!-- ============= ESPAÑOL ============= -->
+    <div class="lang-content active doc-content" id="content-es">
+
+      <div class="highlight-box">
+        <p><span class="info-icon">i</span><strong>En iDisko solo usamos cookies técnicas.</strong></p>
+        <p>Utilizamos únicamente cookies técnicas estrictamente necesarias para el funcionamiento del sitio y de la Aplicación. Ningún cookie publicitario o de medición de audiencia se deposita sin su consentimiento.</p>
+        <p>Puede configurar su navegador para bloquear o eliminar estos cookies, pero algunas funcionalidades podrían no funcionar correctamente.</p>
+      </div>
+
+      <h2>¿Qué es una cookie?</h2>
+      <p>Una cookie es un pequeño archivo de texto depositado por un sitio web en su dispositivo (ordenador, tableta, teléfono móvil) cuando lo visita. Permite al sitio recordar información sobre su visita, como su idioma preferido u otras configuraciones.</p>
+
+      <h2>¿Qué cookies utilizamos?</h2>
+      <p>En iDisko respetamos su privacidad. Por eso, solo utilizamos las siguientes categorías de cookies técnicas necesarias:</p>
+
+      <ul class="simple-list">
+        <li>
+          <span class="bullet"></span>
+          <div class="content">
+            <strong>Cookies de sesión</strong>
+            <span>Necesarias para mantener su sesión activa durante la navegación. Se eliminan automáticamente al cerrar el navegador.</span>
+          </div>
+        </li>
+        <li>
+          <span class="bullet"></span>
+          <div class="content">
+            <strong>Cookies de preferencias</strong>
+            <span>Almacenan su elección de idioma (ES/EN/FR) para que no tenga que seleccionarlo cada vez que visite el sitio.</span>
+          </div>
+        </li>
+        <li>
+          <span class="bullet"></span>
+          <div class="content">
+            <strong>Cookies de seguridad</strong>
+            <span>Ayudan a proteger su cuenta contra accesos no autorizados y a prevenir ataques técnicos.</span>
+          </div>
+        </li>
+      </ul>
+
+      <h2>¿Qué cookies NO utilizamos?</h2>
+      <p>Nos comprometemos explícitamente a <strong>no depositar cookies</strong> de las siguientes categorías sin su consentimiento expreso:</p>
+      <ul>
+        <li>Cookies publicitarias o de remarketing.</li>
+        <li>Cookies de medición de audiencia de terceros (Google Analytics, etc.).</li>
+        <li>Cookies de seguimiento de redes sociales.</li>
+        <li>Cookies de perfilado.</li>
+      </ul>
+
+      <h2>¿Cómo gestionar los cookies?</h2>
+      <p>Tiene el control total sobre los cookies. Puede configurar su navegador para:</p>
+      <ul>
+        <li>Bloquear todos los cookies.</li>
+        <li>Aceptar solo cookies del sitio que visita.</li>
+        <li>Eliminar los cookies existentes.</li>
+        <li>Recibir una notificación antes de que se deposite un cookie.</li>
+      </ul>
+      <p>Tenga en cuenta que si bloquea los cookies técnicos necesarios, algunas funcionalidades del sitio podrían no funcionar correctamente (por ejemplo, la persistencia de su idioma seleccionado).</p>
+
+      <h2>Configuración de su navegador</h2>
+      <p>Para saber cómo gestionar los cookies, consulte la documentación de su navegador:</p>
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+        <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+        <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+        <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+      </ul>
+
+      <h2>Contacto</h2>
+      <p>Para cualquier pregunta relativa a nuestra política de cookies, puede contactarnos:</p>
+      <ul>
+        <li>Por correo electrónico: <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>Por correo postal: DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, Francia.</li>
+      </ul>
+      <p>Consulte también nuestra <a href="privacy.html">Política de Protección de Datos Personales</a> para más información.</p>
+
+      <div class="legal-disclaimer">
+        <strong>Nota sobre la versión</strong><br />
+        La versión oficial y legalmente vinculante de esta Política de Cookies es la redactada en francés. La presente versión en español es una traducción proporcionada a título informativo. En caso de conflicto o divergencia de interpretación, <strong>prevalece la versión francesa</strong>.
+      </div>
+    </div>
+
+    <!-- ============= ENGLISH ============= -->
+    <div class="lang-content doc-content" id="content-en">
+
+      <div class="highlight-box">
+        <p><span class="info-icon">i</span><strong>At iDisko we only use technical cookies.</strong></p>
+        <p>We use only technical cookies strictly necessary for the functioning of the site and the Application. No advertising or audience measurement cookies are placed without your consent.</p>
+        <p>You can configure your browser to block or delete these cookies, but some features may not work properly.</p>
+      </div>
+
+      <h2>What is a cookie?</h2>
+      <p>A cookie is a small text file placed by a website on your device (computer, tablet, mobile phone) when you visit it. It allows the site to remember information about your visit, such as your preferred language or other settings.</p>
+
+      <h2>What cookies do we use?</h2>
+      <p>At iDisko we respect your privacy. Therefore, we only use the following categories of necessary technical cookies:</p>
+
+      <ul class="simple-list">
+        <li>
+          <span class="bullet"></span>
+          <div class="content">
+            <strong>Session cookies</strong>
+            <span>Necessary to keep your session active during browsing. They are automatically deleted when you close the browser.</span>
+          </div>
+        </li>
+        <li>
+          <span class="bullet"></span>
+          <div class="content">
+            <strong>Preference cookies</strong>
+            <span>Store your language choice (ES/EN/FR) so you don't have to select it every time you visit the site.</span>
+          </div>
+        </li>
+        <li>
+          <span class="bullet"></span>
+          <div class="content">
+            <strong>Security cookies</strong>
+            <span>Help protect your account from unauthorized access and prevent technical attacks.</span>
+          </div>
+        </li>
+      </ul>
+
+      <h2>What cookies do we NOT use?</h2>
+      <p>We explicitly commit to <strong>not placing cookies</strong> from the following categories without your express consent:</p>
+      <ul>
+        <li>Advertising or remarketing cookies.</li>
+        <li>Third-party audience measurement cookies (Google Analytics, etc.).</li>
+        <li>Social media tracking cookies.</li>
+        <li>Profiling cookies.</li>
+      </ul>
+
+      <h2>How to manage cookies?</h2>
+      <p>You have full control over cookies. You can configure your browser to:</p>
+      <ul>
+        <li>Block all cookies.</li>
+        <li>Accept only cookies from the site you visit.</li>
+        <li>Delete existing cookies.</li>
+        <li>Receive a notification before a cookie is placed.</li>
+      </ul>
+      <p>Please note that if you block necessary technical cookies, some site features may not work properly (for example, the persistence of your selected language).</p>
+
+      <h2>Browser settings</h2>
+      <p>To learn how to manage cookies, consult your browser's documentation:</p>
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+        <li><a href="https://support.apple.com/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+        <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+        <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>For any questions regarding our cookie policy, you can contact us:</p>
+      <ul>
+        <li>By email: <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>By post: DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, France.</li>
+      </ul>
+      <p>See also our <a href="privacy.html">Privacy Policy</a> for more information.</p>
+
+      <div class="legal-disclaimer">
+        <strong>Note on this version</strong><br />
+        The official and legally binding version of this Cookie Policy is the one drafted in French. This English version is a translation provided for informational purposes. In case of conflict or divergence of interpretation, <strong>the French version prevails</strong>.
+      </div>
+    </div>
+
+    <!-- ============= FRANÇAIS (ORIGINAL) ============= -->
+    <div class="lang-content doc-content" id="content-fr">
+
+      <div class="highlight-box">
+        <p><span class="info-icon">i</span><strong>Chez iDisko, nous n'utilisons que des cookies techniques.</strong></p>
+        <p>Nous utilisons uniquement des cookies techniques strictement nécessaires au fonctionnement du site et de l'Application. Aucun cookie publicitaire ou de mesure d'audience n'est déposé sans votre consentement.</p>
+        <p>Vous pouvez configurer votre navigateur pour bloquer ou supprimer ces cookies, mais certaines fonctionnalités risquent de ne pas fonctionner correctement.</p>
+      </div>
+
+      <h2>Qu'est-ce qu'un cookie ?</h2>
+      <p>Un cookie est un petit fichier texte déposé par un site web sur votre appareil (ordinateur, tablette, téléphone mobile) lorsque vous le visitez. Il permet au site de se souvenir d'informations sur votre visite, telles que votre langue préférée ou d'autres paramètres.</p>
+
+      <h2>Quels cookies utilisons-nous ?</h2>
+      <p>Chez iDisko, nous respectons votre vie privée. Nous n'utilisons donc que les catégories suivantes de cookies techniques nécessaires :</p>
+
+      <ul class="simple-list">
+        <li>
+          <span class="bullet"></span>
+          <div class="content">
+            <strong>Cookies de session</strong>
+            <span>Nécessaires pour maintenir votre session active pendant la navigation. Ils sont automatiquement supprimés lorsque vous fermez le navigateur.</span>
+          </div>
+        </li>
+        <li>
+          <span class="bullet"></span>
+          <div class="content">
+            <strong>Cookies de préférences</strong>
+            <span>Mémorisent votre choix de langue (FR/EN/ES) afin que vous n'ayez pas à le sélectionner à chaque visite du site.</span>
+          </div>
+        </li>
+        <li>
+          <span class="bullet"></span>
+          <div class="content">
+            <strong>Cookies de sécurité</strong>
+            <span>Aident à protéger votre compte contre les accès non autorisés et à prévenir les attaques techniques.</span>
+          </div>
+        </li>
+      </ul>
+
+      <h2>Quels cookies n'utilisons-nous PAS ?</h2>
+      <p>Nous nous engageons explicitement à <strong>ne pas déposer de cookies</strong> des catégories suivantes sans votre consentement exprès :</p>
+      <ul>
+        <li>Cookies publicitaires ou de remarketing.</li>
+        <li>Cookies de mesure d'audience de tiers (Google Analytics, etc.).</li>
+        <li>Cookies de suivi des réseaux sociaux.</li>
+        <li>Cookies de profilage.</li>
+      </ul>
+
+      <h2>Comment gérer les cookies ?</h2>
+      <p>Vous avez le contrôle total sur les cookies. Vous pouvez configurer votre navigateur pour :</p>
+      <ul>
+        <li>Bloquer tous les cookies.</li>
+        <li>N'accepter que les cookies du site que vous visitez.</li>
+        <li>Supprimer les cookies existants.</li>
+        <li>Recevoir une notification avant qu'un cookie ne soit déposé.</li>
+      </ul>
+      <p>Veuillez noter que si vous bloquez les cookies techniques nécessaires, certaines fonctionnalités du site pourraient ne pas fonctionner correctement (par exemple, la persistance de votre langue sélectionnée).</p>
+
+      <h2>Paramètres de votre navigateur</h2>
+      <p>Pour savoir comment gérer les cookies, consultez la documentation de votre navigateur :</p>
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647?hl=fr" target="_blank" rel="noopener">Google Chrome</a></li>
+        <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+        <li><a href="https://support.mozilla.org/fr/kb/activer-desactiver-cookies-preferences" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+        <li><a href="https://support.microsoft.com/fr-fr/microsoft-edge/supprimer-les-cookies-dans-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Pour toute question relative à notre politique de cookies, vous pouvez nous contacter :</p>
+      <ul>
+        <li>Par courriel : <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>Par voie postale : DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, France.</li>
+      </ul>
+      <p>Consultez également notre <a href="privacy.html">Politique de Protection des Données Personnelles</a> pour plus d'informations.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 DS CONNECT · RCS Montpellier 941 864 985</div>
+    <div class="footer-links">
+      <a href="index.html" data-i18n="footerHome">Home</a>
+      <a href="privacy.html" data-i18n="footerPrivacy">Privacy</a>
+      <a href="terms.html" data-i18n="footerTerms">Terms</a>
+      <a href="cookies.html" data-i18n="footerCookies">Cookies</a>
+      <a href="legal.html" data-i18n="footerLegal">Legal Notice</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var UI = {
+  es: {
+    tag: "Legal · Cookies",
+    title: "Política de Cookies",
+    updated: "Última actualización",
+    back: "volver al inicio",
+    footerHome: "Inicio",
+    footerPrivacy: "Privacidad",
+    footerTerms: "Términos",
+    footerCookies: "Cookies",
+    footerLegal: "Aviso Legal"
+  },
+  en: {
+    tag: "Legal · Cookies",
+    title: "Cookie Policy",
+    updated: "Last updated",
+    back: "back to home",
+    footerHome: "Home",
+    footerPrivacy: "Privacy",
+    footerTerms: "Terms",
+    footerCookies: "Cookies",
+    footerLegal: "Legal Notice"
+  },
+  fr: {
+    tag: "Légal · Cookies",
+    title: "Politique de Cookies",
+    updated: "Dernière mise à jour",
+    back: "retour à l'accueil",
+    footerHome: "Accueil",
+    footerPrivacy: "Confidentialité",
+    footerTerms: "CGU",
+    footerCookies: "Cookies",
+    footerLegal: "Mentions Légales"
+  }
+};
+
+function applyLang(lang) {
+  var contents = document.querySelectorAll('.lang-content');
+  for (var i = 0; i < contents.length; i++) contents[i].classList.remove('active');
+  var active = document.getElementById('content-' + lang);
+  if (active) active.classList.add('active');
+
+  var dict = UI[lang] || UI.es;
+  var nodes = document.querySelectorAll('[data-i18n]');
+  for (var j = 0; j < nodes.length; j++) {
+    var key = nodes[j].getAttribute('data-i18n');
+    if (dict[key] !== undefined) nodes[j].textContent = dict[key];
+  }
+
+  document.documentElement.lang = lang;
+  try { localStorage.setItem('idisko_lang', lang); } catch (e) {}
+}
+
+var langBtns = document.querySelectorAll('.lang-btn');
+for (var k = 0; k < langBtns.length; k++) {
+  langBtns[k].addEventListener('click', function () {
+    var newLang = this.getAttribute('data-lang');
+    var all = document.querySelectorAll('.lang-btn');
+    for (var m = 0; m < all.length; m++) all[m].classList.remove('active');
+    this.classList.add('active');
+    applyLang(newLang);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+var savedLang = null;
+try { savedLang = localStorage.getItem('idisko_lang'); } catch (e) {}
+var browserLang = (navigator.language || 'es').slice(0, 2);
+var initialLang = savedLang || (UI[browserLang] ? browserLang : 'es');
+applyLang(initialLang);
+for (var n = 0; n < langBtns.length; n++) {
+  langBtns[n].classList.remove('active');
+  if (langBtns[n].getAttribute('data-lang') === initialLang) {
+    langBtns[n].classList.add('active');
+  }
+}
+</script>
+
+</body>
+</html>

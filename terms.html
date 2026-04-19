@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a0a1a" />
+<title>Terms of Use — iDisko</title>
+<meta name="description" content="iDisko terms of use — conditions générales d'utilisation." />
+<meta name="robots" content="noindex, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --bg: #0a0a1a;
+  --bg-2: #14092a;
+  --ink: #f4eaff;
+  --ink-dim: #b8a8d6;
+  --ink-faint: #7a6a99;
+  --violet: #9b4dff;
+  --violet-bright: #c084fc;
+  --magenta: #ff2e93;
+  --line: rgba(244, 234, 255, 0.08);
+  --line-strong: rgba(244, 234, 255, 0.14);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(155, 77, 255, 0.15), transparent 60%),
+    radial-gradient(ellipse 40% 30% at 90% 30%, rgba(255, 46, 147, 0.08), transparent 60%);
+}
+
+a { color: var(--violet-bright); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--magenta); }
+
+.container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.logo-link img { height: 32px; width: auto; display: block; }
+.logo-link .fallback-i { color: var(--violet-bright); }
+
+.lang-switch {
+  display: flex;
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(244, 234, 255, 0.04);
+  border: 1px solid var(--line-strong);
+  border-radius: 100px;
+  padding: 3px;
+}
+
+.lang-btn {
+  padding: 6px 12px;
+  border-radius: 100px;
+  color: var(--ink-faint);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.lang-btn.active {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.lang-btn:not(.active):hover { color: var(--ink); }
+
+.back-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-dim);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-link:hover { color: var(--violet-bright); }
+
+main { padding: 60px 0 100px; }
+
+.doc-header {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.doc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(155, 77, 255, 0.1);
+  border: 1px solid rgba(155, 77, 255, 0.3);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--violet-bright);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.doc-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--violet-bright);
+  box-shadow: 0 0 8px var(--violet-bright);
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.doc-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.doc-content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--violet-bright);
+  margin-top: 48px;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.doc-content h2 .num {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-faint);
+  margin-right: 10px;
+}
+
+.doc-content p {
+  margin-bottom: 16px;
+  color: var(--ink-dim);
+  font-size: 15px;
+}
+
+.doc-content ul, .doc-content ol {
+  margin: 16px 0 20px 24px;
+  color: var(--ink-dim);
+  font-size: 15px;
+}
+
+.doc-content li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.doc-content strong { color: var(--ink); font-weight: 600; }
+
+.info-box {
+  background: rgba(155, 77, 255, 0.05);
+  border: 1px solid rgba(155, 77, 255, 0.2);
+  border-left: 3px solid var(--violet-bright);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-size: 14px;
+}
+
+.info-box p { margin-bottom: 8px; color: var(--ink); }
+.info-box p:last-child { margin-bottom: 0; }
+
+.legal-disclaimer {
+  margin-top: 60px;
+  padding: 24px;
+  background: rgba(255, 46, 147, 0.04);
+  border: 1px solid rgba(255, 46, 147, 0.2);
+  border-radius: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink-dim);
+}
+
+.legal-disclaimer strong { color: var(--magenta); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.lang-content { display: none; }
+.lang-content.active { display: block; }
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  margin-top: 60px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.footer-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { color: var(--ink-faint); }
+.footer-links a:hover { color: var(--violet-bright); }
+
+@media (max-width: 640px) {
+  .nav-inner { flex-wrap: wrap; gap: 12px; }
+  .back-link { display: none; }
+  h1 { font-size: 28px; }
+  .doc-content h2 { font-size: 18px; margin-top: 36px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link">
+      <img src="logo.png" alt="iDisko" onerror="this.style.display='none'" />
+      <span><span class="fallback-i">i</span>Disko</span>
+    </a>
+
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+    </div>
+
+    <a href="index.html" class="back-link">← <span data-i18n="back">volver al inicio</span></a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <div class="doc-header">
+      <div class="doc-tag" data-i18n="tag">Legal · Terms</div>
+      <h1 data-i18n="title">Términos de Uso</h1>
+      <div class="doc-meta">
+        <span data-i18n="updated">Última actualización</span>: 19/04/2026
+      </div>
+    </div>
+
+    <!-- ============= ESPAÑOL (traducción) ============= -->
+    <div class="lang-content active doc-content" id="content-es">
+
+      <h2><span class="num">1.</span>Objeto</h2>
+      <p>Las presentes Condiciones Generales de Uso (en adelante «CGU») definen las condiciones de uso de la aplicación móvil iDisko (en adelante «la Aplicación»), editada por <strong>DS Connect</strong>, SAS con un capital social de 10.000 €, inscrita en el Registro de Comercio y Sociedades de Montpellier bajo el número <strong>941 864 985</strong>, con domicilio social en Parc Eureka, Le Pôle Eureka, 418 rue du Mas de Verchant, 34000 Montpellier, Francia.</p>
+      <p>Al utilizar la Aplicación, el usuario (en adelante «el Usuario») acepta sin reservas las presentes CGU.</p>
+
+      <h2><span class="num">2.</span>Uso de la Aplicación</h2>
+      <p>El Usuario se compromete a utilizar la Aplicación de conformidad con la ley, las buenas costumbres y las presentes CGU.</p>
+      <p>La Aplicación está estrictamente reservada a las personas mayores de 18 años. Queda prohibida cualquier inscripción de un menor.</p>
+      <p>El Usuario es el único responsable de los contenidos que difunde (vídeos, fotos, música, textos, interacciones).</p>
+
+      <h2><span class="num">3.</span>Datos técnicos e identificación</h2>
+      <p>La Aplicación no recopila el UDID de los dispositivos, de conformidad con las normas actuales de confidencialidad.</p>
+      <p>Si el Usuario consiente al seguimiento publicitario, podrá compartir su IDFA (identificador publicitario de iOS) o equivalente Android. Esta elección corresponde únicamente al Usuario.</p>
+
+      <h2><span class="num">4.</span>Cuentas y autenticación</h2>
+      <p>La creación de una cuenta requiere una dirección de correo electrónico válida y una contraseña.</p>
+      <p>Para reforzar la seguridad, DS Connect puede implementar una autenticación multifactor (MFA): el Usuario podrá ser invitado a confirmar su identidad a través de un código recibido por SMS o correo electrónico.</p>
+
+      <h2><span class="num">5.</span>Contenido musical y servicios de terceros</h2>
+      <p>La música disponible en la Aplicación proviene de dos fuentes legales:</p>
+      <ul>
+        <li>La <strong>API de YouTube</strong>, que permite a los Usuarios escuchar fragmentos musicales de conformidad con las Condiciones de Uso de YouTube.</li>
+        <li>Licencias adquiridas en <strong>Jamendo</strong>, que proporcionan temas libres de derechos integrados legalmente en la Aplicación.</li>
+      </ul>
+      <p>Al utilizar la Aplicación, el Usuario acepta igualmente respetar las <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Condiciones de Uso de YouTube</a> y la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a>.</p>
+      <p>La Aplicación también puede permitir vincular una cuenta musical externa (ej. Spotify, Deezer). Estos servicios de terceros están sujetos a sus propias condiciones y políticas de privacidad.</p>
+
+      <h2><span class="num">6.</span>Compras integradas y suscripciones</h2>
+      <p>La Aplicación ofrece compras in-app (suscripciones premium, funcionalidades adicionales).</p>
+      <p>Los precios se indican en euros IVA incluido y pueden variar según las tiendas (Apple App Store / Google Play).</p>
+      <p>Las suscripciones se renuevan automáticamente salvo resolución antes del fin del período en curso.</p>
+      <p>El Usuario puede gestionar o anular su suscripción directamente desde su cuenta de Apple o Google.</p>
+      <p>De conformidad con la ley, el Usuario dispone de garantías legales y de un derecho de desistimiento, salvo para los contenidos digitales ya consumidos.</p>
+
+      <h2><span class="num">7.</span>Moderación y seguridad</h2>
+      <p>El Usuario se compromete a no publicar contenidos injuriosos, difamatorios, obscenos, violentos o que vulneren los derechos de terceros.</p>
+      <p>DS Connect se reserva el derecho de suprimir cualquier contenido o cuenta que no respete las presentes CGU.</p>
+
+      <h2><span class="num">8.</span>Datos personales y cookies</h2>
+      <p>El tratamiento de datos se rige por la <a href="privacy.html">Política de Protección de Datos Personales</a> y la <a href="cookies.html">Política de Gestión de Cookies</a>, accesibles en la Aplicación.</p>
+      <p>iDisko respeta el RGPD y las recomendaciones de la CNIL.</p>
+
+      <h2><span class="num">9.</span>Propiedad intelectual</h2>
+      <p>Todos los elementos de la Aplicación (marcas, logos, diseño, código, imágenes, sonidos, vídeos) están protegidos por el derecho de la propiedad intelectual y pertenecen exclusivamente a DS Connect.</p>
+      <p>Queda prohibida cualquier reproducción no autorizada.</p>
+
+      <h2><span class="num">10.</span>Responsabilidad</h2>
+      <p>DS Connect no podrá ser considerada responsable de las interrupciones, averías o errores vinculados a las redes de comunicación electrónica.</p>
+      <p>El Usuario sigue siendo el único responsable de su uso de la Aplicación.</p>
+
+      <h2><span class="num">11.</span>Derecho aplicable y jurisdicción competente</h2>
+      <p>Las presentes CGU se rigen por el derecho francés. Cualquier litigio será sometido a los tribunales competentes de Montpellier.</p>
+
+      <div class="legal-disclaimer">
+        <strong>Nota sobre la versión</strong><br />
+        La versión oficial y legalmente vinculante de estos Términos de Uso es la redactada en francés por nuestra abogada. La presente versión en español es una traducción proporcionada a título informativo. En caso de conflicto o divergencia de interpretación, <strong>prevalece la versión francesa</strong>.
+      </div>
+    </div>
+
+    <!-- ============= ENGLISH (translation) ============= -->
+    <div class="lang-content doc-content" id="content-en">
+
+      <h2><span class="num">1.</span>Purpose</h2>
+      <p>These Terms of Use (hereinafter "Terms") define the conditions of use of the iDisko mobile application (hereinafter "the Application"), published by <strong>DS Connect</strong>, a simplified joint-stock company (SAS) with share capital of €10,000, registered with the Montpellier Trade and Companies Register under number <strong>941 864 985</strong>, with its registered office at Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, France.</p>
+      <p>By using the Application, the user (hereinafter "the User") unconditionally accepts these Terms.</p>
+
+      <h2><span class="num">2.</span>Use of the Application</h2>
+      <p>The User agrees to use the Application in compliance with the law, good morals, and these Terms.</p>
+      <p>The Application is strictly reserved for individuals aged 18 years or older. The creation of accounts by minors is prohibited.</p>
+      <p>The User is solely responsible for any content they share (videos, photos, music, text, interactions).</p>
+
+      <h2><span class="num">3.</span>Technical Data and Identification</h2>
+      <p>The Application does not collect device UDID numbers, in compliance with current privacy regulations.</p>
+      <p>If the User consents to advertising tracking, they may choose to share their IDFA (Apple's advertising identifier) or Android equivalent. This choice is entirely up to the User.</p>
+
+      <h2><span class="num">4.</span>Accounts and Authentication</h2>
+      <p>Creating an account requires a valid email address and password.</p>
+      <p>To enhance security, DS Connect may require multi-factor authentication (MFA), meaning the User may need to confirm their identity with a second factor such as a code received by SMS or email.</p>
+
+      <h2><span class="num">5.</span>Music Content and Third-Party Services</h2>
+      <p>Music available within the Application is provided through two legal sources:</p>
+      <ul>
+        <li>The <strong>YouTube API</strong>, which allows Users to listen to music clips under YouTube's Terms of Service.</li>
+        <li>Licenses purchased from <strong>Jamendo</strong>, which provide royalty-free tracks legally integrated into the Application.</li>
+      </ul>
+      <p>By using the Application, the User also agrees to comply with <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube's Terms of Service</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+      <p>The Application may also allow linking with external music accounts (e.g. Spotify, Deezer). These third-party services remain subject to their own terms and privacy policies.</p>
+
+      <h2><span class="num">6.</span>In-App Purchases and Subscriptions</h2>
+      <p>The Application offers in-app purchases (premium subscriptions, additional features).</p>
+      <p>Prices are displayed in euros (including VAT) and may vary depending on the App Store (Apple App Store / Google Play).</p>
+      <p>Subscriptions automatically renew unless canceled before the end of the current period.</p>
+      <p>Users can manage or cancel their subscriptions directly via their Apple or Google account settings.</p>
+      <p>In accordance with applicable law, Users are entitled to legal warranties and may exercise their right of withdrawal, except for digital content already accessed or consumed.</p>
+
+      <h2><span class="num">7.</span>Moderation and Safety</h2>
+      <p>The User agrees not to publish any content that is offensive, defamatory, obscene, violent, or infringes the rights of others.</p>
+      <p>DS Connect reserves the right to remove any content or account that violates these Terms.</p>
+
+      <h2><span class="num">8.</span>Data Protection and Cookies</h2>
+      <p>Data processing is governed by the <a href="privacy.html">Privacy Policy</a> and <a href="cookies.html">Cookie Policy</a>, both accessible within the Application.</p>
+      <p>iDisko complies with the GDPR and the CNIL (French Data Protection Authority).</p>
+
+      <h2><span class="num">9.</span>Intellectual Property</h2>
+      <p>All elements of the Application (trademarks, logos, designs, code, images, sounds, videos) are protected by intellectual property laws and are the exclusive property of DS Connect.</p>
+      <p>Any unauthorized reproduction is prohibited.</p>
+
+      <h2><span class="num">10.</span>Liability</h2>
+      <p>DS Connect cannot be held liable for interruptions, failures, or errors related to electronic communication networks.</p>
+      <p>The User remains solely responsible for their use of the Application.</p>
+
+      <h2><span class="num">11.</span>Governing Law and Jurisdiction</h2>
+      <p>These Terms are governed by French law. Any dispute will be submitted to the competent courts of Montpellier, France.</p>
+
+      <div class="legal-disclaimer">
+        <strong>Note on this version</strong><br />
+        The official and legally binding version of these Terms of Use is the one drafted in French by our legal counsel. This English version is a translation provided for informational purposes. In case of conflict or divergence of interpretation, <strong>the French version prevails</strong>.
+      </div>
+    </div>
+
+    <!-- ============= FRANÇAIS (ORIGINAL - abogada) ============= -->
+    <div class="lang-content doc-content" id="content-fr">
+
+      <h2><span class="num">1.</span>Objet</h2>
+      <p>Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») définissent les modalités d'utilisation de l'application mobile iDisko (ci-après « l'Application »), éditée par <strong>DS Connect</strong>, SAS au capital de 10.000 €, immatriculée au RCS de Montpellier sous le numéro <strong>941 864 985</strong>, dont le siège social est situé Parc Eureka, Le Pôle Eureka, 418 rue du Mas de Verchant, 34000 Montpellier, France.</p>
+      <p>En utilisant l'Application, l'utilisateur (ci-après « l'Utilisateur ») accepte sans réserve les présentes CGU.</p>
+
+      <h2><span class="num">2.</span>Utilisation de l'Application</h2>
+      <p>L'Utilisateur s'engage à utiliser l'Application conformément à la loi, aux bonnes mœurs et aux présentes CGU.</p>
+      <p>L'Application est strictement réservée aux personnes âgées de 18 ans ou plus. Toute inscription d'un mineur est interdite.</p>
+      <p>L'Utilisateur est seul responsable des contenus qu'il diffuse (vidéos, photos, musique, textes, interactions).</p>
+
+      <h2><span class="num">3.</span>Données techniques et identification</h2>
+      <p>L'Application ne collecte pas l'UDID des appareils, conformément aux règles actuelles de confidentialité.</p>
+      <p>Si l'Utilisateur consent au suivi publicitaire, il pourra partager son IDFA (identifiant publicitaire iOS) ou équivalent Android. Ce choix relève uniquement de l'Utilisateur.</p>
+
+      <h2><span class="num">4.</span>Comptes et authentification</h2>
+      <p>La création d'un compte nécessite une adresse email valide et un mot de passe.</p>
+      <p>Afin de renforcer la sécurité, DS Connect peut mettre en place une authentification multi-facteur (MFA) : l'Utilisateur pourra être invité à confirmer son identité via un code reçu par SMS ou email.</p>
+
+      <h2><span class="num">5.</span>Contenu musical et services tiers</h2>
+      <p>La musique disponible dans l'Application provient de deux sources légales :</p>
+      <ul>
+        <li>L'<strong>API YouTube</strong>, permettant aux Utilisateurs d'écouter des extraits musicaux conformément aux Conditions d'Utilisation de YouTube.</li>
+        <li>Des licences achetées auprès de <strong>Jamendo</strong>, fournissant des morceaux libres de droits intégrés légalement dans l'Application.</li>
+      </ul>
+      <p>En utilisant l'Application, l'Utilisateur accepte également de respecter les <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Conditions d'Utilisation de YouTube</a> et la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de confidentialité de Google</a>.</p>
+      <p>L'Application peut aussi permettre de lier un compte musical externe (ex. Spotify, Deezer). Ces services tiers restent soumis à leurs propres conditions et politiques de confidentialité.</p>
+
+      <h2><span class="num">6.</span>Achats intégrés et abonnements</h2>
+      <p>L'Application propose des achats in-app (abonnements premium, fonctionnalités supplémentaires).</p>
+      <p>Les prix sont indiqués en euros TTC et peuvent varier selon les stores (Apple App Store / Google Play).</p>
+      <p>Les abonnements se renouvellent automatiquement sauf résiliation avant la fin de la période en cours.</p>
+      <p>L'Utilisateur peut gérer ou annuler son abonnement directement depuis son compte Apple ou Google.</p>
+      <p>Conformément à la loi, l'Utilisateur bénéficie de garanties légales et d'un droit de rétractation, sauf pour les contenus numériques déjà consommés.</p>
+
+      <h2><span class="num">7.</span>Modération et sécurité</h2>
+      <p>L'Utilisateur s'engage à ne pas publier de contenus injurieux, diffamatoires, obscènes, violents ou portant atteinte aux droits de tiers.</p>
+      <p>DS Connect se réserve le droit de supprimer tout contenu ou compte ne respectant pas les présentes CGU.</p>
+
+      <h2><span class="num">8.</span>Données personnelles et cookies</h2>
+      <p>Le traitement des données est régi par la <a href="privacy.html">Politique de protection des données personnelles</a> et la <a href="cookies.html">Politique de gestion des cookies</a>, accessibles dans l'Application.</p>
+      <p>iDisko respecte le RGPD et les recommandations de la CNIL.</p>
+
+      <h2><span class="num">9.</span>Propriété intellectuelle</h2>
+      <p>Tous les éléments de l'Application (marques, logos, design, code, images, sons, vidéos) sont protégés par le droit de la propriété intellectuelle et appartiennent exclusivement à DS Connect.</p>
+      <p>Toute reproduction non autorisée est interdite.</p>
+
+      <h2><span class="num">10.</span>Responsabilité</h2>
+      <p>DS Connect ne saurait être tenue responsable des interruptions, pannes ou erreurs liées aux réseaux de communication électronique.</p>
+      <p>L'Utilisateur reste seul responsable de son usage de l'Application.</p>
+
+      <h2><span class="num">11.</span>Droit applicable et juridiction compétente</h2>
+      <p>Les présentes CGU sont régies par le droit français. Tout litige sera soumis aux tribunaux compétents de Montpellier.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 DS CONNECT · RCS Montpellier 941 864 985</div>
+    <div class="footer-links">
+      <a href="index.html" data-i18n="footerHome">Home</a>
+      <a href="privacy.html" data-i18n="footerPrivacy">Privacy</a>
+      <a href="terms.html" data-i18n="footerTerms">Terms</a>
+      <a href="cookies.html" data-i18n="footerCookies">Cookies</a>
+      <a href="legal.html" data-i18n="footerLegal">Legal Notice</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var UI = {
+  es: {
+    tag: "Legal · Términos",
+    title: "Términos de Uso",
+    updated: "Última actualización",
+    back: "volver al inicio",
+    footerHome: "Inicio",
+    footerPrivacy: "Privacidad",
+    footerTerms: "Términos",
+    footerCookies: "Cookies",
+    footerLegal: "Aviso Legal"
+  },
+  en: {
+    tag: "Legal · Terms",
+    title: "Terms of Use",
+    updated: "Last updated",
+    back: "back to home",
+    footerHome: "Home",
+    footerPrivacy: "Privacy",
+    footerTerms: "Terms",
+    footerCookies: "Cookies",
+    footerLegal: "Legal Notice"
+  },
+  fr: {
+    tag: "Légal · CGU",
+    title: "Conditions Générales d'Utilisation",
+    updated: "Dernière mise à jour",
+    back: "retour à l'accueil",
+    footerHome: "Accueil",
+    footerPrivacy: "Confidentialité",
+    footerTerms: "CGU",
+    footerCookies: "Cookies",
+    footerLegal: "Mentions Légales"
+  }
+};
+
+function applyLang(lang) {
+  var contents = document.querySelectorAll('.lang-content');
+  for (var i = 0; i < contents.length; i++) contents[i].classList.remove('active');
+  var active = document.getElementById('content-' + lang);
+  if (active) active.classList.add('active');
+
+  var dict = UI[lang] || UI.es;
+  var nodes = document.querySelectorAll('[data-i18n]');
+  for (var j = 0; j < nodes.length; j++) {
+    var key = nodes[j].getAttribute('data-i18n');
+    if (dict[key] !== undefined) nodes[j].textContent = dict[key];
+  }
+
+  document.documentElement.lang = lang;
+  try { localStorage.setItem('idisko_lang', lang); } catch (e) {}
+}
+
+var langBtns = document.querySelectorAll('.lang-btn');
+for (var k = 0; k < langBtns.length; k++) {
+  langBtns[k].addEventListener('click', function () {
+    var newLang = this.getAttribute('data-lang');
+    var all = document.querySelectorAll('.lang-btn');
+    for (var m = 0; m < all.length; m++) all[m].classList.remove('active');
+    this.classList.add('active');
+    applyLang(newLang);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+var savedLang = null;
+try { savedLang = localStorage.getItem('idisko_lang'); } catch (e) {}
+var browserLang = (navigator.language || 'es').slice(0, 2);
+var initialLang = savedLang || (UI[browserLang] ? browserLang : 'es');
+applyLang(initialLang);
+for (var n = 0; n < langBtns.length; n++) {
+  langBtns[n].classList.remove('active');
+  if (langBtns[n].getAttribute('data-lang') === initialLang) {
+    langBtns[n].classList.add('active');
+  }
+}
+</script>
+
+</body>
+</html>

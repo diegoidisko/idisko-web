@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a0a1a" />
+<title>Privacy Policy — iDisko</title>
+<meta name="description" content="iDisko privacy policy — how we protect your personal data. GDPR compliant." />
+<meta name="robots" content="noindex, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --bg: #0a0a1a;
+  --bg-2: #14092a;
+  --ink: #f4eaff;
+  --ink-dim: #b8a8d6;
+  --ink-faint: #7a6a99;
+  --violet: #9b4dff;
+  --violet-bright: #c084fc;
+  --magenta: #ff2e93;
+  --line: rgba(244, 234, 255, 0.08);
+  --line-strong: rgba(244, 234, 255, 0.14);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(155, 77, 255, 0.15), transparent 60%),
+    radial-gradient(ellipse 40% 30% at 90% 30%, rgba(255, 46, 147, 0.08), transparent 60%);
+}
+
+a { color: var(--violet-bright); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--magenta); }
+
+.container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+/* ============= NAV ============= */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.logo-link img { height: 32px; width: auto; display: block; }
+.logo-link .fallback-i { color: var(--violet-bright); }
+
+.lang-switch {
+  display: flex;
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(244, 234, 255, 0.04);
+  border: 1px solid var(--line-strong);
+  border-radius: 100px;
+  padding: 3px;
+}
+
+.lang-btn {
+  padding: 6px 12px;
+  border-radius: 100px;
+  color: var(--ink-faint);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.lang-btn.active {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.lang-btn:not(.active):hover { color: var(--ink); }
+
+.back-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-dim);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-link:hover { color: var(--violet-bright); }
+
+/* ============= CONTENT ============= */
+main { padding: 60px 0 100px; }
+
+.doc-header {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.doc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(155, 77, 255, 0.1);
+  border: 1px solid rgba(155, 77, 255, 0.3);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--violet-bright);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.doc-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--violet-bright);
+  box-shadow: 0 0 8px var(--violet-bright);
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.doc-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.doc-content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--violet-bright);
+  margin-top: 48px;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.doc-content h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.doc-content h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.doc-content p {
+  margin-bottom: 16px;
+  color: var(--ink-dim);
+  font-size: 15px;
+}
+
+.doc-content ul, .doc-content ol {
+  margin: 16px 0 20px 24px;
+  color: var(--ink-dim);
+  font-size: 15px;
+}
+
+.doc-content li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.doc-content strong { color: var(--ink); font-weight: 600; }
+
+.info-box {
+  background: rgba(155, 77, 255, 0.05);
+  border: 1px solid rgba(155, 77, 255, 0.2);
+  border-left: 3px solid var(--violet-bright);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-size: 14px;
+}
+
+.info-box p { margin-bottom: 8px; color: var(--ink); }
+.info-box p:last-child { margin-bottom: 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  background: rgba(155, 77, 255, 0.03);
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+thead th {
+  background: rgba(155, 77, 255, 0.08);
+  color: var(--violet-bright);
+  font-weight: 600;
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+tbody td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-dim);
+  vertical-align: top;
+}
+
+tbody td:first-child {
+  color: var(--ink);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+
+/* Language content toggle */
+.lang-content { display: none; }
+.lang-content.active { display: block; }
+
+/* ============= FOOTER ============= */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  margin-top: 60px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.footer-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { color: var(--ink-faint); }
+.footer-links a:hover { color: var(--violet-bright); }
+
+@media (max-width: 640px) {
+  .nav-inner { flex-wrap: wrap; gap: 12px; }
+  .back-link { display: none; }
+  h1 { font-size: 28px; }
+  .doc-content h2 { font-size: 18px; margin-top: 36px; }
+  table { font-size: 13px; }
+  thead th, tbody td { padding: 10px 12px; }
+  tbody td:first-child { white-space: normal; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link">
+      <!-- Logo PNG si existe, sino fallback texto -->
+      <img src="logo.png" alt="iDisko" onerror="this.style.display='none'" />
+      <span><span class="fallback-i">i</span>Disko</span>
+    </a>
+
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+    </div>
+
+    <a href="index.html" class="back-link">← <span data-i18n="back">volver al inicio</span></a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <div class="doc-header">
+      <div class="doc-tag" data-i18n="tag">Legal · GDPR</div>
+      <h1 data-i18n="title">Política de Protección de Datos Personales</h1>
+      <div class="doc-meta">
+        <span data-i18n="updated">Última actualización</span>: 19/04/2026
+      </div>
+    </div>
+
+    <!-- ============= ESPAÑOL ============= -->
+    <div class="lang-content active" id="content-es">
+
+      <p>La sociedad <strong>DS CONNECT</strong> es una sociedad por acciones simplificada, con un capital social de 10.000 euros, inscrita en el Registro de Comercio y de Sociedades de Montpellier con el número <strong>941 864 985</strong>, con domicilio social en Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, en adelante («nosotros»).</p>
+
+      <p>Nos preocupamos especialmente por su vida privada y por el respeto de sus datos personales. Respetamos la Ley n.º 78-17, de 6 de enero de 1978, relativa a la informática, a los ficheros y a las libertades, modificada (en adelante, la «Ley de Informática y Libertades»), así como el Reglamento (UE) 2016/679 del 27 de abril de 2016 relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos, conocido como Reglamento General de Protección de Datos o RGPD (en adelante, el «RGPD»).</p>
+
+      <p>La presente política de protección de datos personales (en adelante, la «Política») le informa sobre las modalidades según las cuales tratamos sus datos personales en el marco de su utilización de nuestra aplicación móvil «IDISKO» (en adelante, la «Aplicación»), así como de nuestro sitio web accesible en la dirección: <a href="https://www.idisko.com">www.idisko.com</a> (en adelante, el «Sitio»).</p>
+
+      <div class="info-box">
+        <p><strong>Edad mínima:</strong> Nuestra Aplicación está dirigida únicamente a personas de 18 años o más. No permitimos que los menores de 18 años creen una cuenta en nuestra Aplicación.</p>
+      </div>
+
+      <p>Los términos «responsable del tratamiento», «corresponsable», «encargado del tratamiento», «interesado», «datos personales», «tratamiento», «violación de datos personales», «Estado miembro» tienen el mismo significado que se les atribuye en el RGPD.</p>
+
+      <h2>1. ¿Quién es el responsable del tratamiento de sus datos personales?</h2>
+      <p>Somos el responsable del tratamiento de sus datos personales en el marco de su utilización de nuestra Aplicación y de nuestro Sitio.</p>
+      <p>Para cualquier pregunta relativa al tratamiento de sus datos, puede contactarnos:</p>
+      <ul>
+        <li>Por correo electrónico: <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>Por correo postal: DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, Francia.</li>
+      </ul>
+
+      <h2>2. ¿En qué ocasiones recopilamos sus datos personales?</h2>
+      <p>Sus datos personales pueden ser recopilados, en particular, cuando:</p>
+      <ul>
+        <li>crea una cuenta en nuestra Aplicación,</li>
+        <li>utiliza nuestra Aplicación,</li>
+        <li>se pone en contacto con nosotros por cualquier medio,</li>
+        <li>participa en los eventos y juegos que organizamos,</li>
+        <li>responde a nuestras encuestas y cuestionarios de satisfacción,</li>
+        <li>se suscribe a nuestras newsletters,</li>
+        <li>señala un contenido o el perfil de un usuario de nuestra Aplicación,</li>
+        <li>formula una solicitud de ejercicio de derechos.</li>
+      </ul>
+
+      <h2>3. ¿Qué datos personales recopilamos?</h2>
+
+      <h3>3.1 Datos que usted nos proporciona</h3>
+      <h4>Datos de la cuenta</h4>
+      <p>Cuando crea una cuenta, nos proporciona información básica para la configuración de su cuenta: su dirección de correo electrónico y su contraseña.</p>
+
+      <h4>Datos relativos al perfil</h4>
+      <p>Para completar su perfil, debe indicar su nombre de usuario, género, fecha de nacimiento y fotografía de perfil. Puede compartir datos adicionales como su país de nacimiento, biografía, centros de interés, preferencias musicales, fotografías, etc.</p>
+
+      <h4>Datos relativos al contenido que comparte</h4>
+      <p>Cuando utiliza nuestra Aplicación, puede publicar fotografías, vídeos en directo, texto y otros tipos de contenido, como sus conversaciones con otros usuarios. En esta ocasión, puede transmitir datos personales que le conciernen, tales como su voz, sus fotografías, etc.</p>
+
+      <h4>Datos sobre servicios de terceros</h4>
+      <p>Puede decidir compartir datos con nosotros a través de sus cuentas en servicios de terceros, como Apple y Google. Si utiliza un servicio de terceros para crear su cuenta, este puede proporcionarnos información como su nombre y correo electrónico. <strong>No recopilamos ni almacenamos las contraseñas</strong> que utiliza para acceder a los servicios de terceros.</p>
+
+      <div class="info-box">
+        <p><strong>Importante:</strong> Para enviar y descargar fotografías y/o vídeos desde su dispositivo y utilizar la función de vídeos en directo, debe autorizarnos a acceder a la cámara de su dispositivo, galería de fotos y vídeos, así como a su micrófono.</p>
+        <p>El contenido compartido puede ser visto por otros usuarios con los que interactúa. Estos pueden guardar su contenido (por ejemplo, mediante capturas de pantalla) sin que podamos impedirlo.</p>
+      </div>
+
+      <h3>3.2 Datos generados o recopilados automáticamente</h3>
+      <h4>Datos relativos al uso de la Aplicación</h4>
+      <p>El uso de nuestra Aplicación genera datos sobre su actividad: fecha y hora de sus conexiones, funcionalidades utilizadas, anuncios con los que ha interactuado, y la forma en que interactúa con otros usuarios.</p>
+
+      <h4>Datos técnicos</h4>
+      <p>Recopilamos información de hardware y software como dirección IP, identificador del dispositivo (Device ID), tipo de dispositivo, versión, idioma, huso horario y otros identificadores asociados a cookies o tecnologías similares.</p>
+
+      <h3>3.3 Otros datos que recopilamos con su consentimiento</h3>
+      <h4>Datos de geolocalización</h4>
+      <p>Podemos, previa obtención de su consentimiento, recopilar datos de geolocalización (latitud y longitud). Si se niega, es posible que no pueda acceder a las funcionalidades basadas en geolocalización.</p>
+
+      <h4>Datos de identificación (verificación de edad)</h4>
+      <p>Utilizamos la tecnología de <strong>YOTI</strong> para estimar su edad. YOTI LTD es una empresa especializada en la verificación de la edad a partir de un selfi en vídeo/foto. Una vez estimada su edad y comunicada, YOTI <strong>suprime la imagen</strong>. No compartimos información sobre usted con YOTI.</p>
+
+      <h2>4. ¿Por qué utilizamos sus datos personales y sobre qué bases legales?</h2>
+      <p>El tratamiento de sus datos personales se justifica por diferentes bases legales según el uso:</p>
+      <ul>
+        <li><strong>El contrato:</strong> el tratamiento es necesario para la ejecución del contrato.</li>
+        <li><strong>Su consentimiento:</strong> mediante un consentimiento libre, específico, informado e inequívoco. Puede retirarlo en cualquier momento.</li>
+        <li><strong>Nuestro interés legítimo:</strong> tenemos un interés comercial justificado, equilibrado y que no vulnera su vida privada.</li>
+        <li><strong>La ley:</strong> cuando el tratamiento es obligatorio legalmente.</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>Finalidad</th><th>Base legal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gestión de la Aplicación y cuentas de usuarios</td><td>Ejecución de contrato / Interés legítimo</td></tr>
+          <tr><td>Mejora de la Aplicación y nuevas funcionalidades</td><td>Interés legítimo / Consentimiento</td></tr>
+          <tr><td>Seguridad, prevención y moderación de contenidos</td><td>Interés legítimo / Obligaciones legales</td></tr>
+          <tr><td>Gestión de eventos, juegos y encuestas</td><td>Interés legítimo</td></tr>
+          <tr><td>Prospección comercial (newsletters)</td><td>Interés legítimo / Consentimiento</td></tr>
+          <tr><td>Gestión de litigios</td><td>Interés legítimo / Obligaciones legales</td></tr>
+        </tbody>
+      </table>
+
+      <h2>5. ¿A quién se transmiten sus datos personales?</h2>
+      <p>Los datos recopilados están destinados al personal estrictamente autorizado de DS CONNECT. Pueden transmitirse a:</p>
+      <ul>
+        <li>Otros usuarios (en caso de reportes que impliquen acción de moderación).</li>
+        <li>Nuestros encargados del tratamiento (mantenimiento, desarrollo técnico, seguridad), sometidos a confidencialidad y obligaciones del RGPD.</li>
+        <li>Autoridades financieras, judiciales, administrativas, policiales o agencias estatales cuando sea legalmente exigible.</li>
+        <li>Nuestros derechohabientes (en caso de fusión, cesión, adquisición, reestructuración).</li>
+      </ul>
+
+      <h2>6. ¿Dónde se almacenan sus datos? ¿Se transfieren fuera de la UE?</h2>
+      <p>Los datos personales recopilados se almacenan y alojan en <strong>servidores seguros situados en Alemania</strong>.</p>
+      <p>Podemos vernos obligados a transmitir parte de sus datos a encargados del tratamiento establecidos fuera de la Unión Europea. Cuando el Estado de destino no ha sido reconocido oficialmente como adecuado por la Comisión Europea, nos comprometemos a proporcionar las garantías adecuadas de conformidad con el artículo 46 del RGPD (cláusulas contractuales tipo).</p>
+
+      <h2>7. ¿Durante cuánto tiempo conservamos sus datos?</h2>
+      <table>
+        <thead>
+          <tr><th>Tipo de dato</th><th>Plazo de conservación</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cuenta y perfil</td><td>2 años desde la última actividad (supresión bajo petición en cualquier momento)</td></tr>
+          <tr><td>Contenido compartido</td><td>2 años desde la última actividad</td></tr>
+          <tr><td>Reportes</td><td>Hasta 5 años después de la resolución</td></tr>
+          <tr><td>Geolocalización</td><td>Hasta el próximo acceso</td></tr>
+          <tr><td>Eventos, juegos, encuestas</td><td>3 años desde la recopilación</td></tr>
+          <tr><td>Newsletters</td><td>3 años desde el último contacto</td></tr>
+          <tr><td>Obligaciones contables</td><td>10 años desde el cierre del ejercicio</td></tr>
+          <tr><td>Ejercicio de derechos (acceso, rectificación, supresión)</td><td>5 años</td></tr>
+          <tr><td>Derecho de oposición</td><td>6 años</td></tr>
+        </tbody>
+      </table>
+
+      <h2>8. ¿Qué medidas de seguridad adoptamos?</h2>
+      <p>Disponemos de medidas adecuadas para proteger sus datos contra destrucción, pérdida, alteración, divulgación o acceso no autorizado:</p>
+      <ul>
+        <li>Contraseñas fuertes (mínimo 8 caracteres, mayúscula, minúscula, número y carácter especial).</li>
+        <li><strong>Autenticación multifactor (MFA)</strong> obligatoria mediante código por correo electrónico.</li>
+        <li>Servidores cifrados y sistemas de monitoreo continuo.</li>
+        <li>Notificación en caso de violación de datos con alto riesgo para sus derechos.</li>
+      </ul>
+
+      <h2>9. ¿Qué derechos tiene usted y cómo ejercerlos?</h2>
+      <p>Bajo los artículos 15 y siguientes del RGPD, salvo excepciones, dispone de los siguientes derechos:</p>
+      <ul>
+        <li>Derecho de <strong>acceso</strong> a sus datos personales.</li>
+        <li>Derecho de <strong>rectificación</strong> de datos inexactos.</li>
+        <li>Derecho de <strong>supresión</strong> (derecho al olvido).</li>
+        <li>Derecho a la <strong>limitación</strong> del tratamiento.</li>
+        <li>Derecho a la <strong>portabilidad</strong> de los datos.</li>
+        <li>Derecho a no ser objeto de una <strong>decisión automatizada</strong>.</li>
+        <li>Derecho de <strong>oposición</strong> al tratamiento.</li>
+        <li>Derecho de oposición a la <strong>prospección comercial</strong>.</li>
+        <li>Derecho de <strong>retirada del consentimiento</strong>.</li>
+        <li>Derecho a definir directrices sobre sus datos post-mortem.</li>
+        <li>Derecho a <strong>presentar reclamación ante la CNIL</strong> (autoridad francesa de control).</li>
+      </ul>
+      <p>Para ejercer sus derechos:</p>
+      <ul>
+        <li>Por correo electrónico: <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>Por correo postal: DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, Francia.</li>
+      </ul>
+      <p>En caso de duda razonable sobre su identidad, podremos solicitar información adicional para verificarla.</p>
+
+      <h2>10. ¿Puede modificarse la Política?</h2>
+      <p>Podemos actualizar nuestra Política puntualmente para tener en cuenta evoluciones técnicas, económicas, reglamentarias o jurídicas. Le informaremos de cualquier modificación importante mediante una notificación en la Aplicación.</p>
+      <p>La última versión de la Política es la accesible en nuestra Aplicación y en nuestro Sitio.</p>
+    </div>
+
+    <!-- ============= ENGLISH ============= -->
+    <div class="lang-content" id="content-en">
+
+      <p><strong>DS CONNECT</strong> is a simplified joint-stock company with a share capital of 10,000 euros, registered with the Montpellier Trade and Companies Register under number <strong>941 864 985</strong>, whose registered office is located at Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, France (hereinafter "we").</p>
+
+      <p>We are particularly concerned about your privacy and the protection of your personal data. We comply with French Law No. 78-17 of January 6, 1978 on Data Processing, Files and Individual Liberties, as amended, as well as European Regulation (EU) 2016/679 of April 27, 2016, known as the General Data Protection Regulation or GDPR (hereinafter the "GDPR").</p>
+
+      <p>This Privacy Policy (hereinafter the "Policy") informs you of how we process your personal data when you use our mobile application "IDISKO" (the "Application") and our website at <a href="https://www.idisko.com">www.idisko.com</a> (the "Site").</p>
+
+      <div class="info-box">
+        <p><strong>Age requirement:</strong> Our Application is intended solely for individuals aged 18 or over. We do not allow persons under 18 to create an account on our Application.</p>
+      </div>
+
+      <h2>1. Who is responsible for processing your personal data?</h2>
+      <p>We are the controller of the personal data processed in connection with your use of our Application and Site.</p>
+      <p>For any questions regarding the processing of your data, contact us:</p>
+      <ul>
+        <li>By email: <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>By post: DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, France.</li>
+      </ul>
+
+      <h2>2. When do we collect your personal data?</h2>
+      <ul>
+        <li>When you create an account on our Application,</li>
+        <li>When you use our Application,</li>
+        <li>When you contact us by any means,</li>
+        <li>When you participate in events or games we organize,</li>
+        <li>When you respond to surveys or satisfaction questionnaires,</li>
+        <li>When you subscribe to our newsletters,</li>
+        <li>When you report content or another user's profile,</li>
+        <li>When you submit a request to exercise your rights.</li>
+      </ul>
+
+      <h2>3. What personal data do we collect?</h2>
+
+      <h3>3.1 Data you provide us</h3>
+      <h4>Account data</h4>
+      <p>When you create an account, you provide basic information: your email address and password.</p>
+
+      <h4>Profile data</h4>
+      <p>To complete your profile, you provide your username, gender, date of birth, and profile photo. You may share additional information such as country of birth, biography, interests, musical preferences, photos, etc.</p>
+
+      <h4>Data related to the content you share</h4>
+      <p>When using our Application, you may publish photographs, live videos, text, and other content, including conversations with other users. You may share personal data such as your voice and photographs.</p>
+
+      <h4>Third-party service data</h4>
+      <p>You may choose to share data through third-party services such as Apple or Google. If you use a third-party service to create your account, that service may provide us with information such as your name and email. <strong>We do not collect or store passwords</strong> you use for third-party services.</p>
+
+      <div class="info-box">
+        <p><strong>Important:</strong> To upload photos/videos from your device and use the live video feature, you must authorize access to your camera, photo/video library, and microphone.</p>
+        <p>Content shared on our Application can be viewed by users you interact with. They may record your content (e.g., screenshots) without us being able to prevent it.</p>
+      </div>
+
+      <h3>3.2 Data collected automatically</h3>
+      <h4>Application usage data</h4>
+      <p>Using our Application generates activity data: login times, features used, ads you interacted with, and how you interact with other users.</p>
+
+      <h4>Technical data</h4>
+      <p>We collect hardware and software information such as IP address, device ID, device type, OS version, language, time zone, and identifiers linked to cookies or similar technologies.</p>
+
+      <h3>3.3 Data collected with your consent</h3>
+      <h4>Geolocation data</h4>
+      <p>With your consent, we may collect geolocation data (latitude and longitude). Without authorization, certain location-based features may not be available.</p>
+
+      <h4>Identification data (age verification)</h4>
+      <p>We use <strong>YOTI</strong> technology to estimate your age via a video/photo selfie. Once your age has been estimated and transmitted to us, YOTI <strong>deletes the image</strong>. We do not share your information with YOTI.</p>
+
+      <h2>4. Why do we use your personal data and on what legal basis?</h2>
+      <p>Processing is justified by various legal bases:</p>
+      <ul>
+        <li><strong>Contract:</strong> processing necessary for contract performance.</li>
+        <li><strong>Consent:</strong> you freely consent to the processing. You may withdraw consent at any time.</li>
+        <li><strong>Legitimate interest:</strong> we have a commercial interest that is balanced and doesn't infringe your privacy.</li>
+        <li><strong>Legal obligation:</strong> processing required by law.</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>Purpose</th><th>Legal basis</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Application and user account management</td><td>Contract performance / Legitimate interest</td></tr>
+          <tr><td>Application improvement and new features</td><td>Legitimate interest / Consent</td></tr>
+          <tr><td>Safety, moderation, content prevention</td><td>Legitimate interest / Legal obligation</td></tr>
+          <tr><td>Events, games, surveys</td><td>Legitimate interest</td></tr>
+          <tr><td>Commercial prospecting (newsletters)</td><td>Legitimate interest / Consent</td></tr>
+          <tr><td>Litigation management</td><td>Legitimate interest / Legal obligation</td></tr>
+        </tbody>
+      </table>
+
+      <h2>5. Who receives your personal data?</h2>
+      <p>Data is intended for authorized DS CONNECT staff. It may be transmitted to:</p>
+      <ul>
+        <li>Other users (in case of reports requiring moderation action).</li>
+        <li>Our processors (maintenance, technical development, security), bound by confidentiality and GDPR obligations.</li>
+        <li>Financial, judicial, administrative, police authorities when legally required.</li>
+        <li>Our legal successors (merger, sale, acquisition, restructuring).</li>
+      </ul>
+
+      <h2>6. Where is your data stored? Are transfers outside the EU possible?</h2>
+      <p>Personal data is stored on <strong>secure servers in Germany</strong>.</p>
+      <p>We may transfer data to processors outside the EU. When the destination country is not officially recognized as adequate by the European Commission, we commit to providing appropriate safeguards under Article 46 GDPR (Standard Contractual Clauses).</p>
+
+      <h2>7. How long do we keep your data?</h2>
+      <table>
+        <thead>
+          <tr><th>Data type</th><th>Retention period</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Account and profile</td><td>2 years from last activity (deletion on request anytime)</td></tr>
+          <tr><td>Shared content</td><td>2 years from last activity</td></tr>
+          <tr><td>Reports</td><td>Up to 5 years after resolution</td></tr>
+          <tr><td>Geolocation</td><td>Until next access</td></tr>
+          <tr><td>Events, games, surveys</td><td>3 years from collection</td></tr>
+          <tr><td>Newsletters</td><td>3 years from last contact</td></tr>
+          <tr><td>Accounting obligations</td><td>10 years from fiscal year close</td></tr>
+          <tr><td>Rights requests</td><td>5 years</td></tr>
+          <tr><td>Right to object</td><td>6 years</td></tr>
+        </tbody>
+      </table>
+
+      <h2>8. What security measures do we take?</h2>
+      <ul>
+        <li>Strong passwords (minimum 8 characters with uppercase, lowercase, number, special character).</li>
+        <li><strong>Mandatory multi-factor authentication (MFA)</strong> via email code.</li>
+        <li>Encrypted servers and continuous monitoring.</li>
+        <li>Data breach notification when high risk is detected.</li>
+      </ul>
+
+      <h2>9. What rights do you have and how to exercise them?</h2>
+      <p>Under Articles 15+ of the GDPR, you have the following rights (subject to exceptions):</p>
+      <ul>
+        <li>Right of <strong>access</strong>.</li>
+        <li>Right of <strong>rectification</strong>.</li>
+        <li>Right of <strong>erasure</strong> ("right to be forgotten").</li>
+        <li>Right to <strong>restriction</strong> of processing.</li>
+        <li>Right to <strong>data portability</strong>.</li>
+        <li>Right not to be subject to <strong>automated decision-making</strong>.</li>
+        <li>Right to <strong>object</strong>.</li>
+        <li>Right to object to <strong>commercial prospecting</strong>.</li>
+        <li>Right to <strong>withdraw consent</strong> at any time.</li>
+        <li>Right to define directives regarding your data post-mortem.</li>
+        <li>Right to <strong>lodge a complaint with the CNIL</strong> (French supervisory authority).</li>
+      </ul>
+      <p>To exercise your rights:</p>
+      <ul>
+        <li>By email: <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>By post: DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, France.</li>
+      </ul>
+
+      <h2>10. Can this Policy be modified?</h2>
+      <p>We may update this Policy due to technical, economic, regulatory, or legal changes. You will be informed of significant updates via notifications in the Application.</p>
+      <p>The latest version is always available on our Application and Site.</p>
+    </div>
+
+    <!-- ============= FRANÇAIS ============= -->
+    <div class="lang-content" id="content-fr">
+
+      <p>La société <strong>DS CONNECT</strong> est une société par actions simplifiée, au capital social de 10.000 euros, immatriculée au RCS de Montpellier sous le numéro <strong>941 864 985</strong>, dont le siège social se situe Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, ci-après («nous»).</p>
+
+      <p>Nous sommes particulièrement soucieux de votre vie privée et du respect de vos données personnelles. Nous respectons la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés modifiée (ci-après la «Loi Informatique et Libertés») et le règlement européen 2016/679 du 27 avril 2016 dit règlement général sur la protection des données ou RGPD (ci-après le «RGPD»).</p>
+
+      <p>La présente politique (ci-après la «Politique») vous informe sur les modalités selon lesquelles nous traitons vos données personnelles dans le cadre de votre utilisation de notre application mobile «IDISKO» (l'«Application») ainsi que de notre site internet <a href="https://www.idisko.com">www.idisko.com</a> (le «Site»).</p>
+
+      <div class="info-box">
+        <p><strong>Âge minimum :</strong> Notre Application s'adresse uniquement aux personnes âgées de 18 ans ou plus. Nous n'autorisons pas les personnes âgées de moins de 18 ans à créer un compte sur notre Application.</p>
+      </div>
+
+      <h2>1. Qui est le responsable du traitement de vos données personnelles ?</h2>
+      <p>Nous sommes le responsable des traitements de vos données personnelles dans le cadre de votre utilisation de notre Application et de notre Site.</p>
+      <p>Pour toute question relative au traitement de vos données, vous pouvez nous contacter :</p>
+      <ul>
+        <li>Par courriel : <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>Par voie postale : DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, France.</li>
+      </ul>
+
+      <h2>2. À quelles occasions collectons-nous vos données personnelles ?</h2>
+      <ul>
+        <li>Vous créez un compte sur notre Application,</li>
+        <li>Vous utilisez notre Application,</li>
+        <li>Vous nous contactez par quelque moyen que ce soit,</li>
+        <li>Vous participez aux évènements et jeux que nous organisons,</li>
+        <li>Vous répondez à nos sondages et enquêtes de satisfaction,</li>
+        <li>Vous vous abonnez à nos newsletters,</li>
+        <li>Vous signalez un contenu ou le profil d'un utilisateur,</li>
+        <li>Vous formulez une demande d'exercice de droits.</li>
+      </ul>
+
+      <h2>3. Quelles sont les données personnelles que nous collectons ?</h2>
+
+      <h3>3.1 Données que vous nous fournissez</h3>
+      <h4>Données du compte</h4>
+      <p>Lorsque vous créez un compte, vous nous fournissez des informations de base : votre adresse électronique et votre mot de passe.</p>
+
+      <h4>Données relatives au profil</h4>
+      <p>Pour compléter votre profil, vous devez renseigner votre nom d'utilisateur, genre, date de naissance et photographie de profil. Vous pouvez partager des données supplémentaires comme votre pays de naissance, biographie, centres d'intérêt, préférences musicales, photographies, etc.</p>
+
+      <h4>Données relatives au contenu que vous partagez</h4>
+      <p>Lorsque vous utilisez notre Application, vous pouvez publier des photographies, vidéos en direct, texte et autres contenus. Vous pouvez transmettre des données personnelles telles que votre voix, vos photographies, etc.</p>
+
+      <h4>Données sur les services tiers</h4>
+      <p>Vous pouvez décider de partager des données via vos comptes sur des services tiers tels qu'Apple et Google. <strong>Nous ne recueillons, ni ne stockons les mots de passe</strong> que vous utilisez pour accéder aux services tiers.</p>
+
+      <div class="info-box">
+        <p><strong>Important :</strong> Pour envoyer et télécharger des photographies et/ou vidéos et utiliser la fonction de vidéos en direct, vous devez nous autoriser à accéder à votre appareil photo, à votre album photo et vidéo ainsi qu'à votre microphone.</p>
+        <p>Le contenu partagé peut être vu par les autres utilisateurs avec lesquels vous interagissez, qui peuvent l'enregistrer (captures d'écran) sans que nous puissions les en empêcher.</p>
+      </div>
+
+      <h3>3.2 Données générées ou recueillies automatiquement</h3>
+      <h4>Données relatives à l'utilisation de l'Application</h4>
+      <p>L'utilisation génère des données sur votre activité : date et heure de connexion, fonctionnalités utilisées, publicités avec lesquelles vous avez interagi, manière dont vous interagissez avec d'autres utilisateurs.</p>
+
+      <h4>Données techniques</h4>
+      <p>Informations matérielles et logicielles : adresse IP, identifiant de l'appareil (Device ID), type d'appareil, version, langue, fuseau horaire et autres identifiants associés aux cookies.</p>
+
+      <h3>3.3 Autres données que nous recueillons avec votre consentement</h3>
+      <h4>Données de géolocalisation</h4>
+      <p>Nous pouvons, sous réserve de votre consentement, recueillir des données de géolocalisation (latitude et longitude). Si vous refusez, vous pourriez ne pas avoir accès à certaines fonctionnalités.</p>
+
+      <h4>Données d'identification (vérification de l'âge)</h4>
+      <p>Nous utilisons la technologie de <strong>YOTI</strong> pour estimer votre âge à partir d'un selfie vidéo/photo. Une fois votre âge estimé et communiqué, YOTI <strong>supprime l'image</strong>. Nous ne partageons pas d'informations vous concernant avec YOTI.</p>
+
+      <h2>4. Pourquoi utilisons-nous vos données personnelles et sur quelles bases légales ?</h2>
+      <ul>
+        <li><strong>Le contrat :</strong> traitement nécessaire à l'exécution du contrat.</li>
+        <li><strong>Votre consentement :</strong> libre, spécifique, éclairé et univoque. Retrait possible à tout moment.</li>
+        <li><strong>Notre intérêt légitime :</strong> intérêt commercial justifié, équilibré et ne portant pas atteinte à votre vie privée.</li>
+        <li><strong>La loi :</strong> traitement obligatoire par un texte de loi.</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>Finalité</th><th>Base légale</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gestion de l'Application et des comptes</td><td>Exécution du contrat / Intérêt légitime</td></tr>
+          <tr><td>Amélioration et nouvelles fonctionnalités</td><td>Intérêt légitime / Consentement</td></tr>
+          <tr><td>Sécurité, modération</td><td>Intérêt légitime / Obligations légales</td></tr>
+          <tr><td>Évènements, jeux, sondages</td><td>Intérêt légitime</td></tr>
+          <tr><td>Prospection commerciale (newsletters)</td><td>Intérêt légitime / Consentement</td></tr>
+          <tr><td>Gestion des contentieux</td><td>Intérêt légitime / Obligations légales</td></tr>
+        </tbody>
+      </table>
+
+      <h2>5. À qui vos données personnelles sont-elles transmises ?</h2>
+      <p>Les données sont destinées au personnel strictement habilité de DS CONNECT. Elles peuvent être transmises :</p>
+      <ul>
+        <li>Aux autres utilisateurs (en cas de signalements nécessitant modération).</li>
+        <li>À nos sous-traitants (maintenance, développements techniques, sécurité), tenus à la confidentialité et aux obligations du RGPD.</li>
+        <li>Aux autorités financières, judiciaires, administratives ou de police lorsque légalement requis.</li>
+        <li>À nos ayants droit (fusion, cession, acquisition, restructuration).</li>
+      </ul>
+
+      <h2>6. Où sont stockées vos données ? Sont-elles transférées hors UE ?</h2>
+      <p>Les données personnelles collectées sont stockées sur des <strong>serveurs sécurisés en Allemagne</strong>.</p>
+      <p>Nous pouvons être amenés à transmettre vos données à des sous-traitants hors UE. Lorsque l'État de destination n'est pas reconnu comme offrant un niveau de protection adéquat, nous fournissons des garanties appropriées conformément à l'article 46 du RGPD (clauses contractuelles types).</p>
+
+      <h2>7. Pendant combien de temps conservons-nous vos données ?</h2>
+      <table>
+        <thead>
+          <tr><th>Type de donnée</th><th>Durée de conservation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Compte et profil</td><td>2 ans à compter de la dernière activité</td></tr>
+          <tr><td>Contenu partagé</td><td>2 ans à compter de la dernière activité</td></tr>
+          <tr><td>Signalements</td><td>Jusqu'à 5 ans après résolution</td></tr>
+          <tr><td>Géolocalisation</td><td>Jusqu'au prochain accès</td></tr>
+          <tr><td>Évènements, jeux, sondages</td><td>3 ans à compter de la collecte</td></tr>
+          <tr><td>Newsletters</td><td>3 ans à compter du dernier contact</td></tr>
+          <tr><td>Obligations comptables</td><td>10 ans après clôture de l'exercice</td></tr>
+          <tr><td>Exercice de droits</td><td>5 ans</td></tr>
+          <tr><td>Droit d'opposition</td><td>6 ans</td></tr>
+        </tbody>
+      </table>
+
+      <h2>8. Quelles mesures de sécurité prenons-nous ?</h2>
+      <ul>
+        <li>Mots de passe forts (minimum 8 caractères avec majuscule, minuscule, chiffre, caractère spécial).</li>
+        <li><strong>Authentification multi-facteur (MFA)</strong> obligatoire via code par courriel.</li>
+        <li>Serveurs chiffrés et monitoring continu.</li>
+        <li>Notification en cas de violation présentant un risque élevé pour vos droits.</li>
+      </ul>
+
+      <h2>9. Quels sont vos droits et comment les exercer ?</h2>
+      <p>Conformément aux articles 15 et suivants du RGPD, vous disposez des droits suivants (sauf exceptions) :</p>
+      <ul>
+        <li>Droit d'<strong>accès</strong>.</li>
+        <li>Droit de <strong>rectification</strong>.</li>
+        <li>Droit d'<strong>effacement</strong> («droit à l'oubli»).</li>
+        <li>Droit à la <strong>limitation</strong> du traitement.</li>
+        <li>Droit à la <strong>portabilité</strong> des données.</li>
+        <li>Droit de ne pas faire l'objet d'une <strong>décision automatisée</strong>.</li>
+        <li>Droit d'<strong>opposition</strong>.</li>
+        <li>Droit d'opposition à la <strong>prospection commerciale</strong>.</li>
+        <li>Droit de <strong>retrait du consentement</strong>.</li>
+        <li>Droit de définir des directives post-mortem.</li>
+        <li>Droit d'<strong>introduire une réclamation auprès de la CNIL</strong> (autorité française).</li>
+      </ul>
+      <p>Pour exercer vos droits :</p>
+      <ul>
+        <li>Par courriel : <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>Par voie postale : DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, France.</li>
+      </ul>
+
+      <h2>10. La Politique peut-elle être modifiée ?</h2>
+      <p>Nous pouvons mettre à jour notre Politique ponctuellement pour tenir compte d'évolutions techniques, économiques, réglementaires ou juridiques. Nous vous informerons de toute modification importante via une notification dans l'Application.</p>
+      <p>La dernière version est celle accessible sur notre Application et notre Site.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 DS CONNECT · RCS Montpellier 941 864 985</div>
+    <div class="footer-links">
+      <a href="index.html" data-i18n="footerHome">Home</a>
+      <a href="privacy.html" data-i18n="footerPrivacy">Privacy</a>
+      <a href="terms.html" data-i18n="footerTerms">Terms</a>
+      <a href="cookies.html" data-i18n="footerCookies">Cookies</a>
+      <a href="legal.html" data-i18n="footerLegal">Legal Notice</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// i18n for UI labels
+var UI = {
+  es: {
+    tag: "Legal · GDPR",
+    title: "Política de Protección de Datos Personales",
+    updated: "Última actualización",
+    back: "volver al inicio",
+    footerHome: "Inicio",
+    footerPrivacy: "Privacidad",
+    footerTerms: "Términos",
+    footerCookies: "Cookies",
+    footerLegal: "Aviso Legal"
+  },
+  en: {
+    tag: "Legal · GDPR",
+    title: "Privacy Policy",
+    updated: "Last updated",
+    back: "back to home",
+    footerHome: "Home",
+    footerPrivacy: "Privacy",
+    footerTerms: "Terms",
+    footerCookies: "Cookies",
+    footerLegal: "Legal Notice"
+  },
+  fr: {
+    tag: "Légal · RGPD",
+    title: "Politique de Protection des Données Personnelles",
+    updated: "Dernière mise à jour",
+    back: "retour à l'accueil",
+    footerHome: "Accueil",
+    footerPrivacy: "Confidentialité",
+    footerTerms: "Conditions",
+    footerCookies: "Cookies",
+    footerLegal: "Mentions Légales"
+  }
+};
+
+function applyLang(lang) {
+  // Hide all language contents
+  var contents = document.querySelectorAll('.lang-content');
+  for (var i = 0; i < contents.length; i++) contents[i].classList.remove('active');
+  // Show chosen language
+  var active = document.getElementById('content-' + lang);
+  if (active) active.classList.add('active');
+
+  // Update UI strings
+  var dict = UI[lang] || UI.es;
+  var nodes = document.querySelectorAll('[data-i18n]');
+  for (var j = 0; j < nodes.length; j++) {
+    var key = nodes[j].getAttribute('data-i18n');
+    if (dict[key] !== undefined) nodes[j].textContent = dict[key];
+  }
+
+  document.documentElement.lang = lang;
+  try { localStorage.setItem('idisko_lang', lang); } catch (e) {}
+}
+
+// Bind language buttons
+var langBtns = document.querySelectorAll('.lang-btn');
+for (var k = 0; k < langBtns.length; k++) {
+  langBtns[k].addEventListener('click', function () {
+    var newLang = this.getAttribute('data-lang');
+    var all = document.querySelectorAll('.lang-btn');
+    for (var m = 0; m < all.length; m++) all[m].classList.remove('active');
+    this.classList.add('active');
+    applyLang(newLang);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// Detect initial language
+var savedLang = null;
+try { savedLang = localStorage.getItem('idisko_lang'); } catch (e) {}
+var browserLang = (navigator.language || 'es').slice(0, 2);
+var initialLang = savedLang || (UI[browserLang] ? browserLang : 'es');
+applyLang(initialLang);
+for (var n = 0; n < langBtns.length; n++) {
+  langBtns[n].classList.remove('active');
+  if (langBtns[n].getAttribute('data-lang') === initialLang) {
+    langBtns[n].classList.add('active');
+  }
+}
+</script>
+
+</body>
+</html>
