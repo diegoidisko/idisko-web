@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <radialGradient id="bgDisko" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="#2a0d4a"/>
+      <stop offset="55%" stop-color="#0a0a1e"/>
+      <stop offset="100%" stop-color="#000214"/>
+    </radialGradient>
+    <linearGradient id="gradPrimary" x1="0%" y1="0%" x2="100%" y2="100%" gradientTransform="rotate(38)">
+      <stop offset="30%" stop-color="#DF07FF"/>
+      <stop offset="100%" stop-color="#8737DC"/>
+    </linearGradient>
+    <filter id="glowMagenta" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowViolet" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="2000" fill="url(#bgDisko)"/>
+
+  <!-- Header -->
+  <g transform="translate(80,90)">
+    <text x="0" y="0" fill="#DF07FF" font-size="14" font-weight="700" letter-spacing="4">BRAND GUIDE · WORK ALONE, TOGETHER</text>
+    <text x="0" y="70" fill="url(#gradPrimary)" font-size="82" font-weight="800" letter-spacing="-2">iDisko</text>
+    <text x="0" y="120" fill="#b5b3bd" font-size="22" font-weight="400">Design System — Colors &amp; Typography Reference</text>
+  </g>
+
+  <!-- Horizontal divider -->
+  <line x1="80" y1="240" x2="1520" y2="240" stroke="#2d2933" stroke-width="1"/>
+
+  <!-- ============ BRAND COLORS ============ -->
+  <g transform="translate(80,280)">
+    <text x="0" y="0" fill="#ffffff" font-size="28" font-weight="700" letter-spacing="-0.5">Brand Colors</text>
+    <text x="0" y="28" fill="#666672" font-size="14">Core palette — always anchor on the violet→magenta gradient for hero moments.</text>
+
+    <!-- Gradient hero swatch -->
+    <rect x="0" y="54" width="460" height="220" rx="22" fill="url(#gradPrimary)" filter="url(#glowMagenta)"/>
+    <text x="28" y="104" fill="#ffffff" font-size="14" font-weight="700" letter-spacing="3">SIGNATURE GRADIENT</text>
+    <text x="28" y="170" fill="#ffffff" font-size="40" font-weight="800">Violet → Magenta</text>
+    <text x="28" y="208" fill="rgba(255,255,255,0.85)" font-size="15" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">128.46deg · #DF07FF 30% → #8737DC 100%</text>
+    <text x="28" y="240" fill="rgba(255,255,255,0.7)" font-size="13">Used for CTAs, hero text, brand glows, focus states.</text>
+
+    <!-- Primary Violet -->
+    <g transform="translate(500,54)">
+      <rect width="220" height="220" rx="22" fill="#8737DC" filter="url(#glowViolet)"/>
+      <text x="20" y="150" fill="#ffffff" font-size="13" font-weight="700" letter-spacing="2">PRIMARY</text>
+      <text x="20" y="180" fill="#ffffff" font-size="26" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#8737DC</text>
+      <text x="20" y="200" fill="rgba(255,255,255,0.75)" font-size="12">rgb(135, 55, 220)</text>
+    </g>
+
+    <!-- Secondary Magenta -->
+    <g transform="translate(740,54)">
+      <rect width="220" height="220" rx="22" fill="#DF07FF"/>
+      <text x="20" y="150" fill="#ffffff" font-size="13" font-weight="700" letter-spacing="2">SECONDARY</text>
+      <text x="20" y="180" fill="#ffffff" font-size="26" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#DF07FF</text>
+      <text x="20" y="200" fill="rgba(255,255,255,0.75)" font-size="12">rgb(223, 7, 255)</text>
+    </g>
+
+    <!-- Tertiary -->
+    <g transform="translate(980,54)">
+      <rect width="220" height="220" rx="22" fill="#3b0283"/>
+      <text x="20" y="150" fill="#ffffff" font-size="13" font-weight="700" letter-spacing="2">TERTIARY</text>
+      <text x="20" y="180" fill="#ffffff" font-size="26" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#3b0283</text>
+      <text x="20" y="200" fill="rgba(255,255,255,0.75)" font-size="12">Deep violet accent</text>
+    </g>
+
+    <!-- Base bg -->
+    <g transform="translate(1220,54)">
+      <rect width="220" height="220" rx="22" fill="#000214" stroke="#2d2933" stroke-width="1"/>
+      <text x="20" y="150" fill="#ffffff" font-size="13" font-weight="700" letter-spacing="2">APP BASE</text>
+      <text x="20" y="180" fill="#ffffff" font-size="26" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#000214</text>
+      <text x="20" y="200" fill="rgba(255,255,255,0.75)" font-size="12">Dark-first canvas</text>
+    </g>
+  </g>
+
+  <!-- ============ SURFACES ============ -->
+  <g transform="translate(80,620)">
+    <text x="0" y="0" fill="#ffffff" font-size="24" font-weight="700">Surfaces</text>
+    <text x="0" y="22" fill="#666672" font-size="13">Dark-first stack for app chrome, cards and sheets.</text>
+
+    <g transform="translate(0,44)">
+      <rect width="220" height="110" rx="14" fill="#000214" stroke="#2d2933"/>
+      <text x="16" y="70" fill="#ffffff" font-size="14" font-weight="600">bg</text>
+      <text x="16" y="92" fill="#b5b3bd" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#000214</text>
+    </g>
+    <g transform="translate(240,44)">
+      <rect width="220" height="110" rx="14" fill="#0a0a1e" stroke="#2d2933"/>
+      <text x="16" y="70" fill="#ffffff" font-size="14" font-weight="600">bg-dark</text>
+      <text x="16" y="92" fill="#b5b3bd" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#0a0a1e</text>
+    </g>
+    <g transform="translate(480,44)">
+      <rect width="220" height="110" rx="14" fill="#0e0d1f" stroke="#2d2933"/>
+      <text x="16" y="70" fill="#ffffff" font-size="14" font-weight="600">bg-surface</text>
+      <text x="16" y="92" fill="#b5b3bd" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#0e0d1f</text>
+    </g>
+    <g transform="translate(720,44)">
+      <rect width="220" height="110" rx="14" fill="#09091b" stroke="#2d2933"/>
+      <text x="16" y="70" fill="#ffffff" font-size="14" font-weight="600">bg-subdued</text>
+      <text x="16" y="92" fill="#b5b3bd" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#09091b</text>
+    </g>
+    <g transform="translate(960,44)">
+      <rect width="220" height="110" rx="14" fill="#5d4e73"/>
+      <text x="16" y="70" fill="#ffffff" font-size="14" font-weight="600">bg-light</text>
+      <text x="16" y="92" fill="#ffffff" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#5d4e73</text>
+    </g>
+    <g transform="translate(1200,44)">
+      <rect width="240" height="110" rx="14" fill="#101123" stroke="#2d2933"/>
+      <text x="16" y="70" fill="#ffffff" font-size="14" font-weight="600">neutral-900</text>
+      <text x="16" y="92" fill="#b5b3bd" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#101123</text>
+    </g>
+  </g>
+
+  <!-- ============ NEUTRAL RAMP ============ -->
+  <g transform="translate(80,820)">
+    <text x="0" y="0" fill="#ffffff" font-size="24" font-weight="700">Neutral Ramp</text>
+    <text x="0" y="22" fill="#666672" font-size="13">Text, borders and chrome. Never use pure #000 — always the app base.</text>
+
+    <!-- 8 swatches -->
+    <g transform="translate(0,44)">
+      <rect width="170" height="100" rx="12" fill="#ffffff"/>
+      <text x="14" y="62" fill="#000214" font-size="12" font-weight="700">50</text>
+      <text x="14" y="84" fill="#000214" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#ffffff</text>
+    </g>
+    <g transform="translate(180,44)">
+      <rect width="170" height="100" rx="12" fill="#e0e0e0"/>
+      <text x="14" y="62" fill="#000214" font-size="12" font-weight="700">300</text>
+      <text x="14" y="84" fill="#000214" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#e0e0e0</text>
+    </g>
+    <g transform="translate(360,44)">
+      <rect width="170" height="100" rx="12" fill="#b5b3bd"/>
+      <text x="14" y="62" fill="#000214" font-size="12" font-weight="700">400</text>
+      <text x="14" y="84" fill="#000214" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#b5b3bd</text>
+    </g>
+    <g transform="translate(540,44)">
+      <rect width="170" height="100" rx="12" fill="#9e9e9e"/>
+      <text x="14" y="62" fill="#ffffff" font-size="12" font-weight="700">500</text>
+      <text x="14" y="84" fill="#ffffff" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#9e9e9e</text>
+    </g>
+    <g transform="translate(720,44)">
+      <rect width="170" height="100" rx="12" fill="#666672"/>
+      <text x="14" y="62" fill="#ffffff" font-size="12" font-weight="700">600</text>
+      <text x="14" y="84" fill="#ffffff" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#666672</text>
+    </g>
+    <g transform="translate(900,44)">
+      <rect width="170" height="100" rx="12" fill="#5d4e73"/>
+      <text x="14" y="62" fill="#ffffff" font-size="12" font-weight="700">700</text>
+      <text x="14" y="84" fill="#ffffff" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#5d4e73</text>
+    </g>
+    <g transform="translate(1080,44)">
+      <rect width="170" height="100" rx="12" fill="#2d2933"/>
+      <text x="14" y="62" fill="#ffffff" font-size="12" font-weight="700">800</text>
+      <text x="14" y="84" fill="#ffffff" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#2d2933</text>
+    </g>
+    <g transform="translate(1260,44)">
+      <rect width="180" height="100" rx="12" fill="#101123" stroke="#2d2933"/>
+      <text x="14" y="62" fill="#ffffff" font-size="12" font-weight="700">900</text>
+      <text x="14" y="84" fill="#ffffff" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#101123</text>
+    </g>
+  </g>
+
+  <!-- ============ STATUS COLORS ============ -->
+  <g transform="translate(80,1010)">
+    <text x="0" y="0" fill="#ffffff" font-size="24" font-weight="700">Status &amp; Accents</text>
+    <text x="0" y="22" fill="#666672" font-size="13">Narrow-use signals. Keep in small doses — dots, pills, icon strokes.</text>
+
+    <!-- LIVE -->
+    <g transform="translate(0,44)">
+      <rect width="270" height="130" rx="16" fill="#0e0d1f" stroke="#2d2933"/>
+      <circle cx="30" cy="30" r="8" fill="#22FFBD"/>
+      <text x="50" y="36" fill="#ffffff" font-size="14" font-weight="700" letter-spacing="3">LIVE</text>
+      <text x="20" y="80" fill="#22FFBD" font-size="22" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#22FFBD</text>
+      <text x="20" y="106" fill="#b5b3bd" font-size="12">On-air green · success</text>
+    </g>
+    <!-- ONLINE -->
+    <g transform="translate(290,44)">
+      <rect width="270" height="130" rx="16" fill="#0e0d1f" stroke="#2d2933"/>
+      <circle cx="30" cy="30" r="8" fill="#3DDC97"/>
+      <text x="50" y="36" fill="#ffffff" font-size="14" font-weight="700" letter-spacing="3">ONLINE</text>
+      <text x="20" y="80" fill="#3DDC97" font-size="22" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#3DDC97</text>
+      <text x="20" y="106" fill="#b5b3bd" font-size="12">Presence indicator</text>
+    </g>
+    <!-- SHUFFLE -->
+    <g transform="translate(580,44)">
+      <rect width="270" height="130" rx="16" fill="#0e0d1f" stroke="#2d2933"/>
+      <circle cx="30" cy="30" r="8" fill="#FF7A1A"/>
+      <text x="50" y="36" fill="#ffffff" font-size="14" font-weight="700" letter-spacing="3">SHUFFLE</text>
+      <text x="20" y="80" fill="#FF7A1A" font-size="22" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#FF7A1A</text>
+      <text x="20" y="106" fill="#b5b3bd" font-size="12">Shuffle / energetic</text>
+    </g>
+    <!-- VIP -->
+    <g transform="translate(870,44)">
+      <rect width="270" height="130" rx="16" fill="#0e0d1f" stroke="#2d2933"/>
+      <circle cx="30" cy="30" r="8" fill="#DF07FF"/>
+      <text x="50" y="36" fill="#ffffff" font-size="14" font-weight="700" letter-spacing="3">VIP</text>
+      <text x="20" y="80" fill="#DF07FF" font-size="22" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#DF07FF</text>
+      <text x="20" y="106" fill="#b5b3bd" font-size="12">Alias of brand secondary</text>
+    </g>
+    <!-- DANGER -->
+    <g transform="translate(1160,44)">
+      <rect width="280" height="130" rx="16" fill="#0e0d1f" stroke="#2d2933"/>
+      <circle cx="30" cy="30" r="8" fill="#ff4d4f"/>
+      <text x="50" y="36" fill="#ffffff" font-size="14" font-weight="700" letter-spacing="3">DANGER</text>
+      <text x="20" y="80" fill="#ff4d4f" font-size="22" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#ff4d4f</text>
+      <text x="20" y="106" fill="#b5b3bd" font-size="12">Error / destructive only</text>
+    </g>
+  </g>
+
+  <!-- ============ TYPOGRAPHY ============ -->
+  <g transform="translate(80,1230)">
+    <text x="0" y="0" fill="#ffffff" font-size="28" font-weight="700" letter-spacing="-0.5">Typography</text>
+    <text x="0" y="28" fill="#666672" font-size="14">Primary: <tspan fill="#DF07FF" font-weight="700">Clash Display</tspan> (variable 100–900) · Fallbacks: Space Grotesk, Inter, system-ui</text>
+
+    <!-- Type specimen card -->
+    <g transform="translate(0,60)">
+      <rect width="1440" height="420" rx="22" fill="#0e0d1f" stroke="#2d2933"/>
+
+      <!-- Hero display -->
+      <g transform="translate(40,40)">
+        <text x="0" y="0" fill="#666672" font-size="11" font-weight="700" letter-spacing="3">H-DISPLAY · 100 / 800 · -0.02em</text>
+        <text x="0" y="80" fill="url(#gradPrimary)" font-size="96" font-weight="800" letter-spacing="-2">Work alone, together.</text>
+      </g>
+
+      <!-- H1 -->
+      <g transform="translate(40,170)">
+        <text x="0" y="0" fill="#666672" font-size="11" font-weight="700" letter-spacing="3">H1 · 56 / 700</text>
+        <text x="0" y="44" fill="#ffffff" font-size="56" font-weight="700" letter-spacing="-1">Feel the room. Stay in flow.</text>
+      </g>
+
+      <!-- H2 + H3 row -->
+      <g transform="translate(40,260)">
+        <text x="0" y="0" fill="#666672" font-size="11" font-weight="700" letter-spacing="3">H2 · 40 / 600</text>
+        <text x="0" y="38" fill="#ffffff" font-size="40" font-weight="600" letter-spacing="-0.6">Cozy corners for deep focus.</text>
+      </g>
+      <g transform="translate(780,260)">
+        <text x="0" y="0" fill="#666672" font-size="11" font-weight="700" letter-spacing="3">H3 · 30 / 600</text>
+        <text x="0" y="34" fill="#ffffff" font-size="30" font-weight="600" letter-spacing="-0.3">Rooms. Vibes. Company.</text>
+      </g>
+
+      <!-- Body + Caption -->
+      <g transform="translate(40,340)">
+        <text x="0" y="0" fill="#666672" font-size="11" font-weight="700" letter-spacing="3">BODY · 16 / 400</text>
+        <text x="0" y="22" fill="rgba(255,255,255,0.7)" font-size="16" font-weight="400">iDisko turns working alone into working together — virtual rooms where music, presence and soft ambient cues keep you company while you focus.</text>
+        <text x="0" y="52" fill="rgba(255,255,255,0.7)" font-size="16" font-weight="400">The aesthetic is moody, nocturnal and electric: glowing violets, deep indigos, and the occasional neon beam.</text>
+      </g>
+    </g>
+
+    <!-- Weight ladder -->
+    <g transform="translate(0,500)">
+      <text x="0" y="0" fill="#666672" font-size="11" font-weight="700" letter-spacing="3">WEIGHTS · 300 → 700</text>
+      <text x="0" y="40" fill="#ffffff" font-size="32" font-weight="300">Light · iDisko</text>
+      <text x="280" y="40" fill="#ffffff" font-size="32" font-weight="400">Regular · iDisko</text>
+      <text x="600" y="40" fill="#ffffff" font-size="32" font-weight="500">Medium · iDisko</text>
+      <text x="930" y="40" fill="#ffffff" font-size="32" font-weight="600">Semibold · iDisko</text>
+      <text x="1270" y="40" fill="#ffffff" font-size="32" font-weight="700">Bold · iDisko</text>
+    </g>
+
+    <!-- Eyebrow / button-label / caption examples -->
+    <g transform="translate(0,580)">
+      <text x="0" y="0" fill="#666672" font-size="11" font-weight="700" letter-spacing="3">UI MICROCOPY</text>
+      <text x="0" y="32" fill="#DF07FF" font-size="12" font-weight="600" letter-spacing="2">EYEBROW · UPPERCASE · +0.12em</text>
+      <text x="400" y="32" fill="#ffffff" font-size="14" font-weight="600" letter-spacing="0.5">LABEL BUTTON · UPPERCASE</text>
+      <text x="800" y="32" fill="#b5b3bd" font-size="12" font-weight="500">caption · small · fg-3 / #b5b3bd</text>
+    </g>
+  </g>
+
+  <!-- ============ USAGE RULES ============ -->
+  <g transform="translate(80,1880)">
+    <rect x="-20" y="-40" width="1480" height="90" rx="16" fill="rgba(135,55,220,0.12)" stroke="rgba(135,55,220,0.35)"/>
+    <text x="0" y="-10" fill="#DF07FF" font-size="11" font-weight="700" letter-spacing="3">USAGE MANTRA</text>
+    <text x="0" y="18" fill="#ffffff" font-size="16" font-weight="500">Dark canvas · glowing violet→magenta gradient · crisp white display type · tiny neon status dots · no hard black, no pure saturated red. Mood: nocturnal, focused, warm-electric.</text>
+  </g>
+</svg>
