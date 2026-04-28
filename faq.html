@@ -10,6 +10,25 @@
 
 <link rel="icon" href="assets/logo.png" />
 
+<!-- Smart App Banner (iOS Safari only) -->
+<meta name="apple-itunes-app" content="app-id=6749269410, app-argument=https://www.idisko.com/" />
+
+<link rel="canonical" href="https://www.idisko.com/faq.html" />
+
+<!-- Open Graph & Twitter -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="iDisko" />
+<meta property="og:url" content="https://www.idisko.com/faq.html" />
+<meta property="og:title" content="iDisko — FAQ" />
+<meta property="og:description" content="Frequently asked questions about how iDisko works — listening synced, VIP rooms, AI verification, and more." />
+<meta property="og:image" content="https://www.idisko.com/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="iDisko — FAQ" />
+<meta name="twitter:description" content="Frequently asked questions about how iDisko works." />
+<meta name="twitter:image" content="https://www.idisko.com/assets/og-cover.png" />
+
 <style>
 @font-face {
   font-family: "ClashDisplay";
@@ -535,13 +554,19 @@ footer {
 
 .footer-links { display: flex; flex-direction: column; gap: 10px; }
 
-.footer-links a {
+.footer-links a, .footer-links button.linklike {
   color: var(--fg-2);
   font-size: 14px;
+  font-family: var(--font-body);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
   transition: color var(--t-fast);
 }
 
-.footer-links a:hover { color: var(--brand-secondary); }
+.footer-links a:hover, .footer-links button.linklike:hover { color: var(--brand-secondary); }
 
 .footer-bottom {
   padding-top: 24px;
@@ -587,8 +612,10 @@ footer {
 
     <div class="lang-switch" role="tablist" aria-label="Language">
       <button class="lang-btn active" data-lang="es" role="tab">ES</button>
-      <button class="lang-btn" data-lang="fr" role="tab">FR</button>
       <button class="lang-btn" data-lang="en" role="tab">EN</button>
+      <button class="lang-btn" data-lang="fr" role="tab">FR</button>
+      <button class="lang-btn" data-lang="it" role="tab">IT</button>
+      <button class="lang-btn" data-lang="pt" role="tab">PT</button>
     </div>
 
     <a href="index.html" class="back-link"><span aria-hidden="true">←</span> <span data-i18n="back">volver al inicio</span></a>
@@ -597,6 +624,8 @@ footer {
 
 <main>
   <div class="container">
+    <div id="lang-fallback-banner" style="display:none;margin-bottom:32px;padding:14px 18px;background:linear-gradient(180deg,rgba(255,122,26,0.08),rgba(255,122,26,0.02));border:1px solid rgba(255,122,26,0.25);border-left:3px solid #FF7A1A;border-radius:0 12px 12px 0;font-family:var(--font-display);font-size:13px;color:var(--fg-2);"></div>
+
 
     <!-- ============== ESPAÑOL ============== -->
     <article class="doc-content active" data-lang="es">
@@ -1502,6 +1531,7 @@ footer {
           <a href="cookies.html" data-i18n="footerCookies">Cookies</a>
           <a href="legal.html" data-i18n="footerLegal">Aviso Legal</a>
           <a href="faq.html" data-i18n="footerFaq">FAQ</a>
+          <button type="button" class="linklike" data-i18n="footerManageCookies" onclick="window.klaro && window.klaro.show();">Gestionar cookies</button>
         </div>
       </div>
       <div>
@@ -1522,6 +1552,12 @@ footer {
 
 <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
+<!-- Klaro consent manager -->
+<link rel="stylesheet" href="assets/klaro.min.css" />
+<script defer src="assets/klaro-config.js"></script>
+<script defer src="assets/klaro.no-css.js"></script>
+<script defer src="assets/klaro-trackers.js"></script>
+
 <script>
 var UI = {
   es: {
@@ -1534,6 +1570,7 @@ var UI = {
     footerCookies: "Cookies",
     footerLegal: "Aviso Legal",
     footerFaq: "FAQ",
+    footerManageCookies: "Gestionar cookies",
     footerHome: "Inicio",
     footerWebApp: "Web app",
     footerMade: "Hecho para quienes trabajan en remoto."
@@ -1548,6 +1585,7 @@ var UI = {
     footerCookies: "Cookies",
     footerLegal: "Legal Notice",
     footerFaq: "FAQ",
+    footerManageCookies: "Manage cookies",
     footerHome: "Home",
     footerWebApp: "Web app",
     footerMade: "Made for remote workers."
@@ -1562,10 +1600,46 @@ var UI = {
     footerCookies: "Cookies",
     footerLegal: "Mentions Légales",
     footerFaq: "FAQ",
+    footerManageCookies: "Gérer les cookies",
     footerHome: "Accueil",
     footerWebApp: "Web app",
     footerMade: "Conçu pour celles et ceux qui télétravaillent."
+  },
+  it: {
+    back: "torna alla home",
+    footerTagline: "Work alone, together. iDisko è uno spazio di coworking virtuale con musica — per chi lavora da remoto e non vuole passare un altro giorno in silenzio.",
+    footerLegalCol: "Legale",
+    footerCompanyCol: "Azienda",
+    footerPrivacy: "Privacy",
+    footerTerms: "Termini",
+    footerCookies: "Cookie",
+    footerLegal: "Note Legali",
+    footerFaq: "FAQ",
+    footerManageCookies: "Gestisci i cookie",
+    footerHome: "Home",
+    footerWebApp: "Web app",
+    footerMade: "Pensato per chi lavora da remoto."
+  },
+  pt: {
+    back: "voltar ao início",
+    footerTagline: "Work alone, together. iDisko é um espaço de coworking virtual com música — para quem trabalha remoto e não quer passar mais um dia em silêncio.",
+    footerLegalCol: "Legal",
+    footerCompanyCol: "Empresa",
+    footerPrivacy: "Privacidade",
+    footerTerms: "Termos",
+    footerCookies: "Cookies",
+    footerLegal: "Aviso Legal",
+    footerFaq: "FAQ",
+    footerManageCookies: "Gerenciar cookies",
+    footerHome: "Início",
+    footerWebApp: "Web app",
+    footerMade: "Feito para quem trabalha remoto."
   }
+};
+
+var FALLBACK_NOTICES = {
+  it: "Versione italiana in arrivo. Di seguito viene mostrata la versione inglese.",
+  pt: "Versão em português em breve. Abaixo está exibida a versão em inglês."
 };
 
 (function(){
@@ -1575,7 +1649,22 @@ var UI = {
 
   function setLang(lang) {
     btns.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
-    docs.forEach(function(d){ d.classList.toggle('active', d.dataset.lang === lang); });
+
+    var hasOwn = false;
+    docs.forEach(function(d){ if (d.dataset.lang === lang) hasOwn = true; });
+    var effectiveLang = hasOwn ? lang : 'en';
+    docs.forEach(function(d){ d.classList.toggle('active', d.dataset.lang === effectiveLang); });
+
+    var fb = document.getElementById('lang-fallback-banner');
+    if (fb) {
+      if (!hasOwn && FALLBACK_NOTICES[lang]) {
+        fb.textContent = FALLBACK_NOTICES[lang];
+        fb.style.display = 'block';
+      } else {
+        fb.style.display = 'none';
+      }
+    }
+
     htmlEl.setAttribute('lang', lang);
 
     var dict = UI[lang] || UI.es;

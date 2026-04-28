@@ -10,6 +10,25 @@
 
 <link rel="icon" href="assets/logo.png" />
 
+<!-- Smart App Banner (iOS Safari only) -->
+<meta name="apple-itunes-app" content="app-id=6749269410, app-argument=https://www.idisko.com/" />
+
+<link rel="canonical" href="https://www.idisko.com/privacy.html" />
+
+<!-- Open Graph & Twitter -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="iDisko" />
+<meta property="og:url" content="https://www.idisko.com/privacy.html" />
+<meta property="og:title" content="iDisko — Privacy Policy" />
+<meta property="og:description" content="iDisko privacy policy — how we protect your personal data. GDPR compliant." />
+<meta property="og:image" content="https://www.idisko.com/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="iDisko — Privacy Policy" />
+<meta name="twitter:description" content="How we protect your personal data. GDPR compliant." />
+<meta name="twitter:image" content="https://www.idisko.com/assets/og-cover.png" />
+
 <style>
 /* ─── ClashDisplay (variable) ─────────────────────────────────────── */
 @font-face {
@@ -423,13 +442,19 @@ footer {
   gap: 10px;
 }
 
-.footer-links a {
+.footer-links a, .footer-links button.linklike {
   color: var(--fg-2);
   font-size: 14px;
+  font-family: var(--font-body);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
   transition: color var(--t-fast);
 }
 
-.footer-links a:hover { color: var(--brand-secondary); }
+.footer-links a:hover, .footer-links button.linklike:hover { color: var(--brand-secondary); }
 
 .footer-bottom {
   padding-top: 24px;
@@ -477,6 +502,8 @@ footer {
       <button class="lang-btn active" data-lang="es" role="tab">ES</button>
       <button class="lang-btn" data-lang="en" role="tab">EN</button>
       <button class="lang-btn" data-lang="fr" role="tab">FR</button>
+      <button class="lang-btn" data-lang="it" role="tab">IT</button>
+      <button class="lang-btn" data-lang="pt" role="tab">PT</button>
     </div>
 
     <a href="index.html" class="back-link"><span aria-hidden="true">←</span> <span data-i18n="back">volver al inicio</span></a>
@@ -490,7 +517,7 @@ footer {
       <div class="doc-tag" data-i18n="tag">Legal · GDPR</div>
       <h1 data-i18n="title">Política de Protección de Datos Personales</h1>
       <div class="doc-meta">
-        <span data-i18n="updated">Última actualización</span>: 19/04/2026
+        <span data-i18n="updated">Última actualización</span>: 28/04/2026
       </div>
     </div>
 
@@ -564,6 +591,15 @@ footer {
       <h4>Datos de identificación (verificación de edad)</h4>
       <p>Utilizamos la tecnología de <strong>YOTI</strong> para estimar su edad. YOTI LTD es una empresa especializada en la verificación de la edad a partir de un selfi en vídeo/foto. Una vez estimada su edad y comunicada, YOTI <strong>suprime la imagen</strong>. No compartimos información sobre usted con YOTI.</p>
 
+      <h4>Cookies e identificadores en línea (solo Sitio)</h4>
+      <p>En nuestro sitio web (<a href="https://www.idisko.com">www.idisko.com</a>), previo consentimiento, utilizamos cookies e identificadores similares de los siguientes proveedores:</p>
+      <ul>
+        <li><strong>PostHog</strong> (analítica): identificador seudónimo, páginas vistas, clics, tiempo de permanencia. Servidores en Estados Unidos.</li>
+        <li><strong>Meta Pixel</strong> (publicidad): identifica su navegador para medir las conversiones de nuestras campañas publicitarias en Facebook/Instagram. Servidores en Estados Unidos.</li>
+        <li><strong>Microsoft Clarity</strong> (mejora de la experiencia): mapas de calor y grabaciones anónimas de sesiones (el contenido de los formularios se excluye automáticamente). Servidores en Estados Unidos.</li>
+      </ul>
+      <p>La lista completa de cookies, su duración y cómo gestionar su consentimiento se detallan en nuestra <a href="cookies.html">Política de Cookies</a>. Puede retirar su consentimiento en cualquier momento mediante el botón «Gestionar cookies» del pie de página.</p>
+
       <h2>4. ¿Por qué utilizamos sus datos personales y sobre qué bases legales?</h2>
       <p>El tratamiento de sus datos personales se justifica por diferentes bases legales según el uso:</p>
       <ul>
@@ -592,13 +628,26 @@ footer {
       <ul>
         <li>Otros usuarios (en caso de reportes que impliquen acción de moderación).</li>
         <li>Nuestros encargados del tratamiento (mantenimiento, desarrollo técnico, seguridad), sometidos a confidencialidad y obligaciones del RGPD.</li>
+        <li>Nuestros sub-procesadores específicos de la web, que solo intervienen previo consentimiento del usuario:
+          <ul>
+            <li><strong>PostHog Inc.</strong> — análisis de uso del sitio (Estados Unidos).</li>
+            <li><strong>Meta Platforms Ireland Ltd. / Meta Platforms Inc.</strong> — medición de conversiones publicitarias (Irlanda y Estados Unidos).</li>
+            <li><strong>Microsoft Corporation</strong> — mapas de calor y grabación de sesiones vía Clarity (Estados Unidos).</li>
+            <li><strong>Supabase Inc.</strong> — base de datos y autenticación (servidores principales en Alemania, edge computing distribuido).</li>
+          </ul>
+        </li>
         <li>Autoridades financieras, judiciales, administrativas, policiales o agencias estatales cuando sea legalmente exigible.</li>
         <li>Nuestros derechohabientes (en caso de fusión, cesión, adquisición, reestructuración).</li>
       </ul>
 
       <h2>6. ¿Dónde se almacenan sus datos? ¿Se transfieren fuera de la UE?</h2>
-      <p>Los datos personales recopilados se almacenan y alojan en <strong>servidores seguros situados en Alemania</strong>.</p>
-      <p>Podemos vernos obligados a transmitir parte de sus datos a encargados del tratamiento establecidos fuera de la Unión Europea. Cuando el Estado de destino no ha sido reconocido oficialmente como adecuado por la Comisión Europea, nos comprometemos a proporcionar las garantías adecuadas de conformidad con el artículo 46 del RGPD (cláusulas contractuales tipo).</p>
+      <p>Los datos personales recopilados se almacenan principalmente en <strong>servidores seguros situados en Alemania</strong> (Unión Europea).</p>
+      <p>Algunos sub-procesadores están establecidos en <strong>Estados Unidos</strong> (PostHog, Meta Platforms, Microsoft) y reciben datos cuando usted ha dado su consentimiento mediante el banner de cookies. Estas transferencias se enmarcan en:</p>
+      <ul>
+        <li>El <strong>EU-US Data Privacy Framework</strong> (decisión de adecuación de la Comisión Europea de 10 de julio de 2023, C(2023) 4745), aplicable a Meta Platforms y Microsoft Corporation, ambas certificadas.</li>
+        <li><strong>Cláusulas Contractuales Tipo (CCT/SCC)</strong> firmadas con PostHog, conforme al artículo 46.2.c) del RGPD, complementadas con medidas técnicas (cifrado en tránsito y en reposo).</li>
+      </ul>
+      <p>Para los demás encargados del tratamiento, cuando el Estado de destino no ha sido reconocido oficialmente como adecuado por la Comisión Europea, nos comprometemos a proporcionar las garantías adecuadas de conformidad con el artículo 46 del RGPD.</p>
 
       <h2>7. ¿Durante cuánto tiempo conservamos sus datos?</h2>
       <table>
@@ -721,6 +770,15 @@ footer {
       <h4>Identification data (age verification)</h4>
       <p>We use <strong>YOTI</strong> technology to estimate your age via a video/photo selfie. Once your age has been estimated and transmitted to us, YOTI <strong>deletes the image</strong>. We do not share your information with YOTI.</p>
 
+      <h4>Cookies and online identifiers (Site only)</h4>
+      <p>On our website (<a href="https://www.idisko.com">www.idisko.com</a>), with your consent, we use cookies and similar identifiers from the following providers:</p>
+      <ul>
+        <li><strong>PostHog</strong> (analytics): pseudonymous identifier, pages viewed, clicks, time spent. Servers in the United States.</li>
+        <li><strong>Meta Pixel</strong> (advertising): identifies your browser to measure the conversions of our advertising campaigns on Facebook/Instagram. Servers in the United States.</li>
+        <li><strong>Microsoft Clarity</strong> (experience improvement): anonymous heatmaps and session recordings (form contents are automatically excluded). Servers in the United States.</li>
+      </ul>
+      <p>The full list of cookies, their duration and how to manage your consent are detailed in our <a href="cookies.html">Cookie Policy</a>. You can withdraw your consent at any time via the "Manage cookies" button in the footer.</p>
+
       <h2>4. Why do we use your personal data and on what legal basis?</h2>
       <p>Processing is justified by various legal bases:</p>
       <ul>
@@ -749,13 +807,26 @@ footer {
       <ul>
         <li>Other users (in case of reports requiring moderation action).</li>
         <li>Our processors (maintenance, technical development, security), bound by confidentiality and GDPR obligations.</li>
+        <li>Our website-specific sub-processors, activated only after user consent:
+          <ul>
+            <li><strong>PostHog Inc.</strong> — site usage analytics (United States).</li>
+            <li><strong>Meta Platforms Ireland Ltd. / Meta Platforms Inc.</strong> — advertising conversion measurement (Ireland and United States).</li>
+            <li><strong>Microsoft Corporation</strong> — heatmaps and session recordings via Clarity (United States).</li>
+            <li><strong>Supabase Inc.</strong> — database and authentication (primary servers in Germany, distributed edge).</li>
+          </ul>
+        </li>
         <li>Financial, judicial, administrative, police authorities when legally required.</li>
         <li>Our legal successors (merger, sale, acquisition, restructuring).</li>
       </ul>
 
       <h2>6. Where is your data stored? Are transfers outside the EU possible?</h2>
-      <p>Personal data is stored on <strong>secure servers in Germany</strong>.</p>
-      <p>We may transfer data to processors outside the EU. When the destination country is not officially recognized as adequate by the European Commission, we commit to providing appropriate safeguards under Article 46 GDPR (Standard Contractual Clauses).</p>
+      <p>Personal data is stored primarily on <strong>secure servers in Germany</strong> (European Union).</p>
+      <p>Some sub-processors are established in the <strong>United States</strong> (PostHog, Meta Platforms, Microsoft) and receive data when you have given your consent via the cookie banner. These transfers fall under:</p>
+      <ul>
+        <li>The <strong>EU-US Data Privacy Framework</strong> (European Commission adequacy decision of 10 July 2023, C(2023) 4745), applicable to Meta Platforms and Microsoft Corporation, both certified.</li>
+        <li><strong>Standard Contractual Clauses (SCC)</strong> signed with PostHog under Article 46(2)(c) GDPR, supplemented by technical measures (encryption in transit and at rest).</li>
+      </ul>
+      <p>For other processors, when the destination country is not officially recognized as adequate by the European Commission, we commit to providing appropriate safeguards under Article 46 GDPR.</p>
 
       <h2>7. How long do we keep your data?</h2>
       <table>
@@ -876,6 +947,15 @@ footer {
       <h4>Données d'identification (vérification de l'âge)</h4>
       <p>Nous utilisons la technologie de <strong>YOTI</strong> pour estimer votre âge à partir d'un selfie vidéo/photo. Une fois votre âge estimé et communiqué, YOTI <strong>supprime l'image</strong>. Nous ne partageons pas d'informations vous concernant avec YOTI.</p>
 
+      <h4>Cookies et identifiants en ligne (Site uniquement)</h4>
+      <p>Sur notre site web (<a href="https://www.idisko.com">www.idisko.com</a>), sous réserve de votre consentement, nous utilisons des cookies et identifiants similaires des fournisseurs suivants :</p>
+      <ul>
+        <li><strong>PostHog</strong> (mesure d'audience) : identifiant pseudonyme, pages vues, clics, temps passé. Serveurs aux États-Unis.</li>
+        <li><strong>Meta Pixel</strong> (publicité) : identifie votre navigateur pour mesurer les conversions de nos campagnes publicitaires sur Facebook/Instagram. Serveurs aux États-Unis.</li>
+        <li><strong>Microsoft Clarity</strong> (amélioration de l'expérience) : cartes de chaleur (heatmaps) et enregistrements anonymes de sessions (le contenu des formulaires est automatiquement exclu). Serveurs aux États-Unis.</li>
+      </ul>
+      <p>La liste complète des cookies, leur durée et la manière de gérer votre consentement sont détaillées dans notre <a href="cookies.html">Politique de Cookies</a>. Vous pouvez retirer votre consentement à tout moment via le bouton « Gérer les cookies » présent dans le pied de page.</p>
+
       <h2>4. Pourquoi utilisons-nous vos données personnelles et sur quelles bases légales ?</h2>
       <ul>
         <li><strong>Le contrat :</strong> traitement nécessaire à l'exécution du contrat.</li>
@@ -903,13 +983,26 @@ footer {
       <ul>
         <li>Aux autres utilisateurs (en cas de signalements nécessitant modération).</li>
         <li>À nos sous-traitants (maintenance, développements techniques, sécurité), tenus à la confidentialité et aux obligations du RGPD.</li>
+        <li>À nos sous-traitants spécifiques au site web, activés uniquement après consentement de l'utilisateur :
+          <ul>
+            <li><strong>PostHog Inc.</strong> — mesure d'audience du site (États-Unis).</li>
+            <li><strong>Meta Platforms Ireland Ltd. / Meta Platforms Inc.</strong> — mesure des conversions publicitaires (Irlande et États-Unis).</li>
+            <li><strong>Microsoft Corporation</strong> — heatmaps et enregistrements de session via Clarity (États-Unis).</li>
+            <li><strong>Supabase Inc.</strong> — base de données et authentification (serveurs principaux en Allemagne, edge distribué).</li>
+          </ul>
+        </li>
         <li>Aux autorités financières, judiciaires, administratives ou de police lorsque légalement requis.</li>
         <li>À nos ayants droit (fusion, cession, acquisition, restructuration).</li>
       </ul>
 
       <h2>6. Où sont stockées vos données ? Sont-elles transférées hors UE ?</h2>
-      <p>Les données personnelles collectées sont stockées sur des <strong>serveurs sécurisés en Allemagne</strong>.</p>
-      <p>Nous pouvons être amenés à transmettre vos données à des sous-traitants hors UE. Lorsque l'État de destination n'est pas reconnu comme offrant un niveau de protection adéquat, nous fournissons des garanties appropriées conformément à l'article 46 du RGPD (clauses contractuelles types).</p>
+      <p>Les données personnelles collectées sont stockées principalement sur des <strong>serveurs sécurisés en Allemagne</strong> (Union européenne).</p>
+      <p>Certains sous-traitants sont établis aux <strong>États-Unis</strong> (PostHog, Meta Platforms, Microsoft) et reçoivent des données lorsque vous avez donné votre consentement via le bandeau de cookies. Ces transferts sont encadrés par :</p>
+      <ul>
+        <li>Le <strong>EU-US Data Privacy Framework</strong> (décision d'adéquation de la Commission européenne du 10 juillet 2023, C(2023) 4745), applicable à Meta Platforms et Microsoft Corporation, toutes deux certifiées.</li>
+        <li>Des <strong>Clauses Contractuelles Types (CCT)</strong> signées avec PostHog au titre de l'article 46.2.c) du RGPD, complétées par des mesures techniques (chiffrement en transit et au repos).</li>
+      </ul>
+      <p>Pour les autres sous-traitants, lorsque l'État de destination n'est pas reconnu comme offrant un niveau de protection adéquat, nous fournissons des garanties appropriées conformément à l'article 46 du RGPD.</p>
 
       <h2>7. Pendant combien de temps conservons-nous vos données ?</h2>
       <table>
@@ -963,6 +1056,368 @@ footer {
       <p>La dernière version est celle accessible sur notre Application et notre Site.</p>
     </div>
 
+    <!-- ============= ITALIANO ============= -->
+    <div class="lang-content doc-content" id="content-it">
+
+      <p>La società <strong>DS CONNECT</strong> è una società per azioni semplificata (SAS) con un capitale sociale di 10.000 euro, iscritta al Registro delle Imprese di Montpellier con il numero <strong>941 864 985</strong>, con sede legale presso Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, Francia (di seguito «noi»).</p>
+
+      <p>Teniamo particolarmente alla tua privacy e al rispetto dei tuoi dati personali. Rispettiamo la legge n. 78-17 del 6 gennaio 1978 relativa all'informatica, agli archivi e alle libertà, modificata, nonché il Regolamento (UE) 2016/679 del 27 aprile 2016 noto come Regolamento Generale sulla Protezione dei Dati o GDPR (di seguito il «GDPR»).</p>
+
+      <p>La presente politica (di seguito la «Politica») ti informa sulle modalità di trattamento dei tuoi dati personali nell'ambito dell'utilizzo della nostra applicazione mobile «IDISKO» (l'«Applicazione») e del nostro sito web all'indirizzo <a href="https://www.idisko.com">www.idisko.com</a> (il «Sito»).</p>
+
+      <div class="info-box">
+        <p><strong>Età minima:</strong> la nostra Applicazione è destinata esclusivamente a persone di età pari o superiore a 18 anni. Non consentiamo ai minori di 18 anni di creare un account.</p>
+      </div>
+
+      <h2>1. Chi è il titolare del trattamento dei tuoi dati personali?</h2>
+      <p>Siamo il titolare del trattamento dei tuoi dati personali nell'ambito dell'utilizzo della nostra Applicazione e del nostro Sito.</p>
+      <p>Per qualsiasi domanda relativa al trattamento dei tuoi dati, puoi contattarci:</p>
+      <ul>
+        <li>Via email: <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>Per posta: DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, Francia.</li>
+      </ul>
+
+      <h2>2. In quali occasioni raccogliamo i tuoi dati personali?</h2>
+      <ul>
+        <li>Quando crei un account sulla nostra Applicazione,</li>
+        <li>Quando utilizzi la nostra Applicazione,</li>
+        <li>Quando ci contatti con qualsiasi mezzo,</li>
+        <li>Quando partecipi a eventi e giochi che organizziamo,</li>
+        <li>Quando rispondi ai nostri sondaggi e questionari di soddisfazione,</li>
+        <li>Quando ti iscrivi alle nostre newsletter,</li>
+        <li>Quando segnali un contenuto o il profilo di un utente,</li>
+        <li>Quando presenti una richiesta di esercizio dei diritti.</li>
+      </ul>
+
+      <h2>3. Quali dati personali raccogliamo?</h2>
+
+      <h3>3.1 Dati che ci fornisci</h3>
+      <h4>Dati dell'account</h4>
+      <p>Quando crei un account, ci fornisci informazioni di base: il tuo indirizzo email e la tua password.</p>
+
+      <h4>Dati del profilo</h4>
+      <p>Per completare il tuo profilo, indichi il tuo nome utente, sesso, data di nascita e foto profilo. Puoi condividere dati aggiuntivi come paese di nascita, biografia, interessi, preferenze musicali, fotografie, ecc.</p>
+
+      <h4>Dati relativi ai contenuti che condividi</h4>
+      <p>Quando utilizzi la nostra Applicazione, puoi pubblicare fotografie, video in diretta, testo e altri contenuti, comprese le conversazioni con altri utenti. Puoi trasmettere dati personali come la tua voce e le tue fotografie.</p>
+
+      <h4>Dati sui servizi di terzi</h4>
+      <p>Puoi decidere di condividere dati tramite i tuoi account su servizi di terzi come Apple e Google. <strong>Non raccogliamo né conserviamo le password</strong> che utilizzi per accedere a tali servizi.</p>
+
+      <div class="info-box">
+        <p><strong>Importante:</strong> per inviare e caricare foto e/o video dal tuo dispositivo e utilizzare la funzione video in diretta, devi autorizzarci ad accedere alla fotocamera, alla galleria e al microfono del tuo dispositivo.</p>
+        <p>I contenuti condivisi possono essere visti dagli altri utenti con cui interagisci, che possono salvarli (ad esempio tramite screenshot) senza che noi possiamo impedirlo.</p>
+      </div>
+
+      <h3>3.2 Dati generati o raccolti automaticamente</h3>
+      <h4>Dati relativi all'utilizzo dell'Applicazione</h4>
+      <p>L'utilizzo dell'Applicazione genera dati sulla tua attività: data e ora delle connessioni, funzionalità utilizzate, annunci con cui hai interagito, modalità di interazione con altri utenti.</p>
+
+      <h4>Dati tecnici</h4>
+      <p>Raccogliamo informazioni hardware e software come indirizzo IP, identificativo del dispositivo (Device ID), tipo di dispositivo, versione del sistema operativo, lingua, fuso orario e altri identificatori associati ai cookie.</p>
+
+      <h3>3.3 Altri dati che raccogliamo con il tuo consenso</h3>
+      <h4>Dati di geolocalizzazione</h4>
+      <p>Possiamo, previo tuo consenso, raccogliere dati di geolocalizzazione (latitudine e longitudine). Senza autorizzazione, alcune funzionalità basate sulla posizione potrebbero non essere disponibili.</p>
+
+      <h4>Dati di identificazione (verifica dell'età)</h4>
+      <p>Utilizziamo la tecnologia <strong>YOTI</strong> per stimare la tua età tramite un selfie video/foto. Una volta stimata e comunicata l'età, YOTI <strong>elimina l'immagine</strong>. Non condividiamo informazioni con YOTI.</p>
+
+      <h4>Cookie e identificatori online (solo Sito)</h4>
+      <p>Sul nostro sito web (<a href="https://www.idisko.com">www.idisko.com</a>), previo tuo consenso, utilizziamo cookie e identificatori simili dei seguenti fornitori:</p>
+      <ul>
+        <li><strong>PostHog</strong> (analitica): identificatore pseudonimo, pagine visitate, clic, tempo trascorso. Server negli Stati Uniti.</li>
+        <li><strong>Meta Pixel</strong> (pubblicità): identifica il tuo browser per misurare le conversioni delle nostre campagne pubblicitarie su Facebook/Instagram. Server negli Stati Uniti.</li>
+        <li><strong>Microsoft Clarity</strong> (miglioramento dell'esperienza): heatmap e registrazioni anonime delle sessioni (il contenuto dei moduli viene escluso automaticamente). Server negli Stati Uniti.</li>
+      </ul>
+      <p>L'elenco completo dei cookie, la durata e le modalità di gestione del consenso sono dettagliati nella nostra <a href="cookies.html">Cookie Policy</a>. Puoi revocare il consenso in qualsiasi momento tramite il pulsante «Gestisci i cookie» nel piè di pagina.</p>
+
+      <h2>4. Perché utilizziamo i tuoi dati personali e su quale base giuridica?</h2>
+      <ul>
+        <li><strong>Contratto:</strong> trattamento necessario per l'esecuzione del contratto.</li>
+        <li><strong>Consenso:</strong> consenso libero, specifico, informato e inequivocabile. Puoi revocarlo in qualsiasi momento.</li>
+        <li><strong>Interesse legittimo:</strong> interesse commerciale giustificato, bilanciato e che non lede la tua privacy.</li>
+        <li><strong>Obbligo legale:</strong> trattamento richiesto dalla legge.</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>Finalità</th><th>Base giuridica</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gestione dell'Applicazione e degli account utente</td><td>Esecuzione del contratto / Interesse legittimo</td></tr>
+          <tr><td>Miglioramento dell'Applicazione e nuove funzionalità</td><td>Interesse legittimo / Consenso</td></tr>
+          <tr><td>Sicurezza, moderazione, prevenzione</td><td>Interesse legittimo / Obblighi legali</td></tr>
+          <tr><td>Eventi, giochi, sondaggi</td><td>Interesse legittimo</td></tr>
+          <tr><td>Prospezione commerciale (newsletter)</td><td>Interesse legittimo / Consenso</td></tr>
+          <tr><td>Gestione del contenzioso</td><td>Interesse legittimo / Obblighi legali</td></tr>
+        </tbody>
+      </table>
+
+      <h2>5. A chi vengono trasmessi i tuoi dati personali?</h2>
+      <p>I dati sono destinati al personale autorizzato di DS CONNECT. Possono essere trasmessi a:</p>
+      <ul>
+        <li>Altri utenti (in caso di segnalazioni che richiedono moderazione).</li>
+        <li>I nostri responsabili del trattamento (manutenzione, sviluppo tecnico, sicurezza), vincolati alla riservatezza e agli obblighi del GDPR.</li>
+        <li>I nostri sub-responsabili specifici del sito web, attivati solo previo consenso dell'utente:
+          <ul>
+            <li><strong>PostHog Inc.</strong> — analitica del sito (Stati Uniti).</li>
+            <li><strong>Meta Platforms Ireland Ltd. / Meta Platforms Inc.</strong> — misurazione delle conversioni pubblicitarie (Irlanda e Stati Uniti).</li>
+            <li><strong>Microsoft Corporation</strong> — heatmap e registrazioni di sessione tramite Clarity (Stati Uniti).</li>
+            <li><strong>Supabase Inc.</strong> — database e autenticazione (server principali in Germania, edge distribuito).</li>
+          </ul>
+        </li>
+        <li>Autorità finanziarie, giudiziarie, amministrative o di polizia quando richiesto dalla legge.</li>
+        <li>I nostri aventi causa (fusione, cessione, acquisizione, ristrutturazione).</li>
+      </ul>
+
+      <h2>6. Dove sono conservati i tuoi dati? Sono trasferiti fuori dall'UE?</h2>
+      <p>I dati personali sono conservati principalmente su <strong>server sicuri in Germania</strong> (Unione Europea).</p>
+      <p>Alcuni sub-responsabili sono stabiliti negli <strong>Stati Uniti</strong> (PostHog, Meta Platforms, Microsoft) e ricevono dati quando hai dato il tuo consenso tramite il banner dei cookie. Questi trasferimenti sono regolati da:</p>
+      <ul>
+        <li>L'<strong>EU-US Data Privacy Framework</strong> (decisione di adeguatezza della Commissione europea del 10 luglio 2023, C(2023) 4745), applicabile a Meta Platforms e Microsoft Corporation, entrambe certificate.</li>
+        <li><strong>Clausole Contrattuali Tipo (CCT/SCC)</strong> firmate con PostHog ai sensi dell'articolo 46.2.c) del GDPR, integrate da misure tecniche (cifratura in transito e a riposo).</li>
+      </ul>
+      <p>Per gli altri responsabili, quando lo Stato di destinazione non è ufficialmente riconosciuto come adeguato dalla Commissione europea, ci impegniamo a fornire garanzie appropriate ai sensi dell'articolo 46 del GDPR.</p>
+
+      <h2>7. Per quanto tempo conserviamo i tuoi dati?</h2>
+      <table>
+        <thead>
+          <tr><th>Tipo di dato</th><th>Periodo di conservazione</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Account e profilo</td><td>2 anni dall'ultima attività (cancellazione su richiesta in qualsiasi momento)</td></tr>
+          <tr><td>Contenuti condivisi</td><td>2 anni dall'ultima attività</td></tr>
+          <tr><td>Segnalazioni</td><td>Fino a 5 anni dopo la risoluzione</td></tr>
+          <tr><td>Geolocalizzazione</td><td>Fino al successivo accesso</td></tr>
+          <tr><td>Eventi, giochi, sondaggi</td><td>3 anni dalla raccolta</td></tr>
+          <tr><td>Newsletter</td><td>3 anni dall'ultimo contatto</td></tr>
+          <tr><td>Cookie analitici/pubblicitari</td><td>Da 1 giorno a 13 mesi (vedi <a href="cookies.html">Cookie Policy</a>)</td></tr>
+          <tr><td>Obblighi contabili</td><td>10 anni dalla chiusura dell'esercizio</td></tr>
+          <tr><td>Esercizio dei diritti</td><td>5 anni</td></tr>
+          <tr><td>Diritto di opposizione</td><td>6 anni</td></tr>
+        </tbody>
+      </table>
+
+      <h2>8. Quali misure di sicurezza adottiamo?</h2>
+      <ul>
+        <li>Password complesse (minimo 8 caratteri con maiuscola, minuscola, numero, carattere speciale).</li>
+        <li><strong>Autenticazione multi-fattore (MFA)</strong> obbligatoria tramite codice email.</li>
+        <li>Server cifrati e monitoraggio continuo.</li>
+        <li>Notifica in caso di violazione dei dati ad alto rischio.</li>
+      </ul>
+
+      <h2>9. Quali sono i tuoi diritti e come esercitarli?</h2>
+      <p>Ai sensi degli articoli 15 e seguenti del GDPR, hai i seguenti diritti (salvo eccezioni):</p>
+      <ul>
+        <li>Diritto di <strong>accesso</strong>.</li>
+        <li>Diritto di <strong>rettifica</strong>.</li>
+        <li>Diritto di <strong>cancellazione</strong> («diritto all'oblio»).</li>
+        <li>Diritto di <strong>limitazione</strong> del trattamento.</li>
+        <li>Diritto alla <strong>portabilità</strong> dei dati.</li>
+        <li>Diritto di non essere soggetto a <strong>decisioni automatizzate</strong>.</li>
+        <li>Diritto di <strong>opposizione</strong>.</li>
+        <li>Diritto di opposizione alla <strong>prospezione commerciale</strong>.</li>
+        <li>Diritto di <strong>revocare il consenso</strong>.</li>
+        <li>Diritto di stabilire direttive post-mortem sui propri dati.</li>
+        <li>Diritto di <strong>presentare reclamo al Garante</strong> (Garante per la protezione dei dati personali) o alla CNIL (autorità francese).</li>
+      </ul>
+      <p>Per esercitare i tuoi diritti:</p>
+      <ul>
+        <li>Via email: <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>Per posta: DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, Francia.</li>
+      </ul>
+
+      <h2>10. La Politica può essere modificata?</h2>
+      <p>Possiamo aggiornare la Politica per tenere conto di evoluzioni tecniche, economiche, normative o giuridiche. Ti informeremo di modifiche significative tramite notifica nell'Applicazione.</p>
+      <p>L'ultima versione è sempre disponibile sulla nostra Applicazione e sul nostro Sito.</p>
+
+      <div class="info-box" style="margin-top:48px;">
+        <p><strong>Nota sulla versione:</strong> la versione ufficiale e legalmente vincolante della Politica è quella in francese. Questa traduzione italiana è fornita a scopo informativo. In caso di conflitto, prevale la versione francese.</p>
+      </div>
+    </div>
+
+    <!-- ============= PORTUGUÊS (BR) ============= -->
+    <div class="lang-content doc-content" id="content-pt">
+
+      <p>A sociedade <strong>DS CONNECT</strong> é uma sociedade por ações simplificada (SAS) com capital social de 10.000 euros, registrada no Registro de Comércio e Sociedades de Montpellier sob o número <strong>941 864 985</strong>, com sede em Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, França (a seguir «nós»).</p>
+
+      <p>Damos especial atenção à sua privacidade e ao respeito pelos seus dados pessoais. Cumprimos a Lei n.º 78-17 de 6 de janeiro de 1978 relativa à informática, aos arquivos e às liberdades, alterada, bem como o Regulamento (UE) 2016/679 de 27 de abril de 2016, conhecido como Regulamento Geral sobre a Proteção de Dados ou GDPR (a seguir o «GDPR»).</p>
+
+      <p>Esta política (a seguir a «Política») informa sobre as modalidades de tratamento dos seus dados pessoais no âmbito da utilização do nosso aplicativo móvel «IDISKO» (o «Aplicativo») e do nosso site no endereço <a href="https://www.idisko.com">www.idisko.com</a> (o «Site»).</p>
+
+      <div class="info-box">
+        <p><strong>Idade mínima:</strong> nosso Aplicativo é destinado exclusivamente a pessoas com 18 anos ou mais. Não permitimos que menores de 18 anos criem uma conta.</p>
+      </div>
+
+      <h2>1. Quem é o responsável pelo tratamento dos seus dados pessoais?</h2>
+      <p>Somos o controlador dos dados pessoais tratados no âmbito da utilização do nosso Aplicativo e Site.</p>
+      <p>Para qualquer dúvida sobre o tratamento dos seus dados, contate-nos:</p>
+      <ul>
+        <li>Por e-mail: <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>Por carta: DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, França.</li>
+      </ul>
+
+      <h2>2. Em que ocasiões coletamos seus dados pessoais?</h2>
+      <ul>
+        <li>Quando você cria uma conta no nosso Aplicativo,</li>
+        <li>Quando você usa nosso Aplicativo,</li>
+        <li>Quando você nos contata por qualquer meio,</li>
+        <li>Quando você participa de eventos e jogos que organizamos,</li>
+        <li>Quando você responde a pesquisas e questionários,</li>
+        <li>Quando você se inscreve nas nossas newsletters,</li>
+        <li>Quando você denuncia um conteúdo ou perfil,</li>
+        <li>Quando você apresenta um pedido de exercício de direitos.</li>
+      </ul>
+
+      <h2>3. Quais dados pessoais coletamos?</h2>
+
+      <h3>3.1 Dados que você nos fornece</h3>
+      <h4>Dados da conta</h4>
+      <p>Quando você cria uma conta, fornece informações básicas: seu endereço de e-mail e sua senha.</p>
+
+      <h4>Dados do perfil</h4>
+      <p>Para completar seu perfil, você informa nome de usuário, gênero, data de nascimento e foto. Pode compartilhar dados adicionais como país de nascimento, biografia, interesses, preferências musicais, fotos, etc.</p>
+
+      <h4>Dados relativos ao conteúdo que você compartilha</h4>
+      <p>Ao usar nosso Aplicativo, você pode publicar fotografias, vídeos ao vivo, texto e outros conteúdos, incluindo conversas com outros usuários. Você pode transmitir dados pessoais como sua voz e suas fotografias.</p>
+
+      <h4>Dados de serviços de terceiros</h4>
+      <p>Você pode optar por compartilhar dados via serviços de terceiros como Apple e Google. <strong>Não coletamos nem armazenamos as senhas</strong> que você utiliza para acessar serviços de terceiros.</p>
+
+      <div class="info-box">
+        <p><strong>Importante:</strong> para enviar e baixar fotos e/ou vídeos do seu dispositivo e usar a função de vídeo ao vivo, é preciso autorizar acesso à câmera, galeria e microfone.</p>
+        <p>O conteúdo compartilhado pode ser visto por outros usuários com quem você interage, que podem salvá-lo (por exemplo, via captura de tela) sem que possamos impedir.</p>
+      </div>
+
+      <h3>3.2 Dados gerados ou coletados automaticamente</h3>
+      <h4>Dados de uso do Aplicativo</h4>
+      <p>O uso gera dados sobre sua atividade: data e hora das conexões, funcionalidades usadas, anúncios com que interagiu, forma de interação com outros usuários.</p>
+
+      <h4>Dados técnicos</h4>
+      <p>Coletamos informações de hardware e software como endereço IP, identificador do dispositivo (Device ID), tipo de dispositivo, versão do SO, idioma, fuso horário e identificadores associados a cookies.</p>
+
+      <h3>3.3 Outros dados que coletamos com seu consentimento</h3>
+      <h4>Dados de geolocalização</h4>
+      <p>Podemos, com seu consentimento, coletar dados de geolocalização (latitude e longitude). Sem autorização, certas funcionalidades baseadas em localização podem não estar disponíveis.</p>
+
+      <h4>Dados de identificação (verificação de idade)</h4>
+      <p>Usamos a tecnologia <strong>YOTI</strong> para estimar sua idade via selfie em vídeo/foto. Após estimar e comunicar a idade, a YOTI <strong>exclui a imagem</strong>. Não compartilhamos informações com a YOTI.</p>
+
+      <h4>Cookies e identificadores online (apenas Site)</h4>
+      <p>No nosso site (<a href="https://www.idisko.com">www.idisko.com</a>), com seu consentimento, usamos cookies e identificadores similares dos seguintes fornecedores:</p>
+      <ul>
+        <li><strong>PostHog</strong> (análise): identificador pseudônimo, páginas visualizadas, cliques, tempo gasto. Servidores nos Estados Unidos.</li>
+        <li><strong>Meta Pixel</strong> (publicidade): identifica seu navegador para medir conversões das nossas campanhas no Facebook/Instagram. Servidores nos Estados Unidos.</li>
+        <li><strong>Microsoft Clarity</strong> (melhoria da experiência): mapas de calor e gravações anônimas de sessão (conteúdo de formulários é excluído automaticamente). Servidores nos Estados Unidos.</li>
+      </ul>
+      <p>A lista completa de cookies, duração e como gerenciar o consentimento estão detalhadas em nossa <a href="cookies.html">Política de Cookies</a>. Você pode revogar o consentimento a qualquer momento pelo botão «Gerenciar cookies» no rodapé.</p>
+
+      <h2>4. Por que usamos seus dados pessoais e em que base legal?</h2>
+      <ul>
+        <li><strong>Contrato:</strong> tratamento necessário para a execução do contrato.</li>
+        <li><strong>Consentimento:</strong> livre, específico, informado e inequívoco. Pode ser revogado a qualquer momento.</li>
+        <li><strong>Interesse legítimo:</strong> interesse comercial justificado, equilibrado e que não fere sua privacidade.</li>
+        <li><strong>Obrigação legal:</strong> tratamento exigido por lei.</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>Finalidade</th><th>Base legal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gestão do Aplicativo e contas de usuário</td><td>Execução do contrato / Interesse legítimo</td></tr>
+          <tr><td>Melhoria do Aplicativo e novas funcionalidades</td><td>Interesse legítimo / Consentimento</td></tr>
+          <tr><td>Segurança, moderação, prevenção</td><td>Interesse legítimo / Obrigações legais</td></tr>
+          <tr><td>Eventos, jogos, pesquisas</td><td>Interesse legítimo</td></tr>
+          <tr><td>Prospecção comercial (newsletters)</td><td>Interesse legítimo / Consentimento</td></tr>
+          <tr><td>Gestão de litígios</td><td>Interesse legítimo / Obrigações legais</td></tr>
+        </tbody>
+      </table>
+
+      <h2>5. A quem seus dados pessoais são transmitidos?</h2>
+      <p>Os dados são destinados ao pessoal autorizado da DS CONNECT. Podem ser transmitidos a:</p>
+      <ul>
+        <li>Outros usuários (em caso de denúncias que exijam moderação).</li>
+        <li>Nossos operadores (manutenção, desenvolvimento técnico, segurança), vinculados à confidencialidade e às obrigações do GDPR.</li>
+        <li>Nossos suboperadores específicos do site, ativados apenas após consentimento do usuário:
+          <ul>
+            <li><strong>PostHog Inc.</strong> — análise de uso do site (Estados Unidos).</li>
+            <li><strong>Meta Platforms Ireland Ltd. / Meta Platforms Inc.</strong> — medição de conversões publicitárias (Irlanda e Estados Unidos).</li>
+            <li><strong>Microsoft Corporation</strong> — mapas de calor e gravação de sessão via Clarity (Estados Unidos).</li>
+            <li><strong>Supabase Inc.</strong> — banco de dados e autenticação (servidores principais na Alemanha, edge distribuído).</li>
+          </ul>
+        </li>
+        <li>Autoridades financeiras, judiciárias, administrativas ou policiais quando legalmente exigido.</li>
+        <li>Nossos sucessores legais (fusão, cessão, aquisição, reestruturação).</li>
+      </ul>
+
+      <h2>6. Onde seus dados são armazenados? São transferidos para fora da UE?</h2>
+      <p>Os dados pessoais são armazenados principalmente em <strong>servidores seguros na Alemanha</strong> (União Europeia).</p>
+      <p>Alguns suboperadores estão estabelecidos nos <strong>Estados Unidos</strong> (PostHog, Meta Platforms, Microsoft) e recebem dados quando você deu seu consentimento via banner de cookies. Essas transferências são regidas por:</p>
+      <ul>
+        <li>O <strong>EU-US Data Privacy Framework</strong> (decisão de adequação da Comissão Europeia de 10 de julho de 2023, C(2023) 4745), aplicável à Meta Platforms e Microsoft Corporation, ambas certificadas.</li>
+        <li><strong>Cláusulas Contratuais-Tipo (SCC)</strong> assinadas com a PostHog conforme o artigo 46.2.c) do GDPR, complementadas por medidas técnicas (criptografia em trânsito e em repouso).</li>
+      </ul>
+      <p>Para os demais operadores, quando o país de destino não é oficialmente reconhecido como adequado pela Comissão Europeia, comprometemo-nos a fornecer garantias apropriadas conforme o artigo 46 do GDPR.</p>
+
+      <h2>7. Por quanto tempo conservamos seus dados?</h2>
+      <table>
+        <thead>
+          <tr><th>Tipo de dado</th><th>Período de retenção</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Conta e perfil</td><td>2 anos a partir da última atividade (exclusão sob demanda a qualquer momento)</td></tr>
+          <tr><td>Conteúdo compartilhado</td><td>2 anos a partir da última atividade</td></tr>
+          <tr><td>Denúncias</td><td>Até 5 anos após resolução</td></tr>
+          <tr><td>Geolocalização</td><td>Até o próximo acesso</td></tr>
+          <tr><td>Eventos, jogos, pesquisas</td><td>3 anos a partir da coleta</td></tr>
+          <tr><td>Newsletters</td><td>3 anos a partir do último contato</td></tr>
+          <tr><td>Cookies analíticos/publicitários</td><td>De 1 dia a 13 meses (ver <a href="cookies.html">Política de Cookies</a>)</td></tr>
+          <tr><td>Obrigações contábeis</td><td>10 anos após o fechamento do exercício</td></tr>
+          <tr><td>Exercício de direitos</td><td>5 anos</td></tr>
+          <tr><td>Direito de oposição</td><td>6 anos</td></tr>
+        </tbody>
+      </table>
+
+      <h2>8. Quais medidas de segurança adotamos?</h2>
+      <ul>
+        <li>Senhas fortes (mínimo 8 caracteres com maiúscula, minúscula, número, caractere especial).</li>
+        <li><strong>Autenticação multifator (MFA)</strong> obrigatória via código por e-mail.</li>
+        <li>Servidores criptografados e monitoramento contínuo.</li>
+        <li>Notificação em caso de violação de dados de alto risco.</li>
+      </ul>
+
+      <h2>9. Quais são seus direitos e como exercê-los?</h2>
+      <p>Conforme os artigos 15 e seguintes do GDPR, você tem os seguintes direitos (salvo exceções):</p>
+      <ul>
+        <li>Direito de <strong>acesso</strong>.</li>
+        <li>Direito de <strong>retificação</strong>.</li>
+        <li>Direito ao <strong>apagamento</strong> («direito ao esquecimento»).</li>
+        <li>Direito à <strong>limitação</strong> do tratamento.</li>
+        <li>Direito à <strong>portabilidade</strong> dos dados.</li>
+        <li>Direito de não ser sujeito a <strong>decisões automatizadas</strong>.</li>
+        <li>Direito de <strong>oposição</strong>.</li>
+        <li>Direito de opor-se à <strong>prospecção comercial</strong>.</li>
+        <li>Direito de <strong>revogar o consentimento</strong>.</li>
+        <li>Direito de definir diretivas pós-morte sobre seus dados.</li>
+        <li>Direito de <strong>apresentar reclamação à CNIL</strong> (autoridade francesa) ou à autoridade de proteção de dados do seu país.</li>
+      </ul>
+      <p>Para exercer seus direitos:</p>
+      <ul>
+        <li>Por e-mail: <a href="mailto:contact@idisko.com">contact@idisko.com</a></li>
+        <li>Por carta: DS CONNECT, Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant, 34000 Montpellier, França.</li>
+      </ul>
+
+      <h2>10. A Política pode ser alterada?</h2>
+      <p>Podemos atualizar nossa Política para refletir mudanças técnicas, econômicas, regulatórias ou jurídicas. Você será informado de mudanças significativas via notificação no Aplicativo.</p>
+      <p>A versão mais recente está sempre disponível em nosso Aplicativo e Site.</p>
+
+      <div class="info-box" style="margin-top:48px;">
+        <p><strong>Nota sobre a versão:</strong> a versão oficial e juridicamente vinculante da Política é a redigida em francês. Esta tradução em português é fornecida a título informativo. Em caso de conflito, prevalece a versão francesa.</p>
+      </div>
+    </div>
+
   </div>
 </main>
 
@@ -981,6 +1436,7 @@ footer {
           <a href="cookies.html" data-i18n="footerCookies">Cookies</a>
           <a href="legal.html" data-i18n="footerLegal">Aviso Legal</a>
           <a href="faq.html" data-i18n="footerFaq">FAQ</a>
+          <button type="button" class="linklike" data-i18n="footerManageCookies" onclick="window.klaro && window.klaro.show();">Gestionar cookies</button>
         </div>
       </div>
       <div>
@@ -999,6 +1455,12 @@ footer {
   </div>
 </footer>
 
+<!-- Klaro consent manager (loaded on every page) -->
+<link rel="stylesheet" href="assets/klaro.min.css" />
+<script defer src="assets/klaro-config.js"></script>
+<script defer src="assets/klaro.no-css.js"></script>
+<script defer src="assets/klaro-trackers.js"></script>
+
 <script>
 // i18n for UI labels
 var UI = {
@@ -1015,6 +1477,7 @@ var UI = {
     footerCookies: "Cookies",
     footerLegal: "Aviso Legal",
     footerFaq: "FAQ",
+    footerManageCookies: "Gestionar cookies",
     footerHome: "Inicio",
     footerWebApp: "Web app",
     footerMade: "Hecho para quienes trabajan en remoto."
@@ -1032,6 +1495,7 @@ var UI = {
     footerCookies: "Cookies",
     footerLegal: "Legal Notice",
     footerFaq: "FAQ",
+    footerManageCookies: "Manage cookies",
     footerHome: "Home",
     footerWebApp: "Web app",
     footerMade: "Made for remote workers."
@@ -1049,9 +1513,46 @@ var UI = {
     footerCookies: "Cookies",
     footerLegal: "Mentions Légales",
     footerFaq: "FAQ",
+    footerManageCookies: "Gérer les cookies",
     footerHome: "Accueil",
     footerWebApp: "Web app",
     footerMade: "Conçu pour celles et ceux qui télétravaillent."
+  },
+  it: {
+    tag: "Legale · GDPR",
+    title: "Politica di Protezione dei Dati Personali",
+    updated: "Ultimo aggiornamento",
+    back: "torna alla home",
+    footerTagline: "Work alone, together. iDisko è uno spazio di coworking virtuale con musica — per chi lavora da remoto e non vuole passare un altro giorno in silenzio.",
+    footerLegalCol: "Legale",
+    footerCompanyCol: "Azienda",
+    footerPrivacy: "Privacy",
+    footerTerms: "Termini",
+    footerCookies: "Cookie",
+    footerLegal: "Note Legali",
+    footerFaq: "FAQ",
+    footerManageCookies: "Gestisci i cookie",
+    footerHome: "Home",
+    footerWebApp: "Web app",
+    footerMade: "Pensato per chi lavora da remoto."
+  },
+  pt: {
+    tag: "Legal · GDPR",
+    title: "Política de Proteção de Dados Pessoais",
+    updated: "Última atualização",
+    back: "voltar ao início",
+    footerTagline: "Work alone, together. iDisko é um espaço de coworking virtual com música — para quem trabalha remoto e não quer passar mais um dia em silêncio.",
+    footerLegalCol: "Legal",
+    footerCompanyCol: "Empresa",
+    footerPrivacy: "Privacidade",
+    footerTerms: "Termos",
+    footerCookies: "Cookies",
+    footerLegal: "Aviso Legal",
+    footerFaq: "FAQ",
+    footerManageCookies: "Gerenciar cookies",
+    footerHome: "Início",
+    footerWebApp: "Web app",
+    footerMade: "Feito para quem trabalha remoto."
   }
 };
 

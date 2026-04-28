@@ -7,6 +7,91 @@
 <title>iDisko · Work alone, together.</title>
 <link rel="icon" href="assets/logo.png">
 
+<!-- Smart App Banner (iOS Safari only) — shows native "Open in App" / "Install" banner -->
+<meta name="apple-itunes-app" content="app-id=6749269410, app-argument=https://www.idisko.com/">
+
+<!-- Canonical & SEO -->
+<link rel="canonical" href="https://www.idisko.com/">
+<meta name="description" content="iDisko — Work alone, together. A virtual coworking space powered by music, for remote workers who don't want to spend another day in silence.">
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn, iMessage) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="iDisko">
+<meta property="og:url" content="https://www.idisko.com/">
+<meta property="og:title" content="iDisko — Work alone, together.">
+<meta property="og:description" content="A virtual coworking space powered by music. Listen synced with friends or strangers — work, cook, vibe with your own soundtrack.">
+<meta property="og:image" content="https://www.idisko.com/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="iDisko — Work alone, together.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@idisko">
+<meta name="twitter:title" content="iDisko — Work alone, together.">
+<meta name="twitter:description" content="A virtual coworking space powered by music. Listen synced with friends or strangers.">
+<meta name="twitter:image" content="https://www.idisko.com/assets/og-cover.png">
+
+<!-- Structured data — Google rich results (Organization + WebSite + MobileApplication) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.idisko.com/#org",
+      "name": "iDisko",
+      "legalName": "DS CONNECT",
+      "url": "https://www.idisko.com/",
+      "logo": "https://www.idisko.com/assets/logo.png",
+      "email": "contact@idisko.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Parc Eureka, Le Pôle Eureka, 418 Rue du Mas de Verchant",
+        "addressLocality": "Montpellier",
+        "postalCode": "34000",
+        "addressCountry": "FR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/idisko",
+        "https://www.tiktok.com/@idisko"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.idisko.com/#website",
+      "url": "https://www.idisko.com/",
+      "name": "iDisko",
+      "description": "Work alone, together. A virtual coworking space powered by music.",
+      "publisher": { "@id": "https://www.idisko.com/#org" },
+      "inLanguage": ["en", "es", "fr", "it", "pt-BR"]
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "iDisko",
+      "operatingSystem": "iOS, ANDROID",
+      "applicationCategory": "SocialNetworkingApplication",
+      "url": "https://www.idisko.com/",
+      "image": "https://www.idisko.com/assets/og-cover.png",
+      "description": "Listen synced with friends or strangers — a virtual coworking space powered by music.",
+      "publisher": { "@id": "https://www.idisko.com/#org" },
+      "downloadUrl": "https://apps.apple.com/fr/app/idisko/id6749269410",
+      "installUrl": "https://apps.apple.com/fr/app/idisko/id6749269410",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  ]
+}
+</script>
+
 
 
 
@@ -306,6 +391,12 @@ html, body {
   #tweaks-panel input[type="color"] { padding:2px; width:40px; height:26px; cursor:pointer;}
   #tweaks-panel button.tw-close { background:none; border:none; color:#b5b3bd; cursor:pointer;}
 </style>
+
+<!-- Klaro consent manager (loads BEFORE root render so consent state is ready) -->
+<link rel="stylesheet" href="assets/klaro.min.css" />
+<script defer src="assets/klaro-config.js"></script>
+<script defer src="assets/klaro.no-css.js"></script>
+<script defer src="assets/klaro-trackers.js"></script>
 </head>
 <body>
 <div id="root"></div>
@@ -319,6 +410,24 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "copyVariant": "poetic"
 }/*EDITMODE-END*/;
 window.__TWEAKS = { ...TWEAK_DEFAULTS };
+</script>
+
+<script>
+// ─── i18n infrastructure (injected) ──────────────────────────────
+window.STRINGS = {"en": {"nav": {"howItWorks": "How it works", "features": "Features", "useCases": "Use cases", "faq": "FAQ", "signIn": "Sign in →", "tryItNow": "Try it now →"}, "hero": {"eyebrow": "Meet with music", "h1a": "Work alone,", "h1b": "together.", "sub": "A room full of people doing their thing — working, cooking, vibing — each with their own soundtrack. Hit play on yours. Bump into someone if you feel like it.", "primary": "Try it now", "checkLine": "No sign-up to peek · Free forever · AI-verified profiles", "orGetApp": "Or get the app"}, "liveCount": {"suffix": "people on iDisko"}, "store": {"appStoreCap": "Download on the", "appStoreLabel": "App Store", "googlePlayCap": "Get it on", "googlePlayLabel": "Google Play"}, "social": {"ratingSuffix": "from 2,100+ music lovers", "countriesPrefix": "People listening in", "countriesValue": "20+ countries", "liveSuffix": "live right now", "vipRoomsTooltip": "Total VIP rooms created since launch", "vipRoomsSuffix": "VIP rooms since day one"}, "problem": {"eyebrow": "BEFORE iDISKO", "h3a": "Music alone is good.", "h3b": "Music together is better.", "body": "Headphones on, scrolling apps full of fake profiles and small talk. You discover a song you love — and there's no one around to share it with. The world is full of people listening to the same thing right now. You just can't see them.", "silent": "SILENT"}, "solution": {"eyebrow": "WITH iDISKO", "h3a": "Hit play.", "h3b": "Land in a room full of strangers.", "body": "Open iDisko. See real people — working, cooking, chilling — each with their own soundtrack. Filter by age, gender, country. Send a request. Enter a VIP chat if it clicks."}, "how": {"eyebrow": "How it works", "titleLine1": "Three taps", "titleLine2": "to a shared moment.", "step": "STEP", "step1Title": "Hit play", "step1Body": "Open iDisko, pick your music. Spotify, YouTube, Jamendo — your soundtrack, your call. Filter who you want to see by age, gender, country.", "step2Title": "See the room", "step2Body": "A live grid of real people listening right now. AI-verified, no fake profiles. Camera optional, vibe required.", "step3Title": "Send a request", "step3Body": "Someone catches your eye? Send a request. They accept, you enter a VIP chat — just the two of you, same song, your moment."}, "feat": {"eyebrow": "What's inside", "titlePrefix": "Four ways to", "titleGradient": "not work alone.", "soon": "Soon", "diskoTag": "Disko Room", "diskoTitle1": "See live tiles of real people,", "diskoTitleGradient": "working alongside you.", "diskoBody": "Join iDisko and see up to 50 people listening live, each with their own soundtrack. Your music stays yours. Theirs stays theirs. If you want, send a VIP request to share the moment.", "diskoBullet1": "Video is optional — audio presence is enough", "diskoBullet2": "Bring music from YouTube or iDisko library", "diskoBullet3": "No synced calls, no screen sharing — pure parallel listening", "focusTag": "Focus Mode", "focusTitle1": "Lo-fi rooms for", "focusTitleGradient": "deep work.", "focusBody": "No faces. No chat. Just you, a shared lo-fi playlist, and a counter of everyone else in the room doing the same. The gentle reassurance that others are in it too.", "focusBullet1": "Curated lo-fi, ambient, and classical rooms", "focusBullet2": "Pomodoro timer built in — optional, never naggy", "focusBullet3": "Streaks and stats for those who like them", "shuffleTag": "Shuffle", "shuffleTitle1": "A", "shuffleTitleGradient": "quick shuffle", "shuffleTitle2": ", your coffee break, when you want to bump into someone.", "shuffleBody": "Tap Shuffle, get matched with one other person for a 5-minute moment. Share what you're listening to, swap a playlist, then back to whatever you were doing. Like bumping into someone in real life — only better, because the music's already there.", "shuffleBullet1": "One is the DJ of the room.", "shuffleBullet2": "Paired by music vibe — you accept or skip, always your call", "shuffleBullet3": "AI video moderation keeps the room safe", "shuffleBullet4": "AI-verified profiles, no fakes", "vipTag": "VIP Rooms", "vipTitle1": "Invite a friend for a", "vipTitleGradient": "private session.", "vipBody": "Your friend works remote in another city. Invite them to a VIP room — same room, same synced music, your own little co-working space for a day.", "vipBullet1": "Private 1:1", "vipBullet2": "Synced music — you both hit play at the same time", "vipBullet3": "Stop music if you want to discuss."}, "mocks": {"diskoLive": "LIVE · 47", "diskoYou": "YOU", "diskoPlaylist": "Your playlist · Deep Focus", "diskoSpotify": "Spotify · 4h 32m", "focusTag": "FOCUS MODE", "focusStreak": "02:14:36 streak", "focusHintPlay": "HOVER TO PLAY", "focusHintPause": "CLICK TO PAUSE", "focusTitle": "Lo-fi rain & focus", "focusSubtitle": "Playing with 284 others · No video, no chat", "ariaPlay": "Play", "ariaPause": "Pause", "shuffleTag": "SHUFFLE", "shuffleSession": "5-minute sessions", "shuffleRole1": "Designer · Berlin", "shuffleRole2": "PM · Milano", "shuffleIcebreakers": "Ice breakers", "shufflePrompt1": "What are you listening to?", "shufflePrompt2": "Share your playlist", "shufflePrompt3": "Where are you from?", "shuffleTimerLabel": "Shuffle time", "shuffleTimerLeft": "3:42 left", "vipSameSong": "Same song, same time", "vipSyncedTrack": "Synced · \"Glimpse of Us\"", "vipPlayingFor": "Joji · Playing for both of you"}, "useCases": {"eyebrow": "Match your mood", "titleLine1": "A vibe", "titleLine2": "for every kind of moment.", "workingTitle": "Working", "workingDesc": "Lo-fi, ambient, classical. Stay focused and feel less alone while you grind.", "workingMusic": "Lo-fi · Classical · Ambient", "cookingTitle": "Cooking", "cookingDesc": "Upbeat, percussive, danceable. The kitchen is small — the playlist isn't.", "cookingMusic": "Pop · House · Afrobeats", "chillingTitle": "Chilling", "chillingDesc": "Moody, textured, easy. For the slow afternoon and the rainy Sunday.", "chillingMusic": "Indie · Jazz · Cinematic", "goingOutTitle": "Going out (in)", "goingOutDesc": "Loud, social, ready. Pre-game from your kitchen, meet someone at the same BPM.", "goingOutMusic": "Reggaeton · EDM · Disco"}, "testimonials": {"eyebrow": "People on iDisko", "titleLine1": "The social fix", "titleLine2": "nobody shipped —", "titleGradient": "until now.", "q1": "I'm not the best at starting conversations, and that's what I loved about iDisko. You enjoy your music, and if someone catches your interest, you have the perfect link to start a conversation. Pressure-free. Like a nightclub, but at home.", "q1Name": "Alejo", "q1Role": "Buenos Aires · Argentina", "q2": "I used iDisko while cooking, discovered new songs, and chatted with three people from different countries. The music broke the ice and gave us a great starting point for conversation.", "q2Name": "Sylvia", "q2Role": "Madrid · Spain", "q3": "No fake profiles, no time wasted. I get to filter by age and gender — simple and real. It replaced the dating apps I gave up on.", "q3Name": "Charlotte", "q3Role": "Paris · France"}, "pricing": {"title": "Free to start. Works in your browser right now.", "body": "No credit card. No download. Close the tab anytime.", "cta": "Open iDisko →"}, "faq": {"eyebrow": "Questions", "title": "Straight answers.", "q1": "Is iDisko free?", "a1": "Yes. The core experience is free — forever. iDisko Premium ($4.99/mo) removes ads, unlocks unlimited VIP rooms, custom status, and advanced filters. You don't need it to get the magic.", "q2": "Do I have to show my camera?", "a2": "Never. Most people don't. Audio presence (a tiny EQ bar that moves when your music plays) is enough to know someone's there. Cameras are off by default — you can stay invisible behind just a profile photo.", "q3": "Is it like a dating app?", "a3": "Not exactly. iDisko is about meeting people through what you're listening to right now — not swiping on profiles. Some people make friends, some find a date, some just want company while they cook. The app doesn't push any of those.", "q4": "What music sources does it support?", "a4": "YouTube and Jamendo (royalty-free). More integrations coming.", "q5": "Is it private?", "a5": "Rooms don't record. Your face (if you turn it on) isn't stored. AI moderation keeps fakes and creeps out. Shuffle is opt-in — you accept or skip every match.", "q6": "How is this different from Discord or dating apps?", "a6": "Discord is built around voice channels and chat. Dating apps are built around photos and bios. iDisko is built around the song playing in your headphones right now — and the people listening to something similar across the world. You can be here for hours and never type a word, or send one request and end up in a VIP chat. Your call."}, "finalCta": {"onlineSuffix": "ONLINE", "titleLine1": "Your next song", "titleGradient": "doesn't have to be a solo.", "body": "Open it in a browser tab. Hit play on whatever you love. There's a whole world listening with you.", "cta": "Try it now", "or": "— or —"}, "newsletter": {"eyebrow": "Newsletter", "title": "Get the drops first.", "body": "Drop your email. We only write when something good ships — beta launches, real updates, never spam.", "placeholder": "you@email.com", "cta": "Notify me", "sending": "Sending…", "consent": "By subscribing you agree to our", "consentLink": "Privacy Policy", "successTitle": "Check your inbox.", "successBody": "We just sent you a confirmation link. Tap it and you're in.", "alreadyConfirmed": "You're already subscribed. Thanks for being early.", "invalidEmail": "That doesn't look like a valid email.", "networkError": "Something went wrong. Try again in a sec."}, "footer": {"tagline": "The first social app powered by music. Discover people around the world while listening to your favorite music — working, cooking, chilling, going out.", "colProduct": "Product", "colCompany": "Company", "colLegal": "Legal", "diskoRooms": "Disko Rooms", "focusMode": "Focus Mode", "shuffle": "Shuffle", "vipRooms": "VIP Rooms", "webApp": "Web app", "appStore": "App Store", "googlePlay": "Google Play", "contact": "Contact", "privacy": "Privacy", "terms": "Terms", "legal": "Legal Notice", "cookies": "Cookies", "faqLink": "FAQ", "copyright": "© 2026 iDisko. The first social app powered by music."}}, "es": {"nav": {"howItWorks": "Cómo funciona", "features": "Funciones", "useCases": "Casos de uso", "faq": "FAQ", "signIn": "Iniciar sesión →", "tryItNow": "Probalo ahora →"}, "hero": {"eyebrow": "Encontrate con la música", "h1a": "Trabajá solo,", "h1b": "acompañado.", "sub": "Una sala llena de gente haciendo lo suyo —trabajando, cocinando, vibrando— cada uno con su propia banda sonora. Dale play a la tuya. Cruzate con alguien si tenés ganas.", "primary": "Probalo ahora", "checkLine": "Sin registro para mirar · Gratis para siempre · Perfiles verificados con IA", "orGetApp": "O bajá la app"}, "liveCount": {"suffix": "personas en iDisko"}, "store": {"appStoreCap": "Descargá en el", "appStoreLabel": "App Store", "googlePlayCap": "Bajalo en", "googlePlayLabel": "Google Play"}, "social": {"ratingSuffix": "de 2.100+ amantes de la música", "countriesPrefix": "Gente escuchando en", "countriesValue": "20+ países", "liveSuffix": "en vivo ahora", "vipRoomsTooltip": "Total de salas VIP creadas desde el lanzamiento", "vipRoomsSuffix": "salas VIP desde el día uno"}, "problem": {"eyebrow": "ANTES DE iDISKO", "h3a": "Música solo está bien.", "h3b": "Música compartida está mejor.", "body": "Auriculares puestos, deslizando apps llenas de perfiles falsos y conversaciones vacías. Descubrís una canción que amás —y no hay nadie para compartirla. El mundo está lleno de gente escuchando lo mismo ahora. Solo que no las podés ver.", "silent": "SILENCIO"}, "solution": {"eyebrow": "CON iDISKO", "h3a": "Dale play.", "h3b": "Caé en una sala llena de gente.", "body": "Abrí iDisko. Vas a ver gente real —trabajando, cocinando, relajándose— cada uno con su banda sonora. Filtrá por edad, género, país. Mandá una solicitud. Entrá a un chat VIP si hay onda."}, "how": {"eyebrow": "Cómo funciona", "titleLine1": "Tres toques", "titleLine2": "para un momento compartido.", "step": "PASO", "step1Title": "Dale play", "step1Body": "Abrí iDisko, elegí tu música. Spotify, YouTube, Jamendo —tu banda sonora, tu decisión. Filtrá a quién querés ver por edad, género, país.", "step2Title": "Mirá la sala", "step2Body": "Una grilla en vivo de gente real escuchando ahora mismo. Verificada con IA, sin perfiles falsos. Cámara opcional, onda obligatoria.", "step3Title": "Mandá una solicitud", "step3Body": "¿Alguien te llama la atención? Mandá una solicitud. Te aceptan, entrás a un chat VIP —solo ustedes dos, la misma canción, tu momento."}, "feat": {"eyebrow": "Lo que hay adentro", "titlePrefix": "Cuatro formas de", "titleGradient": "no trabajar solo.", "soon": "Próximamente", "diskoTag": "Disko Room", "diskoTitle1": "Mirá tiles en vivo de gente real,", "diskoTitleGradient": "trabajando al lado tuyo.", "diskoBody": "Entrá a iDisko y vas a ver hasta 50 personas escuchando en vivo, cada una con su banda sonora. Tu música queda tuya. La de ellos, suya. Si querés, mandá una solicitud VIP para compartir el momento.", "diskoBullet1": "El video es opcional —la presencia de audio alcanza", "diskoBullet2": "Traé música de YouTube o de la biblioteca de iDisko", "diskoBullet3": "Sin llamadas sincronizadas, sin compartir pantalla —escucha paralela pura", "focusTag": "Focus Mode", "focusTitle1": "Salas Lo-fi para", "focusTitleGradient": "trabajo profundo.", "focusBody": "Sin caras. Sin chat. Solo vos, una playlist lo-fi compartida y un contador de toda la gente que está haciendo lo mismo. La calma de saber que hay otros adentro también.", "focusBullet1": "Salas curadas de lo-fi, ambient y clásica", "focusBullet2": "Pomodoro integrado —opcional, nunca invasivo", "focusBullet3": "Rachas y stats para los que les copa", "shuffleTag": "Shuffle", "shuffleTitle1": "Un", "shuffleTitleGradient": "Shuffle rápido", "shuffleTitle2": ", tu pausa café, cuando tenés ganas de cruzarte con alguien.", "shuffleBody": "Tocá Shuffle, te matcheamos con otra persona por 5 minutos. Compartí qué estás escuchando, intercambiá una playlist, y volvé a lo tuyo. Como cruzarte con alguien en la vida real —pero mejor, porque la música ya está.", "shuffleBullet1": "Uno es el DJ de la sala.", "shuffleBullet2": "Emparejados por onda musical —aceptás o pasás, siempre vos decidís", "shuffleBullet3": "Moderación de video con IA mantiene la sala segura", "shuffleBullet4": "Perfiles verificados con IA, sin truchos", "vipTag": "Salas VIP", "vipTitle1": "Invitá a un amigo a una", "vipTitleGradient": "sesión privada.", "vipBody": "Tu amigo trabaja remoto en otra ciudad. Invitalo a una sala VIP —misma sala, misma música sincronizada, tu propio coworking del día.", "vipBullet1": "Privado 1:1", "vipBullet2": "Música sincronizada —los dos dan play al mismo tiempo", "vipBullet3": "Pausá la música si querés charlar."}, "mocks": {"diskoLive": "EN VIVO · 47", "diskoYou": "VOS", "diskoPlaylist": "Tu playlist · Deep Focus", "diskoSpotify": "Spotify · 4h 32m", "focusTag": "FOCUS MODE", "focusStreak": "02:14:36 racha", "focusHintPlay": "HOVER PARA PLAY", "focusHintPause": "CLICK PARA PAUSAR", "focusTitle": "Lluvia lo-fi & foco", "focusSubtitle": "Sonando con 284 personas · Sin video, sin chat", "ariaPlay": "Play", "ariaPause": "Pausar", "shuffleTag": "SHUFFLE", "shuffleSession": "Sesiones de 5 minutos", "shuffleRole1": "Diseñador · Berlín", "shuffleRole2": "PM · Milán", "shuffleIcebreakers": "Rompehielos", "shufflePrompt1": "¿Qué estás escuchando?", "shufflePrompt2": "Compartí tu playlist", "shufflePrompt3": "¿De dónde sos?", "shuffleTimerLabel": "Tiempo de Shuffle", "shuffleTimerLeft": "Quedan 3:42", "vipSameSong": "Misma canción, mismo momento", "vipSyncedTrack": "Sincronizado · \"Glimpse of Us\"", "vipPlayingFor": "Joji · Sonando para los dos"}, "useCases": {"eyebrow": "Encontrá tu vibe", "titleLine1": "Una vibe", "titleLine2": "para cada momento.", "workingTitle": "Trabajando", "workingDesc": "Lo-fi, ambient, clásica. Mantenete enfocado y sentite menos solo mientras laburás.", "workingMusic": "Lo-fi · Clásica · Ambient", "cookingTitle": "Cocinando", "cookingDesc": "Movido, percusivo, bailable. La cocina es chica —la playlist no.", "cookingMusic": "Pop · House · Afrobeats", "chillingTitle": "Relajando", "chillingDesc": "Atmosférico, texturado, suave. Para la tarde lenta y el domingo de lluvia.", "chillingMusic": "Indie · Jazz · Cinematic", "goingOutTitle": "Saliendo (sin salir)", "goingOutDesc": "Fuerte, social, listo. Calentá motores desde tu cocina, conocé a alguien al mismo BPM.", "goingOutMusic": "Reggaetón · EDM · Disco"}, "testimonials": {"eyebrow": "Gente en iDisko", "titleLine1": "El fix social", "titleLine2": "que nadie había hecho —", "titleGradient": "hasta ahora.", "q1": "No soy el mejor empezando conversaciones, y eso es lo que amé de iDisko. Disfrutás tu música, y si alguien te llama la atención, tenés el link perfecto para arrancar a hablar. Sin presión. Como un boliche, pero en casa.", "q1Name": "Alejo", "q1Role": "Buenos Aires · Argentina", "q2": "Usé iDisko mientras cocinaba, descubrí canciones nuevas y charlé con tres personas de distintos países. La música rompió el hielo y nos dio un punto de partida buenísimo.", "q2Name": "Sylvia", "q2Role": "Madrid · España", "q3": "Sin perfiles falsos, sin perder tiempo. Puedo filtrar por edad y género —simple y real. Reemplazó las apps de citas que ya había abandonado.", "q3Name": "Charlotte", "q3Role": "París · Francia"}, "pricing": {"title": "Gratis para empezar. Funciona en tu navegador ahora.", "body": "Sin tarjeta. Sin descarga. Cerrá la pestaña cuando quieras.", "cta": "Abrir iDisko →"}, "faq": {"eyebrow": "Preguntas", "title": "Respuestas directas.", "q1": "¿iDisko es gratis?", "a1": "Sí. La experiencia core es gratis —para siempre. iDisko Premium ($4.99/mes) saca anuncios, desbloquea salas VIP ilimitadas, estado custom y filtros avanzados. No lo necesitás para sentir la magia.", "q2": "¿Tengo que mostrar la cámara?", "a2": "Nunca. La mayoría no lo hace. La presencia de audio (una barrita de EQ que se mueve cuando suena tu música) alcanza para saber que hay alguien. Las cámaras están apagadas por defecto —podés quedarte invisible detrás de una foto de perfil.", "q3": "¿Es como una app de citas?", "a3": "No exactamente. iDisko es para conocer gente a través de lo que estás escuchando ahora —no deslizar fotos. Algunos hacen amigos, algunos consiguen una cita, algunos solo quieren compañía mientras cocinan. La app no empuja ninguna de esas.", "q4": "¿Qué fuentes de música soporta?", "a4": "YouTube y Jamendo (libre de derechos). Más integraciones en camino.", "q5": "¿Es privado?", "a5": "Las salas no se graban. Tu cara (si la activás) no se guarda. La moderación con IA mantiene afuera a falsos y creepys. Shuffle es opt-in —aceptás o pasás cada match.", "q6": "¿En qué se diferencia de Discord o de las apps de citas?", "a6": "Discord se construye alrededor de canales de voz y chat. Las apps de citas se construyen alrededor de fotos y bios. iDisko se construye alrededor de la canción que está sonando en tus auriculares ahora —y la gente escuchando algo parecido en todo el mundo. Podés estar acá horas sin escribir una palabra, o mandar una solicitud y terminar en un chat VIP. Vos decidís."}, "finalCta": {"onlineSuffix": "EN LÍNEA", "titleLine1": "Tu próxima canción", "titleGradient": "no tiene que ser un solo.", "body": "Abrila en una pestaña. Dale play a lo que ames. Hay un mundo entero escuchando con vos.", "cta": "Probalo ahora", "or": "— o —"}, "newsletter": {"eyebrow": "Newsletter", "title": "Enterate primero.", "body": "Dejá tu email. Te escribimos solo cuando hay algo bueno —betas, features grandes, novedades reales. Cero spam.", "placeholder": "tu@email.com", "cta": "Avisame", "sending": "Enviando…", "consent": "Al suscribirte aceptás nuestra", "consentLink": "Política de Privacidad", "successTitle": "Revisá tu casilla.", "successBody": "Te mandamos un link de confirmación. Tocalo y listo.", "alreadyConfirmed": "Ya estás suscripto. Gracias por estar temprano.", "invalidEmail": "Ese email no parece válido.", "networkError": "Algo salió mal. Probá de nuevo en un segundo."}, "footer": {"tagline": "La primera app social impulsada por la música. Conocé gente del mundo mientras escuchás tu música favorita —trabajando, cocinando, relajando, saliendo.", "colProduct": "Producto", "colCompany": "Empresa", "colLegal": "Legal", "diskoRooms": "Disko Rooms", "focusMode": "Focus Mode", "shuffle": "Shuffle", "vipRooms": "Salas VIP", "webApp": "Web app", "appStore": "App Store", "googlePlay": "Google Play", "contact": "Contacto", "privacy": "Privacidad", "terms": "Términos", "legal": "Aviso Legal", "cookies": "Cookies", "faqLink": "FAQ", "copyright": "© 2026 iDisko. La primera app social impulsada por la música."}}, "fr": {"nav": {"howItWorks": "Comment ça marche", "features": "Fonctions", "useCases": "Cas d'usage", "faq": "FAQ", "signIn": "Se connecter →", "tryItNow": "Essayer maintenant →"}, "hero": {"eyebrow": "Rencontre par la musique", "h1a": "Travaille seul,", "h1b": "ensemble.", "sub": "Une salle pleine de gens qui font leur truc — travailler, cuisiner, vibrer — chacun avec sa propre bande son. Lance la tienne. Croise quelqu'un si l'envie te prend.", "primary": "Essayer maintenant", "checkLine": "Sans inscription pour jeter un œil · Gratuit pour toujours · Profils vérifiés par IA", "orGetApp": "Ou télécharge l'app"}, "liveCount": {"suffix": "personnes sur iDisko"}, "store": {"appStoreCap": "Télécharger sur", "appStoreLabel": "App Store", "googlePlayCap": "Disponible sur", "googlePlayLabel": "Google Play"}, "social": {"ratingSuffix": "de 2 100+ amateurs de musique", "countriesPrefix": "Des gens écoutent dans", "countriesValue": "20+ pays", "liveSuffix": "en direct maintenant", "vipRoomsTooltip": "Total de salons VIP créés depuis le lancement", "vipRoomsSuffix": "salons VIP depuis le premier jour"}, "problem": {"eyebrow": "AVANT iDISKO", "h3a": "La musique seul, c'est bien.", "h3b": "La musique ensemble, c'est mieux.", "body": "Casque sur les oreilles, à scroller des apps pleines de faux profils et de small talk. Tu découvres un morceau que tu adores — et personne autour pour le partager. Le monde est plein de gens qui écoutent la même chose maintenant. Tu ne peux juste pas les voir.", "silent": "SILENCE"}, "solution": {"eyebrow": "AVEC iDISKO", "h3a": "Lance la musique.", "h3b": "Atterris dans un salon plein d'inconnus.", "body": "Ouvre iDisko. Vois de vraies personnes — qui travaillent, cuisinent, chillent — chacune avec sa bande son. Filtre par âge, sexe, pays. Envoie une demande. Entre dans un chat VIP si ça matche."}, "how": {"eyebrow": "Comment ça marche", "titleLine1": "Trois clics", "titleLine2": "pour un moment partagé.", "step": "ÉTAPE", "step1Title": "Lance la musique", "step1Body": "Ouvre iDisko, choisis ta musique. Spotify, YouTube, Jamendo — ta bande son, ton choix. Filtre qui tu veux voir par âge, sexe, pays.", "step2Title": "Vois le salon", "step2Body": "Une grille en direct de vraies personnes qui écoutent maintenant. Vérifiées par IA, pas de faux profils. Caméra optionnelle, vibe obligatoire.", "step3Title": "Envoie une demande", "step3Body": "Quelqu'un attire ton attention ? Envoie une demande. La personne accepte, tu entres dans un chat VIP — juste vous deux, même morceau, votre moment."}, "feat": {"eyebrow": "Ce qu'il y a dedans", "titlePrefix": "Quatre façons de", "titleGradient": "ne pas travailler seul.", "soon": "Bientôt", "diskoTag": "Disko Room", "diskoTitle1": "Vois des tuiles en direct de vraies personnes,", "diskoTitleGradient": "qui travaillent à côté de toi.", "diskoBody": "Rejoins iDisko et vois jusqu'à 50 personnes écouter en direct, chacune avec sa bande son. Ta musique reste à toi. La leur reste à eux. Si tu veux, envoie une demande VIP pour partager le moment.", "diskoBullet1": "La vidéo est optionnelle — la présence audio suffit", "diskoBullet2": "Apporte ta musique de YouTube ou de la bibliothèque iDisko", "diskoBullet3": "Pas d'appels synchronisés, pas de partage d'écran — pure écoute parallèle", "focusTag": "Focus Mode", "focusTitle1": "Des salons Lo-fi pour", "focusTitleGradient": "le travail profond.", "focusBody": "Pas de visages. Pas de chat. Juste toi, une playlist lo-fi partagée et un compteur de tous ceux qui font la même chose. La douce assurance que d'autres y sont aussi.", "focusBullet1": "Salons curated de lo-fi, ambient et classique", "focusBullet2": "Pomodoro intégré — optionnel, jamais lourd", "focusBullet3": "Streaks et stats pour ceux qui aiment ça", "shuffleTag": "Shuffle", "shuffleTitle1": "Un", "shuffleTitleGradient": "Shuffle rapide", "shuffleTitle2": ", ta pause café, quand tu veux croiser quelqu'un.", "shuffleBody": "Touche Shuffle, on te matche avec une autre personne pour 5 minutes. Partage ce que tu écoutes, échange une playlist, puis retour à ce que tu faisais. Comme croiser quelqu'un dans la vraie vie — sauf que la musique est déjà là.", "shuffleBullet1": "L'un est le DJ du salon.", "shuffleBullet2": "Apparié par vibe musicale — tu acceptes ou passes, toujours ton choix", "shuffleBullet3": "Modération vidéo par IA pour garder le salon safe", "shuffleBullet4": "Profils vérifiés par IA, pas de faux", "vipTag": "Salons VIP", "vipTitle1": "Invite un ami pour une", "vipTitleGradient": "session privée.", "vipBody": "Ton ami télétravaille dans une autre ville. Invite-le dans un salon VIP — même salon, même musique synchronisée, votre petit coworking d'un jour.", "vipBullet1": "Privé 1:1", "vipBullet2": "Musique synchronisée — vous lancez tous les deux en même temps", "vipBullet3": "Coupe la musique si tu veux discuter."}, "mocks": {"diskoLive": "EN DIRECT · 47", "diskoYou": "TOI", "diskoPlaylist": "Ta playlist · Deep Focus", "diskoSpotify": "Spotify · 4h 32m", "focusTag": "FOCUS MODE", "focusStreak": "02:14:36 série", "focusHintPlay": "HOVER POUR LANCER", "focusHintPause": "CLIC POUR PAUSE", "focusTitle": "Pluie lo-fi & focus", "focusSubtitle": "En écoute avec 284 autres · Pas de vidéo, pas de chat", "ariaPlay": "Lecture", "ariaPause": "Pause", "shuffleTag": "SHUFFLE", "shuffleSession": "Sessions de 5 minutes", "shuffleRole1": "Designer · Berlin", "shuffleRole2": "PM · Milan", "shuffleIcebreakers": "Brise-glace", "shufflePrompt1": "Tu écoutes quoi ?", "shufflePrompt2": "Partage ta playlist", "shufflePrompt3": "T'es d'où ?", "shuffleTimerLabel": "Temps Shuffle", "shuffleTimerLeft": "3:42 restants", "vipSameSong": "Même morceau, même moment", "vipSyncedTrack": "Synchronisé · \"Glimpse of Us\"", "vipPlayingFor": "Joji · En écoute pour vous deux"}, "useCases": {"eyebrow": "Trouve ton vibe", "titleLine1": "Un vibe", "titleLine2": "pour chaque moment.", "workingTitle": "Travailler", "workingDesc": "Lo-fi, ambient, classique. Reste concentré et sens-toi moins seul pendant que tu bosses.", "workingMusic": "Lo-fi · Classique · Ambient", "cookingTitle": "Cuisiner", "cookingDesc": "Rythmé, percussif, dansant. La cuisine est petite — la playlist non.", "cookingMusic": "Pop · House · Afrobeats", "chillingTitle": "Chiller", "chillingDesc": "Atmosphérique, texturé, easy. Pour l'après-midi lent et le dimanche pluvieux.", "chillingMusic": "Indie · Jazz · Cinématique", "goingOutTitle": "Sortir (chez soi)", "goingOutDesc": "Fort, social, prêt. Échauffe-toi depuis ta cuisine, rencontre quelqu'un au même BPM.", "goingOutMusic": "Reggaeton · EDM · Disco"}, "testimonials": {"eyebrow": "Des gens sur iDisko", "titleLine1": "Le fix social", "titleLine2": "que personne n'avait fait —", "titleGradient": "jusqu'à maintenant.", "q1": "Je ne suis pas le meilleur pour démarrer des conversations, et c'est ce que j'ai aimé dans iDisko. Tu profites de ta musique, et si quelqu'un attire ton attention, tu as le lien parfait pour démarrer une discussion. Sans pression. Comme une boîte de nuit, mais à la maison.", "q1Name": "Alejo", "q1Role": "Buenos Aires · Argentine", "q2": "J'ai utilisé iDisko en cuisinant, j'ai découvert de nouveaux morceaux, et j'ai chaté avec trois personnes de différents pays. La musique a brisé la glace et nous a donné un super point de départ.", "q2Name": "Sylvia", "q2Role": "Madrid · Espagne", "q3": "Pas de faux profils, pas de temps perdu. Je peux filtrer par âge et sexe — simple et réel. Ça a remplacé les apps de rencontre que j'avais abandonnées.", "q3Name": "Charlotte", "q3Role": "Paris · France"}, "pricing": {"title": "Gratuit pour commencer. Marche dans ton navigateur dès maintenant.", "body": "Pas de carte. Pas de téléchargement. Ferme l'onglet quand tu veux.", "cta": "Ouvrir iDisko →"}, "faq": {"eyebrow": "Questions", "title": "Réponses directes.", "q1": "iDisko est-il gratuit ?", "a1": "Oui. L'expérience de base est gratuite — pour toujours. iDisko Premium (4,99 €/mois) supprime les pubs, débloque les salons VIP illimités, le statut custom et les filtres avancés. Tu n'en as pas besoin pour la magie.", "q2": "Dois-je montrer ma caméra ?", "a2": "Jamais. La plupart ne le fait pas. La présence audio (une petite barre EQ qui bouge quand ta musique joue) suffit à savoir que quelqu'un est là. Les caméras sont coupées par défaut — tu peux rester invisible derrière juste une photo de profil.", "q3": "C'est comme une app de rencontre ?", "a3": "Pas exactement. iDisko, c'est rencontrer des gens à travers ce que tu écoutes maintenant — pas swiper sur des profils. Certains se font des amis, d'autres trouvent un date, d'autres veulent juste de la compagnie pendant qu'ils cuisinent. L'app ne pousse aucun de ces usages.", "q4": "Quelles sources musicales sont supportées ?", "a4": "YouTube et Jamendo (libre de droits). Plus d'intégrations à venir.", "q5": "C'est privé ?", "a5": "Les salons ne s'enregistrent pas. Ton visage (si tu l'actives) n'est pas stocké. La modération IA garde les faux et les creeps dehors. Shuffle est opt-in — tu acceptes ou passes chaque match.", "q6": "En quoi c'est différent de Discord ou des apps de rencontre ?", "a6": "Discord est construit autour des canaux vocaux et du chat. Les apps de rencontre sont construites autour des photos et bios. iDisko est construit autour de la chanson qui joue dans ton casque maintenant — et des gens qui écoutent quelque chose de similaire à travers le monde. Tu peux rester ici des heures sans taper un mot, ou envoyer une demande et finir dans un chat VIP. À toi de voir."}, "finalCta": {"onlineSuffix": "EN LIGNE", "titleLine1": "Ta prochaine chanson", "titleGradient": "n'a pas à être un solo.", "body": "Ouvre-la dans un onglet. Lance ce que tu aimes. Il y a un monde entier qui écoute avec toi.", "cta": "Essayer maintenant", "or": "— ou —"}, "newsletter": {"eyebrow": "Newsletter", "title": "Sois prévenu en premier.", "body": "Laisse ton email. On n'écrit que quand quelque chose de bon arrive — betas, vraies nouveautés, jamais de spam.", "placeholder": "toi@email.com", "cta": "Préviens-moi", "sending": "Envoi…", "consent": "En t'inscrivant tu acceptes notre", "consentLink": "Politique de confidentialité", "successTitle": "Regarde ta boîte.", "successBody": "On vient de t'envoyer un lien de confirmation. Clique dessus et c'est bon.", "alreadyConfirmed": "Tu es déjà inscrit·e. Merci d'être là tôt.", "invalidEmail": "Cet email n'a pas l'air valide.", "networkError": "Quelque chose a planté. Réessaie dans une seconde."}, "footer": {"tagline": "La première app sociale propulsée par la musique. Découvre des gens du monde entier en écoutant ta musique préférée — au travail, en cuisinant, en chillant, en sortant.", "colProduct": "Produit", "colCompany": "Entreprise", "colLegal": "Légal", "diskoRooms": "Disko Rooms", "focusMode": "Focus Mode", "shuffle": "Shuffle", "vipRooms": "Salons VIP", "webApp": "Web app", "appStore": "App Store", "googlePlay": "Google Play", "contact": "Contact", "privacy": "Confidentialité", "terms": "CGU", "legal": "Mentions Légales", "cookies": "Cookies", "faqLink": "FAQ", "copyright": "© 2026 iDisko. La première app sociale propulsée par la musique."}}, "it": {"nav": {"howItWorks": "Come funziona", "features": "Funzioni", "useCases": "Casi d'uso", "faq": "FAQ", "signIn": "Accedi →", "tryItNow": "Provalo ora →"}, "hero": {"eyebrow": "Incontrati con la musica", "h1a": "Lavora da solo,", "h1b": "insieme.", "sub": "Una stanza piena di persone che fanno la loro cosa — lavorare, cucinare, vibrare — ognuno con la propria colonna sonora. Premi play sulla tua. Incrocia qualcuno se ne hai voglia.", "primary": "Provalo ora", "checkLine": "Senza registrazione per dare un'occhiata · Gratis per sempre · Profili verificati con IA", "orGetApp": "O scarica l'app"}, "liveCount": {"suffix": "persone su iDisko"}, "store": {"appStoreCap": "Scarica su", "appStoreLabel": "App Store", "googlePlayCap": "Scaricalo su", "googlePlayLabel": "Google Play"}, "social": {"ratingSuffix": "da 2.100+ amanti della musica", "countriesPrefix": "Persone che ascoltano in", "countriesValue": "20+ paesi", "liveSuffix": "live ora", "vipRoomsTooltip": "Totale stanze VIP create dal lancio", "vipRoomsSuffix": "stanze VIP dal primo giorno"}, "problem": {"eyebrow": "PRIMA DI iDISKO", "h3a": "La musica da soli va bene.", "h3b": "La musica insieme è meglio.", "body": "Cuffie alle orecchie, scrolli app piene di profili falsi e small talk. Scopri una canzone che ami — e non c'è nessuno con cui condividerla. Il mondo è pieno di persone che ascoltano la stessa cosa adesso. Solo che non puoi vederle.", "silent": "SILENZIO"}, "solution": {"eyebrow": "CON iDISKO", "h3a": "Premi play.", "h3b": "Atterra in una stanza piena di sconosciuti.", "body": "Apri iDisko. Vedi persone vere — che lavorano, cucinano, si rilassano — ognuna con la propria colonna sonora. Filtra per età, genere, paese. Manda una richiesta. Entra in una chat VIP se scatta."}, "how": {"eyebrow": "Come funziona", "titleLine1": "Tre tap", "titleLine2": "per un momento condiviso.", "step": "PASSO", "step1Title": "Premi play", "step1Body": "Apri iDisko, scegli la tua musica. Spotify, YouTube, Jamendo — la tua colonna sonora, la tua scelta. Filtra chi vuoi vedere per età, genere, paese.", "step2Title": "Vedi la stanza", "step2Body": "Una griglia live di persone vere che ascoltano adesso. Verificate con IA, niente profili falsi. Camera opzionale, vibe obbligatoria.", "step3Title": "Manda una richiesta", "step3Body": "Qualcuno cattura la tua attenzione? Manda una richiesta. Accettano, entri in una chat VIP — solo voi due, stessa canzone, il vostro momento."}, "feat": {"eyebrow": "Cosa c'è dentro", "titlePrefix": "Quattro modi per", "titleGradient": "non lavorare da solo.", "soon": "Presto", "diskoTag": "Disko Room", "diskoTitle1": "Vedi tile live di persone vere,", "diskoTitleGradient": "che lavorano accanto a te.", "diskoBody": "Entra in iDisko e vedi fino a 50 persone ascoltare live, ognuna con la propria colonna sonora. La tua musica resta tua. La loro resta loro. Se vuoi, manda una richiesta VIP per condividere il momento.", "diskoBullet1": "Il video è opzionale — la presenza audio basta", "diskoBullet2": "Porta la musica da YouTube o dalla libreria iDisko", "diskoBullet3": "Niente chiamate sincronizzate, niente schermo condiviso — puro ascolto parallelo", "focusTag": "Focus Mode", "focusTitle1": "Stanze Lo-fi per il", "focusTitleGradient": "lavoro profondo.", "focusBody": "Niente facce. Niente chat. Solo tu, una playlist lo-fi condivisa e un contatore di tutti gli altri nella stanza che fanno lo stesso. La gentile rassicurazione che ci sono anche altri.", "focusBullet1": "Stanze curate di lo-fi, ambient e classica", "focusBullet2": "Pomodoro integrato — opzionale, mai assillante", "focusBullet3": "Streak e statistiche per chi le ama", "shuffleTag": "Shuffle", "shuffleTitle1": "Uno", "shuffleTitleGradient": "Shuffle veloce", "shuffleTitle2": ", la tua pausa caffè, quando vuoi incrociare qualcuno.", "shuffleBody": "Tocca Shuffle, ti matchiamo con un'altra persona per 5 minuti. Condividi cosa stai ascoltando, scambia una playlist, poi torni a quel che facevi. Come incrociare qualcuno nella vita reale — solo meglio, perché la musica c'è già.", "shuffleBullet1": "Uno è il DJ della stanza.", "shuffleBullet2": "Abbinati per vibe musicale — accetti o salti, sempre tu decidi", "shuffleBullet3": "La moderazione video con IA tiene la stanza sicura", "shuffleBullet4": "Profili verificati con IA, niente falsi", "vipTag": "Stanze VIP", "vipTitle1": "Invita un amico per una", "vipTitleGradient": "sessione privata.", "vipBody": "Il tuo amico lavora in remoto in un'altra città. Invitalo in una stanza VIP — stessa stanza, stessa musica sincronizzata, il vostro piccolo coworking del giorno.", "vipBullet1": "Privato 1:1", "vipBullet2": "Musica sincronizzata — premete play tutti e due nello stesso momento", "vipBullet3": "Ferma la musica se vuoi parlare."}, "mocks": {"diskoLive": "LIVE · 47", "diskoYou": "TU", "diskoPlaylist": "La tua playlist · Deep Focus", "diskoSpotify": "Spotify · 4h 32m", "focusTag": "FOCUS MODE", "focusStreak": "02:14:36 striscia", "focusHintPlay": "HOVER PER PARTIRE", "focusHintPause": "CLICK PER PAUSA", "focusTitle": "Pioggia lo-fi & focus", "focusSubtitle": "In ascolto con 284 altri · Niente video, niente chat", "ariaPlay": "Play", "ariaPause": "Pausa", "shuffleTag": "SHUFFLE", "shuffleSession": "Sessioni di 5 minuti", "shuffleRole1": "Designer · Berlino", "shuffleRole2": "PM · Milano", "shuffleIcebreakers": "Rompighiaccio", "shufflePrompt1": "Cosa stai ascoltando?", "shufflePrompt2": "Condividi la tua playlist", "shufflePrompt3": "Di dove sei?", "shuffleTimerLabel": "Tempo Shuffle", "shuffleTimerLeft": "Restano 3:42", "vipSameSong": "Stessa canzone, stesso momento", "vipSyncedTrack": "Sincronizzato · \"Glimpse of Us\"", "vipPlayingFor": "Joji · In riproduzione per entrambi"}, "useCases": {"eyebrow": "Trova la tua vibe", "titleLine1": "Una vibe", "titleLine2": "per ogni momento.", "workingTitle": "Lavorare", "workingDesc": "Lo-fi, ambient, classica. Resta concentrato e sentiti meno solo mentre lavori.", "workingMusic": "Lo-fi · Classica · Ambient", "cookingTitle": "Cucinare", "cookingDesc": "Ritmato, percussivo, ballabile. La cucina è piccola — la playlist no.", "cookingMusic": "Pop · House · Afrobeats", "chillingTitle": "Rilassarsi", "chillingDesc": "Atmosferico, texturato, easy. Per il pomeriggio lento e la domenica di pioggia.", "chillingMusic": "Indie · Jazz · Cinematica", "goingOutTitle": "Uscire (in casa)", "goingOutDesc": "Forte, sociale, pronto. Riscaldati dalla tua cucina, incontra qualcuno allo stesso BPM.", "goingOutMusic": "Reggaeton · EDM · Disco"}, "testimonials": {"eyebrow": "Persone su iDisko", "titleLine1": "Il fix sociale", "titleLine2": "che nessuno aveva fatto —", "titleGradient": "fino ad ora.", "q1": "Non sono il migliore a iniziare conversazioni, ed è quello che ho amato di iDisko. Ti godi la tua musica, e se qualcuno cattura il tuo interesse, hai il link perfetto per iniziare una conversazione. Senza pressione. Come una discoteca, ma a casa.", "q1Name": "Alejo", "q1Role": "Buenos Aires · Argentina", "q2": "Ho usato iDisko mentre cucinavo, ho scoperto canzoni nuove e ho chattato con tre persone di paesi diversi. La musica ha rotto il ghiaccio e ci ha dato un ottimo punto di partenza.", "q2Name": "Sylvia", "q2Role": "Madrid · Spagna", "q3": "Niente profili falsi, niente tempo perso. Posso filtrare per età e genere — semplice e reale. Ha sostituito le app di incontri che avevo abbandonato.", "q3Name": "Charlotte", "q3Role": "Parigi · Francia"}, "pricing": {"title": "Gratis per iniziare. Funziona nel tuo browser ora.", "body": "Niente carta. Niente download. Chiudi la scheda quando vuoi.", "cta": "Apri iDisko →"}, "faq": {"eyebrow": "Domande", "title": "Risposte dirette.", "q1": "iDisko è gratis?", "a1": "Sì. L'esperienza di base è gratis — per sempre. iDisko Premium (4,99 €/mese) toglie le pub, sblocca stanze VIP illimitate, status custom e filtri avanzati. Non ti serve per sentire la magia.", "q2": "Devo mostrare la camera?", "a2": "Mai. La maggior parte non lo fa. La presenza audio (una piccola barra EQ che si muove quando suona la tua musica) basta a sapere che c'è qualcuno. Le camere sono spente di default — puoi restare invisibile dietro solo una foto profilo.", "q3": "È come un'app di incontri?", "a3": "Non esattamente. iDisko serve a conoscere persone attraverso quello che stai ascoltando ora — non a swipare su profili. Alcuni fanno amicizia, altri trovano un appuntamento, altri vogliono solo compagnia mentre cucinano. L'app non spinge nessuno di questi usi.", "q4": "Quali fonti musicali supporta?", "a4": "YouTube e Jamendo (royalty-free). Più integrazioni in arrivo.", "q5": "È privato?", "a5": "Le stanze non si registrano. Il tuo viso (se lo attivi) non viene memorizzato. La moderazione IA tiene fuori falsi e creep. Shuffle è opt-in — accetti o salti ogni match.", "q6": "In cosa è diverso da Discord o dalle app di incontri?", "a6": "Discord è costruito attorno ai canali vocali e alla chat. Le app di incontri sono costruite attorno a foto e bio. iDisko è costruito attorno alla canzone che suona nelle tue cuffie ora — e alle persone che ascoltano qualcosa di simile in tutto il mondo. Puoi restare qui per ore senza scrivere una parola, o mandare una richiesta e finire in una chat VIP. Decidi tu."}, "finalCta": {"onlineSuffix": "ONLINE", "titleLine1": "La tua prossima canzone", "titleGradient": "non deve essere un assolo.", "body": "Aprila in una scheda. Premi play su quello che ami. C'è un mondo intero in ascolto con te.", "cta": "Provalo ora", "or": "— oppure —"}, "newsletter": {"eyebrow": "Newsletter", "title": "Sappilo per primo.", "body": "Lascia la tua email. Scriviamo solo quando c'è qualcosa di buono — beta, novità vere, mai spam.", "placeholder": "tu@email.com", "cta": "Avvisami", "sending": "Invio…", "consent": "Iscrivendoti accetti la nostra", "consentLink": "Privacy Policy", "successTitle": "Controlla la casella.", "successBody": "Ti abbiamo mandato un link di conferma. Tappalo e sei dentro.", "alreadyConfirmed": "Sei già iscritto/a. Grazie di esserci presto.", "invalidEmail": "Questa email non sembra valida.", "networkError": "Qualcosa è andato storto. Riprova tra un attimo."}, "footer": {"tagline": "La prima app sociale alimentata dalla musica. Scopri persone in tutto il mondo mentre ascolti la tua musica preferita — al lavoro, cucinando, rilassandoti, uscendo.", "colProduct": "Prodotto", "colCompany": "Azienda", "colLegal": "Legale", "diskoRooms": "Disko Rooms", "focusMode": "Focus Mode", "shuffle": "Shuffle", "vipRooms": "Stanze VIP", "webApp": "Web app", "appStore": "App Store", "googlePlay": "Google Play", "contact": "Contatto", "privacy": "Privacy", "terms": "Termini", "legal": "Note Legali", "cookies": "Cookie", "faqLink": "FAQ", "copyright": "© 2026 iDisko. La prima app sociale alimentata dalla musica."}}, "pt": {"nav": {"howItWorks": "Como funciona", "features": "Recursos", "useCases": "Casos de uso", "faq": "FAQ", "signIn": "Entrar →", "tryItNow": "Experimente agora →"}, "hero": {"eyebrow": "Encontre-se pela música", "h1a": "Trabalhe sozinho,", "h1b": "junto.", "sub": "Uma sala cheia de gente fazendo a sua coisa — trabalhando, cozinhando, vibrando — cada um com sua trilha sonora. Dá play na sua. Esbarra em alguém se der vontade.", "primary": "Experimente agora", "checkLine": "Sem cadastro para dar uma olhada · Grátis pra sempre · Perfis verificados com IA", "orGetApp": "Ou baixe o app"}, "liveCount": {"suffix": "pessoas no iDisko"}, "store": {"appStoreCap": "Baixe na", "appStoreLabel": "App Store", "googlePlayCap": "Disponível no", "googlePlayLabel": "Google Play"}, "social": {"ratingSuffix": "de 2.100+ amantes da música", "countriesPrefix": "Pessoas ouvindo em", "countriesValue": "20+ países", "liveSuffix": "ao vivo agora", "vipRoomsTooltip": "Total de salas VIP criadas desde o lançamento", "vipRoomsSuffix": "salas VIP desde o primeiro dia"}, "problem": {"eyebrow": "ANTES DO iDISKO", "h3a": "Música sozinho é bom.", "h3b": "Música junto é melhor.", "body": "Fones nos ouvidos, rolando apps cheios de perfis falsos e papo furado. Você descobre uma música que ama — e não tem ninguém pra dividir. O mundo tá cheio de gente ouvindo a mesma coisa agora. Você só não consegue ver.", "silent": "SILÊNCIO"}, "solution": {"eyebrow": "COM iDISKO", "h3a": "Dá play.", "h3b": "Cai numa sala cheia de desconhecidos.", "body": "Abre o iDisko. Vê gente real — trabalhando, cozinhando, relaxando — cada um com sua trilha. Filtra por idade, gênero, país. Manda um pedido. Entra num chat VIP se rolar."}, "how": {"eyebrow": "Como funciona", "titleLine1": "Três toques", "titleLine2": "pra um momento compartilhado.", "step": "PASSO", "step1Title": "Dá play", "step1Body": "Abre o iDisko, escolhe a sua música. Spotify, YouTube, Jamendo — sua trilha, sua escolha. Filtra quem você quer ver por idade, gênero, país.", "step2Title": "Vê a sala", "step2Body": "Uma grade ao vivo de gente real ouvindo agora. Verificada com IA, sem perfis falsos. Câmera opcional, vibe obrigatória.", "step3Title": "Manda um pedido", "step3Body": "Alguém te chamou a atenção? Manda um pedido. Aceitam, você entra num chat VIP — só vocês dois, mesma música, seu momento."}, "feat": {"eyebrow": "O que tem dentro", "titlePrefix": "Quatro jeitos de", "titleGradient": "não trabalhar sozinho.", "soon": "Em breve", "diskoTag": "Disko Room", "diskoTitle1": "Vê tiles ao vivo de gente real,", "diskoTitleGradient": "trabalhando do seu lado.", "diskoBody": "Entra no iDisko e vê até 50 pessoas ouvindo ao vivo, cada uma com sua trilha. Sua música continua sua. A deles continua deles. Se quiser, manda um pedido VIP pra dividir o momento.", "diskoBullet1": "Vídeo é opcional — a presença de áudio basta", "diskoBullet2": "Traz música do YouTube ou da biblioteca iDisko", "diskoBullet3": "Sem chamadas sincronizadas, sem compartilhar tela — escuta paralela pura", "focusTag": "Focus Mode", "focusTitle1": "Salas Lo-fi pra", "focusTitleGradient": "trabalho profundo.", "focusBody": "Sem rostos. Sem chat. Só você, uma playlist lo-fi compartilhada e um contador de todo mundo na sala fazendo o mesmo. A calma de saber que tem outros nessa também.", "focusBullet1": "Salas curadas de lo-fi, ambient e clássica", "focusBullet2": "Pomodoro integrado — opcional, nunca chato", "focusBullet3": "Sequências e estatísticas pra quem curte", "shuffleTag": "Shuffle", "shuffleTitle1": "Um", "shuffleTitleGradient": "Shuffle rápido", "shuffleTitle2": ", sua pausa pro café, quando você quer esbarrar com alguém.", "shuffleBody": "Toca Shuffle, te matcheamos com outra pessoa por 5 minutos. Compartilha o que tá ouvindo, troca uma playlist, depois volta pro que tava fazendo. Como esbarrar com alguém na vida real — só que melhor, porque a música já tá rolando.", "shuffleBullet1": "Um é o DJ da sala.", "shuffleBullet2": "Pareados pela vibe musical — você aceita ou pula, sempre você decide", "shuffleBullet3": "A moderação de vídeo com IA mantém a sala segura", "shuffleBullet4": "Perfis verificados com IA, sem fakes", "vipTag": "Salas VIP", "vipTitle1": "Convida um amigo pra uma", "vipTitleGradient": "sessão privada.", "vipBody": "Seu amigo trabalha remoto em outra cidade. Convida ele pra uma sala VIP — mesma sala, mesma música sincronizada, seu coworking particular do dia.", "vipBullet1": "Privado 1:1", "vipBullet2": "Música sincronizada — vocês dois dão play ao mesmo tempo", "vipBullet3": "Para a música se quiser conversar."}, "mocks": {"diskoLive": "AO VIVO · 47", "diskoYou": "VOCÊ", "diskoPlaylist": "Sua playlist · Deep Focus", "diskoSpotify": "Spotify · 4h 32m", "focusTag": "FOCUS MODE", "focusStreak": "02:14:36 sequência", "focusHintPlay": "HOVER PRA TOCAR", "focusHintPause": "CLIQUE PRA PAUSAR", "focusTitle": "Chuva lo-fi & foco", "focusSubtitle": "Tocando com outras 284 pessoas · Sem vídeo, sem chat", "ariaPlay": "Play", "ariaPause": "Pausar", "shuffleTag": "SHUFFLE", "shuffleSession": "Sessões de 5 minutos", "shuffleRole1": "Designer · Berlim", "shuffleRole2": "PM · Milão", "shuffleIcebreakers": "Quebra-gelos", "shufflePrompt1": "O que você tá ouvindo?", "shufflePrompt2": "Compartilha sua playlist", "shufflePrompt3": "De onde você é?", "shuffleTimerLabel": "Tempo de Shuffle", "shuffleTimerLeft": "Faltam 3:42", "vipSameSong": "Mesma música, mesmo momento", "vipSyncedTrack": "Sincronizado · \"Glimpse of Us\"", "vipPlayingFor": "Joji · Tocando pra vocês dois"}, "useCases": {"eyebrow": "Acha sua vibe", "titleLine1": "Uma vibe", "titleLine2": "pra cada momento.", "workingTitle": "Trabalhando", "workingDesc": "Lo-fi, ambient, clássica. Mantém o foco e se sente menos sozinho enquanto rala.", "workingMusic": "Lo-fi · Clássica · Ambient", "cookingTitle": "Cozinhando", "cookingDesc": "Animado, percussivo, dançante. A cozinha é pequena — a playlist não.", "cookingMusic": "Pop · House · Afrobeats", "chillingTitle": "Relaxando", "chillingDesc": "Atmosférico, texturado, easy. Pra tarde devagar e o domingo de chuva.", "chillingMusic": "Indie · Jazz · Cinematográfica", "goingOutTitle": "Saindo (em casa)", "goingOutDesc": "Alto, social, pronto. Esquenta da sua cozinha, conhece alguém no mesmo BPM.", "goingOutMusic": "Reggaeton · EDM · Disco"}, "testimonials": {"eyebrow": "Pessoas no iDisko", "titleLine1": "O fix social", "titleLine2": "que ninguém tinha feito —", "titleGradient": "até agora.", "q1": "Não sou o melhor pra começar conversa, e foi isso que amei no iDisko. Você curte sua música, e se alguém te chama atenção, você tem o gancho perfeito pra começar a conversar. Sem pressão. Como uma balada, mas em casa.", "q1Name": "Alejo", "q1Role": "Buenos Aires · Argentina", "q2": "Usei o iDisko enquanto cozinhava, descobri músicas novas e bati papo com três pessoas de países diferentes. A música quebrou o gelo e nos deu um ótimo ponto de partida.", "q2Name": "Sylvia", "q2Role": "Madri · Espanha", "q3": "Sem perfis falsos, sem perder tempo. Consigo filtrar por idade e gênero — simples e real. Substituiu os apps de namoro que eu tinha desistido.", "q3Name": "Charlotte", "q3Role": "Paris · França"}, "pricing": {"title": "Grátis pra começar. Funciona no seu navegador agora.", "body": "Sem cartão. Sem download. Fecha a aba quando quiser.", "cta": "Abrir iDisko →"}, "faq": {"eyebrow": "Perguntas", "title": "Respostas diretas.", "q1": "O iDisko é grátis?", "a1": "Sim. A experiência principal é grátis — pra sempre. iDisko Premium (R$ 24,90/mês) tira anúncios, libera salas VIP ilimitadas, status personalizado e filtros avançados. Você não precisa pra sentir a mágica.", "q2": "Tenho que mostrar a câmera?", "a2": "Nunca. A maioria não mostra. A presença de áudio (uma barrinha de EQ que se mexe quando sua música tá tocando) basta pra saber que tem alguém ali. As câmeras ficam desligadas por padrão — você pode ficar invisível atrás só de uma foto de perfil.", "q3": "É tipo um app de namoro?", "a3": "Não exatamente. iDisko é sobre conhecer pessoas pelo que você tá ouvindo agora — não swipar perfis. Alguns fazem amizade, outros marcam um encontro, outros só querem companhia enquanto cozinham. O app não empurra nenhum desses usos.", "q4": "Quais fontes de música suporta?", "a4": "YouTube e Jamendo (livre de royalties). Mais integrações vindo.", "q5": "É privado?", "a5": "As salas não são gravadas. Seu rosto (se você ligar) não é armazenado. A moderação com IA mantém fakes e esquisitões fora. Shuffle é opt-in — você aceita ou pula cada match.", "q6": "Como é diferente do Discord ou de apps de namoro?", "a6": "Discord é construído em volta de canais de voz e chat. Apps de namoro são construídos em volta de fotos e bios. iDisko é construído em volta da música que tá tocando no seu fone agora — e das pessoas ouvindo algo parecido pelo mundo. Você pode ficar aqui horas sem digitar uma palavra, ou mandar um pedido e cair num chat VIP. Você decide."}, "finalCta": {"onlineSuffix": "ONLINE", "titleLine1": "Sua próxima música", "titleGradient": "não precisa ser um solo.", "body": "Abre numa aba do navegador. Dá play no que você ama. Tem um mundo inteiro ouvindo com você.", "cta": "Experimente agora", "or": "— ou —"}, "newsletter": {"eyebrow": "Newsletter", "title": "Saiba antes de todo mundo.", "body": "Deixa seu email. Só escrevemos quando rola algo bom — betas, novidades de verdade, zero spam.", "placeholder": "voce@email.com", "cta": "Me avisa", "sending": "Enviando…", "consent": "Ao se inscrever você aceita nossa", "consentLink": "Política de Privacidade", "successTitle": "Olha sua caixa.", "successBody": "Acabamos de mandar um link de confirmação. Toca nele e tá feito.", "alreadyConfirmed": "Você já está inscrito. Valeu por estar cedo.", "invalidEmail": "Esse email não parece válido.", "networkError": "Algo deu errado. Tenta de novo num segundo."}, "footer": {"tagline": "O primeiro app social movido a música. Descubra pessoas pelo mundo enquanto ouve sua música favorita — trabalhando, cozinhando, relaxando, saindo.", "colProduct": "Produto", "colCompany": "Empresa", "colLegal": "Legal", "diskoRooms": "Disko Rooms", "focusMode": "Focus Mode", "shuffle": "Shuffle", "vipRooms": "Salas VIP", "webApp": "Web app", "appStore": "App Store", "googlePlay": "Google Play", "contact": "Contato", "privacy": "Privacidade", "terms": "Termos", "legal": "Aviso Legal", "cookies": "Cookies", "faqLink": "FAQ", "copyright": "© 2026 iDisko. O primeiro app social movido a música."}}};
+window.SUPPORTED_LANGS = ["es","en","fr","it","pt"];
+window.LOCALES = { es:"es-ES", en:"en-US", fr:"fr-FR", it:"it-IT", pt:"pt-BR" };
+(function detectLang(){
+  let lang = null;
+  try { lang = localStorage.getItem("idisko_lang"); } catch(e) {}
+  if (!lang || window.SUPPORTED_LANGS.indexOf(lang) === -1) {
+    const browser = (navigator.language || "en").slice(0,2).toLowerCase();
+    lang = window.SUPPORTED_LANGS.indexOf(browser) !== -1 ? browser : "en";
+  }
+  window.LANG = lang;
+  window.LANG_LOCALE = window.LOCALES[lang] || "en-US";
+  document.documentElement.lang = lang;
+})();
 </script>
 
 <script type="text/babel">
@@ -385,6 +494,7 @@ function EqBars({ color = "#22FFBD" }) {
 // Live user count — synced with backend (e.g. Supabase) when available.
 // TODO(diego): replace fetch URL with real Supabase REST endpoint.
 function LiveUserCount() {
+  const { t } = window.useT();
   const { useState, useEffect, useRef } = React;
   const [n, setN] = useState(8456); // last known seed; replaced by real fetch within ~1s
   const realRef = useRef(8456);
@@ -420,10 +530,11 @@ function LiveUserCount() {
     return () => { mounted = false; clearInterval(realInterval); clearInterval(tickInterval); };
   }, []);
 
-  return <span>{n.toLocaleString("en-US")} people on iDisko</span>;
+  return <span>{n.toLocaleString(window.LANG_LOCALE || "en-US")} {t('liveCount.suffix')}</span>;
 }
 
 function Header() {
+  const { t, lang, setLang } = window.useT();
   return (
     <header style={{position:"sticky",top:0,zIndex:50,padding:"14px 0",background:"rgba(0,2,20,0.72)",backdropFilter:"blur(14px)",borderBottom:"1px solid rgba(135,55,220,0.12)"}}>
       <div className="container" style={{display:"flex",alignItems:"center",gap:24}}>
@@ -432,18 +543,32 @@ function Header() {
           <span style={{fontFamily:"ClashDisplay",fontWeight:700,fontSize:18,letterSpacing:"-0.02em",color:"#fff"}}>iDisko</span>
         </a>
         <nav className="hide-mobile" style={{display:"flex",gap:28,marginLeft:40,fontSize:14,color:"#b5b3bd",fontWeight:500}}>
-          <a href="#how" style={{textDecoration:"none"}}>How it works</a>
-          <a href="#features" style={{textDecoration:"none"}}>Features</a>
-          <a href="#usecases" style={{textDecoration:"none"}}>Use cases</a>
-          <a href="#faq" style={{textDecoration:"none"}}>FAQ</a>
+          <a href="#how" style={{textDecoration:"none"}}>{t('nav.howItWorks')}</a>
+          <a href="#features" style={{textDecoration:"none"}}>{t('nav.features')}</a>
+          <a href="#usecases" style={{textDecoration:"none"}}>{t('nav.useCases')}</a>
+          <a href="#faq" style={{textDecoration:"none"}}>{t('nav.faq')}</a>
         </nav>
         <div style={{marginLeft:"auto",display:"flex",alignItems:"center",gap:12}}>
-          <a href="https://app.idisko.com" className="hide-mobile" data-event="nav_app_link" style={{fontSize:13,color:"#b5b3bd",textDecoration:"none"}}>Sign in →</a>
+          <div className="hide-mobile" style={{display:"inline-flex",gap:2,padding:3,background:"rgba(255,255,255,0.04)",border:"1px solid #1a1632",borderRadius:999}}>
+            {["es","en","fr","it","pt"].map(L => (
+              <button key={L} onClick={()=>setLang(L)}
+                style={{
+                  padding:"5px 9px",borderRadius:999,border:"none",cursor:"pointer",
+                  fontFamily:"ClashDisplay",fontWeight:600,fontSize:10,letterSpacing:"0.08em",
+                  textTransform:"uppercase",
+                  background: lang===L ? "linear-gradient(128deg,#DF07FF,#8737DC)" : "transparent",
+                  color: lang===L ? "#fff" : "#b5b3bd",
+                  boxShadow: lang===L ? "0 2px 12px rgba(223,7,255,0.35)" : "none",
+                  transition: "all 150ms"
+                }}>{L}</button>
+            ))}
+          </div>
+          <a href="https://app.idisko.com" className="hide-mobile" data-event="nav_app_link" style={{fontSize:13,color:"#b5b3bd",textDecoration:"none"}}>{t('nav.signIn')}</a>
           <a href="https://app.idisko.com"
              data-event="nav_try_now"
              data-meta="Purchase" data-tiktok="ClickButton" data-posthog="cta_click_nav"
              style={{padding:"10px 18px",borderRadius:999,background:"linear-gradient(128deg,#DF07FF,#8737DC)",color:"#fff",fontWeight:600,fontSize:13,letterSpacing:"0.04em",textDecoration:"none",boxShadow:"0 4px 30px rgba(223,7,255,0.25)"}}>
-            Try it now →
+            {t('nav.tryItNow')}
           </a>
         </div>
       </div>
@@ -452,6 +577,7 @@ function Header() {
 }
 
 function StoreButtons({ compact = false }) {
+  const { t } = window.useT();
   const pad = compact ? "10px 16px" : "12px 20px";
   const mainFs = compact ? 14 : 15;
   return (
@@ -460,16 +586,16 @@ function StoreButtons({ compact = false }) {
          style={{padding:pad,borderRadius:12,background:"#000",color:"#fff",textDecoration:"none",display:"inline-flex",alignItems:"center",gap:10,border:"1px solid #2d2933",transition:"all 150ms"}}>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
         <div style={{textAlign:"left",lineHeight:1.1}}>
-          <div style={{fontSize:9,color:"#b5b3bd",letterSpacing:".04em"}}>Download on the</div>
-          <div style={{fontSize:mainFs,fontWeight:600}}>App Store</div>
+          <div style={{fontSize:9,color:"#b5b3bd",letterSpacing:".04em"}}>{t('store.appStoreCap')}</div>
+          <div style={{fontSize:mainFs,fontWeight:600}}>{t('store.appStoreLabel')}</div>
         </div>
       </a>
       <a href="https://play.google.com/store/apps/details?id=com.idisko.app&pcampaignid=web_share" data-event="play_store_click" data-meta="Lead" data-posthog="cta_click_playstore"
          style={{padding:pad,borderRadius:12,background:"#000",color:"#fff",textDecoration:"none",display:"inline-flex",alignItems:"center",gap:10,border:"1px solid #2d2933"}}>
         <svg width="20" height="22" viewBox="0 0 512 512"><path fill="#22FFBD" d="M48 59.4c0-16 8.7-30 21.8-37.5L322 256 69.8 490.2C56.7 482.7 48 468.6 48 452.6V59.4z"/><path fill="#DF07FF" d="M379.8 233.7l-57.8 22.3 57.8 22.3 66.9-38.3c14.7-8.4 14.7-30.2 0-38.6l-66.9-38.3v70.6z"/><path fill="#8737DC" d="M322 256L69.8 21.9c4.5-2.5 9.7-3.9 15.1-3.9 5.6 0 11 1.5 15.7 4.1L379.8 186.1 322 256z"/><path fill="#fff" d="M322 256l57.8 69.9L100.6 490c-4.7 2.6-10.1 4.1-15.7 4.1-5.4 0-10.6-1.4-15.1-3.9L322 256z"/></svg>
         <div style={{textAlign:"left",lineHeight:1.1}}>
-          <div style={{fontSize:9,color:"#b5b3bd",letterSpacing:".04em"}}>Get it on</div>
-          <div style={{fontSize:mainFs,fontWeight:600}}>Google Play</div>
+          <div style={{fontSize:9,color:"#b5b3bd",letterSpacing:".04em"}}>{t('store.googlePlayCap')}</div>
+          <div style={{fontSize:mainFs,fontWeight:600}}>{t('store.googlePlayLabel')}</div>
         </div>
       </a>
     </div>
@@ -600,6 +726,7 @@ function RecordVisual({ showAvatars }) {
 }
 
 function Hero({ tweaks }) {
+  const { t } = window.useT();
   const c = COPY[tweaks.copyVariant] || COPY.poetic;
   return (
     <section style={{position:"relative",padding:"60px 0 100px",overflow:"hidden"}}>
@@ -613,14 +740,14 @@ function Hero({ tweaks }) {
           <div>
             <div style={{display:"inline-flex",alignItems:"center",gap:8,padding:"6px 12px",borderRadius:999,background:"rgba(34,255,189,.08)",border:"1px solid rgba(34,255,189,.25)",fontSize:11,fontWeight:600,letterSpacing:".12em",textTransform:"uppercase",color:"#22FFBD",marginBottom:22}}>
               <span className="live-dot" style={{width:6,height:6,borderRadius:"50%",background:"#22FFBD"}}/>
-              {c.eyebrow}
+              {t('hero.eyebrow')}
             </div>
             <h1 className="hero-title" style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:78,lineHeight:0.98,letterSpacing:"-0.03em",margin:0,textWrap:"balance"}}>
-              {c.h1a}<br/>
-              <span style={{background:"linear-gradient(128deg,#DF07FF 10%,#8737DC 70%)",WebkitBackgroundClip:"text",color:"transparent"}}>{c.h1b}</span>
+              {t('hero.h1a')}<br/>
+              <span style={{background:"linear-gradient(128deg,#DF07FF 10%,#8737DC 70%)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('hero.h1b')}</span>
             </h1>
             <p style={{fontSize:19,color:"#b5b3bd",lineHeight:1.5,marginTop:24,maxWidth:520,textWrap:"pretty"}}>
-              {c.sub}
+              {t('hero.sub')}
             </p>
 
             {/* PRIMARY CTA */}
@@ -645,18 +772,18 @@ function Hero({ tweaks }) {
                 <span style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:40,height:40,borderRadius:"50%",background:"rgba(255,255,255,.18)"}}>
                   <i data-lucide="play" style={{width:18,height:18}} fill="#fff"/>
                 </span>
-                {c.primary}
+                {t('hero.primary')}
                 <i data-lucide="arrow-right" style={{width:22,height:22,opacity:.9}}/>
               </a>
               <div style={{marginTop:12,fontSize:12,color:"#666672",display:"flex",alignItems:"center",gap:8}}>
                 <i data-lucide="check" style={{width:12,height:12,color:"#22FFBD"}}/>
-                No sign-up to peek · Free forever · AI-verified profiles
+                {t('hero.checkLine')}
               </div>
             </div>
 
             {/* SECONDARY — app stores */}
             <div style={{marginTop:32}}>
-              <div style={{fontSize:12,color:"#666672",marginBottom:10,letterSpacing:".08em",textTransform:"uppercase",fontWeight:500}}>Or get the app</div>
+              <div style={{fontSize:12,color:"#666672",marginBottom:10,letterSpacing:".08em",textTransform:"uppercase",fontWeight:500}}>{t('hero.orGetApp')}</div>
               <StoreButtons compact/>
             </div>
           </div>
@@ -677,6 +804,7 @@ Object.assign(window, { Header, Hero, StoreButtons, EqBars, PEOPLE });
 // Social proof + Problem/Solution + How it works
 
 function SocialProof({ tweaks }) {
+  const { t } = window.useT();
   const avatars = PEOPLE.slice(0, 5);
   return (
     <section style={{padding:"32px 0 56px",borderBottom:"1px solid rgba(255,255,255,0.04)"}}>
@@ -692,24 +820,24 @@ function SocialProof({ tweaks }) {
               <div style={{display:"flex",gap:2,color:"#22FFBD"}}>
                 {[...Array(5)].map((_,j)=><i key={j} data-lucide="star" style={{width:13,height:13}} fill="currentColor"/>)}
               </div>
-              <div style={{fontSize:12,color:"#b5b3bd",marginTop:2}}>4.8 from 2,100+ music lovers</div>
+              <div style={{fontSize:12,color:"#b5b3bd",marginTop:2}}>4.8 {t('social.ratingSuffix')}</div>
             </div>
           </div>
         )}
         <div style={{height:28,width:1,background:"#2d2933"}} className="hide-mobile"/>
         <div style={{fontSize:13,color:"#b5b3bd",letterSpacing:".04em",display:"flex",alignItems:"center",gap:8}}>
           <i data-lucide="globe" style={{width:15,height:15,color:"#DF07FF"}}/>
-          People listening in <span style={{color:"#fff",fontWeight:600}}>20+ countries</span>
+{t('social.countriesPrefix')} <span style={{color:"#fff",fontWeight:600}}>{t('social.countriesValue')}</span>
         </div>
         <div style={{height:28,width:1,background:"#2d2933"}} className="hide-mobile"/>
         <div style={{fontSize:13,color:"#b5b3bd",letterSpacing:".04em",display:"flex",alignItems:"center",gap:8}}>
           <EqBars color="#22FFBD"/>
-          <span style={{color:"#fff",fontWeight:600}}>2,847</span> live right now
+<span style={{color:"#fff",fontWeight:600}}>2,847</span> {t('social.liveSuffix')}
         </div>
         <div style={{height:28,width:1,background:"#2d2933"}} className="hide-mobile"/>
-        <div title="Total VIP rooms created since launch" style={{fontSize:13,color:"#b5b3bd",letterSpacing:".04em",display:"flex",alignItems:"center",gap:8}}>
+        <div title={t('social.vipRoomsTooltip')} style={{fontSize:13,color:"#b5b3bd",letterSpacing:".04em",display:"flex",alignItems:"center",gap:8}}>
           <i data-lucide="crown" style={{width:15,height:15,color:"#DF07FF"}}/>
-          <span style={{color:"#fff",fontWeight:600}}>184,320</span> VIP rooms since day one
+<span style={{color:"#fff",fontWeight:600}}>184,320</span> {t('social.vipRoomsSuffix')}
         </div>
       </div>
     </section>
@@ -717,6 +845,7 @@ function SocialProof({ tweaks }) {
 }
 
 function ProblemSolution() {
+  const { t } = window.useT();
   return (
     <section className="section-pad" style={{padding:"64px 0"}}>
       <div className="container">
@@ -725,13 +854,13 @@ function ProblemSolution() {
           <div style={{position:"relative",padding:"36px 32px",borderRadius:24,background:"linear-gradient(180deg,#09091b 0%, #0a0a1e 100%)",border:"1px solid #1a1632",overflow:"hidden"}}>
             <div style={{position:"absolute",inset:0,background:"url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><filter id=%22n%22><feTurbulence baseFrequency=%22.6%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%22.5%22/></svg>')",opacity:.08,pointerEvents:"none"}}/>
             <div style={{position:"relative"}}>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#666672",marginBottom:16}}>BEFORE iDISKO</div>
+              <div style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#666672",marginBottom:16}}>{t('problem.eyebrow')}</div>
               <h3 style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:36,lineHeight:1.02,letterSpacing:"-0.02em",margin:0,color:"#e0e0e0"}}>
-                Music alone is good.<br/>
-                <span style={{color:"#666672"}}>Music together is better.</span>
+                {t('problem.h3a')}<br/>
+                <span style={{color:"#666672"}}>{t('problem.h3b')}</span>
               </h3>
               <p style={{fontSize:15,color:"#9e9e9e",lineHeight:1.55,marginTop:14,maxWidth:440}}>
-                Headphones on, scrolling apps full of fake profiles and small talk. You discover a song you love — and there's no one around to share it with. The world is full of people listening to the same thing right now. You just can't see them.
+                {t('problem.body')}
               </p>
               {/* muted waveform */}
               <div style={{marginTop:22,position:"relative",height:96,borderRadius:16,background:"#000214",overflow:"hidden",border:"1px solid #1a1632",display:"flex",alignItems:"center",padding:"0 20px",gap:14}}>
@@ -741,7 +870,7 @@ function ProblemSolution() {
                 <svg width="100%" height="28" viewBox="0 0 400 28" preserveAspectRatio="none" style={{flex:1}}>
                   {[...Array(50)].map((_,i)=>(<rect key={i} x={i*8} y={13} width={3} height={2} rx={1} fill="#2d2933"/>))}
                 </svg>
-                <div style={{fontSize:11,color:"#666672",letterSpacing:".14em",flexShrink:0,fontWeight:600}}>SILENT</div>
+                <div style={{fontSize:11,color:"#666672",letterSpacing:".14em",flexShrink:0,fontWeight:600}}>{t('problem.silent')}</div>
               </div>
             </div>
           </div>
@@ -751,14 +880,14 @@ function ProblemSolution() {
             <div style={{position:"relative"}}>
               <div style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:16,display:"inline-flex",alignItems:"center",gap:6}}>
                 <span className="live-dot" style={{width:5,height:5,borderRadius:"50%",background:"#22FFBD"}}/>
-                WITH iDISKO
+                {t('solution.eyebrow')}
               </div>
               <h3 style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:36,lineHeight:1.02,letterSpacing:"-0.02em",margin:0}}>
-                Hit play.<br/>
-                <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>Land in a room full of strangers.</span>
+                {t('solution.h3a')}<br/>
+                <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('solution.h3b')}</span>
               </h3>
               <p style={{fontSize:15,color:"#b5b3bd",lineHeight:1.55,marginTop:14,maxWidth:440}}>
-                Open iDisko. See real people — working, cooking, chilling — each with their own soundtrack. Filter by age, gender, country. Send a request. Enter a VIP chat if it clicks.
+                {t('solution.body')}
               </p>
               {/* mini room preview */}
               <div style={{marginTop:22,position:"relative",height:96,borderRadius:16,background:"#000214",overflow:"hidden",border:"1px solid rgba(135,55,220,.25)",display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:6,padding:8}}>
@@ -782,27 +911,28 @@ function ProblemSolution() {
 }
 
 function HowItWorks() {
+  const { t } = window.useT();
   const steps = [
     {
       n: "01",
-      title: "Hit play",
-      body: "Open iDisko, pick your music. Spotify, YouTube, Jamendo — your soundtrack, your call. Filter who you want to see by age, gender, country.",
+      title: t('how.step1Title'),
+      body: t('how.step1Body'),
       icon: "compass",
       color: "#8737DC",
       accent: "rgba(135,55,220,.2)"
     },
     {
       n: "02",
-      title: "See the room",
-      body: "A live grid of real people listening right now. AI-verified, no fake profiles. Camera optional, vibe required.",
+      title: t('how.step2Title'),
+      body: t('how.step2Body'),
       icon: "door-open",
       color: "#DF07FF",
       accent: "rgba(223,7,255,.2)"
     },
     {
       n: "03",
-      title: "Send a request",
-      body: "Someone catches your eye? Send a request. They accept, you enter a VIP chat — just the two of you, same song, your moment.",
+      title: t('how.step3Title'),
+      body: t('how.step3Body'),
       icon: "heart",
       color: "#22FFBD",
       accent: "rgba(34,255,189,.15)"
@@ -813,9 +943,9 @@ function HowItWorks() {
     <section id="how" className="section-pad" style={{padding:"40px 0 100px",position:"relative"}}>
       <div className="container">
         <div style={{textAlign:"center",maxWidth:680,margin:"0 auto 64px"}}>
-          <div className="eyebrow" style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:14}}>How it works</div>
+          <div className="eyebrow" style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:14}}>{t('how.eyebrow')}</div>
           <h2 className="section-title" style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:52,letterSpacing:"-0.02em",lineHeight:1.02,margin:0}}>
-            Three taps<br/>to a shared moment.
+            {t('how.titleLine1')}<br/>{t('how.titleLine2')}
           </h2>
         </div>
         <div className="grid-3" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20,position:"relative"}}>
@@ -828,7 +958,7 @@ function HowItWorks() {
               <div style={{width:64,height:64,borderRadius:20,background:s.accent,border:`1px solid ${s.color}55`,display:"flex",alignItems:"center",justifyContent:"center",marginBottom:20,boxShadow:`0 8px 30px ${s.color}22`}}>
                 <i data-lucide={s.icon} style={{width:26,height:26,color:s.color}}/>
               </div>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:".14em",color:s.color,marginBottom:6}}>STEP {s.n}</div>
+              <div style={{fontSize:11,fontWeight:700,letterSpacing:".14em",color:s.color,marginBottom:6}}>{t('how.step')} {s.n}</div>
               <h3 style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:26,letterSpacing:"-0.01em",margin:"0 0 10px",lineHeight:1.1}}>{s.title}</h3>
               <p style={{fontSize:15,color:"#b5b3bd",lineHeight:1.55,margin:0}}>{s.body}</p>
             </div>
@@ -847,13 +977,14 @@ Object.assign(window, { SocialProof, ProblemSolution, HowItWorks });
 // Feature showcase (alternating) + Use cases
 
 function FeatureRow({ tag, title, accent, body, bullets, reverse, soon, children }) {
+  const { t } = window.useT();
   return (
     <div className="features-alt" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:60,alignItems:"center",marginBottom:100}}>
       <div style={{order: reverse ? 2 : 1}}>
         <div style={{display:"inline-flex",alignItems:"center",gap:8,marginBottom:16}}>
           <span style={{display:"inline-block",padding:"4px 12px",borderRadius:999,background:`${accent}22`,color:accent,fontSize:11,fontWeight:700,letterSpacing:".14em",textTransform:"uppercase",border:`1px solid ${accent}44`}}>{tag}</span>
           {soon && (
-            <span style={{display:"inline-block",padding:"4px 10px",borderRadius:999,background:"rgba(255,122,26,.14)",color:"#FF7A1A",fontSize:11,fontWeight:700,letterSpacing:".14em",textTransform:"uppercase",border:"1px solid rgba(255,122,26,.4)"}}>Soon</span>
+            <span style={{display:"inline-block",padding:"4px 10px",borderRadius:999,background:"rgba(255,122,26,.14)",color:"#FF7A1A",fontSize:11,fontWeight:700,letterSpacing:".14em",textTransform:"uppercase",border:"1px solid rgba(255,122,26,.4)"}}>{t('feat.soon')}</span>
           )}
         </div>
         <h3 style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:44,lineHeight:1.02,letterSpacing:"-0.02em",margin:0,textWrap:"balance"}}>{title}</h3>
@@ -875,6 +1006,7 @@ function FeatureRow({ tag, title, accent, body, bullets, reverse, soon, children
 }
 
 function DiskoRoomMock() {
+  const { t } = window.useT();
   const tiles = PEOPLE.slice(0,6);
   return (
     <div style={{position:"relative",borderRadius:24,overflow:"hidden",background:"#0a0a1e",border:"1px solid rgba(135,55,220,.2)",boxShadow:"0 30px 80px rgba(0,0,0,.5), 0 0 60px rgba(135,55,220,.15)"}}>
@@ -888,7 +1020,7 @@ function DiskoRoomMock() {
         <div style={{flex:1,textAlign:"center",fontSize:11,color:"#666672",fontFamily:"monospace"}}>app.idisko.com/deep-focus</div>
         <div style={{display:"inline-flex",alignItems:"center",gap:6,padding:"3px 8px",borderRadius:999,background:"rgba(34,255,189,.1)",border:"1px solid rgba(34,255,189,.3)",fontSize:10,color:"#22FFBD",fontWeight:700,letterSpacing:".1em"}}>
           <span className="live-dot" style={{width:5,height:5,borderRadius:"50%",background:"#22FFBD"}}/>
-          LIVE · 47
+          {t('mocks.diskoLive')}
         </div>
       </div>
       {/* grid of tiles */}
@@ -900,7 +1032,7 @@ function DiskoRoomMock() {
             <div style={{position:"absolute",top:8,left:8,display:"inline-flex",alignItems:"center",gap:4,padding:"2px 6px",borderRadius:999,background:"rgba(0,0,0,.6)",fontSize:9,fontWeight:700}}>
               <EqBars color="#22FFBD"/>
             </div>
-            {i === 0 && <div style={{position:"absolute",top:8,right:8,fontSize:9,fontWeight:700,letterSpacing:".1em",color:"#22FFBD"}}>YOU</div>}
+            {i === 0 && <div style={{position:"absolute",top:8,right:8,fontSize:9,fontWeight:700,letterSpacing:".1em",color:"#22FFBD"}}>{t('mocks.diskoYou')}</div>}
             <div style={{position:"absolute",left:8,right:8,bottom:8}}>
               <div style={{fontSize:11,fontWeight:700}}>{p.name} {p.flag}</div>
               <div style={{fontSize:9,color:"rgba(255,255,255,.7)",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{p.track}</div>
@@ -912,8 +1044,8 @@ function DiskoRoomMock() {
       <div style={{display:"flex",alignItems:"center",gap:10,padding:"12px 16px",borderTop:"1px solid #1a1632",background:"#000214"}}>
         <div style={{width:36,height:36,borderRadius:10,background:"linear-gradient(135deg,#1DB954,#159443)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:16}}>♪</div>
         <div style={{flex:1,minWidth:0}}>
-          <div style={{fontSize:12,fontWeight:700,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>Your playlist · Deep Focus</div>
-          <div style={{fontSize:10,color:"#b5b3bd"}}>Spotify · 4h 32m</div>
+          <div style={{fontSize:12,fontWeight:700,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{t('mocks.diskoPlaylist')}</div>
+          <div style={{fontSize:10,color:"#b5b3bd"}}>{t('mocks.diskoSpotify')}</div>
         </div>
         <div style={{display:"flex",gap:8,color:"#b5b3bd"}}>
           <i data-lucide="mic-off" style={{width:14,height:14}}/>
@@ -926,6 +1058,7 @@ function DiskoRoomMock() {
 }
 
 function FocusModeMock() {
+  const { t } = window.useT();
   const { useState, useEffect, useRef } = React;
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef(null);
@@ -971,9 +1104,9 @@ function FocusModeMock() {
       <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
         <div style={{display:"inline-flex",alignItems:"center",gap:8,padding:"5px 10px",borderRadius:999,background:"rgba(135,55,220,.3)",fontSize:10,fontWeight:700,letterSpacing:".12em"}}>
           <i data-lucide="headphones" style={{width:12,height:12}}/>
-          FOCUS MODE
+          {t('mocks.focusTag')}
         </div>
-        <div style={{fontSize:11,color:"#666672",fontFamily:"monospace"}}>02:14:36 streak</div>
+        <div style={{fontSize:11,color:"#666672",fontFamily:"monospace"}}>{t('mocks.focusStreak')}</div>
       </div>
 
       {/* center — spinning vinyl + waveform */}
@@ -1004,7 +1137,7 @@ function FocusModeMock() {
           </div>
           {/* hover hint */}
           <div className="vinyl-hint" style={{position:"absolute",bottom:-22,left:"50%",transform:"translate(-50%, 4px)",opacity:0,transition:"opacity 200ms, transform 200ms",fontSize:9,fontWeight:700,letterSpacing:".14em",color:"#b5b3bd",whiteSpace:"nowrap",pointerEvents:"none"}}>
-            {playing ? "CLICK TO PAUSE" : "HOVER TO PLAY"}
+            {playing ? t('mocks.focusHintPause') : t('mocks.focusHintPlay')}
           </div>
         </div>
         <svg width="100%" height="40" viewBox="0 0 400 40" preserveAspectRatio="none" style={{opacity: playing ? 1 : 0.35, transition:"opacity 300ms"}}>
@@ -1015,8 +1148,8 @@ function FocusModeMock() {
           <defs><linearGradient id="wavgrad" x1="0" x2="1"><stop offset="0" stopColor="#DF07FF"/><stop offset="1" stopColor="#22FFBD"/></linearGradient></defs>
         </svg>
         <div style={{textAlign:"center"}}>
-          <div style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:20}}>Lo-fi rain & focus</div>
-          <div style={{fontSize:12,color:"#b5b3bd",marginTop:4}}>Playing with 284 others · No video, no chat</div>
+          <div style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:20}}>{t('mocks.focusTitle')}</div>
+          <div style={{fontSize:12,color:"#b5b3bd",marginTop:4}}>{t('mocks.focusSubtitle')}</div>
         </div>
       </div>
 
@@ -1024,7 +1157,7 @@ function FocusModeMock() {
       <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
         <button
           onClick={toggle}
-          aria-label={playing ? "Pause" : "Play"}
+          aria-label={playing ? t('mocks.ariaPause') : t('mocks.ariaPlay')}
           style={{width:52,height:52,borderRadius:"50%",border:"none",cursor:"pointer",background:"linear-gradient(128deg,#DF07FF,#8737DC)",color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 8px 30px rgba(223,7,255,.4)"}}
         >
           <i data-lucide={playing ? "pause" : "play"} style={{width:20,height:20}} fill="currentColor"/>
@@ -1035,15 +1168,16 @@ function FocusModeMock() {
 }
 
 function ShuffleMock() {
+  const { t } = window.useT();
   // SHUFFLE — quick paired chat with a music match. Pink accent.
   return (
     <div style={{position:"relative",height:440,borderRadius:24,overflow:"hidden",background:"linear-gradient(135deg, #2a0d1f 0%, #0a0a1e 100%)",border:"1px solid rgba(236,72,153,.25)",boxShadow:"0 30px 80px rgba(0,0,0,.5)",padding:24}}>
       <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:18}}>
         <span style={{display:"inline-flex",alignItems:"center",gap:6,padding:"4px 10px",borderRadius:999,background:"rgba(236,72,153,.12)",border:"1px solid rgba(236,72,153,.35)",fontSize:10,fontWeight:700,letterSpacing:".14em",color:"#EC4899"}}>
           <i data-lucide="shuffle" style={{width:11,height:11}}/>
-          SHUFFLE
+          {t('mocks.shuffleTag')}
         </span>
-        <span style={{fontSize:11,color:"#666672"}}>5-minute sessions</span>
+        <span style={{fontSize:11,color:"#666672"}}>{t('mocks.shuffleSession')}</span>
       </div>
 
       {/* 2-up chat */}
@@ -1055,7 +1189,7 @@ function ShuffleMock() {
             {i === 0 && <div style={{position:"absolute",top:10,right:10,fontSize:9,fontWeight:700,letterSpacing:".1em",color:"#22FFBD"}}>YOU</div>}
             <div style={{position:"absolute",left:10,right:10,bottom:10}}>
               <div style={{fontSize:12,fontWeight:700}}>{p.name} {p.flag}</div>
-              <div style={{fontSize:10,color:"rgba(255,255,255,.7)"}}>{i===0?"Designer · Berlin":"PM · Milano"}</div>
+              <div style={{fontSize:10,color:"rgba(255,255,255,.7)"}}>{i===0?t('mocks.shuffleRole1'):t('mocks.shuffleRole2')}</div>
             </div>
           </div>
         ))}
@@ -1063,9 +1197,10 @@ function ShuffleMock() {
 
       {/* Suggested prompts */}
       <div style={{marginTop:18,display:"flex",flexDirection:"column",gap:8}}>
-        <div style={{fontSize:10,letterSpacing:".14em",color:"#666672",fontWeight:700,textTransform:"uppercase"}}>Ice breakers</div>
+        <div style={{fontSize:10,letterSpacing:".14em",color:"#666672",fontWeight:700,textTransform:"uppercase"}}>{t('mocks.shuffleIcebreakers')}</div>
         <div style={{display:"flex",flexWrap:"wrap",gap:6}}>
-          {["What are you listening to?","Share your playlist","Where are you from?"].map((t,i)=>(
+          {[t('mocks.shufflePrompt1'),t('mocks.shufflePrompt2'),t('mocks.shufflePrompt3')].map((tx,i)=>(
+
             <span key={i} style={{padding:"6px 12px",borderRadius:999,background:"rgba(255,255,255,.06)",border:"1px solid #2d2933",fontSize:11}}>{t}</span>
           ))}
         </div>
@@ -1074,8 +1209,8 @@ function ShuffleMock() {
       {/* timer bar */}
       <div style={{position:"absolute",left:24,right:24,bottom:20}}>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",fontSize:10,color:"#b5b3bd",marginBottom:6}}>
-          <span>Shuffle time</span>
-          <span>3:42 left</span>
+          <span>{t('mocks.shuffleTimerLabel')}</span>
+          <span>{t('mocks.shuffleTimerLeft')}</span>
         </div>
         <div style={{height:3,borderRadius:2,background:"#1a1632",overflow:"hidden"}}>
           <div style={{width:"74%",height:"100%",background:"linear-gradient(90deg,#EC4899,#DF07FF)"}}/>
@@ -1086,6 +1221,7 @@ function ShuffleMock() {
 }
 
 function VipMock() {
+  const { t } = window.useT();
   return (
     <div style={{position:"relative",height:440,borderRadius:24,overflow:"hidden",background:"#0a0a1e",border:"1px solid rgba(223,7,255,.3)",boxShadow:"0 30px 80px rgba(0,0,0,.5), 0 0 60px rgba(223,7,255,.15)"}}>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",height:"75%"}}>
@@ -1100,7 +1236,7 @@ function VipMock() {
             <div style={{position:"absolute",left:12,right:12,bottom:12}}>
               <div style={{fontSize:13,fontWeight:700}}>{p.name} {p.flag}</div>
               <div style={{fontSize:10,color:"rgba(255,255,255,.7)",marginTop:2,display:"flex",alignItems:"center",gap:4}}>
-                <EqBars color="#DF07FF"/> Same song, same time
+                <EqBars color="#DF07FF"/> {t('mocks.vipSameSong')}
               </div>
             </div>
           </div>
@@ -1113,8 +1249,8 @@ function VipMock() {
       <div style={{position:"absolute",left:16,right:16,bottom:16,padding:"10px 14px",borderRadius:14,background:"rgba(14,13,31,.95)",backdropFilter:"blur(10px)",border:"1px solid rgba(223,7,255,.3)",display:"flex",alignItems:"center",gap:10}}>
         <div style={{width:36,height:36,borderRadius:8,background:"linear-gradient(135deg,#DF07FF,#8737DC)",display:"flex",alignItems:"center",justifyContent:"center"}}>♪</div>
         <div style={{flex:1,minWidth:0}}>
-          <div style={{fontSize:12,fontWeight:700}}>Synced · "Glimpse of Us"</div>
-          <div style={{fontSize:10,color:"#b5b3bd"}}>Joji · Playing for both of you</div>
+          <div style={{fontSize:12,fontWeight:700}}>{t('mocks.vipSyncedTrack')}</div>
+          <div style={{fontSize:10,color:"#b5b3bd"}}>{t('mocks.vipPlayingFor')}</div>
         </div>
         <i data-lucide="pause" style={{width:16,height:16,color:"#DF07FF"}} fill="currentColor"/>
       </div>
@@ -1123,65 +1259,66 @@ function VipMock() {
 }
 
 function FeatureShowcase() {
+  const { t } = window.useT();
   return (
     <section id="features" className="section-pad" style={{padding:"60px 0 40px"}}>
       <div className="container">
         <div style={{textAlign:"center",maxWidth:680,margin:"0 auto 72px"}}>
-          <div className="eyebrow" style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:14}}>What's inside</div>
+          <div className="eyebrow" style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:14}}>{t('feat.eyebrow')}</div>
           <h2 className="section-title" style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:52,letterSpacing:"-0.02em",lineHeight:1.02,margin:0}}>
-            Four ways to <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>not work alone.</span>
+            {t('feat.titlePrefix')} <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.titleGradient')}</span>
           </h2>
         </div>
 
         <FeatureRow
-          tag="Disko Room"
+          tag={t('feat.diskoTag')}
           accent="#8737DC"
-          title={<>See live tiles of real people, <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>working alongside you.</span></>}
-          body="Join iDisko and see up to 50 people listening live, each with their own soundtrack. Your music stays yours. Theirs stays theirs. If you want, send a VIP request to share the moment."
+          title={<>{t('feat.diskoTitle1')} <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.diskoTitleGradient')}</span></>}
+          body={t('feat.diskoBody')}
           bullets={[
-            "Video is optional — audio presence is enough",
-            "Bring music from YouTube or iDisko library",
-            "No synced calls, no screen sharing — pure parallel listening"
+            t('feat.diskoBullet1'),
+            t('feat.diskoBullet2'),
+            t('feat.diskoBullet3')
           ]}
         ><DiskoRoomMock/></FeatureRow>
 
         <FeatureRow
           reverse
-          tag="Focus Mode"
+          tag={t('feat.focusTag')}
           soon
           accent="#DF07FF"
-          title={<>Lo-fi rooms for <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>deep work.</span></>}
-          body="No faces. No chat. Just you, a shared lo-fi playlist, and a counter of everyone else in the room doing the same. The gentle reassurance that others are in it too."
+          title={<>{t('feat.focusTitle1')} <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.focusTitleGradient')}</span></>}
+          body={t('feat.focusBody')}
           bullets={[
-            "Curated lo-fi, ambient, and classical rooms",
-            "Pomodoro timer built in — optional, never naggy",
-            "Streaks and stats for those who like them"
+            t('feat.focusBullet1'),
+            t('feat.focusBullet2'),
+            t('feat.focusBullet3')
           ]}
         ><FocusModeMock/></FeatureRow>
 
         <FeatureRow
-          tag="Shuffle"
+          tag={t('feat.shuffleTag')}
           accent="#EC4899"
-          title={<>A <span style={{background:"linear-gradient(128deg,#EC4899,#DF07FF)",WebkitBackgroundClip:"text",color:"transparent"}}>quick shuffle</span> , your coffee break, when you want to bump into someone.</>}
-          body="Tap Shuffle, get matched with one other person for a 5-minute moment. Share what you're listening to, swap a playlist, then back to whatever you were doing. Like bumping into someone in real life — only better, because the music's already there."
+          title={<>{t('feat.shuffleTitle1')} <span style={{background:"linear-gradient(128deg,#EC4899,#DF07FF)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.shuffleTitleGradient')}</span>{t('feat.shuffleTitle2')}</>}
+          body={t('feat.shuffleBody')}
           bullets={[
-            "One is the Dj of the room. ",
-            "Paired by music vibe — you accept or skip, always your call",
-            "AI video moderation keeps the room safe",
-            "AI-verified profiles, no fakes"
+            t('feat.shuffleBullet1'),
+            t('feat.shuffleBullet2'),
+            t('feat.shuffleBullet3'),
+            t('feat.shuffleBullet4')
           ]}
         ><ShuffleMock/></FeatureRow>
 
         <FeatureRow
           reverse
-          tag="VIP Rooms"
+          tag={t('feat.vipTag')}
           accent="#DF07FF"
-          title={<>Invite a friend for a <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>private session.</span></>}
-          body="Your friend works remote in another city. Invite them to a VIP room — same room, same synced music, your own little co-working space for a day."
+          title={<>{t('feat.vipTitle1')} <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.vipTitleGradient')}</span></>}
+          body={t('feat.vipBody')}
           bullets={[
-            "Private 1:1 ",
-            "Synced music — you both hit play at the same time",
-            "Stop music if you want discuss."
+            t('feat.vipBullet1'),
+            t('feat.vipBullet2'),
+            t('feat.vipBullet3')
           ]}
         ><VipMock/></FeatureRow>
       </div>
@@ -1191,47 +1328,48 @@ function FeatureShowcase() {
 
 // USE CASES
 function UseCases() {
+  const { t } = window.useT();
   const cases = [
     {
-      title: "Working",
-      desc: "Lo-fi, ambient, classical. Stay focused and feel less alone while you grind.",
+      title: t('useCases.workingTitle'),
+      desc: t('useCases.workingDesc'),
       bg: "linear-gradient(135deg, #1a0d2a 0%, #0a0a1e 100%)",
       accent: "#8737DC",
       icon: "laptop",
-      music: "Lo-fi · Classical · Ambient"
+      music: t('useCases.workingMusic')
     },
     {
-      title: "Cooking",
-      desc: "Upbeat, percussive, danceable. The kitchen is small — the playlist isn't.",
+      title: t('useCases.cookingTitle'),
+      desc: t('useCases.cookingDesc'),
       bg: "linear-gradient(135deg, #2a0d20 0%, #0a0a1e 100%)",
       accent: "#EC4899",
       icon: "utensils",
-      music: "Pop · House · Afrobeats"
+      music: t('useCases.cookingMusic')
     },
     {
-      title: "Chilling",
-      desc: "Moody, textured, easy. For the slow afternoon and the rainy Sunday.",
+      title: t('useCases.chillingTitle'),
+      desc: t('useCases.chillingDesc'),
       bg: "linear-gradient(135deg, #0d1a2a 0%, #0a0a1e 100%)",
       accent: "#22FFBD",
       icon: "sofa",
-      music: "Indie · Jazz · Cinematic"
+      music: t('useCases.chillingMusic')
     },
     {
-      title: "Going out (in)",
-      desc: "Loud, social, ready. Pre-game from your kitchen, meet someone at the same BPM.",
+      title: t('useCases.goingOutTitle'),
+      desc: t('useCases.goingOutDesc'),
       bg: "linear-gradient(135deg, #2a0d1a 0%, #0a0a1e 100%)",
       accent: "#DF07FF",
       icon: "sparkles",
-      music: "Reggaeton · EDM · Disco"
+      music: t('useCases.goingOutMusic')
     }
   ];
   return (
     <section id="usecases" className="section-pad" style={{padding:"100px 0"}}>
       <div className="container">
         <div style={{textAlign:"center",maxWidth:680,margin:"0 auto 56px"}}>
-          <div className="eyebrow" style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:14}}>Match your mood</div>
+          <div className="eyebrow" style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:14}}>{t('useCases.eyebrow')}</div>
           <h2 className="section-title" style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:52,letterSpacing:"-0.02em",lineHeight:1.02,margin:0}}>
-            A vibe<br/>for every kind of moment.
+            {t('useCases.titleLine1')}<br/>{t('useCases.titleLine2')}
           </h2>
         </div>
         <div className="grid-4" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:16}}>
@@ -1269,25 +1407,26 @@ Object.assign(window, { FeatureShowcase, UseCases });
 const { useState: useStateB } = React;
 
 function Testimonials() {
+  const { t } = window.useT();
   const quotes = [
     {
-      q: "I'm not the best at starting conversations, and that's what I loved about iDisko. You enjoy your music, and if someone catches your interest, you have the perfect link to start a conversation. Pressure-free. Like a nightclub, but at home.",
-      n: "Alejo",
-      role: "Buenos Aires · Argentina",
+      q: t('testimonials.q1'),
+      n: t('testimonials.q1Name'),
+      role: t('testimonials.q1Role'),
       img: window.__resources.imgAlejo,
       stars: 5
     },
     {
-      q: "I used iDisko while cooking, discovered new songs, and chatted with three people from different countries. The music broke the ice and gave us a great starting point for conversation.",
-      n: "Sylvia",
-      role: "Madrid · Spain",
+      q: t('testimonials.q2'),
+      n: t('testimonials.q2Name'),
+      role: t('testimonials.q2Role'),
       img: PEOPLE[0].img,
       stars: 5
     },
     {
-      q: "No fake profiles, no time wasted. I get to filter by age and gender — simple and real. It replaced the dating apps I gave up on.",
-      n: "Charlotte",
-      role: "Paris · France",
+      q: t('testimonials.q3'),
+      n: t('testimonials.q3Name'),
+      role: t('testimonials.q3Role'),
       img: window.__resources.imgCharlotte,
       stars: 5
     },
@@ -1296,9 +1435,9 @@ function Testimonials() {
     <section className="section-pad" style={{padding:"100px 0",background:"linear-gradient(180deg,transparent,rgba(59,2,131,0.12),transparent)"}}>
       <div className="container">
         <div style={{textAlign:"center",maxWidth:680,margin:"0 auto 56px"}}>
-          <div className="eyebrow" style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:14}}>People on iDisko</div>
+          <div className="eyebrow" style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:14}}>{t('testimonials.eyebrow')}</div>
           <h2 className="section-title" style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:52,letterSpacing:"-0.02em",lineHeight:1.02,margin:0}}>
-            The social fix<br/>nobody shipped — <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>until now.</span>
+            {t('testimonials.titleLine1')}<br/>{t('testimonials.titleLine2')} <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('testimonials.titleGradient')}</span>
           </h2>
         </div>
         <div className="grid-3" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20}}>
@@ -1326,6 +1465,7 @@ function Testimonials() {
 }
 
 function PricingHint() {
+  const { t } = window.useT();
   return (
     <section style={{padding:"20px 0 60px"}}>
       <div className="container">
@@ -1335,13 +1475,13 @@ function PricingHint() {
               <i data-lucide="gift" style={{width:22,height:22,color:"#22FFBD"}}/>
             </div>
             <div>
-              <div style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:22,letterSpacing:"-0.01em"}}>Free to start. Works in your browser right now.</div>
-              <div style={{fontSize:13,color:"#b5b3bd",marginTop:4}}>No credit card. No download. Close the tab anytime.</div>
+              <div style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:22,letterSpacing:"-0.01em"}}>{t('pricing.title')}</div>
+              <div style={{fontSize:13,color:"#b5b3bd",marginTop:4}}>{t('pricing.body')}</div>
             </div>
           </div>
           <a href="https://app.idisko.com" data-event="pricing_cta" data-posthog="cta_click_pricing"
              style={{padding:"14px 24px",borderRadius:999,background:"#22FFBD",color:"#000214",fontWeight:700,fontSize:14,letterSpacing:".04em",textDecoration:"none",display:"inline-flex",alignItems:"center",gap:10,whiteSpace:"nowrap"}}>
-            Open iDisko →
+            {t('pricing.cta')}
           </a>
         </div>
       </div>
@@ -1350,22 +1490,23 @@ function PricingHint() {
 }
 
 function Faq() {
+  const { t } = window.useT();
   const [open, setOpen] = useStateB(0);
   const faqs = [
-    { q: "Is iDisko free?", a: "Yes. The core experience is free — forever. iDisko Premium ($4.99/mo) removes ads, unlocks unlimited VIP rooms, custom status, and advanced filters. You don't need it to get the magic." },
-    { q: "Do I have to show my camera?", a: "Never. Most people don't. Audio presence (a tiny EQ bar that moves when your music plays) is enough to know someone's there. Cameras are off by default — you can stay invisible behind just a profile photo." },
-    { q: "Is it like a dating app?", a: "Not exactly. iDisko is about meeting people through what you're listening to right now — not swiping on profiles. Some people make friends, some find a date, some just want company while they cook. The app doesn't push any of those." },
-    { q: "What music sources does it support?", a: "YouTube and Jamendo (royalty-free). More integrations coming." },
-    { q: "Is it private?", a: "Rooms don't record. Your face (if you turn it on) isn't stored. AI moderation keeps fakes and creeps out. Shuffle is opt-in — you accept or skip every match." },
-    { q: "How is this different from Discord or dating apps?", a: "Discord is built around voice channels and chat. Dating apps are built around photos and bios. iDisko is built around the song playing in your headphones right now — and the people listening to something similar across the world. You can be here for hours and never type a word, or send one request and end up in a VIP chat. Your call." },
+    { q: t('faq.q1'), a: t('faq.a1') },
+    { q: t('faq.q2'), a: t('faq.a2') },
+    { q: t('faq.q3'), a: t('faq.a3') },
+    { q: t('faq.q4'), a: t('faq.a4') },
+    { q: t('faq.q5'), a: t('faq.a5') },
+    { q: t('faq.q6'), a: t('faq.a6') },
   ];
   return (
     <section id="faq" className="section-pad" style={{padding:"80px 0"}}>
       <div className="container" style={{maxWidth:820}}>
         <div style={{textAlign:"center",marginBottom:48}}>
-          <div className="eyebrow" style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:14}}>Questions</div>
+          <div className="eyebrow" style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:14}}>{t('faq.eyebrow')}</div>
           <h2 className="section-title" style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:52,letterSpacing:"-0.02em",lineHeight:1.02,margin:0}}>
-            Straight answers.
+            {t('faq.title')}
           </h2>
         </div>
         <div style={{display:"flex",flexDirection:"column",gap:10}}>
@@ -1388,6 +1529,7 @@ function Faq() {
 }
 
 function FinalCta() {
+  const { t } = window.useT();
   return (
     <section className="section-pad" style={{padding:"80px 0 100px",position:"relative",overflow:"hidden"}}>
       <div style={{position:"absolute",inset:"-40% -20%",background:"radial-gradient(ellipse at center,rgba(223,7,255,.25) 0%,transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(34,255,189,.1) 0%, transparent 50%)",filter:"blur(40px)",pointerEvents:"none"}}/>
@@ -1400,15 +1542,15 @@ function FinalCta() {
             ))}
             <div style={{marginLeft:10,padding:"6px 12px",borderRadius:999,background:"rgba(34,255,189,.12)",border:"1px solid rgba(34,255,189,.3)",fontSize:11,color:"#22FFBD",fontWeight:600,letterSpacing:".08em",display:"inline-flex",alignItems:"center",gap:6}}>
               <span className="live-dot" style={{width:5,height:5,borderRadius:"50%",background:"#22FFBD"}}/>
-              2,847 ONLINE
+              2,847 {t('finalCta.onlineSuffix')}
             </div>
           </div>
           <h2 style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:60,letterSpacing:"-0.02em",margin:0,lineHeight:0.98,textWrap:"balance"}}>
-            Your next song<br/>
-            <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>doesn't have to be a solo.</span>
+            {t('finalCta.titleLine1')}<br/>
+            <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('finalCta.titleGradient')}</span>
           </h2>
           <p style={{fontSize:18,color:"#b5b3bd",marginTop:22,maxWidth:500,marginLeft:"auto",marginRight:"auto",textWrap:"pretty"}}>
-            Open it in a browser tab. Hit play on whatever you love. There's a whole world listening with you.
+            {t('finalCta.body')}
           </p>
           <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:20,marginTop:36}}>
             <a href="https://app.idisko.com"
@@ -1431,10 +1573,10 @@ function FinalCta() {
               <span style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:34,height:34,borderRadius:"50%",background:"rgba(255,255,255,.18)"}}>
                 <i data-lucide="play" style={{width:15,height:15}} fill="#fff"/>
               </span>
-              Try it now
+              {t('finalCta.cta')}
               <i data-lucide="arrow-right" style={{width:20,height:20}}/>
             </a>
-            <div style={{fontSize:12,color:"#666672"}}>— or —</div>
+            <div style={{fontSize:12,color:"#666672"}}>{t('finalCta.or')}</div>
             <StoreButtons compact/>
           </div>
         </div>
@@ -1444,6 +1586,7 @@ function FinalCta() {
 }
 
 function Footer() {
+  const { t } = window.useT();
   return (
     <footer style={{padding:"60px 0 32px",borderTop:"1px solid #1a1632",background:"#09091b",position:"relative"}}>
       <div className="container">
@@ -1454,7 +1597,7 @@ function Footer() {
               <span style={{fontFamily:"ClashDisplay",fontWeight:700,fontSize:18,letterSpacing:"-0.02em",color:"#fff"}}>iDisko</span>
             </a>
             <p style={{fontSize:13,color:"#b5b3bd",marginTop:14,lineHeight:1.5,maxWidth:300,textWrap:"pretty"}}>
-              The first social app powered by music. Discover people around the world while listening to your favorite music — working, cooking, chilling, going out.
+              {t('footer.tagline')}
             </p>
             <div style={{display:"flex",gap:10,marginTop:20}}>
               {[
@@ -1472,25 +1615,25 @@ function Footer() {
             </div>
           </div>
           {[
-            { h: "Product",  items: [
-              { x:"Disko Rooms", url:"#features" },
-              { x:"Focus Mode", url:"#features" },
-              { x:"Shuffle", url:"#features" },
-              { x:"VIP Rooms", url:"#features" },
-              { x:"Web app", url:"https://app.idisko.com" }
+            { h: t('footer.colProduct'),  items: [
+              { x:t('footer.diskoRooms'), url:"#features" },
+              { x:t('footer.focusMode'), url:"#features" },
+              { x:t('footer.shuffle'), url:"#features" },
+              { x:t('footer.vipRooms'), url:"#features" },
+              { x:t('footer.webApp'), url:"https://app.idisko.com" }
             ] },
-            { h: "Company",  items: [
-              { x:"Web app", url:"https://app.idisko.com" },
-              { x:"App Store", url:"https://apps.apple.com/fr/app/idisko/id6749269410" },
-              { x:"Google Play", url:"https://play.google.com/store/apps/details?id=com.idisko.app" },
-              { x:"Contact", url:"mailto:contact@idisko.com" }
+            { h: t('footer.colCompany'),  items: [
+              { x:t('footer.webApp'), url:"https://app.idisko.com" },
+              { x:t('footer.appStore'), url:"https://apps.apple.com/fr/app/idisko/id6749269410" },
+              { x:t('footer.googlePlay'), url:"https://play.google.com/store/apps/details?id=com.idisko.app" },
+              { x:t('footer.contact'), url:"mailto:contact@idisko.com" }
             ] },
-            { h: "Legal",  items: [
-              { x:"Privacy", url:"privacy.html" },
-              { x:"Terms", url:"terms.html" },
-              { x:"Legal Notice", url:"legal.html" },
-              { x:"Cookies", url:"cookies.html" },
-              { x:"FAQ", url:"faq.html" }
+            { h: t('footer.colLegal'),  items: [
+              { x:t('footer.privacy'), url:"privacy.html" },
+              { x:t('footer.terms'), url:"terms.html" },
+              { x:t('footer.legal'), url:"legal.html" },
+              { x:t('footer.cookies'), url:"cookies.html" },
+              { x:t('footer.faqLink'), url:"faq.html" }
             ] },
           ].map((c,i)=>(
             <div key={i}>
@@ -1506,37 +1649,188 @@ function Footer() {
           ))}
         </div>
         <div style={{marginTop:48,paddingTop:24,borderTop:"1px solid #1a1632",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:14}}>
-          <span style={{fontSize:12,color:"#666672"}}>© 2026 iDisko. The first social app powered by music.</span>
-          <div style={{display:"flex",alignItems:"center",gap:6,padding:"6px 10px",borderRadius:999,background:"rgba(255,255,255,.03)",border:"1px solid #1a1632",fontSize:12,color:"#b5b3bd"}}>
-            <i data-lucide="globe" style={{width:13,height:13}}/>
-            <select style={{background:"transparent",border:"none",color:"#b5b3bd",fontFamily:"inherit",fontSize:12,cursor:"pointer",outline:"none"}} defaultValue="en">
-              <option value="en" style={{background:"#09091b"}}>🇬🇧 English</option>
-              <option value="es" style={{background:"#09091b"}}>🇪🇸 Español</option>
-              <option value="fr" style={{background:"#09091b"}}>🇫🇷 Français</option>
-              <option value="pt" style={{background:"#09091b"}}>🇵🇹 Português</option>
-            </select>
-          </div>
+          <span style={{fontSize:12,color:"#666672"}}>{t('footer.copyright')}</span>
+
         </div>
       </div>
     </footer>
   );
 }
 
-Object.assign(window, { Testimonials, PricingHint, Faq, FinalCta, Footer });
+function NewsletterForm() {
+  const { t, lang } = window.useT();
+  const { useState } = React;
+  const [email, setEmail]     = useState("");
+  const [status, setStatus]   = useState("idle"); // idle | sending | success | already | error
+  const [errorMsg, setError]  = useState("");
+
+  const API_URL = "https://api.idisko.com/functions/v1/newsletter-api?action=subscribe";
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (status === "sending") return;
+    const v = email.trim();
+    if (!EMAIL_RE.test(v)) { setStatus("error"); setError(t('newsletter.invalidEmail')); return; }
+    setStatus("sending"); setError("");
+    try {
+      const r = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: v, locale: lang, source: "landing" }),
+      });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) {
+        if (d && d.error === "email_invalid") { setStatus("error"); setError(t('newsletter.invalidEmail')); return; }
+        setStatus("error"); setError(t('newsletter.networkError')); return;
+      }
+      if (d.status === "already_confirmed") setStatus("already");
+      else                                  setStatus("success");
+
+      // ── Conversion tracking (Klaro-gated; safe to call even without consent) ──
+      try {
+        const emailDomain = v.split("@")[1] || "";
+        if (window.idisko && typeof window.idisko.track === "function") {
+          window.idisko.track("newsletter_signup", {
+            email_domain: emailDomain,
+            locale: lang,
+            already_confirmed: d.status === "already_confirmed",
+            source: "landing"
+          });
+        }
+      } catch (_) {}
+    } catch (_) {
+      setStatus("error"); setError(t('newsletter.networkError'));
+    }
+  };
+
+  const showSuccess = status === "success";
+  const showAlready = status === "already";
+  const sending     = status === "sending";
+
+  return (
+    <section id="newsletter" className="section-pad" style={{padding:"40px 0 60px"}}>
+      <div className="container" style={{maxWidth:720}}>
+        <div style={{position:"relative",padding:"40px 32px",borderRadius:24,background:"linear-gradient(180deg,rgba(14,13,31,0.7),rgba(9,9,27,0.95))",border:"1px solid rgba(135,55,220,0.25)",boxShadow:"0 20px 60px rgba(0,0,0,.4), 0 0 80px rgba(223,7,255,.08)",textAlign:"center",overflow:"hidden"}}>
+          <div style={{position:"absolute",inset:"-30% -10%",background:"radial-gradient(ellipse at 50% 0%,rgba(223,7,255,.18) 0%,transparent 60%)",pointerEvents:"none"}}/>
+          <div style={{position:"relative"}}>
+            <div className="eyebrow" style={{fontSize:11,fontWeight:700,letterSpacing:".18em",textTransform:"uppercase",color:"#DF07FF",marginBottom:14}}>{t('newsletter.eyebrow')}</div>
+            <h2 style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:36,letterSpacing:"-0.02em",lineHeight:1.05,margin:0,textWrap:"balance"}}>
+              {t('newsletter.title')}
+            </h2>
+            <p style={{fontSize:15,color:"#b5b3bd",marginTop:14,lineHeight:1.55,maxWidth:480,marginLeft:"auto",marginRight:"auto",textWrap:"pretty"}}>
+              {t('newsletter.body')}
+            </p>
+
+            {showSuccess || showAlready ? (
+              <div role="status" aria-live="polite" style={{marginTop:28,padding:"22px 24px",borderRadius:16,background:"rgba(34,255,189,.08)",border:"1px solid rgba(34,255,189,.3)"}}>
+                <div style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:42,height:42,borderRadius:"50%",background:"rgba(34,255,189,.15)",border:"1px solid rgba(34,255,189,.4)",marginBottom:12}}>
+                  <i data-lucide="check" style={{width:20,height:20,color:"#22FFBD"}}/>
+                </div>
+                <div style={{fontFamily:"ClashDisplay",fontWeight:600,fontSize:18,color:"#fff",marginBottom:6}}>
+                  {showAlready ? t('newsletter.alreadyConfirmed') : t('newsletter.successTitle')}
+                </div>
+                {showSuccess && (
+                  <div style={{fontSize:14,color:"#b5b3bd",lineHeight:1.5}}>{t('newsletter.successBody')}</div>
+                )}
+              </div>
+            ) : (
+              <form onSubmit={onSubmit} noValidate style={{marginTop:28,display:"flex",flexDirection:"column",alignItems:"center",gap:12}}>
+                <div style={{display:"flex",gap:10,width:"100%",maxWidth:480,flexWrap:"wrap",justifyContent:"center"}}>
+                  <input
+                    type="email"
+                    inputMode="email"
+                    autoComplete="email"
+                    required
+                    value={email}
+                    onChange={e=>{ setEmail(e.target.value); if (status==="error") setStatus("idle"); }}
+                    placeholder={t('newsletter.placeholder')}
+                    aria-label={t('newsletter.placeholder')}
+                    aria-invalid={status==="error"}
+                    style={{flex:"1 1 240px",minWidth:0,padding:"14px 18px",borderRadius:999,background:"rgba(93,78,115,0.18)",border:`1px solid ${status==="error"?"#ff4d4f":"#2d2933"}`,color:"#fff",fontSize:15,outline:"none",transition:"border-color 150ms"}}
+                    onFocus={e=>{ if(status!=="error") e.currentTarget.style.borderColor="#8737DC"; }}
+                    onBlur={e=>{ if(status!=="error") e.currentTarget.style.borderColor="#2d2933"; }}
+                    disabled={sending}
+                  />
+                  <button
+                    type="submit"
+                    disabled={sending}
+                    data-event="newsletter_subscribe"
+                    data-posthog="newsletter_submit"
+                    style={{padding:"14px 24px",borderRadius:999,background:"linear-gradient(128deg,#DF07FF 10%,#8737DC 70%)",color:"#fff",fontWeight:700,fontSize:14,letterSpacing:".02em",border:"none",cursor:sending?"wait":"pointer",boxShadow:"0 6px 24px rgba(223,7,255,.3)",transition:"transform 150ms",opacity:sending?0.7:1,whiteSpace:"nowrap"}}
+                    onMouseDown={e=>e.currentTarget.style.transform="scale(.97)"}
+                    onMouseUp={e=>e.currentTarget.style.transform="scale(1)"}
+                    onMouseLeave={e=>e.currentTarget.style.transform="scale(1)"}>
+                    {sending ? t('newsletter.sending') : t('newsletter.cta')}
+                  </button>
+                </div>
+                {status === "error" && (
+                  <div role="alert" style={{fontSize:13,color:"#ff4d4f",marginTop:2}}>{errorMsg}</div>
+                )}
+                <div style={{fontSize:12,color:"#666672",marginTop:6}}>
+                  {t('newsletter.consent')} <a href="privacy.html" style={{color:"#b5b3bd",textDecoration:"underline"}}>{t('newsletter.consentLink')}</a>.
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+Object.assign(window, { Testimonials, PricingHint, Faq, FinalCta, NewsletterForm, Footer });
 
 </script>
 
 <script type="text/babel">
-const { useEffect, useState } = React;
+const { useEffect, useState, useContext, createContext, useMemo } = React;
+
+// ─── i18n context ─────────────────────────────────────────────────────────
+// Expose globally so components defined in other <script type="text/babel"> blocks
+// (Header, Hero, Footer, etc.) can access the same Context instance.
+const LangContext = createContext({ lang: "en", setLang: () => {}, t: (k) => k });
+window.LangContext = LangContext;
+
+// Global useT: works across all babel script blocks.
+window.useT = function useT() { return React.useContext(window.LangContext); };
+function useT() { return window.useT(); }
+
+// Helper: dotted key lookup with fallback chain (current → en → key)
+function lookupT(strings, lang, key) {
+  const parts = key.split(".");
+  let v = strings[lang];
+  for (const p of parts) { v = v && v[p]; if (v == null) break; }
+  if (v != null) return v;
+  // Fallback to English
+  v = strings["en"];
+  for (const p of parts) { v = v && v[p]; if (v == null) break; }
+  return v != null ? v : key;
+}
 
 function App() {
   const [tweaks, setTweaks] = useState(window.__TWEAKS);
+  const [lang, setLangState] = useState(window.LANG || "en");
+  const setLang = (newLang) => {
+    if (window.SUPPORTED_LANGS && window.SUPPORTED_LANGS.indexOf(newLang) === -1) return;
+    window.LANG = newLang;
+    window.LANG_LOCALE = (window.LOCALES && window.LOCALES[newLang]) || "en-US";
+    document.documentElement.lang = newLang;
+    try { localStorage.setItem("idisko_lang", newLang); } catch(e) {}
+    setLangState(newLang);
+  };
+  const langCtx = useMemo(() => ({
+    lang,
+    setLang,
+    t: (key) => lookupT(window.STRINGS, lang, key),
+  }), [lang]);
+
   useEffect(() => {
     const tick = () => window.lucide && window.lucide.createIcons();
     tick();
     const t = setInterval(tick, 400);
     return () => clearInterval(t);
-  }, [tweaks]);
+  }, [tweaks, lang]);
 
   // Tweaks bridge
   useEffect(() => {
@@ -1559,6 +1853,7 @@ function App() {
   };
 
   return (
+    <LangContext.Provider value={langCtx}>
     <div data-accent={tweaks.accentHue}>
       <Header/>
       <Hero tweaks={tweaks}/>
@@ -1571,9 +1866,11 @@ function App() {
       <PricingHint/>
       <Faq/>
       <FinalCta/>
+      <NewsletterForm/>
       <Footer/>
       {showTweaks && <TweaksPanel tweaks={tweaks} setTweak={setTweak} onClose={()=>setShowTweaks(false)}/>}
     </div>
+    </LangContext.Provider>
   );
 }
 
@@ -1620,6 +1917,28 @@ function TweaksPanel({ tweaks, setTweak, onClose }) {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+
+// ── Delegated CTA tracking (Klaro-gated via window.idisko.track) ─────────
+// Any clickable element with `data-event="..."` automatically reports to
+// PostHog, Meta Pixel and Clarity. Optional `data-meta="EventName"` overrides
+// the Meta standard event name (else mapped via stdMap in klaro-trackers.js).
+document.addEventListener("click", function (e) {
+  var el = e.target.closest("[data-event]");
+  if (!el) return;
+  var eventName = el.getAttribute("data-event");
+  if (!eventName) return;
+  try {
+    if (window.idisko && typeof window.idisko.track === "function") {
+      var props = {
+        href: el.getAttribute("href") || null,
+        text: (el.textContent || "").trim().slice(0, 80),
+        meta_event: el.getAttribute("data-meta") || null,
+        posthog_event: el.getAttribute("data-posthog") || null
+      };
+      window.idisko.track(eventName, props);
+    }
+  } catch (_) {}
+}, true);
 </script>
 
 

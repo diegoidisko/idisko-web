@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /thanks.html
+Disallow: /confirm.html
+Disallow: /unsubscribe.html
+
+Sitemap: https://www.idisko.com/sitemap.xml

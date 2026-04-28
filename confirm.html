@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#000214" />
+<title>Confirm your subscription — iDisko</title>
+<meta name="description" content="Confirm your iDisko newsletter subscription." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="assets/logo.png" />
+
+<!-- Smart App Banner (iOS Safari only) -->
+<meta name="apple-itunes-app" content="app-id=6749269410, app-argument=https://www.idisko.com/" />
+
+<link rel="canonical" href="https://www.idisko.com/confirm.html" />
+<meta name="robots" content="noindex,follow" />
+
+<!-- Open Graph & Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="iDisko" />
+<meta property="og:url" content="https://www.idisko.com/confirm.html" />
+<meta property="og:title" content="iDisko — Confirm subscription" />
+<meta property="og:description" content="Confirm your subscription to iDisko Inside." />
+<meta property="og:image" content="https://www.idisko.com/assets/og-cover.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.idisko.com/assets/og-cover.png" />
+
+<style>
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("assets/ClashDisplay.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --bg: #000214;
+  --bg-surface: #0e0d1f;
+  --fg-1: #ffffff;
+  --fg-2: #e0e0e0;
+  --fg-3: #b5b3bd;
+  --fg-muted: #666672;
+  --line: #1a1632;
+  --brand-primary: #8737DC;
+  --brand-secondary: #DF07FF;
+  --status-success: #22FFBD;
+  --status-warn: #FFB020;
+  --status-error: #ff4d4f;
+  --gradient-primary: linear-gradient(128deg, #DF07FF 10%, #8737DC 70%);
+  --font-display: "ClashDisplay", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg-1);
+  font-family: var(--font-display);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(135,55,220,.22), transparent 60%),
+    radial-gradient(ellipse 45% 35% at 90% 25%, rgba(223,7,255,.10), transparent 60%);
+}
+a { color: var(--brand-secondary); text-decoration: none; transition: color .15s; }
+a:hover { color: #fff; }
+
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(0,2,20,.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(135,55,220,.12);
+  padding: 14px 0;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.logo-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  text-decoration: none; color: var(--fg-1);
+  font-weight: 700; font-size: 18px; letter-spacing: -0.02em;
+}
+.logo-link img { height: 26px; }
+.lang-switch {
+  display: inline-flex; gap: 4px;
+  background: rgba(93,78,115,.18);
+  border: 1px solid var(--line);
+  border-radius: 999px; padding: 4px;
+}
+.lang-btn {
+  padding: 4px 10px; border-radius: 999px;
+  background: transparent; color: var(--fg-3);
+  border: none; cursor: pointer; font-size: 12px; font-weight: 600;
+  letter-spacing: .04em; text-transform: uppercase;
+  font-family: var(--font-display);
+  transition: all .15s;
+}
+.lang-btn:hover { color: var(--fg-1); }
+.lang-btn.active { background: var(--gradient-primary); color: #fff; }
+
+main {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 60px 24px;
+}
+.card {
+  width: 100%; max-width: 520px;
+  background: linear-gradient(180deg, rgba(14,13,31,.7), rgba(9,9,27,.95));
+  border: 1px solid rgba(135,55,220,.25);
+  border-radius: 24px;
+  padding: 48px 36px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,.4), 0 0 80px rgba(223,7,255,.08);
+}
+.icon-wrap {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 64px; height: 64px; border-radius: 50%;
+  margin-bottom: 22px;
+}
+.icon-wrap.success { background: rgba(34,255,189,.12); border: 1px solid rgba(34,255,189,.4); }
+.icon-wrap.warn    { background: rgba(255,176,32,.12); border: 1px solid rgba(255,176,32,.4); }
+.icon-wrap.error   { background: rgba(255,77,79,.12);  border: 1px solid rgba(255,77,79,.4); }
+.icon-wrap.loading { background: rgba(135,55,220,.12); border: 1px solid rgba(135,55,220,.4); }
+.icon-wrap svg { width: 28px; height: 28px; }
+.icon-wrap.success svg { color: var(--status-success); }
+.icon-wrap.warn    svg { color: var(--status-warn); }
+.icon-wrap.error   svg { color: var(--status-error); }
+.icon-wrap.loading svg { color: var(--brand-secondary); animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 30px; letter-spacing: -0.02em; line-height: 1.1;
+  margin: 0 0 14px;
+}
+.body { font-size: 15px; color: var(--fg-3); line-height: 1.55; margin: 0 0 28px; }
+.cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 28px; border-radius: 999px;
+  background: var(--gradient-primary);
+  color: #fff; font-weight: 700; font-size: 15px;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(223,7,255,.3);
+  transition: transform .15s;
+}
+.cta:hover { color: #fff; transform: translateY(-1px); }
+.cta:active { transform: scale(.98); }
+.cta-secondary {
+  display: inline-block; margin-top: 14px;
+  font-size: 13px; color: var(--fg-muted); text-decoration: underline;
+}
+.cta-secondary:hover { color: var(--fg-1); }
+
+footer.foot {
+  padding: 24px 32px; text-align: center;
+  font-size: 12px; color: var(--fg-muted);
+  border-top: 1px solid var(--line);
+  background: var(--bg-surface);
+}
+</style>
+
+<!-- Klaro consent manager -->
+<link rel="stylesheet" href="assets/klaro.min.css" />
+<script defer src="assets/klaro-config.js"></script>
+<script defer src="assets/klaro.no-css.js"></script>
+<script defer src="assets/klaro-trackers.js"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo-link" href="index.html">
+      <img src="assets/logo.png" alt="iDisko" />
+      <span>iDisko</span>
+    </a>
+    <div class="lang-switch" id="langSwitch" role="tablist" aria-label="Language"></div>
+  </div>
+</nav>
+
+<main>
+  <div class="card" id="card" role="status" aria-live="polite">
+    <div class="icon-wrap loading" id="iconWrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" stroke-opacity=".25"/>
+        <path d="M22 12a10 10 0 0 1-10 10"/>
+      </svg>
+    </div>
+    <h1 class="title" id="title">…</h1>
+    <p class="body" id="body">…</p>
+    <a class="cta" id="cta" href="index.html" style="display:none;">…</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <span id="footCopyright">© 2026 iDisko.</span>
+</footer>
+
+<script>
+(function(){
+  var SUPPORTED = ["es","en","fr","it","pt"];
+  var I18N = {
+    es: {
+      langName: "ES",
+      loadingTitle: "Confirmando tu email…",
+      loadingBody: "Un segundo, estamos verificando el link.",
+      successTitle: "¡Email confirmado!",
+      successBody: "Estás dentro. Te vamos a escribir solo cuando haya algo bueno —betas, features grandes, novedades reales.",
+      successCta: "Ir a iDisko",
+      alreadyTitle: "Ya estabas confirmado.",
+      alreadyBody: "Tu suscripción ya estaba activa. Nada más que hacer —seguimos en contacto.",
+      alreadyCta: "Volver al sitio",
+      invalidTitle: "Link inválido o expirado.",
+      invalidBody: "Este link de confirmación no funciona. Puede haber expirado o ya se haya usado. Suscribite de nuevo desde la home.",
+      invalidCta: "Volver al sitio",
+      unsubTitle: "Te habías dado de baja.",
+      unsubBody: "Este email se dio de baja antes. Si querés volver, suscribite de nuevo desde la home.",
+      unsubCta: "Suscribirme de nuevo",
+      errorTitle: "Algo salió mal.",
+      errorBody: "No pudimos confirmar tu email ahora. Probá de nuevo en un minuto o escribinos.",
+      errorCta: "Volver al sitio",
+      copyright: "© 2026 iDisko. La primera app social impulsada por la música."
+    },
+    en: {
+      langName: "EN",
+      loadingTitle: "Confirming your email…",
+      loadingBody: "One sec, we're checking the link.",
+      successTitle: "Email confirmed!",
+      successBody: "You're in. We'll only write when something good ships — beta launches, real updates, never spam.",
+      successCta: "Go to iDisko",
+      alreadyTitle: "You were already confirmed.",
+      alreadyBody: "Your subscription was already active. Nothing else to do — we'll be in touch.",
+      alreadyCta: "Back to the site",
+      invalidTitle: "Invalid or expired link.",
+      invalidBody: "This confirmation link doesn't work. It may have expired or already been used. Subscribe again from the home page.",
+      invalidCta: "Back to the site",
+      unsubTitle: "You unsubscribed before.",
+      unsubBody: "This email previously unsubscribed. If you'd like back in, subscribe again from the home page.",
+      unsubCta: "Subscribe again",
+      errorTitle: "Something went wrong.",
+      errorBody: "We couldn't confirm your email right now. Try again in a minute or contact us.",
+      errorCta: "Back to the site",
+      copyright: "© 2026 iDisko. The first social app powered by music."
+    },
+    fr: {
+      langName: "FR",
+      loadingTitle: "Confirmation de ton email…",
+      loadingBody: "Une seconde, on vérifie le lien.",
+      successTitle: "Email confirmé !",
+      successBody: "Tu es dans la place. On n'écrira que quand quelque chose de bon arrive — betas, vraies nouveautés, jamais de spam.",
+      successCta: "Aller sur iDisko",
+      alreadyTitle: "Tu étais déjà confirmé·e.",
+      alreadyBody: "Ton inscription était déjà active. Rien d'autre à faire — on garde contact.",
+      alreadyCta: "Retour au site",
+      invalidTitle: "Lien invalide ou expiré.",
+      invalidBody: "Ce lien de confirmation ne fonctionne pas. Il a peut-être expiré ou été déjà utilisé. Inscris-toi à nouveau depuis la page d'accueil.",
+      invalidCta: "Retour au site",
+      unsubTitle: "Tu t'étais désinscrit·e.",
+      unsubBody: "Cet email s'était désinscrit avant. Si tu veux revenir, inscris-toi à nouveau depuis la page d'accueil.",
+      unsubCta: "Me réinscrire",
+      errorTitle: "Quelque chose a planté.",
+      errorBody: "On n'a pas pu confirmer ton email maintenant. Réessaie dans une minute ou écris-nous.",
+      errorCta: "Retour au site",
+      copyright: "© 2026 iDisko. La première app sociale propulsée par la musique."
+    },
+    it: {
+      langName: "IT",
+      loadingTitle: "Confermo la tua email…",
+      loadingBody: "Un secondo, sto controllando il link.",
+      successTitle: "Email confermata!",
+      successBody: "Sei dentro. Scriveremo solo quando c'è qualcosa di buono — beta, novità vere, mai spam.",
+      successCta: "Vai su iDisko",
+      alreadyTitle: "Eri già confermato/a.",
+      alreadyBody: "La tua iscrizione era già attiva. Niente altro da fare — restiamo in contatto.",
+      alreadyCta: "Torna al sito",
+      invalidTitle: "Link non valido o scaduto.",
+      invalidBody: "Questo link di conferma non funziona. Potrebbe essere scaduto o già usato. Iscriviti di nuovo dalla home.",
+      invalidCta: "Torna al sito",
+      unsubTitle: "Ti eri disiscritto/a.",
+      unsubBody: "Questa email si era disiscritta prima. Se vuoi tornare, iscriviti di nuovo dalla home.",
+      unsubCta: "Iscrivermi di nuovo",
+      errorTitle: "Qualcosa è andato storto.",
+      errorBody: "Non abbiamo potuto confermare la tua email ora. Riprova tra un minuto o scrivici.",
+      errorCta: "Torna al sito",
+      copyright: "© 2026 iDisko. La prima app sociale alimentata dalla musica."
+    },
+    pt: {
+      langName: "PT",
+      loadingTitle: "Confirmando seu email…",
+      loadingBody: "Um segundo, estamos verificando o link.",
+      successTitle: "Email confirmado!",
+      successBody: "Você tá dentro. Só vamos escrever quando rolar algo bom — betas, novidades de verdade, zero spam.",
+      successCta: "Ir pro iDisko",
+      alreadyTitle: "Você já estava confirmado.",
+      alreadyBody: "Sua inscrição já estava ativa. Nada mais a fazer — a gente se fala.",
+      alreadyCta: "Voltar pro site",
+      invalidTitle: "Link inválido ou expirado.",
+      invalidBody: "Esse link de confirmação não funciona. Pode ter expirado ou já ter sido usado. Se inscreva de novo pela home.",
+      invalidCta: "Voltar pro site",
+      unsubTitle: "Você tinha cancelado.",
+      unsubBody: "Esse email tinha cancelado a inscrição antes. Se quiser voltar, se inscreva de novo pela home.",
+      unsubCta: "Me inscrever de novo",
+      errorTitle: "Algo deu errado.",
+      errorBody: "Não conseguimos confirmar seu email agora. Tenta de novo em um minuto ou escreve pra gente.",
+      errorCta: "Voltar pro site",
+      copyright: "© 2026 iDisko. O primeiro app social movido a música."
+    }
+  };
+
+  var ICONS = {
+    loading: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-opacity=".25"/><path d="M22 12a10 10 0 0 1-10 10"/></svg>',
+    success: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>',
+    warn:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+    error:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
+  };
+
+  var API_URL = "https://api.idisko.com/functions/v1/newsletter-api";
+
+  function detectLang() {
+    var qs = new URLSearchParams(location.search);
+    var fromQs = qs.get("lang");
+    if (fromQs && SUPPORTED.indexOf(fromQs) !== -1) return fromQs;
+    try {
+      var stored = localStorage.getItem("idisko_lang");
+      if (stored && SUPPORTED.indexOf(stored) !== -1) return stored;
+    } catch (e) {}
+    var browser = (navigator.language || "en").slice(0,2).toLowerCase();
+    return SUPPORTED.indexOf(browser) !== -1 ? browser : "en";
+  }
+
+  function setLang(lang) {
+    if (SUPPORTED.indexOf(lang) === -1) lang = "en";
+    document.documentElement.lang = lang;
+    try { localStorage.setItem("idisko_lang", lang); } catch (e) {}
+    renderLangSwitch(lang);
+    document.getElementById("footCopyright").textContent = I18N[lang].copyright;
+    return lang;
+  }
+
+  function renderLangSwitch(active) {
+    var wrap = document.getElementById("langSwitch");
+    wrap.innerHTML = "";
+    SUPPORTED.forEach(function(l){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "lang-btn" + (l === active ? " active" : "");
+      b.textContent = I18N[l].langName;
+      b.setAttribute("aria-pressed", l === active ? "true" : "false");
+      b.addEventListener("click", function(){
+        var newLang = setLang(l);
+        currentLang = newLang;
+        renderState(currentState, newLang);
+      });
+      wrap.appendChild(b);
+    });
+  }
+
+  function renderState(state, lang) {
+    var t = I18N[lang];
+    var iconWrap = document.getElementById("iconWrap");
+    var title    = document.getElementById("title");
+    var body     = document.getElementById("body");
+    var cta      = document.getElementById("cta");
+
+    var iconKind, titleKey, bodyKey, ctaKey, ctaHref;
+    switch (state) {
+      case "loading":
+        iconKind="loading"; titleKey="loadingTitle"; bodyKey="loadingBody"; ctaKey=null; break;
+      case "confirmed":
+        iconKind="success"; titleKey="successTitle"; bodyKey="successBody"; ctaKey="successCta";
+        ctaHref="thanks.html?lang=" + lang; break;
+      case "already_confirmed":
+        iconKind="success"; titleKey="alreadyTitle"; bodyKey="alreadyBody"; ctaKey="alreadyCta";
+        ctaHref="index.html"; break;
+      case "invalid":
+        iconKind="warn"; titleKey="invalidTitle"; bodyKey="invalidBody"; ctaKey="invalidCta";
+        ctaHref="index.html#newsletter"; break;
+      case "unsubscribed":
+        iconKind="warn"; titleKey="unsubTitle"; bodyKey="unsubBody"; ctaKey="unsubCta";
+        ctaHref="index.html#newsletter"; break;
+      case "error":
+      default:
+        iconKind="error"; titleKey="errorTitle"; bodyKey="errorBody"; ctaKey="errorCta";
+        ctaHref="index.html"; break;
+    }
+
+    iconWrap.className = "icon-wrap " + iconKind;
+    iconWrap.innerHTML = ICONS[iconKind];
+    title.textContent = t[titleKey];
+    body.textContent  = t[bodyKey];
+    if (ctaKey) {
+      cta.style.display = "inline-flex";
+      cta.textContent = t[ctaKey];
+      cta.setAttribute("href", ctaHref);
+    } else {
+      cta.style.display = "none";
+    }
+  }
+
+  var currentLang = setLang(detectLang());
+  var currentState = "loading";
+  renderState(currentState, currentLang);
+
+  // Auto-redirect to thanks.html on successful confirmation after 1.4s
+  function maybeRedirect(state, lang) {
+    if (state === "confirmed") {
+      setTimeout(function(){ location.href = "thanks.html?lang=" + lang; }, 1400);
+    }
+  }
+
+  var token = new URLSearchParams(location.search).get("token");
+  if (!token) {
+    currentState = "invalid";
+    renderState(currentState, currentLang);
+  } else {
+    fetch(API_URL + "?action=confirm&token=" + encodeURIComponent(token), { cache: "no-store" })
+      .then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(d){
+        var s = (d && d.status) || "error";
+        if (["confirmed","already_confirmed","invalid","unsubscribed"].indexOf(s) === -1) s = "error";
+        currentState = s;
+        renderState(currentState, currentLang);
+        maybeRedirect(currentState, currentLang);
+      })
+      .catch(function(){
+        currentState = "error";
+        renderState(currentState, currentLang);
+      });
+  }
+})();
+</script>
+
+</body>
+</html>
