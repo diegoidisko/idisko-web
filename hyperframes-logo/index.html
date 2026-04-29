@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>iDisko Outro</title>
+    <script src="./vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "ClashDisplay";
+        src: url("./assets/ClashDisplay.ttf") format("truetype");
+        font-weight: 400 900;
+        font-display: block;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0a0510;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="root"
+      data-width="1920"
+      data-height="1080"
+      data-start="0"
+      data-duration="5"
+    >
+      <div class="canvas">
+        <div class="bg-glow"></div>
+
+        <div class="stage">
+          <div class="logo-glow"></div>
+
+          <div class="sparkles">
+            <span class="sparkle s1">✦</span>
+            <span class="sparkle s2">✦</span>
+            <span class="sparkle s3">✦</span>
+            <span class="sparkle s4">✦</span>
+            <span class="sparkle s5">✦</span>
+          </div>
+
+          <div class="logo-wrap">
+            <img class="logo-img" src="./assets/logo.png" alt="iDisko" />
+          </div>
+
+          <div class="wordmark">
+            <span class="word-letter">i</span><span class="word-letter">D</span><span class="word-letter">i</span><span class="word-letter">s</span><span class="word-letter">k</span><span class="word-letter">o</span>
+          </div>
+
+          <div class="underline"></div>
+
+          <div class="tagline">Where music meets the night</div>
+        </div>
+      </div>
+
+      <style>
+        [data-composition-id="root"] .canvas {
+          width: 1920px;
+          height: 1080px;
+          position: relative;
+          overflow: hidden;
+          background:
+            radial-gradient(ellipse at 50% 55%, #1a0a26 0%, #0a0510 60%, #050208 100%);
+          font-family: "ClashDisplay", system-ui, sans-serif;
+        }
+
+        [data-composition-id="root"] .bg-glow {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 1600px;
+          height: 1600px;
+          margin-left: -800px;
+          margin-top: -800px;
+          background: radial-gradient(circle, rgba(155, 70, 255, 0.18) 0%, rgba(10, 5, 16, 0) 60%);
+          opacity: 0;
+          pointer-events: none;
+          z-index: 0;
+        }
+
+        [data-composition-id="root"] .stage {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        [data-composition-id="root"] .logo-glow {
+          position: absolute;
+          left: 50%;
+          top: 38%;
+          width: 700px;
+          height: 700px;
+          margin-left: -350px;
+          margin-top: -350px;
+          background: radial-gradient(circle, rgba(180, 100, 255, 0.55) 0%, rgba(120, 50, 220, 0.15) 35%, rgba(10, 5, 16, 0) 65%);
+          opacity: 0;
+          pointer-events: none;
+          z-index: 1;
+          filter: blur(8px);
+        }
+
+        [data-composition-id="root"] .logo-wrap {
+          position: relative;
+          width: 360px;
+          height: 360px;
+          margin-bottom: 36px;
+          opacity: 0;
+          z-index: 3;
+          will-change: transform, opacity;
+        }
+
+        [data-composition-id="root"] .logo-img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          filter: drop-shadow(0 0 40px rgba(170, 90, 255, 0.55));
+        }
+
+        [data-composition-id="root"] .wordmark {
+          position: relative;
+          font-size: 140px;
+          font-weight: 700;
+          color: #ffffff;
+          letter-spacing: 0.02em;
+          line-height: 1;
+          z-index: 3;
+          display: flex;
+          gap: 4px;
+          text-shadow: 0 0 30px rgba(170, 90, 255, 0.35);
+        }
+
+        [data-composition-id="root"] .word-letter {
+          display: inline-block;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        [data-composition-id="root"] .underline {
+          width: 0;
+          height: 3px;
+          margin-top: 22px;
+          background: linear-gradient(90deg, rgba(170, 90, 255, 0) 0%, #c89bff 50%, rgba(170, 90, 255, 0) 100%);
+          z-index: 3;
+        }
+
+        [data-composition-id="root"] .tagline {
+          margin-top: 28px;
+          font-size: 28px;
+          font-weight: 400;
+          letter-spacing: 0.32em;
+          text-transform: uppercase;
+          color: rgba(220, 200, 255, 0.7);
+          opacity: 0;
+          z-index: 3;
+        }
+
+        [data-composition-id="root"] .sparkles {
+          position: absolute;
+          left: 50%;
+          top: 38%;
+          width: 600px;
+          height: 600px;
+          margin-left: -300px;
+          margin-top: -300px;
+          z-index: 2;
+          pointer-events: none;
+        }
+
+        [data-composition-id="root"] .sparkle {
+          position: absolute;
+          color: #fff;
+          font-size: 32px;
+          opacity: 0;
+          text-shadow: 0 0 12px rgba(220, 180, 255, 0.9);
+          will-change: transform, opacity;
+        }
+
+        [data-composition-id="root"] .s1 { top: 8%;  left: 12%; font-size: 28px; }
+        [data-composition-id="root"] .s2 { top: 18%; left: 82%; font-size: 40px; }
+        [data-composition-id="root"] .s3 { top: 62%; left: 6%;  font-size: 36px; }
+        [data-composition-id="root"] .s4 { top: 78%; left: 78%; font-size: 24px; }
+        [data-composition-id="root"] .s5 { top: 42%; left: 92%; font-size: 22px; }
+      </style>
+
+      <script>
+        (function () {
+          const sel = (s) => '[data-composition-id="root"] ' + s;
+
+          const tl = gsap.timeline({ paused: true });
+
+          // 0. Background glow blooms in early
+          tl.fromTo(
+            sel('.bg-glow'),
+            { opacity: 0, scale: 0.6 },
+            { opacity: 1, scale: 1, duration: 1.6, ease: "power2.out" },
+            0.0
+          );
+
+          // 1. Logo: scale-bounce in with a subtle rotation, very Figma-like
+          tl.fromTo(
+            sel('.logo-wrap'),
+            { opacity: 0, scale: 0.35, rotation: -18, y: 30 },
+            { opacity: 1, scale: 1, rotation: 0, y: 0, duration: 1.1, ease: "back.out(1.7)" },
+            0.15
+          );
+
+          // 2. Logo punch: small bounce after settle
+          tl.to(
+            sel('.logo-wrap'),
+            { scale: 1.06, duration: 0.18, ease: "power2.out" },
+            1.05
+          );
+          tl.to(
+            sel('.logo-wrap'),
+            { scale: 1, duration: 0.32, ease: "power2.inOut" },
+            1.23
+          );
+
+          // 3. Logo glow bloom synced with the punch
+          tl.fromTo(
+            sel('.logo-glow'),
+            { opacity: 0, scale: 0.5 },
+            { opacity: 1, scale: 1.15, duration: 0.45, ease: "power2.out" },
+            0.95
+          );
+          tl.to(
+            sel('.logo-glow'),
+            { opacity: 0.35, scale: 1, duration: 1.4, ease: "power2.inOut" },
+            1.4
+          );
+
+          // 4. Sparkles pop
+          const sparkles = ['.s1', '.s2', '.s3', '.s4', '.s5'];
+          sparkles.forEach((s, i) => {
+            tl.fromTo(
+              sel(s),
+              { opacity: 0, scale: 0 },
+              { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.5)" },
+              0.85 + i * 0.07
+            );
+            tl.to(
+              sel(s),
+              { opacity: 0, scale: 0.6, duration: 0.9, ease: "power2.in" },
+              1.6 + i * 0.05
+            );
+          });
+
+          // 5. Wordmark: letters stagger in from below
+          tl.fromTo(
+            sel('.word-letter'),
+            { opacity: 0, y: 40 },
+            { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", stagger: 0.06 },
+            1.25
+          );
+
+          // 6. Underline sweeps out from center
+          tl.fromTo(
+            sel('.underline'),
+            { width: 0 },
+            { width: 520, duration: 0.7, ease: "power3.out" },
+            1.7
+          );
+
+          // 7. Tagline fades up
+          tl.fromTo(
+            sel('.tagline'),
+            { opacity: 0, y: 12 },
+            { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
+            2.0
+          );
+
+          // 8. Gentle settle: very subtle float on the logo until end
+          tl.to(
+            sel('.logo-wrap'),
+            { y: -8, duration: 1.6, ease: "sine.inOut" },
+            2.6
+          );
+
+          window.__timelines = window.__timelines || {};
+          window.__timelines["root"] = tl;
+        })();
+      </script>
+    </div>
+  </body>
+</html>
