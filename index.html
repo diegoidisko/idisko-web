@@ -338,11 +338,14 @@ html, body {
 
   @keyframes softPulse { 0%,100% { opacity: .85; transform: scale(1);} 50% { opacity:1; transform: scale(1.04);} }
   @keyframes liveDot { 0%,100% { box-shadow: 0 0 0 0 rgba(34,255,189,.6);} 50% { box-shadow: 0 0 0 6px rgba(34,255,189,0);} }
+  @keyframes countPop { 0% { transform: translateY(0) scale(1); text-shadow: 0 0 0 rgba(196,45,255,0); } 35% { transform: translateY(-3px) scale(1.08); text-shadow: 0 0 22px rgba(196,45,255,.65); } 100% { transform: translateY(0) scale(1); text-shadow: 0 0 0 rgba(196,45,255,0); } }
   @keyframes floatY { 0%,100%{transform: translateY(0);} 50%{transform: translateY(-8px);} }
   @keyframes eqBar { 0%,100%{height: 30%;} 50%{height: 100%;} }
   @keyframes sheen { 0%{background-position:-200% 0;} 100%{background-position:200% 0;} }
 
   .live-dot { animation: liveDot 1.8s ease-out infinite; }
+  .live-count-number { display: inline-block; animation: countPop .72s cubic-bezier(.2,.85,.2,1); will-change: transform, text-shadow; }
+  @media (prefers-reduced-motion: reduce) { .live-count-number { animation: none; } }
   .float-y { animation: floatY 6s ease-in-out infinite; }
 
   .eq-bars { display:inline-flex; align-items:flex-end; gap:2px; height:12px; }
@@ -495,8 +498,44 @@ function EqBars({ color = "#22FFBD" }) {
 // TODO(diego): replace fetch URL with real Supabase REST endpoint.
 function LiveUserCount() {
   const { t, lang } = window.useT();
-  const formatted = lang === "en" ? "8,000+" : "8.000+";
-  return <span>{formatted} {t('liveCount.suffix')}</span>;
+  const { useState, useEffect, useRef } = React;
+  const [n, setN] = useState(8000);
+  const [pulseKey, setPulseKey] = useState(0);
+  const lastCount = useRef(n);
+
+  useEffect(() => {
+    let mounted = true;
+    const ENDPOINT = "https://api.idisko.com/functions/v1/quick-api";
+    const fetchReal = async () => {
+      try {
+        const r = await fetch(ENDPOINT, { cache: "no-store" });
+        if (!r.ok) return;
+        const d = await r.json();
+        if (!mounted || typeof d.count !== "number") return;
+        setN(prev => Math.max(prev, d.count, 8000));
+      } catch (_) {}
+    };
+    fetchReal();
+    const fetchInterval = setInterval(fetchReal, 30_000);
+    const tickInterval = setInterval(() => {
+      if (mounted) setN(v => v + 4);
+    }, 15_000);
+    return () => {
+      mounted = false;
+      clearInterval(fetchInterval);
+      clearInterval(tickInterval);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (lastCount.current === n) return;
+    lastCount.current = n;
+    setPulseKey(k => k + 1);
+  }, [n]);
+
+  const sep = lang === "en" ? "," : ".";
+  const formatted = String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, sep) + "+";
+  return <span><span key={pulseKey} className="live-count-number">{formatted}</span> {t('liveCount.suffix')}</span>;
 }
 
 function Header() {
@@ -873,7 +912,7 @@ function HowItWorks() {
       n: "03",
       title: t('how.step3Title'),
       body: t('how.step3Body'),
-      image: "assets/vip-badge.png",
+      label: "VIP",
       color: "#22FFBD",
       accent: "rgba(34,255,189,.15)"
     }
@@ -896,8 +935,8 @@ function HowItWorks() {
                  onMouseEnter={e=>{e.currentTarget.style.borderColor=s.color+"66";e.currentTarget.style.transform="translateY(-4px)";}}
                  onMouseLeave={e=>{e.currentTarget.style.borderColor="#1a1632";e.currentTarget.style.transform="translateY(0)";}}>
               <div style={{width:64,height:64,borderRadius:20,background:s.accent,border:`1px solid ${s.color}55`,display:"flex",alignItems:"center",justifyContent:"center",marginBottom:20,boxShadow:`0 8px 30px ${s.color}22`}}>
-                {s.image ? (
-                  <img src={s.image} alt="" style={{width:30,height:30,objectFit:"contain",filter:"drop-shadow(0 4px 12px rgba(223,7,255,.35))"}}/>
+                {s.label ? (
+                  <span style={{fontSize:15,fontWeight:800,letterSpacing:".08em",color:s.color}}>{s.label}</span>
                 ) : (
                   <i data-lucide={s.icon} style={{width:26,height:26,color:s.color}}/>
                 )}
@@ -1336,6 +1375,16 @@ function Testimonials() {
     if (key === 'maria sol') return PEOPLE[1].img;
     return PEOPLE[0].img;
   };
+  const getFlag = (name) => {
+    const key = String(name || '').toLowerCase();
+    if (key === 'charlotte') return "🇫🇷";
+    if (key === 'alejo') return "🇦🇷";
+    if (key === 'sylvia') return "🇪🇸";
+    if (key === 'francesco') return "🇮🇹";
+    if (key === 'beatriz') return "🇧🇷";
+    if (key === 'maria sol') return "🇦🇷";
+    return "";
+  };
   const scrollByCards = (dir) => {
     const el = document.getElementById('testimonial-carousel');
     if (el) el.scrollBy({ left: dir * 392, behavior: 'smooth' });
@@ -1354,15 +1403,15 @@ function Testimonials() {
           </div>
         </div>
       </div>
-      <div id="testimonial-carousel" style={{display:"flex",gap:20,overflowX:"auto",scrollSnapType:"x mandatory",scrollPadding:"max(20px, calc((100vw - 1200px) / 2 + 32px))",padding:"0 max(20px, calc((100vw - 1200px) / 2 + 32px)) 16px",WebkitOverflowScrolling:"touch"}}>
+      <div id="testimonial-carousel" style={{display:"flex",alignItems:"flex-start",gap:20,overflowX:"auto",scrollSnapType:"x mandatory",scrollPadding:"max(20px, calc((100vw - 1200px) / 2 + 32px))",padding:"0 max(20px, calc((100vw - 1200px) / 2 + 32px)) 16px",WebkitOverflowScrolling:"touch"}}>
         {items.map((item,i)=>(
-          <article key={i} style={{flex:"0 0 min(360px, 85vw)",scrollSnapAlign:"start",padding:30,borderRadius:22,background:"#0e0d1f",border:"1px solid #1a1632",position:"relative",transition:"all 250ms",minHeight:360,display:"flex",flexDirection:"column"}} onMouseEnter={e=>{e.currentTarget.style.borderColor="rgba(135,55,220,.4)";e.currentTarget.style.transform="translateY(-3px)";}} onMouseLeave={e=>{e.currentTarget.style.borderColor="#1a1632";e.currentTarget.style.transform="translateY(0)";}}>
+          <article key={i} style={{flex:"0 0 min(360px, 85vw)",scrollSnapAlign:"start",padding:30,borderRadius:22,background:"#0e0d1f",border:"1px solid #1a1632",position:"relative",transition:"all 250ms",display:"flex",flexDirection:"column"}} onMouseEnter={e=>{e.currentTarget.style.borderColor="rgba(135,55,220,.4)";e.currentTarget.style.transform="translateY(-3px)";}} onMouseLeave={e=>{e.currentTarget.style.borderColor="#1a1632";e.currentTarget.style.transform="translateY(0)";}}>
             <div style={{fontSize:46,lineHeight:1,color:"#DF07FF",marginBottom:12}}>“</div>
             <p style={{fontSize:18,lineHeight:1.55,margin:0,fontWeight:500,color:"#e0e0e0",textWrap:"pretty"}}>{item.originalQuote}</p>
             {lang !== item.originalLang && (<p style={{fontSize:13,lineHeight:1.5,margin:"14px 0 0",color:"#666672",fontStyle:"italic",textWrap:"pretty"}}>— {item.translatedQuote}</p>)}
-            <div style={{marginTop:"auto",display:"flex",alignItems:"center",gap:12,paddingTop:22,borderTop:"1px solid #1a1632"}}>
+            <div style={{marginTop:22,display:"flex",alignItems:"center",gap:12,paddingTop:18,borderTop:"1px solid #1a1632"}}>
               <img src={getImg(item.name)} loading="lazy" alt="" style={{width:40,height:40,borderRadius:"50%",objectFit:"cover",border:"1px solid #2d2933"}}/>
-              <div><div style={{fontSize:14,fontWeight:700}}>{item.name}</div><div style={{fontSize:12,color:"#b5b3bd"}}>{item.role}</div></div>
+              <div><div style={{display:"flex",alignItems:"center",gap:6,fontSize:14,fontWeight:700}}>{item.name}<span style={{fontSize:12,lineHeight:1}}>{getFlag(item.name)}</span></div><div style={{fontSize:12,color:"#b5b3bd"}}>{item.role}</div></div>
             </div>
           </article>
         ))}
