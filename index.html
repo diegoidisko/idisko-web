@@ -413,6 +413,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "copyVariant": "poetic"
 }/*EDITMODE-END*/;
 window.__TWEAKS = { ...TWEAK_DEFAULTS };
+window.__LIVE_COUNT_ENDPOINT = "https://api.idisko.com/functions/v1/quick-api";
+window.__liveCountPromise = fetch(window.__LIVE_COUNT_ENDPOINT, { cache: "no-store" })
+  .then(r => r.ok ? r.json() : null)
+  .catch(() => null);
 </script>
 
 <script>
@@ -496,30 +500,41 @@ function EqBars({ color = "#22FFBD" }) {
 
 // Live user count — synced with backend (e.g. Supabase) when available.
 // TODO(diego): replace fetch URL with real Supabase REST endpoint.
-function LiveUserCount() {
+function LiveUserCount({ numberStyle = null } = {}) {
   const { t, lang } = window.useT();
   const { useState, useEffect, useRef } = React;
-  const [n, setN] = useState(8000);
+  const [n, setN] = useState(null);
   const [pulseKey, setPulseKey] = useState(0);
   const lastCount = useRef(n);
+  const hasLoadedRealCount = useRef(false);
 
   useEffect(() => {
     let mounted = true;
-    const ENDPOINT = "https://api.idisko.com/functions/v1/quick-api";
+    const ENDPOINT = window.__LIVE_COUNT_ENDPOINT || "https://api.idisko.com/functions/v1/quick-api";
     const fetchReal = async () => {
       try {
-        const r = await fetch(ENDPOINT, { cache: "no-store" });
-        if (!r.ok) return;
-        const d = await r.json();
-        if (!mounted || typeof d.count !== "number") return;
-        setN(prev => Math.max(prev, d.count, 8000));
-      } catch (_) {}
+        const prefetched = window.__liveCountPromise;
+        window.__liveCountPromise = null;
+        const d = prefetched
+          ? await prefetched
+          : await fetch(ENDPOINT, { cache: "no-store" }).then(r => r.ok ? r.json() : null);
+        if (!mounted || !d || typeof d.count !== "number") return;
+        setN(prev => {
+          if (!hasLoadedRealCount.current) {
+            hasLoadedRealCount.current = true;
+            return d.count;
+          }
+          return Math.max(prev ?? d.count, d.count);
+        });
+      } catch (_) {
+        if (mounted && !hasLoadedRealCount.current) setN(8000);
+      }
     };
     fetchReal();
     const fetchInterval = setInterval(fetchReal, 30_000);
     const tickInterval = setInterval(() => {
-      if (mounted) setN(v => v + 4);
-    }, 15_000);
+      if (mounted) setN(v => typeof v === "number" ? v + 4 : v);
+    }, 5_000);
     return () => {
       mounted = false;
       clearInterval(fetchInterval);
@@ -528,14 +543,14 @@ function LiveUserCount() {
   }, []);
 
   useEffect(() => {
-    if (lastCount.current === n) return;
+    if (n === null || lastCount.current === n) return;
     lastCount.current = n;
     setPulseKey(k => k + 1);
   }, [n]);
 
   const sep = lang === "en" ? "," : ".";
-  const formatted = String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, sep) + "+";
-  return <span><span key={pulseKey} className="live-count-number">{formatted}</span> {t('liveCount.suffix')}</span>;
+  const formatted = n === null ? "..." : String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+  return <span><span key={pulseKey} className="live-count-number" style={numberStyle || undefined}>{formatted}</span> {t('liveCount.suffix')}</span>;
 }
 
 function Header() {
@@ -815,7 +830,7 @@ function SocialProof({ tweaks }) {
       <div className="container" style={{display:"flex",alignItems:"center",justifyContent:"center",textAlign:"center"}}>
         <div style={{display:"inline-flex",alignItems:"baseline",justifyContent:"center",gap:12,flexWrap:"wrap"}}>
           <span style={{fontFamily:"ClashDisplay",fontWeight:700,fontSize:54,lineHeight:1,letterSpacing:"-0.03em",background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>
-            <LiveUserCount/>
+            <LiveUserCount numberStyle={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",backgroundClip:"text",color:"transparent"}}/>
           </span>
         </div>
       </div>
