@@ -7,31 +7,31 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.idisko.com/faq.html</loc>
+    <loc>https://www.idisko.com/faq/</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.idisko.com/privacy.html</loc>
+    <loc>https://www.idisko.com/politique-de-confidentialite/</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.idisko.com/cookies.html</loc>
+    <loc>https://www.idisko.com/cookies/</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.idisko.com/terms.html</loc>
+    <loc>https://www.idisko.com/cgu/</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.idisko.com/legal.html</loc>
+    <loc>https://www.idisko.com/mentions-legales/</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
