@@ -37,6 +37,9 @@
       capture_pageview: true,
       capture_pageleave: true,
       autocapture: true,
+      // Share distinct_id across www.idisko.com and app.idisko.com.
+      cross_subdomain_cookie: true,
+      persistence: 'localStorage+cookie',
       // utm_id is missing from posthog-js IAB whitelist — add it explicitly:
       custom_campaign_params: ['utm_id']
     });
@@ -124,15 +127,30 @@
     try { if (window.posthog && loaded.posthog) posthog.capture(event, props); } catch (e) {}
     try {
       if (window.fbq && loaded.metaPixel) {
-        // Map common iDisko events to Meta standard events:
+        // Map common iDisko events to Meta standard events.
+        // Precedence: explicit data-meta on the element > stdMap > trackCustom fallback.
         var stdMap = {
           'newsletter_signup': 'Lead',
           'newsletter_confirmed': 'CompleteRegistration',
           'app_store_click': 'InitiateCheckout',
           'play_store_click': 'InitiateCheckout'
         };
-        if (stdMap[event]) fbq('track', stdMap[event], props);
-        else fbq('trackCustom', event, props);
+        // Meta's set of standard events — only these are 'track', everything else 'trackCustom'.
+        var metaStandardEvents = {
+          AddPaymentInfo:1, AddToCart:1, AddToWishlist:1, CompleteRegistration:1, Contact:1,
+          CustomizeProduct:1, Donate:1, FindLocation:1, InitiateCheckout:1, Lead:1, Purchase:1,
+          Schedule:1, Search:1, StartTrial:1, SubmitApplication:1, Subscribe:1, ViewContent:1
+        };
+        var explicit = props && props.meta_event;
+        var resolved = explicit || stdMap[event];
+        if (resolved && metaStandardEvents[resolved]) {
+          fbq('track', resolved, props);
+        } else if (resolved) {
+          // Non-standard name supplied via data-meta → custom event under that name.
+          fbq('trackCustom', resolved, props);
+        } else {
+          fbq('trackCustom', event, props);
+        }
       }
     } catch (e) {}
     try { if (window.clarity && loaded.clarity) clarity('event', event); } catch (e) {}
