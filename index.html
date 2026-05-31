@@ -1441,7 +1441,7 @@ function UseCases() {
 
 function LifestyleGallery() {
   const { t } = window.useT();
-  const images = ["gallery-09-parque.jpg","gallery-01-kitchen-night.jpg","gallery-02-bed-late-night.jpg","gallery-03-working-home.jpg","gallery-04-subway.jpg","gallery-05-couch-together.jpg","gallery-06-kitchen-dance.jpg","gallery-07-getting-ready.jpg","gallery-08-cafe.jpg"];
+  const images = ["gallery-09-parque","gallery-01-kitchen-night","gallery-02-bed-late-night","gallery-03-working-home","gallery-04-subway","gallery-05-couch-together","gallery-06-kitchen-dance","gallery-07-getting-ready","gallery-08-cafe"];
   const loop = [...images, ...images];
   return (
     <section className="section-pad" style={{padding:"10px 0 100px",overflow:"hidden"}}>
@@ -1452,7 +1452,7 @@ function LifestyleGallery() {
       </div>
       <div style={{overflow:"hidden",padding:0,maskImage:"linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%)",WebkitMaskImage:"linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%)"}}>
         <div className="lifestyle-track" style={{display:"flex",gap:16,width:"max-content"}}>
-          {loop.map((img,i)=>(<img key={i} src={`assets/gallery/${img}`} loading="lazy" alt="" style={{height:"clamp(280px,32vw,400px)",aspectRatio:"3/2",objectFit:"cover",borderRadius:16,border:"1px solid rgba(255,255,255,.08)",boxShadow:"0 20px 60px rgba(0,0,0,.35)",flex:"0 0 auto"}}/>))}
+          {loop.map((img,i)=>(<picture key={i} style={{display:"block",height:"clamp(280px,32vw,400px)",aspectRatio:"3/2",flex:"0 0 auto"}}><source srcSet={`assets/gallery/${img}.webp`} type="image/webp"/><img src={`assets/gallery/${img}.jpg`} loading="lazy" alt="" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:16,border:"1px solid rgba(255,255,255,.08)",boxShadow:"0 20px 60px rgba(0,0,0,.35)"}}/></picture>))}
         </div>
       </div>
     </section>
