@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Users — iDisko</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a26;--border:#ffffff0f;--text:#f0f0f8;--muted:#6b6b8a;--gold:#ffce4a;--violet:#8737dc;--magenta:#df07ff;--green:#c8f060;--red:#ff5e6c;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;min-height:100vh;}
+  .header{position:sticky;top:0;z-index:100;background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .header-left{display:flex;align-items:center;gap:16px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--green);}
+  .divider-v{width:1px;height:20px;background:var(--border);}
+  .page-title{font-family:'Syne',sans-serif;font-weight:600;font-size:13px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:7px;}
+  .stamp{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+  .container{max-width:1300px;margin:0 auto;padding:32px 40px;}
+  .grid-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px;}
+  .tile{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;}
+  .tile.gold{border-color:rgba(255,206,74,.3);background:linear-gradient(180deg,rgba(255,206,74,.07),var(--surface));}
+  .tile .n{font-family:'Syne',sans-serif;font-weight:800;font-size:32px;letter-spacing:-1px;line-height:1;}
+  .tile.gold .n{color:var(--gold);}
+  .tile .l{font-size:11px;color:var(--text);margin-top:10px;}
+  .tile .s{font-size:10px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.5px;}
+  .controls{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;}
+  .tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:4px;}
+  .tab{padding:7px 16px;border-radius:7px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;color:var(--muted);border:none;background:transparent;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:6px;}
+  .tab.active{background:var(--surface2);color:var(--text);border:1px solid var(--border);}
+  .tab .b{background:var(--gold);color:#000;border-radius:100px;padding:1px 6px;font-size:9px;font-weight:700;}
+  .search{position:relative;flex:1;min-width:200px;max-width:320px;}
+  .search input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'DM Mono',monospace;font-size:12px;padding:9px 14px;outline:none;}
+  .search input:focus{border-color:var(--gold);}
+  .count{font-size:11px;color:var(--muted);margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;}
+  .count b{color:var(--gold);}
+  .users{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;}
+  .ucard{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s;}
+  .ucard:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.14);}
+  .ucard.paid{border-color:rgba(255,206,74,.25);}
+  .ucard.paid::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--magenta));}
+  .utop{display:flex;align-items:center;gap:13px;}
+  .ava{width:52px;height:52px;border-radius:50%;object-fit:cover;background:var(--surface2);border:2px solid var(--border);flex-shrink:0;}
+  .ava-ph{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--magenta));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:17px;color:#fff;flex-shrink:0;}
+  .ucard.paid .ava,.ucard.paid .ava-ph{border:2px solid rgba(255,206,74,.5);}
+  .uinfo{flex:1;min-width:0;}
+  .uname{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .ustore{font-size:10px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.5px;}
+  .plan{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:100px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;flex-shrink:0;}
+  .plan.p6{background:rgba(255,206,74,.14);color:var(--gold);border:1px solid rgba(255,206,74,.3);}
+  .plan.p3{background:rgba(223,7,255,.12);color:var(--magenta);border:1px solid rgba(223,7,255,.3);}
+  .plan.p1{background:rgba(135,55,220,.16);color:#b388ff;border:1px solid rgba(135,55,220,.35);}
+  .plan.comp{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);}
+  .umeta{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid var(--border);padding-top:12px;gap:10px;}
+  .ml{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+  .mv{font-size:12px;color:var(--text);margin-top:2px;}
+  .soon{color:var(--red)!important;}
+  .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:60px;font-size:12px;}
+  .note{margin-top:26px;font-size:10.5px;color:var(--muted);line-height:1.8;border-top:1px solid var(--border);padding-top:16px;}
+  .note b{color:var(--text);}
+  @media(max-width:768px){.header{padding:14px 20px;}.container{padding:22px 16px;}.grid-stats{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-left">
+    <div class="logo">iDisko</div>
+    <div class="divider-v"></div>
+    <div class="page-title">&#9733; Premium Users</div>
+  </div>
+  <div class="stamp">Snapshot · 11 jun 2026</div>
+</header>
+<div class="container">
+  <div class="grid-stats">
+    <div class="tile gold"><div class="n" id="tTotal">—</div><div class="l">Usuarios premium</div><div class="s">flag is_premium</div></div>
+    <div class="tile"><div class="n" id="tPaid">—</div><div class="l">De pago (con plan)</div><div class="s">RevenueCat</div></div>
+    <div class="tile"><div class="n" id="tComp">—</div><div class="l">Cortesía / manual</div><div class="s">sin suscripción</div></div>
+    <div class="tile"><div class="n" id="tSoon">—</div><div class="l">Vencen ≤ 30 días</div><div class="s">requieren atención</div></div>
+  </div>
+
+  <div class="controls">
+    <div class="search"><input type="text" id="q" placeholder="Buscar por nombre..." oninput="render()"></div>
+    <div class="tabs">
+      <button class="tab active" data-f="all" onclick="setF(this)">Todos <span class="b" id="cAll">0</span></button>
+      <button class="tab" data-f="paid" onclick="setF(this)">De pago <span class="b" id="cPaid">0</span></button>
+      <button class="tab" data-f="comp" onclick="setF(this)">Cortesía <span class="b" id="cComp">0</span></button>
+    </div>
+  </div>
+
+  <div class="count" id="count"></div>
+  <div class="users" id="list"></div>
+
+  <div class="note">
+    <b>Fuente:</b> <code>profiles.is_premium</code> + <code>user_subscriptions</code> (RevenueCat). &nbsp;·&nbsp;
+    <b>De pago</b> = tiene suscripción con plan; <b>Cortesía/manual</b> = premium activado sin compra (cuentas internas, regalos o pruebas). &nbsp;·&nbsp;
+    <b>Snapshot del 11 jun 2026</b>: a diferencia de los paneles de shuffle/VIP, este NO es en vivo — los datos de facturación no se exponen a la clave pública. Para refrescar, se vuelve a exportar (cero cambios en la app).
+  </div>
+</div>
+<script>
+const PIC='https://acshjckzfiytwbobpacl.supabase.co/storage/v1/object/public/pictures/';
+const PREMIUM=[{"name":"martinetcheberrito","avatar":null,"photo_path":"b2b97749-2e07-4e79-8004-c67ee9dd1a76/1774218365786-2vo2ulffprv","expires":"2026-10-03","product":"Idisko_premium_web_6months","store":"RC_BILLING","status":"active","purchased":"2026-04-03"},{"name":"Chino","avatar":"https://lh3.googleusercontent.com/a/ACg8ocIHB9N-bi8OapXs4-tozJfUgTcA4dz5srriwr5UNW0IA3p1yA=s96-c","photo_path":"792a129f-a0bd-439b-ba1b-4697e70ff69e/1779791074728-8ofmkxnngom","expires":"2026-07-11","product":"Idisko_premium_web_3months","store":"RC_BILLING","status":"active","purchased":"2026-04-11"},{"name":"palolitomatador","avatar":"https://lh3.googleusercontent.com/a/ACg8ocLY5vJo6BngIJvzznYSEdxlK5wdKGr06Y1fTiMUa3YbbpVvZeg=s96-c","photo_path":"9edb84ad-dc13-4025-957b-6cecde22ba9b/1778513804973-gjokcqkng74","expires":"2026-07-06","product":"com.idisko.premium.1month","store":"APP_STORE","status":"active","purchased":"2026-06-06"},{"name":"Chino simonet","avatar":null,"photo_path":"4f2a0187-c858-4b77-98f0-27f9d240ffb6/1758636731599","expires":"2026-06-21","product":"idisko_premium_web_1month_v2026","store":"RC_BILLING","status":"active","purchased":"2026-05-21"},{"name":"Ophelia","avatar":"https://lh3.googleusercontent.com/a/ACg8ocLIAfWEKcSZphe4uFvkfTOG0hYcMgMqYLhBQTdUDdTLe7ShoTY=s96-c","photo_path":"8e784346-6394-4a24-8ee1-b220f8b0d52a/1768576659500-gy1p253ye0r","expires":"2026-06-17","product":"Idisko_premium_web_6months2026","store":"RC_BILLING","status":"active","purchased":"2026-05-17"},{"name":"ElChinoSimonet","avatar":"https://lh3.googleusercontent.com/a/ACg8ocLb4FPp2bNWX1eFNGsIIWTaSqt8b7csTPW4D_jMJcB2Ao_VWByB=s96-c","photo_path":"0a3a4759-417f-43e8-b80c-8bbe2ff18c55/1774446261296-cefz3z404h9","expires":"2026-06-12","product":null,"store":null,"status":null,"purchased":null},{"name":"jeans","avatar":null,"photo_path":"050526b2-9c53-42d4-96d4-c5c99e82e572/1775579807959-xva2xxbe569","expires":null,"product":null,"store":null,"status":null,"purchased":null},{"name":"DES ✅","avatar":null,"photo_path":"cbc1b768-b71d-4276-b14e-d004009123d0/1775509669405-u41068fm9n","expires":null,"product":null,"store":null,"status":null,"purchased":null},{"name":"maria melo","avatar":"https://lh3.googleusercontent.com/a/ACg8ocLTwFv4T9_JIoNyNoWPkct3M048kfhOTg541BNxhloZDviEb_Q=s96-c","photo_path":"2e199cc4-f609-4918-8000-da4aae1bd433/1775505106850-7n260pm9ane","expires":null,"product":null,"store":null,"status":null,"purchased":null},{"name":"kkkkk","avatar":"https://lh3.googleusercontent.com/a/ACg8ocJRQNrFBHQ9W4mav4fqGqCWHuho4d2UWKvr_pNjoRGwiDscSdQFQQ=s96-c","photo_path":"561b1e37-3f6e-42b1-adc5-6723119a4cd6/1775505860225-de65sjzdtre","expires":null,"product":null,"store":null,"status":null,"purchased":null},{"name":"Linda Berettini","avatar":null,"photo_path":"a1308333-9c28-4731-86cc-2367e6c11442/1775579810783-6sdg54c3f6","expires":null,"product":null,"store":null,"status":null,"purchased":null},{"name":"Francesco","avatar":"https://lh3.googleusercontent.com/a/ACg8ocJ9H0Nvs-YoszJcyDHt71nRZZ2Ni_l6U0TJ23UWCFXDoW0S5F78=s96-c","photo_path":"bb1c5dcf-415d-4cf8-a0c9-bdcbe212bed9/1765624305662","expires":null,"product":null,"store":null,"status":null,"purchased":null},{"name":"Ary","avatar":"https://lh3.googleusercontent.com/a/ACg8ocKzaRPivSVWV6wt0e3IoDsCJXubIkTCO55q8N6Q6Jx05mLzVA=s96-c","photo_path":"bff68b5a-4345-4f62-bfd7-7c3b36706491/1775505492878-h7ylup4fjzq","expires":null,"product":null,"store":null,"status":null,"purchased":null}];
+
+let filter='all';
+function planInfo(p){
+  if(!p)return{label:'Cortesía',cls:'comp',months:0};
+  const l=p.toLowerCase();
+  if(l.includes('6month'))return{label:'6 meses',cls:'p6'};
+  if(l.includes('3month'))return{label:'3 meses',cls:'p3'};
+  if(l.includes('1month'))return{label:'1 mes',cls:'p1'};
+  return{label:p,cls:'p1'};
+}
+function storeLabel(s){return{APP_STORE:'App Store',PLAY_STORE:'Google Play',RC_BILLING:'Web'}[s]||(s?s:'—');}
+function ini(n){return(n||'?').trim().split(/\s+/).map(w=>w[0]||'').join('').slice(0,2).toUpperCase()||'?';}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function daysTo(d){if(!d)return null;return Math.round((new Date(d+'T12:00:00')-new Date())/86400000);}
+
+function setF(btn){filter=btn.dataset.f;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');render();}
+
+function render(){
+  const q=(document.getElementById('q').value||'').toLowerCase().trim();
+  const paid=PREMIUM.filter(u=>u.product), comp=PREMIUM.filter(u=>!u.product);
+  document.getElementById('tTotal').textContent=PREMIUM.length;
+  document.getElementById('tPaid').textContent=paid.length;
+  document.getElementById('tComp').textContent=comp.length;
+  document.getElementById('tSoon').textContent=PREMIUM.filter(u=>{const d=daysTo(u.expires);return d!==null&&d<=30&&d>=0;}).length;
+  document.getElementById('cAll').textContent=PREMIUM.length;
+  document.getElementById('cPaid').textContent=paid.length;
+  document.getElementById('cComp').textContent=comp.length;
+
+  let data=filter==='paid'?paid:filter==='comp'?comp:PREMIUM;
+  if(q)data=data.filter(u=>(u.name||'').toLowerCase().includes(q));
+  document.getElementById('count').innerHTML='Mostrando <b>'+data.length+'</b> usuario'+(data.length!==1?'s':'');
+
+  const list=document.getElementById('list');
+  if(!data.length){list.innerHTML='<div class="empty">Sin resultados</div>';return;}
+  list.innerHTML=data.map(u=>{
+    const pi=planInfo(u.product);
+    const photo=u.avatar||(u.photo_path?PIC+u.photo_path:null);
+    const ph='<div class="ava-ph">'+ini(u.name)+'</div>';
+    const img=photo?'<img class="ava" src="'+esc(photo)+'" referrerpolicy="no-referrer" onerror="this.outerHTML=\''+ph.replace(/'/g,"\\'")+'\'">':ph;
+    const d=daysTo(u.expires);
+    let exp;
+    if(!u.expires)exp='<span class="mv">Sin vencimiento</span>';
+    else{
+      const soon=d!==null&&d<=7;
+      const when=d<0?'venció':d===0?'hoy':'en '+d+'d';
+      exp='<span class="mv'+(soon?' soon':'')+'">'+new Date(u.expires+'T12:00:00').toLocaleDateString('es-ES',{day:'numeric',month:'short'})+' · '+when+'</span>';
+    }
+    return `<div class="ucard ${u.product?'paid':''}">
+      <div class="utop">
+        ${img}
+        <div class="uinfo">
+          <div class="uname" title="${esc(u.name)}">${esc(u.name)}</div>
+          <div class="ustore">${u.product?storeLabel(u.store):'cuenta interna / regalo'}</div>
+        </div>
+        <span class="plan ${pi.cls}">${pi.label}</span>
+      </div>
+      <div class="umeta">
+        <div><div class="ml">Vence</div>${exp}</div>
+        <div style="text-align:right"><div class="ml">Desde</div><span class="mv">${u.purchased?new Date(u.purchased+'T12:00:00').toLocaleDateString('es-ES',{day:'numeric',month:'short',year:'2-digit'}):'—'}</span></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+render();
+</script>
+</body>
+</html>
