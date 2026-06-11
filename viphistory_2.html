@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Match History — iDisko</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a26;--border:#ffffff0f;--accent:#c8f060;--text:#f0f0f8;--muted:#6b6b8a;--accepted:#c8f060;--declined:#ff5e6c;--pending:#ffb547;--shuffle:#ff7a1a; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;min-height:100vh;}
+  .header{position:sticky;top:0;z-index:100;background:rgba(10,10,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .header-left{display:flex;align-items:center;gap:16px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--accent);}
+  .divider-v{width:1px;height:20px;background:var(--border);}
+  .page-title{font-family:'Syne',sans-serif;font-weight:600;font-size:13px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
+  .stats-bar{display:flex;gap:12px;}
+  .stat-pill{display:flex;align-items:center;gap:7px;background:var(--surface2);border:1px solid var(--border);border-radius:100px;padding:5px 14px;font-size:11px;color:var(--muted);}
+  .stat-pill strong{color:var(--text);}
+  .stat-dot{width:6px;height:6px;border-radius:50%;}
+  .container{max-width:1400px;margin:0 auto;padding:32px 40px;}
+  .date-nav{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
+  .date-nav-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--border);border-radius:8px;cursor:pointer;color:var(--muted);font-size:18px;transition:all .15s;}
+  .date-nav-btn:hover{border-color:var(--accent);color:var(--accent);}
+  .current-date{font-family:'Syne',sans-serif;font-weight:700;font-size:26px;letter-spacing:-1px;}
+  .date-sub{font-size:11px;color:var(--muted);margin-left:6px;text-transform:uppercase;letter-spacing:1px;}
+  input[type="date"]{background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Mono',monospace;font-size:12px;padding:8px 12px;cursor:pointer;margin-left:auto;outline:none;}
+  input[type="date"]:focus{border-color:var(--accent);}
+  .chart-section{margin-bottom:28px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 28px;}
+  .chart-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+  .chart-title{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
+  .chart-legend{display:flex;gap:16px;}
+  .legend-item{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+  .legend-dot{width:8px;height:8px;border-radius:2px;}
+  .chart-wrap{position:relative;height:120px;}
+  canvas#barChart{width:100%!important;height:120px!important;}
+  /* ── Shuffle usage panel ── */
+  .shuffle-section{margin-bottom:28px;background:linear-gradient(180deg,rgba(255,122,26,.05),rgba(255,122,26,0) 60%),var(--surface);border:1px solid rgba(255,122,26,.22);border-radius:16px;padding:24px 28px;}
+  .sh-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:6px;flex-wrap:wrap;}
+  .sh-title{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;display:flex;align-items:center;gap:9px;}
+  .sh-title .ic{width:26px;height:26px;border-radius:8px;background:rgba(255,122,26,.14);display:flex;align-items:center;justify-content:center;font-size:14px;}
+  .sh-stamp{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:6px;}
+  .sh-stamp .d{width:6px;height:6px;border-radius:50%;background:var(--shuffle);}
+  .sh-sub{font-size:11px;color:var(--muted);margin-bottom:20px;}
+  .sh-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .sh-tile{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:18px 16px;position:relative;overflow:hidden;}
+  .sh-tile.hl{border-color:rgba(255,122,26,.35);background:linear-gradient(180deg,rgba(255,122,26,.08),var(--surface2));}
+  .sh-num{font-family:'Syne',sans-serif;font-weight:800;font-size:30px;letter-spacing:-1px;line-height:1;}
+  .sh-tile.hl .sh-num{color:var(--shuffle);}
+  .sh-lbl{font-size:11px;color:var(--text);margin-top:10px;line-height:1.4;}
+  .sh-meta{font-size:10px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;}
+  .sh-bar{height:6px;border-radius:4px;background:var(--surface);overflow:hidden;margin-top:14px;}
+  .sh-bar>div{height:100%;background:var(--shuffle);border-radius:4px;}
+  .sh-note{margin-top:18px;font-size:10.5px;color:var(--muted);line-height:1.7;border-top:1px solid var(--border);padding-top:14px;}
+  .sh-note b{color:var(--text);}
+  .controls-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+  .section-divider{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+  .section-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+  .search-wrap{position:relative;flex:1;min-width:200px;max-width:340px;}
+  .search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'DM Mono',monospace;font-size:12px;padding:9px 36px 9px 36px;outline:none;transition:border-color .15s;}
+  .search-wrap input:focus{border-color:var(--accent);}
+  .search-wrap input::placeholder{color:var(--muted);}
+  .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px;pointer-events:none;}
+  .clear-btn{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);cursor:pointer;font-size:13px;display:none;}
+  .clear-btn.visible{display:block;}
+  .filter-tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:4px;}
+  .filter-tab{padding:7px 16px;border-radius:7px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;color:var(--muted);transition:all .15s;border:none;background:transparent;display:flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;}
+  .filter-tab.active{background:var(--surface2);color:var(--text);border:1px solid var(--border);}
+  .count-badge{background:var(--accent);color:#000;border-radius:100px;padding:1px 6px;font-size:9px;font-weight:700;}
+  .declined-tab.active .count-badge{background:var(--declined);}
+  .pending-tab.active .count-badge{background:var(--pending);}
+  .total-count{font-size:11px;color:var(--muted);margin-bottom:14px;letter-spacing:1px;text-transform:uppercase;}
+  .total-count span{color:var(--accent);font-weight:600;}
+  .matches-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;}
+  .match-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s;animation:fadeIn .35s ease forwards;opacity:0;}
+  .match-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-2px);}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  .card-bar{position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:16px 0 0 16px;}
+  .status-accepted .card-bar{background:var(--accepted);}
+  .status-declined .card-bar{background:var(--declined);}
+  .status-pending .card-bar{background:var(--pending);}
+  .card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;}
+  .users-row{display:flex;align-items:center;gap:10px;flex:1;}
+  .avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;background:var(--surface2);border:2px solid var(--border);flex-shrink:0;}
+  .av-ph{width:44px;height:44px;border-radius:50%;background:var(--surface2);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--muted);flex-shrink:0;}
+  .arrow{color:var(--muted);font-size:14px;flex-shrink:0;}
+  .uinfo{flex:1;min-width:0;margin-left:8px;}
+  .uname{font-family:'Syne',sans-serif;font-weight:600;font-size:12px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:130px;display:block;}
+  .sent-to{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:2px 0;}
+  .sbadge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:100px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:1px;flex-shrink:0;margin-left:8px;}
+  .status-accepted .sbadge{background:rgba(200,240,96,.12);color:var(--accepted);border:1px solid rgba(200,240,96,.2);}
+  .status-declined .sbadge{background:rgba(255,94,108,.12);color:var(--declined);border:1px solid rgba(255,94,108,.2);}
+  .status-pending .sbadge{background:rgba(255,181,71,.12);color:var(--pending);border:1px solid rgba(255,181,71,.2);}
+  .sdot{width:5px;height:5px;border-radius:50%;background:currentColor;}
+  .card-meta{display:flex;gap:16px;padding-top:12px;border-top:1px solid var(--border);flex-wrap:wrap;}
+  .mi{display:flex;flex-direction:column;gap:2px;}
+  .ml{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+  .mv{font-size:11px;color:var(--text);}
+  .mid{margin-left:auto;text-align:right;}
+  .loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px;gap:16px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:2px;grid-column:1/-1;}
+  .spinner{width:28px;height:28px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .empty-state{text-align:center;padding:80px;color:var(--muted);grid-column:1/-1;}
+  .empty-icon{font-size:40px;margin-bottom:14px;opacity:.3;}
+  .empty-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;opacity:.5;}
+  .error-banner{background:rgba(255,94,108,.08);border:1px solid rgba(255,94,108,.25);border-radius:12px;padding:16px 20px;color:var(--declined);font-size:11px;margin-bottom:20px;line-height:1.8;}
+  @media(max-width:768px){.header{padding:14px 20px;}.container{padding:24px 16px;}.stats-bar{display:none;}.current-date{font-size:20px;}.controls-row{flex-direction:column;align-items:stretch;}.search-wrap{max-width:100%;}.sh-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-left">
+    <div class="logo">iDisko</div>
+    <div class="divider-v"></div>
+    <div class="page-title">VIP History</div>
+  </div>
+  <div class="stats-bar">
+    <div class="stat-pill"><div class="stat-dot" style="background:var(--accepted)"></div>Accepted: <strong id="sa">—</strong></div>
+    <div class="stat-pill"><div class="stat-dot" style="background:var(--declined)"></div>Declined: <strong id="sd">—</strong></div>
+    <div class="stat-pill"><div class="stat-dot" style="background:var(--pending)"></div>Pending: <strong id="sp">—</strong></div>
+  </div>
+</header>
+<div class="container">
+
+  <!-- ════════ SHUFFLE USAGE ════════ -->
+  <div class="shuffle-section">
+    <div class="sh-head">
+      <div class="sh-title"><span class="ic">&#128256;</span>Shuffle — ¿se usa y se ven 2 personas?</div>
+      <div class="sh-stamp"><span class="d"></span>Snapshot manual · 11 jun 2026</div>
+    </div>
+    <div class="sh-sub">Las sesiones de shuffle se borran al terminar, así que estos números vienen de los contadores históricos de Postgres (inserts acumulados), no de filas vivas.</div>
+    <div class="sh-grid">
+      <div class="sh-tile">
+        <div class="sh-num">148</div>
+        <div class="sh-lbl">Entradas a la cola de shuffle</div>
+        <div class="sh-meta">la gente SÍ lo usa</div>
+      </div>
+      <div class="sh-tile hl">
+        <div class="sh-num">5</div>
+        <div class="sh-lbl">Veces que 2 personas se vieron</div>
+        <div class="sh-meta">sesiones emparejadas</div>
+      </div>
+      <div class="sh-tile">
+        <div class="sh-num">3.4%</div>
+        <div class="sh-lbl">Tasa de emparejamiento</div>
+        <div class="sh-meta">5 de 148 intentos</div>
+        <div class="sh-bar"><div style="width:3.4%"></div></div>
+      </div>
+      <div class="sh-tile">
+        <div class="sh-num">10</div>
+        <div class="sh-lbl">Pares registrados</div>
+        <div class="sh-meta">lista anti-repetición</div>
+      </div>
+    </div>
+    <div class="sh-note">
+      <b>Lectura:</b> el shuffle se usa bastante (148 entradas) pero casi nunca logra juntar a 2 personas (solo 5) — probablemente falta gente en cola a la vez. &nbsp;·&nbsp;
+      <b>Por qué es un snapshot:</b> estas tablas tienen RLS que bloquea la clave pública <code>anon</code> (y los contadores de Postgres tampoco son legibles desde el navegador), así que este panel no se actualiza solo. Para refrescarlo basta volver a leer los contadores desde el panel de Supabase — sin tocar la app.
+    </div>
+  </div>
+
+  <div class="section-divider">VIP Requests</div>
+
+  <div class="date-nav">
+    <button class="date-nav-btn" onclick="changeDay(-1)">&#8249;</button>
+    <div><span class="current-date" id="dateDisplay"></span><span class="date-sub" id="dayLabel"></span></div>
+    <button class="date-nav-btn" onclick="changeDay(1)">&#8250;</button>
+    <input type="date" id="datePicker" onchange="onDatePick(this.value)">
+  </div>
+  <div class="chart-section">
+    <div class="chart-header">
+      <span class="chart-title">Last 14 days</span>
+      <div class="chart-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--accepted)"></div>Accepted</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--declined)"></div>Declined</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--pending)"></div>Pending</div>
+      </div>
+    </div>
+    <div class="chart-wrap"><canvas id="barChart"></canvas></div>
+  </div>
+  <div class="controls-row">
+    <div class="search-wrap">
+      <span class="search-icon">&#9906;</span>
+      <input type="text" id="searchInput" placeholder="Search by name..." oninput="onSearch(this.value)">
+      <button class="clear-btn" id="clearBtn" onclick="clearSearch()">&#10005;</button>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="setFilter('all',this)">All <span class="count-badge" id="ca">0</span></button>
+      <button class="filter-tab" onclick="setFilter('accepted',this)">Accepted <span class="count-badge" id="cb">0</span></button>
+      <button class="filter-tab declined-tab" onclick="setFilter('declined',this)">Declined <span class="count-badge" id="cc">0</span></button>
+      <button class="filter-tab pending-tab" onclick="setFilter('pending',this)">Pending <span class="count-badge" id="cd">0</span></button>
+    </div>
+  </div>
+  <div id="errorBanner"></div>
+  <div class="total-count" id="totalCount"></div>
+  <div class="matches-grid" id="grid"><div class="loading"><div class="spinner"></div>Loading...</div></div>
+</div>
+<script>
+const BASE='https://acshjckzfiytwbobpacl.supabase.co';
+const KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFjc2hqY2t6Zml5dHdib2JwYWNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0NjQ5NTQsImV4cCI6MjA1ODA0MDk1NH0.Rqi4leEnIzgtO7PuEUKaYjLg8KqYFyNECK_7y7p-D-0';
+const PIC=BASE+'/storage/v1/object/public/pictures';
+const HDRS={'apikey':KEY,'Authorization':'Bearer '+KEY,'Accept':'application/json'};
+let currentDate=new Date(),allMatches=[],currentFilter='all',searchQuery='';
+
+function toDateStr(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function updateDateUI(){
+  document.getElementById('dateDisplay').textContent=currentDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+  document.getElementById('dayLabel').textContent='— '+currentDate.toLocaleDateString('en-US',{weekday:'long'});
+  document.getElementById('datePicker').value=toDateStr(currentDate);
+}
+function changeDay(d){const nd=new Date(currentDate);nd.setDate(nd.getDate()+d);currentDate=nd;updateDateUI();loadData();loadChart();}
+function onDatePick(v){const[y,m,d]=v.split('-').map(Number);currentDate=new Date(y,m-1,d);updateDateUI();loadData();loadChart();}
+
+async function sb(table,qs){
+  const r=await fetch(BASE+'/rest/v1/'+table+'?'+qs,{headers:HDRS});
+  const txt=await r.text();
+  if(!r.ok)throw new Error(table+' '+r.status+': '+txt.slice(0,150));
+  return JSON.parse(txt);
+}
+
+async function loadData(){
+  document.getElementById('grid').innerHTML='<div class="loading"><div class="spinner"></div>Loading...</div>';
+  document.getElementById('errorBanner').innerHTML='';
+  document.getElementById('totalCount').innerHTML='';
+  const d1=toDateStr(currentDate);
+  const nxt=new Date(currentDate);nxt.setDate(nxt.getDate()+1);
+  const d2=toDateStr(nxt);
+  try{
+    const reqs=await sb('vip_request','created_at=gte.'+d1+'T00:00:00&created_at=lt.'+d2+'T00:00:00&order=created_at.desc&limit=500');
+    if(!reqs.length){allMatches=[];updateStats([]);renderCards(applyFilters([]));return;}
+    const ids=[...new Set([...reqs.map(r=>r.sender_id),...reqs.map(r=>r.receiver_id)].filter(Boolean))];
+    let pics=[];
+    try{pics=await sb('pictures_with_users','user_id=in.('+ids.join(',')+')'+'&order=display_order.asc');}catch(e){}
+    const umap={};
+    for(const p of pics){if(!umap[p.user_id])umap[p.user_id]={full_name:p.full_name||'Unknown',photo_url:p.file_path?PIC+'/'+p.file_path:null};}
+    allMatches=reqs.map(r=>({...r,sender:umap[r.sender_id]||{full_name:'Unknown',photo_url:null},receiver:umap[r.receiver_id]||{full_name:'Unknown',photo_url:null}}));
+    updateStats(allMatches);renderCards(applyFilters(allMatches));
+  }catch(e){
+    document.getElementById('grid').innerHTML='';
+    document.getElementById('errorBanner').innerHTML='<div class="error-banner">&#9888; '+e.message+'</div>';
+  }
+}
+
+async function loadChart(){
+  const days=14;
+  const labels=[],accD=[],decD=[],penD=[];
+  const start=new Date(currentDate);start.setDate(start.getDate()-(days-1));
+  for(let i=0;i<days;i++){
+    const d=new Date(start);d.setDate(d.getDate()+i);
+    labels.push(d.toLocaleDateString('en-US',{month:'short',day:'numeric'}));
+    accD.push(0);decD.push(0);penD.push(0);
+  }
+  try{
+    const d1=toDateStr(start);
+    const endNext=new Date(currentDate);endNext.setDate(endNext.getDate()+1);
+    const d2=toDateStr(endNext);
+    const rows=await sb('vip_request','created_at=gte.'+d1+'T00:00:00&created_at=lt.'+d2+'T00:00:00&select=created_at,status&limit=5000');
+    for(const r of rows){
+      const rd=new Date(r.created_at);
+      const idx=Math.round((rd-start)/86400000);
+      if(idx<0||idx>=days)continue;
+      if(r.status==='accepted')accD[idx]++;
+      else if(r.status==='declined')decD[idx]++;
+      else penD[idx]++;
+    }
+  }catch(e){}
+  drawChart(labels,accD,decD,penD);
+}
+
+function drawChart(labels,acc,dec,pen){
+  const canvas=document.getElementById('barChart');
+  const ctx=canvas.getContext('2d');
+  const dpr=window.devicePixelRatio||1;
+  const W=canvas.offsetWidth||800;
+  const H=120;
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  ctx.scale(dpr,dpr);
+  const n=labels.length;
+  const padL=28,padR=10,padT=10,padB=28;
+  const cW=W-padL-padR,cH=H-padT-padB;
+  const maxVal=Math.max(...acc.map((a,i)=>a+dec[i]+pen[i]),1);
+  const bgW=cW/n,barW=Math.min(bgW*0.55,20);
+  const todayIdx=n-1;
+
+  // grid
+  ctx.strokeStyle='rgba(255,255,255,0.05)';ctx.lineWidth=1;
+  for(let g=0;g<=4;g++){const y=padT+cH-(g/4)*cH;ctx.beginPath();ctx.moveTo(padL,y);ctx.lineTo(W-padR,y);ctx.stroke();}
+
+  // today highlight
+  const tx=padL+todayIdx*bgW;
+  ctx.fillStyle='rgba(200,240,96,0.04)';
+  ctx.fillRect(tx,padT,bgW,cH);
+
+  // bars
+  for(let i=0;i<n;i++){
+    const x=padL+i*bgW+(bgW-barW)/2;
+    const segs=[{v:acc[i],c:'#c8f060'},{v:dec[i],c:'#ff5e6c'},{v:pen[i],c:'#ffb547'}];
+    let yo=padT+cH;
+    for(const s of segs){
+      if(!s.v)continue;
+      const h=(s.v/maxVal)*cH;
+      yo-=h;
+      ctx.fillStyle=s.c;
+      ctx.beginPath();
+      ctx.moveTo(x+3,yo);ctx.lineTo(x+barW-3,yo);
+      ctx.quadraticCurveTo(x+barW,yo,x+barW,yo+3);
+      ctx.lineTo(x+barW,yo+h);ctx.lineTo(x,yo+h);ctx.lineTo(x,yo+3);
+      ctx.quadraticCurveTo(x,yo,x+3,yo);
+      ctx.closePath();ctx.fill();
+    }
+  }
+
+  // x labels
+  ctx.fillStyle='rgba(107,107,138,0.7)';ctx.font="9px 'DM Mono',monospace";ctx.textAlign='center';
+  for(let i=0;i<n;i++){
+    if(i===todayIdx){ctx.fillStyle='rgba(200,240,96,0.8)';}else{ctx.fillStyle='rgba(107,107,138,0.6)';}
+    if(i%2===0||i===todayIdx){ctx.fillText(i===todayIdx?'Today':labels[i],padL+i*bgW+bgW/2,H-6);}
+  }
+  // y max
+  ctx.fillStyle='rgba(107,107,138,0.5)';ctx.textAlign='right';ctx.font="9px 'DM Mono',monospace";
+  ctx.fillText(maxVal,padL-3,padT+9);
+}
+
+function onSearch(val){searchQuery=val.toLowerCase().trim();document.getElementById('clearBtn').classList.toggle('visible',searchQuery.length>0);renderCards(applyFilters(allMatches));}
+function clearSearch(){searchQuery='';document.getElementById('searchInput').value='';document.getElementById('clearBtn').classList.remove('visible');renderCards(applyFilters(allMatches));}
+
+function applyFilters(data){
+  let d=currentFilter==='all'?data:data.filter(m=>m.status===currentFilter);
+  if(searchQuery)d=d.filter(m=>m.sender.full_name.toLowerCase().includes(searchQuery)||m.receiver.full_name.toLowerCase().includes(searchQuery));
+  return d;
+}
+function setFilter(f,btn){currentFilter=f;document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');renderCards(applyFilters(allMatches));}
+
+function updateStats(data){
+  const a=data.filter(m=>m.status==='accepted').length;
+  const d=data.filter(m=>m.status==='declined').length;
+  const p=data.filter(m=>m.status==='pending').length;
+  document.getElementById('sa').textContent=a;document.getElementById('sd').textContent=d;document.getElementById('sp').textContent=p;
+  document.getElementById('ca').textContent=data.length;document.getElementById('cb').textContent=a;document.getElementById('cc').textContent=d;document.getElementById('cd').textContent=p;
+}
+
+function ini(name){return(name||'?').split(' ').map(w=>w[0]||'').join('').slice(0,2).toUpperCase();}
+function av(u){
+  const fb='<div class="av-ph">'+ini(u.full_name)+'</div>';
+  if(u.photo_url)return '<img class="avatar" src="'+u.photo_url+'" alt="'+u.full_name+'" onerror="this.outerHTML=\''+fb.replace(/'/g,"\\'")+'\'">';
+  return fb;
+}
+function ftime(ts){if(!ts)return'—';return new Date(ts).toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});}
+function slabel(s){return{accepted:'Accepted',declined:'Declined',pending:'Pending'}[s]||s;}
+function hlName(name){
+  if(!searchQuery||!name.toLowerCase().includes(searchQuery))return name;
+  const re=new RegExp('('+searchQuery.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+  return name.replace(re,'<mark style="background:rgba(200,240,96,.2);color:var(--accent);border-radius:2px">$1</mark>');
+}
+
+function renderCards(data){
+  const grid=document.getElementById('grid');
+  if(!data||!data.length){
+    grid.innerHTML='<div class="empty-state"><div class="empty-icon">&#10022;</div><div class="empty-title">'+(searchQuery?'No results for "'+searchQuery+'"':'No VIPs found')+'</div><div style="font-size:11px">'+(searchQuery?'Try a different name':'Try a different date or filter')+'</div></div>';
+    document.getElementById('totalCount').innerHTML='';return;
+  }
+  document.getElementById('totalCount').innerHTML='Showing <span>'+data.length+'</span> VIP match'+(data.length!==1?'es':'');
+  grid.innerHTML=data.map((m,i)=>`
+    <div class="match-card status-${m.status}" style="animation-delay:${Math.min(i*.04,.4)}s">
+      <div class="card-bar"></div>
+      <div class="card-top">
+        <div class="users-row">
+          ${av(m.sender)}<span class="arrow">&#8594;</span>${av(m.receiver)}
+          <div class="uinfo">
+            <span class="uname" title="${m.sender.full_name}">${hlName(m.sender.full_name)}</span>
+            <div class="sent-to">sent VIP to</div>
+            <span class="uname" title="${m.receiver.full_name}">${hlName(m.receiver.full_name)}</span>
+          </div>
+        </div>
+        <div class="sbadge"><div class="sdot"></div>${slabel(m.status)}</div>
+      </div>
+      <div class="card-meta">
+        <div class="mi"><span class="ml">Time</span><span class="mv">${ftime(m.created_at)}</span></div>
+        <div class="mi"><span class="ml">From</span><span class="mv" style="max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${m.sender.full_name}</span></div>
+        <div class="mi"><span class="ml">To</span><span class="mv" style="max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${m.receiver.full_name}</span></div>
+        <div class="mi mid"><span class="ml">ID</span><span class="mv" style="color:var(--muted)">#${m.id}</span></div>
+      </div>
+    </div>`).join('');
+}
+
+updateDateUI();
+loadData();
+loadChart();
+window.addEventListener('resize',()=>loadChart());
+</script>
+</body>
+</html>
