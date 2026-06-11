@@ -71,6 +71,12 @@
   .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:60px;font-size:12px;}
   .note{margin-top:26px;font-size:10.5px;color:var(--muted);line-height:1.8;border-top:1px solid var(--border);padding-top:16px;}
   .note b{color:var(--text);}
+  .sec-title{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:36px 0 18px;display:flex;align-items:center;gap:10px;}
+  .sec-title::after{content:'';flex:1;height:1px;background:var(--border);}
+  .tcard{background:var(--surface);border:1px dashed rgba(255,206,74,.3);border-radius:18px;padding:20px;display:flex;gap:18px;align-items:center;}
+  .tava{width:84px;height:84px;border-radius:50%;background:rgba(255,206,74,.1);border:2px dashed rgba(255,206,74,.4);display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;}
+  .trial-note{margin-top:14px;font-size:10.5px;color:var(--muted);line-height:1.8;}
+  .trial-note b{color:var(--gold);}
   @media(max-width:900px){.charts{grid-template-columns:1fr;}}
   @media(max-width:768px){.header{padding:14px 20px;}.container{padding:22px 16px;}.grid-stats{grid-template-columns:repeat(2,1fr);}.users{grid-template-columns:1fr;}}
 </style>
@@ -118,6 +124,16 @@
 
   <div class="count" id="count"></div>
   <div class="users" id="list"></div>
+
+  <h2 class="sec-title">&#129514; En prueba — Free trial</h2>
+  <div class="grid-stats" style="margin-bottom:18px">
+    <div class="tile gold"><div class="n" id="trActive">—</div><div class="l">En prueba ahora</div><div class="s">trial activo</div></div>
+    <div class="tile"><div class="n" id="trStarted">—</div><div class="l">Trials iniciados</div><div class="s">histórico</div></div>
+    <div class="tile"><div class="n" id="trConv">—</div><div class="l">Convertidos a pago</div><div class="s" id="trRate">—</div></div>
+    <div class="tile"><div class="n" id="trCancel">—</div><div class="l">Cancelaron renovación</div><div class="s">no renovarán</div></div>
+  </div>
+  <div class="users" id="trialList"></div>
+  <div class="trial-note">&#9888; Los trials figuran <b>anónimos</b>: la app usa IDs anónimos de RevenueCat y no los vincula al perfil, por eso no hay nombre ni foto. Para poder atribuirlos a un usuario en el futuro, hay que setear el <code>appUserID</code> de RevenueCat = <code>user_id</code> de Supabase (cambio en la app).</div>
 
   <div class="note">
     <b>Fuente:</b> <code>profiles.is_premium</code> + <code>user_subscriptions</code> (RevenueCat). &nbsp;·&nbsp;
@@ -233,8 +249,46 @@ function render(){
     </div>`;
   }).join('');
 }
+/* ── free trials (PostHog / RevenueCat, anónimos) ── */
+const TRIAL_FUNNEL={started:50,converted:12,cancelled:48};
+const TRIALS=[
+  {uid:"$RCAnonymousID:1ef550d51fb744b285e2dedcaea0950d",product:"com.idisko.premium.6.months",store:"APP_STORE",started:"2026-06-05",expires:"2026-06-12",country:"United States",cancelled:true},
+  {uid:"$RCAnonymousID:874509e045b94f8eb498d286b853e413",product:"com.idisko.premium.6.months",store:"APP_STORE",started:"2026-06-07",expires:"2026-06-14",country:"United States",cancelled:true},
+  {uid:"$RCAnonymousID:895dcf12d7ee49a3808c63875daec9b2",product:"com.idisko.premium.6.months",store:"APP_STORE",started:"2026-06-08",expires:"2026-06-15",country:"United States",cancelled:true}
+];
+const FLAG={'United States':'🇺🇸','Argentina':'🇦🇷','Italy':'🇮🇹','France':'🇫🇷','Brazil':'🇧🇷','Spain':'🇪🇸'};
+function shortId(u){const x=(u||'').split(':').pop();return '#'+x.slice(0,6);}
+function renderTrials(){
+  document.getElementById('trActive').textContent=TRIALS.length;
+  document.getElementById('trStarted').textContent=TRIAL_FUNNEL.started;
+  document.getElementById('trConv').textContent=TRIAL_FUNNEL.converted;
+  document.getElementById('trCancel').textContent=TRIAL_FUNNEL.cancelled;
+  const rate=TRIAL_FUNNEL.started?Math.round(TRIAL_FUNNEL.converted/TRIAL_FUNNEL.started*100):0;
+  document.getElementById('trRate').textContent=rate+'% de conversión';
+  const el=document.getElementById('trialList');
+  if(!TRIALS.length){el.innerHTML='<div class="empty">Sin trials activos ahora</div>';return;}
+  el.innerHTML=TRIALS.map(t=>{
+    const pi=planInfo(t.product);const d=daysTo(t.expires);
+    const soon=d!==null&&d<=7;const when=d<0?'venció':d===0?'hoy':'en '+d+'d';
+    const exp=new Date(t.expires+'T12:00:00').toLocaleDateString('es-ES',{day:'numeric',month:'short'})+' · '+when;
+    const sta=new Date(t.started+'T12:00:00').toLocaleDateString('es-ES',{day:'numeric',month:'short'});
+    return `<div class="tcard">
+      <div class="tava">&#129514;</div>
+      <div class="ubody">
+        <div class="urow1"><div class="uname">Trial anónimo</div><span class="plan p6">${pi.label} · prueba</span></div>
+        <div class="ustore">&#127822; ${storeLabel(t.store)} · ${(FLAG[t.country]||'')} ${esc(t.country)} · <span style="opacity:.6">${shortId(t.uid)}</span></div>
+        <div class="umeta">
+          <div><div class="ml">Termina</div><span class="mv${soon?' soon':''}">${exp}</span></div>
+          <div><div class="ml">Empezó</div><span class="mv">${sta}</span></div>
+          <div><div class="ml">Renovación</div><span class="mv" style="color:${t.cancelled?'var(--red)':'var(--green)'}">${t.cancelled?'OFF':'ON'}</span></div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
 function drawCharts(){drawDonut();drawExp();}
-render();drawCharts();
+render();renderTrials();drawCharts();
 window.addEventListener('resize',drawCharts);
 </script>
 </body>
