@@ -77,6 +77,10 @@
   .tava{width:84px;height:84px;border-radius:50%;background:rgba(255,206,74,.1);border:2px dashed rgba(255,206,74,.4);display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;}
   .trial-note{margin-top:14px;font-size:10.5px;color:var(--muted);line-height:1.8;}
   .trial-note b{color:var(--gold);}
+  .recon{display:flex;gap:14px;align-items:flex-start;background:rgba(255,94,108,.07);border:1px solid rgba(255,94,108,.28);border-radius:14px;padding:16px 18px;margin-bottom:22px;font-size:12px;line-height:1.7;color:var(--text);}
+  .recon-ic{font-size:20px;flex-shrink:0;}
+  .recon b{color:#fff;}
+  .recon-fix{display:block;margin-top:6px;color:var(--muted);font-size:11px;}
   @media(max-width:900px){.charts{grid-template-columns:1fr;}}
   @media(max-width:768px){.header{padding:14px 20px;}.container{padding:22px 16px;}.grid-stats{grid-template-columns:repeat(2,1fr);}.users{grid-template-columns:1fr;}}
 </style>
@@ -91,6 +95,13 @@
   <div class="stamp">Snapshot · 11 jun 2026</div>
 </header>
 <div class="container">
+  <div class="recon">
+    <div class="recon-ic">&#9888;</div>
+    <div>
+      <b>Ojo con el total:</b> aquí ves <b>13 premium identificados</b> en Supabase (con cuenta vinculada). RevenueCat reporta <b>23 suscripciones activas</b> + 3 trials. La diferencia (~10) son <b>suscriptores anónimos de App Store</b> que la app no vincula al perfil — tienen premium en su teléfono pero tu base no sabe quiénes son.
+      <span class="recon-fix">Arreglo: que la app llame a <code>Purchases.logIn(user_id)</code> al iniciar sesión; desde entonces se vinculan solos.</span>
+    </div>
+  </div>
   <div class="grid-stats">
     <div class="tile gold"><div class="n" id="tTotal">—</div><div class="l">Usuarios premium</div><div class="s">flag is_premium</div></div>
     <div class="tile"><div class="n" id="tPaid">—</div><div class="l">De pago (con plan)</div><div class="s">RevenueCat</div></div>
