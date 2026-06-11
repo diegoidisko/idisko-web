@@ -169,7 +169,13 @@
     </div>
 
     <div class="sh-chart-box">
-      <div class="chart-title">Entradas a shuffle por día &nbsp;·&nbsp; toca una barra</div>
+      <div class="chart-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+        <span class="chart-title" style="margin:0">Entradas a shuffle por día &nbsp;·&nbsp; toca una barra</span>
+        <div class="chart-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--shuffle)"></div>Entradas</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div>Emparejados + aceptados</div>
+        </div>
+      </div>
       <div class="sh-chart-wrap"><canvas id="shChart"></canvas></div>
     </div>
 
@@ -252,11 +258,15 @@ function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').repl
 
 async function loadShuffle(){
   try{
-    const [daily,entries,conns]=await Promise.all([
+    const [daily,entries,conns,connDaily]=await Promise.all([
       sb('shuffle_daily_v','order=day.asc'),
       sb('shuffle_entries_v','order=entered_at.desc&limit=5000'),
-      sb('shuffle_connections_v','order=ended_at.desc&limit=500')
+      sb('shuffle_connections_v','order=ended_at.desc&limit=500'),
+      sb('shuffle_conn_daily_v','order=day.asc')
     ]);
+    // merge accepted-connections count into each day
+    const accByDay={};for(const r of connDaily){accByDay[r.day]={connections:r.connections,accepted:r.accepted};}
+    for(const d of daily){const a=accByDay[d.day]||{};d.connections=a.connections||0;d.accepted=a.accepted||0;}
     shDaily=daily;
     // tiles
     const total=daily.reduce((s,d)=>s+d.entries,0);
@@ -333,10 +343,16 @@ function drawShChart(){
   const bgW=cW/n,barW=Math.min(bgW*0.62,18);
   ctx.strokeStyle='rgba(255,255,255,0.05)';ctx.lineWidth=1;
   for(let g=0;g<=4;g++){const y=padT+cH-(g/4)*cH;ctx.beginPath();ctx.moveTo(padL,y);ctx.lineTo(W-padR,y);ctx.stroke();}
-  for(let i=0;i<n;i++){const v=data[i].entries;const h=(v/maxVal)*cH;const x=padL+i*bgW+(bgW-barW)/2;const y=padT+cH-h;
-    const sel=i===shIdx;ctx.fillStyle=sel?'#ffd0a0':'#ff7a1a';
-    const r=3;ctx.beginPath();ctx.moveTo(x,y+h);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.lineTo(x+barW-r,y);ctx.quadraticCurveTo(x+barW,y,x+barW,y+r);ctx.lineTo(x+barW,y+h);ctx.closePath();ctx.fill();
-    if(sel){ctx.fillStyle='#ffd0a0';ctx.font="bold 9px 'DM Mono',monospace";ctx.textAlign='center';ctx.fillText(v,x+barW/2,y-4);}
+  for(let i=0;i<n;i++){
+    const v=data[i].entries;const acc=Math.min(data[i].accepted||0,v);
+    const x=padL+i*bgW+(bgW-barW)/2;const sel=i===shIdx;const r=3;
+    const totH=(v/maxVal)*cH, accH=(acc/maxVal)*cH, topY=padT+cH-totH;
+    // orange (entries) segment — full bar with rounded top
+    ctx.fillStyle=sel?'#ffd0a0':'#ff7a1a';
+    ctx.beginPath();ctx.moveTo(x,padT+cH);ctx.lineTo(x,topY+r);ctx.quadraticCurveTo(x,topY,x+r,topY);ctx.lineTo(x+barW-r,topY);ctx.quadraticCurveTo(x+barW,topY,x+barW,topY+r);ctx.lineTo(x+barW,padT+cH);ctx.closePath();ctx.fill();
+    // green (accepted connections) segment stacked at the base
+    if(accH>0){ctx.fillStyle='#c8f060';ctx.fillRect(x,padT+cH-accH,barW,accH);}
+    if(sel){ctx.fillStyle='#ffd0a0';ctx.font="bold 9px 'DM Mono',monospace";ctx.textAlign='center';ctx.fillText(acc>0?v+' · '+acc+'✓':v,x+barW/2,topY-4);}
   }
   ctx.fillStyle='rgba(107,107,138,0.6)';ctx.font="9px 'DM Mono',monospace";ctx.textAlign='center';
   for(let i=0;i<n;i++){if(i%3===0||i===n-1){ctx.fillText(data[i].day.slice(5),padL+i*bgW+bgW/2,H-8);}}
