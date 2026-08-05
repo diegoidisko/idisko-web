@@ -1419,6 +1419,20 @@ function MatchingMock() {
   );
 }
 
+// Matching spotlight — the differentiator gets its own section high on the
+// page (promise → proof → differentiator), instead of being buried in Features.
+function MatchingSpotlight() {
+  const { t } = window.useT();
+  return (
+    <section id="matching" className="section-pad" style={{padding:"88px 0 20px",position:"relative",overflow:"hidden"}}>
+      <div style={{position:"absolute",inset:"-30% -20% auto -20%",height:"120%",background:"radial-gradient(ellipse at 75% 30%, rgba(34,255,189,.12) 0%, transparent 55%), radial-gradient(ellipse at 20% 70%, rgba(135,55,220,.18) 0%, transparent 50%)",filter:"blur(30px)",pointerEvents:"none"}}/>
+      <div className="container" style={{position:"relative"}}>
+        <FeatureRow tag={t('feat.matchTag')} accent="#22FFBD" title={<>{t('feat.matchTitle1')} <span style={{background:"linear-gradient(128deg,#22FFBD,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.matchTitleGradient')}</span></>} body={t('feat.matchBody')} bullets={[t('feat.matchBullet1'), t('feat.matchBullet2'), t('feat.matchBullet3'), t('feat.matchBullet4'), t('feat.matchBullet5')]}><MatchingMock/></FeatureRow>
+      </div>
+    </section>
+  );
+}
+
 function FeatureShowcase() {
   const { t } = window.useT();
   return (
@@ -1431,10 +1445,9 @@ function FeatureShowcase() {
           </h2>
         </div>
         <FeatureRow tag={t('feat.diskoTag')} accent="#8737DC" title={<>{t('feat.diskoTitle1')} <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.diskoTitleGradient')}</span></>} body={t('feat.diskoBody')} bullets={[t('feat.diskoBullet1'), t('feat.diskoBullet2'), t('feat.diskoBullet3')]}><DiskoRoomMock/></FeatureRow>
-        <FeatureRow reverse tag={t('feat.matchTag')} accent="#22FFBD" title={<>{t('feat.matchTitle1')} <span style={{background:"linear-gradient(128deg,#22FFBD,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.matchTitleGradient')}</span></>} body={t('feat.matchBody')} bullets={[t('feat.matchBullet1'), t('feat.matchBullet2'), t('feat.matchBullet3'), t('feat.matchBullet4'), t('feat.matchBullet5')]}><MatchingMock/></FeatureRow>
-        <FeatureRow tag={t('feat.vipTag')} accent="#DF07FF" title={<>{t('feat.vipTitle1')} <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.vipTitleGradient')}</span></>} body={t('feat.vipBody')} bullets={[t('feat.vipBullet1'), t('feat.vipBullet2'), t('feat.vipBullet3')]}><VipMock/></FeatureRow>
-        <FeatureRow reverse tag={t('feat.shuffleTag')} accent="#EC4899" title={<>{t('feat.shuffleTitle1')} <span style={{background:"linear-gradient(128deg,#EC4899,#DF07FF)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.shuffleTitleGradient')}</span>{t('feat.shuffleTitle2')}</>} body={t('feat.shuffleBody')} bullets={[t('feat.shuffleBullet1'), t('feat.shuffleBullet2'), t('feat.shuffleBullet3'), t('feat.shuffleBullet4')]}><ShuffleMock/></FeatureRow>
-        <FeatureRow tag={t('feat.focusTag')} soon accent="#DF07FF" title={<>{t('feat.focusTitle1')} <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.focusTitleGradient')}</span></>} body={t('feat.focusBody')} bullets={[t('feat.focusBullet1'), t('feat.focusBullet2'), t('feat.focusBullet3')]}><FocusModeMock/></FeatureRow>
+        <FeatureRow reverse tag={t('feat.vipTag')} accent="#DF07FF" title={<>{t('feat.vipTitle1')} <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.vipTitleGradient')}</span></>} body={t('feat.vipBody')} bullets={[t('feat.vipBullet1'), t('feat.vipBullet2'), t('feat.vipBullet3')]}><VipMock/></FeatureRow>
+        <FeatureRow tag={t('feat.shuffleTag')} accent="#EC4899" title={<>{t('feat.shuffleTitle1')} <span style={{background:"linear-gradient(128deg,#EC4899,#DF07FF)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.shuffleTitleGradient')}</span>{t('feat.shuffleTitle2')}</>} body={t('feat.shuffleBody')} bullets={[t('feat.shuffleBullet1'), t('feat.shuffleBullet2'), t('feat.shuffleBullet3'), t('feat.shuffleBullet4')]}><ShuffleMock/></FeatureRow>
+        <FeatureRow reverse tag={t('feat.focusTag')} soon accent="#DF07FF" title={<>{t('feat.focusTitle1')} <span style={{background:"linear-gradient(128deg,#DF07FF,#8737DC)",WebkitBackgroundClip:"text",color:"transparent"}}>{t('feat.focusTitleGradient')}</span></>} body={t('feat.focusBody')} bullets={[t('feat.focusBullet1'), t('feat.focusBullet2'), t('feat.focusBullet3')]}><FocusModeMock/></FeatureRow>
       </div>
     </section>
   );
@@ -1543,7 +1556,7 @@ function LifestyleGallery() {
   );
 }
 
-Object.assign(window, { FeatureShowcase, UseCases, LifestyleGallery });
+Object.assign(window, { FeatureShowcase, UseCases, LifestyleGallery, MatchingSpotlight });
 
 </script>
 <script type="text/babel">
@@ -2045,6 +2058,7 @@ function App() {
       <Header/>
       <Hero tweaks={tweaks}/>
       <SocialProof tweaks={tweaks}/>
+      <MatchingSpotlight/>
       <Testimonials/>
       <ProblemSolution/>
       <HowItWorks/>
