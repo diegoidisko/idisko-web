@@ -129,7 +129,7 @@
         },
         consentNotice: {
           changeDescription: 'Hubo cambios desde tu última visita. Por favor renueva tu consentimiento.',
-          description: 'Usamos cookies para analizar el tráfico y medir nuestras campañas. Puedes <button class="cm-link cn-learn-more">elegir</button> qué activar o aceptar todo.',
+          description: 'Usamos cookies para analizar el tráfico y medir nuestras campañas. Puedes elegir qué activar o aceptar todo.',
           learnMore: 'Personalizar'
         },
         purposes: {
@@ -162,7 +162,7 @@
         },
         consentNotice: {
           changeDescription: 'There were changes since your last visit. Please renew your consent.',
-          description: 'We use cookies to analyze traffic and measure our campaigns. You can <button class="cm-link cn-learn-more">choose</button> what to enable or accept all.',
+          description: 'We use cookies to analyze traffic and measure our campaigns. You can choose what to enable or accept all.',
           learnMore: 'Customize'
         },
         purposes: {
@@ -195,7 +195,7 @@
         },
         consentNotice: {
           changeDescription: 'Des modifications ont été apportées depuis votre dernière visite. Veuillez renouveler votre consentement.',
-          description: 'Nous utilisons des cookies pour analyser le trafic et mesurer nos campagnes. Vous pouvez <button class="cm-link cn-learn-more">choisir</button> ce que vous activez ou tout accepter.',
+          description: 'Nous utilisons des cookies pour analyser le trafic et mesurer nos campagnes. Vous pouvez choisir ce que vous activez ou tout accepter.',
           learnMore: 'Personnaliser'
         },
         purposes: {
@@ -228,7 +228,7 @@
         },
         consentNotice: {
           changeDescription: 'Ci sono stati cambiamenti dalla tua ultima visita. Rinnova il consenso.',
-          description: 'Usiamo cookie per analizzare il traffico e misurare le nostre campagne. Puoi <button class="cm-link cn-learn-more">scegliere</button> cosa abilitare o accettare tutto.',
+          description: 'Usiamo cookie per analizzare il traffico e misurare le nostre campagne. Puoi scegliere cosa abilitare o accettare tutto.',
           learnMore: 'Personalizza'
         },
         purposes: {
@@ -261,7 +261,7 @@
         },
         consentNotice: {
           changeDescription: 'Houve alterações desde sua última visita. Por favor, renove o consentimento.',
-          description: 'Usamos cookies para analisar o tráfego e medir nossas campanhas. Você pode <button class="cm-link cn-learn-more">escolher</button> o que ativar ou aceitar tudo.',
+          description: 'Usamos cookies para analisar o tráfego e medir nossas campanhas. Você pode escolher o que ativar ou aceitar tudo.',
           learnMore: 'Personalizar'
         },
         purposes: {
