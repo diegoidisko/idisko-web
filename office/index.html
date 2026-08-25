@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>iDisko Office | La música que une a tu equipo</title>
+<meta name="description" content="iDisko Office: team-building por música para equipos remotos e híbridos. Salas de escucha en vivo, playlist colaborativa de empresa y perfiles de trabajo separados. Programa piloto." />
+<link rel="icon" href="/assets/logo.png" />
+<link rel="canonical" href="https://www.idisko.com/office/" />
+<meta name="theme-color" content="#070716" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="iDisko" />
+<meta property="og:url" content="https://www.idisko.com/office/" />
+<meta property="og:title" content="iDisko Office — La música que une a tu equipo" />
+<meta property="og:description" content="Team-building por música para equipos remotos e híbridos. Programa piloto: cupos limitados." />
+<meta property="og:image" content="https://www.idisko.com/assets/og-cover.png" />
+<style>
+  @font-face { font-family: "ClashDisplay"; src: url("/assets/ClashDisplay.ttf") format("truetype"); font-display: swap; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #070716; color: #f4f3f6; font-family: "Poppins", "Helvetica Neue", Arial, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  header.site { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: "ClashDisplay", sans-serif; font-weight: 600; font-size: 20px; text-decoration: none; }
+  .brand img { width: 30px; height: 30px; }
+  .brand .office-tag { color: #22FFBD; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-left: 4px; }
+  .lang-switch { display: flex; gap: 6px; }
+  .lang-btn { background: transparent; color: #9b98a6; border: 1px solid #2a2540; border-radius: 8px; padding: 5px 11px; font-size: 12px; font-weight: 700; text-transform: uppercase; cursor: pointer; }
+  .lang-btn.active { color: #fff; border-color: #DF07FF; background: rgba(223,7,255,.12); }
+  .hero { padding: 72px 0 56px; text-align: center; }
+  .eyebrow { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #22FFBD; border: 1px solid rgba(34,255,189,.35); background: rgba(34,255,189,.08); border-radius: 999px; padding: 7px 16px; margin-bottom: 22px; }
+  h1 { font-family: "ClashDisplay", sans-serif; font-weight: 600; font-size: clamp(38px, 6vw, 64px); letter-spacing: -0.02em; line-height: 1.02; margin-bottom: 20px; }
+  h1 .grad { background: linear-gradient(128deg, #DF07FF, #8737DC); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { max-width: 720px; margin: 0 auto 32px; font-size: 17px; color: #b5b3bd; }
+  .cta-btn { display: inline-block; background: linear-gradient(128deg, #DF07FF, #8737DC); color: #fff; text-decoration: none; font-weight: 700; font-size: 16px; padding: 16px 32px; border-radius: 999px; box-shadow: 0 12px 40px rgba(223,7,255,.35); transition: transform 200ms; }
+  .cta-btn:hover { transform: translateY(-2px); }
+  .cta-note { margin-top: 14px; font-size: 13px; color: #8d8a99; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; padding: 40px 0 20px; }
+  .card { background: #0e0d1f; border: 1px solid #1a1632; border-radius: 20px; padding: 26px; }
+  .card .icn { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 14px; background: rgba(135,55,220,.18); border: 1px solid rgba(135,55,220,.4); }
+  .card h3 { font-family: "ClashDisplay", sans-serif; font-weight: 600; font-size: 19px; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .card p { font-size: 14px; color: #b5b3bd; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; padding: 24px 0 8px; }
+  .step { border-left: 2px solid rgba(223,7,255,.5); padding-left: 16px; }
+  .step .n { font-size: 11px; font-weight: 700; letter-spacing: .14em; color: #DF07FF; margin-bottom: 4px; }
+  .step h4 { font-size: 16px; margin-bottom: 4px; }
+  .step p { font-size: 13.5px; color: #b5b3bd; }
+  section.block { padding: 44px 0; }
+  .sec-title { font-family: "ClashDisplay", sans-serif; font-weight: 600; font-size: clamp(26px, 4vw, 36px); letter-spacing: -0.015em; text-align: center; margin-bottom: 8px; }
+  .sec-sub { text-align: center; color: #8d8a99; font-size: 14px; max-width: 620px; margin: 0 auto; }
+  .pilot { background: linear-gradient(180deg, #0e0d1f, #12102a); border: 1px solid #2a2245; border-radius: 26px; padding: 48px 32px; text-align: center; margin: 40px 0 64px; }
+  .pilot h2 { font-family: "ClashDisplay", sans-serif; font-weight: 600; font-size: clamp(26px, 4vw, 38px); letter-spacing: -0.015em; margin-bottom: 14px; }
+  .pilot p { max-width: 640px; margin: 0 auto 26px; color: #b5b3bd; font-size: 15.5px; }
+  .pilot .mail { display: block; margin-top: 16px; font-size: 14px; color: #8d8a99; }
+  .pilot .mail a { color: #22FFBD; text-decoration: none; font-weight: 600; }
+  footer.site { border-top: 1px solid #1a1632; padding: 26px 0 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13px; color: #8d8a99; }
+  footer.site a { color: #b5b3bd; text-decoration: none; }
+  .lang-content { display: none; }
+  .lang-content.active { display: block; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header class="site">
+    <a class="brand" href="/"><img src="/assets/logo.png" alt="iDisko" /> iDisko <span class="office-tag">Office</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="es">es</button>
+      <button class="lang-btn" data-lang="fr">fr</button>
+    </div>
+  </header>
+
+  <!-- ===================== ES ===================== -->
+  <div class="lang-content" id="content-es">
+    <section class="hero">
+      <div class="eyebrow">Programa piloto · Cupos limitados</div>
+      <h1>La música que une<br /><span class="grad">a tu equipo.</span></h1>
+      <p class="sub">iDisko Office es un espacio privado para tu empresa donde el equipo escucha música junto, construye una playlist común y se conoce mejor — aunque cada uno esté en una punta del mundo. Team-building por música, pensado para equipos remotos e híbridos.</p>
+      <a class="cta-btn" href="mailto:d.simonet@idisko.com?subject=iDisko%20Office%20%E2%80%94%20Programa%20piloto">Quiero probarlo con mi equipo</a>
+      <div class="cta-note">Sin compromiso · Funciona en el navegador, sin instalar nada</div>
+    </section>
+
+    <section class="block">
+      <h2 class="sec-title">Qué encuentra tu equipo adentro</h2>
+      <div class="cards">
+        <div class="card"><div class="icn">🎧</div><h3>Salas de escucha en vivo</h3><p>La misma canción, al mismo tiempo, para todos. Una cabina de DJ que rota: cualquiera puede tomar los controles o sugerir el próximo tema.</p></div>
+        <div class="card"><div class="icn">📻</div><h3>La playlist de la empresa</h3><p>Colaborativa: cada uno suma sus temas y la oficina —esté donde esté— tiene su banda sonora. Con el ranking de lo más escuchado de la semana.</p></div>
+        <div class="card"><div class="icn">☕</div><h3>Momentos de equipo</h3><p>Chat de sala alrededor de las canciones, reacciones, "mesas" para charlas uno a uno y cámara opcional para cuando quieran verse. El afterwork que no necesita oficina.</p></div>
+        <div class="card"><div class="icn">🔒</div><h3>Privacidad de verdad</h3><p>El perfil de trabajo está completamente separado del iDisko personal: en el espacio de tu empresa solo existe el contexto profesional. Y los datos de tu empresa solo los ve tu empresa.</p></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="sec-title">Cómo arranca</h2>
+      <div class="steps">
+        <div class="step"><div class="n">PASO 01</div><h4>Solo por invitación</h4><p>El administrador invita al equipo por email. Nadie entra al espacio de tu empresa sin invitación.</p></div>
+        <div class="step"><div class="n">PASO 02</div><h4>Sin instalar nada</h4><p>Funciona en el navegador. Cada persona completa un perfil de trabajo liviano y ya está adentro.</p></div>
+        <div class="step"><div class="n">PASO 03</div><h4>Listo en una tarde</h4><p>Crean las salas, arman la playlist y le dan play. La cultura del equipo hace el resto.</p></div>
+      </div>
+    </section>
+
+    <section class="pilot">
+      <h2>Estamos eligiendo a las primeras empresas.</h2>
+      <p>Abrimos iDisko Office con un grupo reducido de empresas pioneras. Si trabajás en Recursos Humanos, cultura interna o liderás un equipo remoto, escribime y lo probamos juntos con tu equipo.</p>
+      <a class="cta-btn" href="mailto:d.simonet@idisko.com?subject=iDisko%20Office%20%E2%80%94%20Programa%20piloto">Escribime</a>
+      <span class="mail">o directo a <a href="mailto:d.simonet@idisko.com">d.simonet@idisko.com</a> — respondo yo: Diego, fundador de iDisko.</span>
+    </section>
+  </div>
+
+  <!-- ===================== FR ===================== -->
+  <div class="lang-content" id="content-fr">
+    <section class="hero">
+      <div class="eyebrow">Programme pilote · Places limitées</div>
+      <h1>La musique qui rassemble<br /><span class="grad">votre équipe.</span></h1>
+      <p class="sub">iDisko Office est un espace privé pour votre entreprise, où l'équipe écoute de la musique ensemble, construit une playlist commune et apprend à se connaître — même aux quatre coins du monde. Du team-building par la musique, pensé pour les équipes à distance et hybrides.</p>
+      <a class="cta-btn" href="mailto:d.simonet@idisko.com?subject=iDisko%20Office%20%E2%80%94%20Programme%20pilote">Je veux l'essayer avec mon équipe</a>
+      <div class="cta-note">Sans engagement · Fonctionne dans le navigateur, rien à installer</div>
+    </section>
+
+    <section class="block">
+      <h2 class="sec-title">Ce que votre équipe y trouve</h2>
+      <div class="cards">
+        <div class="card"><div class="icn">🎧</div><h3>Des salons d'écoute en direct</h3><p>La même chanson, au même moment, pour tout le monde. Une cabine DJ tournante : chacun peut prendre les commandes ou suggérer le morceau suivant.</p></div>
+        <div class="card"><div class="icn">📻</div><h3>La playlist de l'entreprise</h3><p>Collaborative : chacun ajoute ses morceaux et le bureau — où qu'il soit — a sa bande-son. Avec le classement des titres les plus écoutés de la semaine.</p></div>
+        <div class="card"><div class="icn">☕</div><h3>Des moments d'équipe</h3><p>Chat de salon autour des chansons, réactions, « tables » pour discuter en tête-à-tête et caméra en option quand l'équipe veut se voir. L'afterwork qui n'a pas besoin de bureau.</p></div>
+        <div class="card"><div class="icn">🔒</div><h3>Une vraie confidentialité</h3><p>Le profil professionnel est totalement séparé de l'iDisko personnel : dans l'espace de votre entreprise, seul le contexte professionnel existe. Et les données de votre entreprise ne sont visibles que par elle.</p></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="sec-title">Comment ça démarre</h2>
+      <div class="steps">
+        <div class="step"><div class="n">ÉTAPE 01</div><h4>Sur invitation uniquement</h4><p>L'administrateur invite l'équipe par email. Personne n'entre dans l'espace de votre entreprise sans invitation.</p></div>
+        <div class="step"><div class="n">ÉTAPE 02</div><h4>Rien à installer</h4><p>Tout fonctionne dans le navigateur. Chacun complète un profil professionnel léger, et c'est parti.</p></div>
+        <div class="step"><div class="n">ÉTAPE 03</div><h4>Prêt en un après-midi</h4><p>Vous créez les salons, montez la playlist et appuyez sur play. La culture d'équipe fait le reste.</p></div>
+      </div>
+    </section>
+
+    <section class="pilot">
+      <h2>Nous choisissons les premières entreprises.</h2>
+      <p>Nous ouvrons iDisko Office à un premier groupe d'entreprises pionnières. Vous travaillez aux Ressources Humaines, à la culture interne, ou vous dirigez une équipe à distance ? Écrivez-moi et essayons-le ensemble avec votre équipe.</p>
+      <a class="cta-btn" href="mailto:d.simonet@idisko.com?subject=iDisko%20Office%20%E2%80%94%20Programme%20pilote">Écrivez-moi</a>
+      <span class="mail">ou directement à <a href="mailto:d.simonet@idisko.com">d.simonet@idisko.com</a> — c'est moi qui réponds : Diego, fondateur d'iDisko.</span>
+    </section>
+  </div>
+
+  <footer class="site">
+    <span>© 2026 iDisko · <span id="f-tag">La primera app social impulsada por la música.</span></span>
+    <a href="/">← idisko.com</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var META = {
+    es: { title: "iDisko Office | La música que une a tu equipo",
+          desc: "iDisko Office: team-building por música para equipos remotos e híbridos. Salas de escucha en vivo, playlist colaborativa de empresa y perfiles de trabajo separados. Programa piloto.",
+          ftag: "La primera app social impulsada por la música." },
+    fr: { title: "iDisko Office | La musique qui rassemble votre équipe",
+          desc: "iDisko Office : du team-building par la musique pour les équipes à distance et hybrides. Salons d'écoute en direct, playlist d'entreprise collaborative et profils professionnels séparés. Programme pilote.",
+          ftag: "La première app sociale propulsée par la musique." }
+  };
+  function applyLang(lang) {
+    if (!META[lang]) lang = "es";
+    var blocks = document.querySelectorAll(".lang-content");
+    for (var i = 0; i < blocks.length; i++) blocks[i].classList.remove("active");
+    document.getElementById("content-" + lang).classList.add("active");
+    var btns = document.querySelectorAll(".lang-btn");
+    for (var j = 0; j < btns.length; j++) btns[j].classList.toggle("active", btns[j].getAttribute("data-lang") === lang);
+    document.documentElement.lang = lang;
+    document.title = META[lang].title;
+    var d = document.querySelector('meta[name="description"]');
+    if (d) d.setAttribute("content", META[lang].desc);
+    document.getElementById("f-tag").textContent = META[lang].ftag;
+    try { localStorage.setItem("idisko_lang", lang); } catch (e) {}
+  }
+  var btns = document.querySelectorAll(".lang-btn");
+  for (var k = 0; k < btns.length; k++) btns[k].addEventListener("click", function () { applyLang(this.getAttribute("data-lang")); });
+  var saved = null;
+  try { saved = localStorage.getItem("idisko_lang"); } catch (e) {}
+  var browser = (navigator.language || "es").slice(0, 2).toLowerCase();
+  applyLang(META[saved] ? saved : (browser === "fr" ? "fr" : "es"));
+})();
+</script>
+
+</body>
+</html>
