@@ -40,12 +40,12 @@
     noticeAsModal: false,
     lang: lang,
     privacyPolicy: {
-      default: 'cookies.html',
-      es: 'cookies.html',
-      en: 'cookies.html',
-      fr: 'cookies.html',
-      it: 'cookies.html',
-      pt: 'cookies.html'
+      default: '/cookies/',
+      es: '/cookies/',
+      en: '/cookies/',
+      fr: '/cookies/',
+      it: '/cookies/',
+      pt: '/cookies/'
     },
     purposes: ['analytics', 'advertising', 'session'],
     services: [
@@ -97,7 +97,7 @@
     translations: {
       // ─── Fallback ──────────────────────────────────────────────
       zz: {
-        privacyPolicyUrl: '/cookies.html',
+        privacyPolicyUrl: '/cookies/',
         consentModal: {
           title: 'Privacy preferences',
           description: 'We use cookies and similar technologies. Some are strictly necessary; others (analytics, advertising) require your consent.'
@@ -122,10 +122,10 @@
 
       // ─── ESPAÑOL ───────────────────────────────────────────────
       es: {
-        privacyPolicyUrl: '/cookies.html',
+        privacyPolicyUrl: '/cookies/',
         consentModal: {
           title: 'Preferencias de privacidad',
-          description: 'Usamos cookies y tecnologías similares para hacer funcionar el sitio, medir su rendimiento y, con tu consentimiento, mostrarte publicidad relevante. Puedes elegir qué activar. Más detalles en nuestra <a href="cookies.html">Política de Cookies</a>.'
+          description: 'Usamos cookies y tecnologías similares para hacer funcionar el sitio, medir su rendimiento y, con tu consentimiento, mostrarte publicidad relevante. Puedes elegir qué activar. Más detalles en nuestra <a href="/cookies/">Política de Cookies</a>.'
         },
         consentNotice: {
           changeDescription: 'Hubo cambios desde tu última visita. Por favor renueva tu consentimiento.',
@@ -155,10 +155,10 @@
 
       // ─── ENGLISH ───────────────────────────────────────────────
       en: {
-        privacyPolicyUrl: '/cookies.html',
+        privacyPolicyUrl: '/cookies/',
         consentModal: {
           title: 'Privacy preferences',
-          description: 'We use cookies and similar technologies to operate the site, measure performance and, with your consent, show you relevant advertising. You decide what to enable. More details in our <a href="cookies.html">Cookie Policy</a>.'
+          description: 'We use cookies and similar technologies to operate the site, measure performance and, with your consent, show you relevant advertising. You decide what to enable. More details in our <a href="/cookies/">Cookie Policy</a>.'
         },
         consentNotice: {
           changeDescription: 'There were changes since your last visit. Please renew your consent.',
@@ -188,10 +188,10 @@
 
       // ─── FRANÇAIS (binding) ────────────────────────────────────
       fr: {
-        privacyPolicyUrl: '/cookies.html',
+        privacyPolicyUrl: '/cookies/',
         consentModal: {
           title: 'Préférences de confidentialité',
-          description: 'Nous utilisons des cookies et technologies similaires pour faire fonctionner le site, mesurer ses performances et, avec votre consentement, afficher des publicités pertinentes. Vous choisissez ce que vous activez. Plus de détails dans notre <a href="cookies.html">Politique de Cookies</a>.'
+          description: 'Nous utilisons des cookies et technologies similaires pour faire fonctionner le site, mesurer ses performances et, avec votre consentement, afficher des publicités pertinentes. Vous choisissez ce que vous activez. Plus de détails dans notre <a href="/cookies/">Politique de Cookies</a>.'
         },
         consentNotice: {
           changeDescription: 'Des modifications ont été apportées depuis votre dernière visite. Veuillez renouveler votre consentement.',
@@ -221,10 +221,10 @@
 
       // ─── ITALIANO ──────────────────────────────────────────────
       it: {
-        privacyPolicyUrl: '/cookies.html',
+        privacyPolicyUrl: '/cookies/',
         consentModal: {
           title: 'Preferenze di privacy',
-          description: 'Utilizziamo cookie e tecnologie simili per far funzionare il sito, misurarne le prestazioni e, con il tuo consenso, mostrarti pubblicità pertinenti. Decidi tu cosa abilitare. Maggiori dettagli nella nostra <a href="cookies.html">Cookie Policy</a>.'
+          description: 'Utilizziamo cookie e tecnologie simili per far funzionare il sito, misurarne le prestazioni e, con il tuo consenso, mostrarti pubblicità pertinenti. Decidi tu cosa abilitare. Maggiori dettagli nella nostra <a href="/cookies/">Cookie Policy</a>.'
         },
         consentNotice: {
           changeDescription: 'Ci sono stati cambiamenti dalla tua ultima visita. Rinnova il consenso.',
@@ -254,10 +254,10 @@
 
       // ─── PORTUGUÊS (BR) ────────────────────────────────────────
       pt: {
-        privacyPolicyUrl: '/cookies.html',
+        privacyPolicyUrl: '/cookies/',
         consentModal: {
           title: 'Preferências de privacidade',
-          description: 'Usamos cookies e tecnologias similares para o site funcionar, medir o desempenho e, com seu consentimento, mostrar anúncios relevantes. Você decide o que ativar. Mais detalhes na nossa <a href="cookies.html">Política de Cookies</a>.'
+          description: 'Usamos cookies e tecnologias similares para o site funcionar, medir o desempenho e, com seu consentimento, mostrar anúncios relevantes. Você decide o que ativar. Mais detalhes na nossa <a href="/cookies/">Política de Cookies</a>.'
         },
         consentNotice: {
           changeDescription: 'Houve alterações desde sua última visita. Por favor, renove o consentimento.',
