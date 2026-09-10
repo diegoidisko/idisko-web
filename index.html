@@ -434,7 +434,9 @@ html, body {
   .eq-bars span:nth-child(5){ animation-delay: 600ms;}
 
   /* Responsive helpers */
+  html, body { overflow-x: hidden; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .hero-grid > *, .grid-2 > *, .grid-3 > *, .grid-4 > *, .features-alt > * { min-width: 0; }
   @media (max-width: 720px) {
     .container { padding: 0 20px; }
     .hide-mobile { display: none !important; }
@@ -745,7 +747,20 @@ function HeroVisual({ variant, showAvatars }) {
 }
 
 function TilesVisual({ showAvatars }) {
+  const { useState, useEffect, useRef } = React;
   const tiles = PEOPLE.slice(0, showAvatars ? 5 : 0);
+  // The cluster is designed on a fixed 600×580 canvas and scaled down to fit
+  // narrow screens, so tiles never overflow the viewport on mobile.
+  const wrapRef = useRef(null);
+  const [scale, setScale] = useState(1);
+  useEffect(() => {
+    const measure = () => {
+      if (wrapRef.current) setScale(Math.min(1, wrapRef.current.clientWidth / 600));
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
   // Positioned tiles — a cluster suggesting a "room" of workers
   const positions = [
     { t: 0,    l: 10,  w: 170, h: 220, rot: -4, z: 2, live: true  },
@@ -755,7 +770,8 @@ function TilesVisual({ showAvatars }) {
     { t: 320,  l: 320, w: 200, h: 240, rot: -3, z: 4, live: true  },
   ];
   return (
-    <div style={{position:"relative",height:580,minWidth:600,width:"100%"}}>
+    <div ref={wrapRef} style={{position:"relative",height:580*scale,width:"100%"}}>
+    <div style={{position:"absolute",top:0,left:"50%",transform:`translateX(-50%) scale(${scale})`,transformOrigin:"top center",width:600,height:580}}>
       {/* ambient glow */}
       <div style={{position:"absolute",inset:"-10% -10%",background:"radial-gradient(circle at 40% 40%, rgba(135,55,220,0.35) 0%, transparent 55%), radial-gradient(circle at 70% 70%, rgba(34,255,189,0.14) 0%, transparent 55%)",filter:"blur(30px)",pointerEvents:"none"}}/>
       {/* Waveform bg element */}
@@ -818,6 +834,7 @@ function TilesVisual({ showAvatars }) {
         <span className="live-dot" style={{width:6,height:6,borderRadius:"50%",background:"#22FFBD"}}/>
         <LiveUserCount/>
       </div>
+    </div>
     </div>
   );
 }
