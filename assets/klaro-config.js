@@ -180,7 +180,7 @@
         },
         purposes: {
           analytics: { title: 'Analítica', description: 'Nos ayuda a entender cómo se usa el sitio (PostHog).' },
-          advertising: { title: 'Publicidad', description: 'Medimos la eficacia de nuestras campañas en redes sociales (Meta Pixel).' },
+          advertising: { title: 'Publicidad', description: 'Medimos la eficacia de nuestras campañas (Meta Pixel, TikTok, Google Ads).' },
           session: { title: 'Mejora de experiencia', description: 'Mapas de calor y grabaciones anónimas de sesión (Microsoft Clarity).' }
         },
         ok: 'Aceptar todo',
@@ -213,7 +213,7 @@
         },
         purposes: {
           analytics: { title: 'Analytics', description: 'Helps us understand how the site is used (PostHog).' },
-          advertising: { title: 'Advertising', description: 'Measures the effectiveness of our social-media campaigns (Meta Pixel).' },
+          advertising: { title: 'Advertising', description: 'Measures the effectiveness of our campaigns (Meta Pixel, TikTok, Google Ads).' },
           session: { title: 'Experience improvement', description: 'Anonymous heatmaps and session recordings (Microsoft Clarity).' }
         },
         ok: 'Accept all',
@@ -246,7 +246,7 @@
         },
         purposes: {
           analytics: { title: 'Mesure d\'audience', description: 'Nous aide à comprendre comment le site est utilisé (PostHog).' },
-          advertising: { title: 'Publicité', description: 'Mesure l\'efficacité de nos campagnes sur les réseaux sociaux (Meta Pixel).' },
+          advertising: { title: 'Publicité', description: 'Mesure l\'efficacité de nos campagnes (Meta Pixel, TikTok, Google Ads).' },
           session: { title: 'Amélioration de l\'expérience', description: 'Heatmaps et enregistrements anonymes de session (Microsoft Clarity).' }
         },
         ok: 'Tout accepter',
@@ -279,7 +279,7 @@
         },
         purposes: {
           analytics: { title: 'Analitica', description: 'Ci aiuta a capire come viene utilizzato il sito (PostHog).' },
-          advertising: { title: 'Pubblicità', description: 'Misura l\'efficacia delle nostre campagne sui social network (Meta Pixel).' },
+          advertising: { title: 'Pubblicità', description: 'Misura l\'efficacia delle nostre campagne (Meta Pixel, TikTok, Google Ads).' },
           session: { title: 'Miglioramento dell\'esperienza', description: 'Heatmap e registrazioni anonime di sessione (Microsoft Clarity).' }
         },
         ok: 'Accetta tutto',
@@ -312,7 +312,7 @@
         },
         purposes: {
           analytics: { title: 'Análise', description: 'Nos ajuda a entender como o site é usado (PostHog).' },
-          advertising: { title: 'Publicidade', description: 'Mede a eficácia das nossas campanhas em redes sociais (Meta Pixel).' },
+          advertising: { title: 'Publicidade', description: 'Mede a eficácia das nossas campanhas (Meta Pixel, TikTok, Google Ads).' },
           session: { title: 'Melhoria da experiência', description: 'Mapas de calor e gravações anônimas de sessão (Microsoft Clarity).' }
         },
         ok: 'Aceitar tudo',
