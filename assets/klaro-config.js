@@ -31,6 +31,7 @@
     groupByPurpose: true,
     storageMethod: 'cookie',
     cookieName: 'klaro',
+    cookieDomain: '.idisko.com', // share consent between www.idisko.com and app.idisko.com
     cookieExpiresAfterDays: 365,
     default: false,         // services off by default until consent
     mustConsent: false,     // banner is dismissable; user can ignore
