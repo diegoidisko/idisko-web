@@ -92,6 +92,51 @@
         default: false,
         optOut: false,
         onlyOnce: true
+      },
+      // Declared on the landing only so the shared klaro cookie carries the
+      // exact same service keys as app.idisko.com. The landing never loads
+      // TikTok or Google scripts — see assets/klaro-trackers.js.
+      {
+        name: 'tiktok-pixel',
+        title: 'TikTok Pixel',
+        purposes: ['advertising'],
+        cookies: [
+          ['_ttp', '/'],
+          ['_ttp', '/', '.idisko.com']
+        ],
+        required: false,
+        default: false,
+        optOut: false,
+        onlyOnce: true,
+        translations: {
+          zz: { description: 'Conversion measurement for our TikTok campaigns.' },
+          fr: { description: 'Mesure des conversions de nos campagnes TikTok.' },
+          en: { description: 'Conversion measurement for our TikTok campaigns.' },
+          es: { description: 'Medición de conversiones de nuestras campañas de TikTok.' },
+          it: { description: 'Misurazione delle conversioni delle nostre campagne TikTok.' },
+          pt: { description: 'Medição de conversões das nossas campanhas no TikTok.' }
+        }
+      },
+      {
+        name: 'google-ads',
+        title: 'Google Ads',
+        purposes: ['advertising'],
+        cookies: [
+          [/^_gcl_/, '/'],
+          [/^_gcl_/, '/', '.idisko.com']
+        ],
+        required: false,
+        default: false,
+        optOut: false,
+        onlyOnce: true,
+        translations: {
+          zz: { description: 'Conversion measurement for our Google Ads campaigns.' },
+          fr: { description: 'Mesure des conversions de nos campagnes Google Ads.' },
+          en: { description: 'Conversion measurement for our Google Ads campaigns.' },
+          es: { description: 'Medición de conversiones de nuestras campañas de Google Ads.' },
+          it: { description: 'Misurazione delle conversioni delle nostre campagne Google Ads.' },
+          pt: { description: 'Medição de conversões das nossas campanhas no Google Ads.' }
+        }
       }
     ],
 
