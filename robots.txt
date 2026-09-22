@@ -3,5 +3,6 @@ Allow: /
 Disallow: /thanks.html
 Disallow: /confirm.html
 Disallow: /unsubscribe.html
+Disallow: /index.source.html
 
 Sitemap: https://www.idisko.com/sitemap.xml

@@ -401,10 +401,10 @@ html, body {
   color: transparent;
 }
 </style>
-<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
-<script src="https://unpkg.com/@babel/standalone@7.25.0/babel.min.js"></script>
+<script src="assets/vendor/lucide.min.js"></script>
+<script src="assets/vendor/react.production.min.js"></script>
+<script src="assets/vendor/react-dom.production.min.js"></script>
+<script src="assets/vendor/babel.min.js"></script>
 <style>
   html, body { margin:0; padding:0; background: #000214; color: #fff; font-family: ClashDisplay, system-ui; -webkit-font-smoothing: antialiased; scroll-behavior: smooth;}
   * { box-sizing: border-box; }
@@ -519,7 +519,11 @@ window.SUPPORTED_LANGS = ["es","en","fr","it","pt"];
 window.LOCALES = { es:"es-ES", en:"en-US", fr:"fr-FR", it:"it-IT", pt:"pt-BR" };
 (function detectLang(){
   let lang = null;
-  try { lang = localStorage.getItem("idisko_lang"); } catch(e) {}
+  // Prerendered language pages hard-set their language; the URL wins.
+  if (window.__PAGE_LANG && window.SUPPORTED_LANGS.indexOf(window.__PAGE_LANG) !== -1) {
+    lang = window.__PAGE_LANG;
+  }
+  if (!lang) { try { lang = localStorage.getItem("idisko_lang"); } catch(e) {} }
   if (!lang || window.SUPPORTED_LANGS.indexOf(lang) === -1) {
     const browser = (navigator.language || "en").slice(0,2).toLowerCase();
     lang = window.SUPPORTED_LANGS.indexOf(browser) !== -1 ? browser : "en";
@@ -1914,10 +1918,15 @@ function App() {
   const [lang, setLangState] = useState(window.LANG || "en");
   const setLang = (newLang) => {
     if (window.SUPPORTED_LANGS && window.SUPPORTED_LANGS.indexOf(newLang) === -1) return;
+    try { localStorage.setItem("idisko_lang", newLang); } catch(e) {}
+    // On prerendered pages each language lives at its own URL (SEO): navigate.
+    if (window.__PRERENDERED) {
+      const target = newLang === "en" ? "/" : "/" + newLang + "/";
+      if (location.pathname !== target) { location.assign(target); return; }
+    }
     window.LANG = newLang;
     window.LANG_LOCALE = (window.LOCALES && window.LOCALES[newLang]) || "en-US";
     document.documentElement.lang = newLang;
-    try { localStorage.setItem("idisko_lang", newLang); } catch(e) {}
     setLangState(newLang);
   };
   const langCtx = useMemo(() => ({

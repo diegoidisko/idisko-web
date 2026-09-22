@@ -1,0 +1,13 @@
+{
+  "name": "idisko-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "iDisko landing — static prerender build",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "@babel/standalone": "^7.25.0",
+    "playwright": "^1.48.0"
+  }
+}
