@@ -1,39 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.idisko.com/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.idisko.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.idisko.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.idisko.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.idisko.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.idisko.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.idisko.com/"/>
+  </url>
+  <url>
+    <loc>https://www.idisko.com/es/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.idisko.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.idisko.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.idisko.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.idisko.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.idisko.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.idisko.com/"/>
+  </url>
+  <url>
+    <loc>https://www.idisko.com/fr/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.idisko.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.idisko.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.idisko.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.idisko.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.idisko.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.idisko.com/"/>
+  </url>
+  <url>
+    <loc>https://www.idisko.com/it/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.idisko.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.idisko.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.idisko.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.idisko.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.idisko.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.idisko.com/"/>
+  </url>
+  <url>
+    <loc>https://www.idisko.com/pt/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.idisko.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.idisko.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.idisko.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.idisko.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.idisko.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.idisko.com/"/>
+  </url>
+  <url>
+    <loc>https://www.idisko.com/office/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.idisko.com/faq/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.idisko.com/politique-de-confidentialite/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.idisko.com/cookies/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.idisko.com/cgu/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.idisko.com/mentions-legales/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.4</priority>
   </url>
 </urlset>
