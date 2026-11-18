@@ -24,7 +24,7 @@
   window.klaroConfig = {
     version: 1,
     elementID: 'klaro',
-    styling: { theme: ['dark', 'top', 'wide'] },
+    styling: { theme: ['dark', 'bottom', 'wide'] },
     noAutoLoad: false,
     htmlTexts: true,
     embedded: false,
@@ -175,17 +175,17 @@
         },
         consentNotice: {
           changeDescription: 'Hubo cambios desde tu última visita. Por favor renueva tu consentimiento.',
-          description: 'Usamos cookies para analizar el tráfico y medir nuestras campañas. Puedes <button class="cm-link cn-learn-more">elegir</button> qué activar o aceptar todo.',
-          learnMore: 'Personalizar'
+          description: 'Usamos cookies para medir las visitas, ver cómo se usa el sitio y saber qué anuncios funcionan. Con tu permiso, nos ayudan a mejorar iDisko.',
+          learnMore: 'Elegir qué activar'
         },
         purposes: {
           analytics: { title: 'Analítica', description: 'Nos ayuda a entender cómo se usa el sitio (PostHog).' },
           advertising: { title: 'Publicidad', description: 'Medimos la eficacia de nuestras campañas (Meta Pixel, TikTok, Google Ads).' },
           session: { title: 'Mejora de experiencia', description: 'Mapas de calor y grabaciones anónimas de sesión (Microsoft Clarity).' }
         },
-        ok: 'Aceptar todo',
+        ok: 'Aceptar',
         save: 'Guardar mis elecciones',
-        decline: 'Rechazar todo',
+        decline: 'Rechazar',
         close: 'Cerrar',
         acceptAll: 'Aceptar todo',
         acceptSelected: 'Guardar mis elecciones',
@@ -208,17 +208,17 @@
         },
         consentNotice: {
           changeDescription: 'There were changes since your last visit. Please renew your consent.',
-          description: 'We use cookies to analyze traffic and measure our campaigns. You can <button class="cm-link cn-learn-more">choose</button> what to enable or accept all.',
-          learnMore: 'Customize'
+          description: 'We use cookies to measure visits, see how the site is used and learn which ads work. With your permission, they help us improve iDisko.',
+          learnMore: 'Choose what to enable'
         },
         purposes: {
           analytics: { title: 'Analytics', description: 'Helps us understand how the site is used (PostHog).' },
           advertising: { title: 'Advertising', description: 'Measures the effectiveness of our campaigns (Meta Pixel, TikTok, Google Ads).' },
           session: { title: 'Experience improvement', description: 'Anonymous heatmaps and session recordings (Microsoft Clarity).' }
         },
-        ok: 'Accept all',
+        ok: 'Accept',
         save: 'Save my choices',
-        decline: 'Decline all',
+        decline: 'Decline',
         close: 'Close',
         acceptAll: 'Accept all',
         acceptSelected: 'Save my choices',
@@ -241,17 +241,17 @@
         },
         consentNotice: {
           changeDescription: 'Des modifications ont été apportées depuis votre dernière visite. Veuillez renouveler votre consentement.',
-          description: 'Nous utilisons des cookies pour analyser le trafic et mesurer nos campagnes. Vous pouvez <button class="cm-link cn-learn-more">choisir</button> ce que vous activez ou tout accepter.',
-          learnMore: 'Personnaliser'
+          description: 'Nous utilisons des cookies pour mesurer les visites, voir comment le site est utilisé et savoir quelles publicités fonctionnent. Avec votre accord, ils nous aident à améliorer iDisko.',
+          learnMore: 'Choisir ce que j\'active'
         },
         purposes: {
           analytics: { title: 'Mesure d\'audience', description: 'Nous aide à comprendre comment le site est utilisé (PostHog).' },
           advertising: { title: 'Publicité', description: 'Mesure l\'efficacité de nos campagnes (Meta Pixel, TikTok, Google Ads).' },
           session: { title: 'Amélioration de l\'expérience', description: 'Heatmaps et enregistrements anonymes de session (Microsoft Clarity).' }
         },
-        ok: 'Tout accepter',
+        ok: 'Accepter',
         save: 'Enregistrer mes choix',
-        decline: 'Tout refuser',
+        decline: 'Refuser',
         close: 'Fermer',
         acceptAll: 'Tout accepter',
         acceptSelected: 'Enregistrer mes choix',
@@ -274,17 +274,17 @@
         },
         consentNotice: {
           changeDescription: 'Ci sono stati cambiamenti dalla tua ultima visita. Rinnova il consenso.',
-          description: 'Usiamo cookie per analizzare il traffico e misurare le nostre campagne. Puoi <button class="cm-link cn-learn-more">scegliere</button> cosa abilitare o accettare tutto.',
-          learnMore: 'Personalizza'
+          description: 'Usiamo i cookie per misurare le visite, vedere come viene usato il sito e capire quali annunci funzionano. Con il tuo permesso, ci aiutano a migliorare iDisko.',
+          learnMore: 'Scegli cosa attivare'
         },
         purposes: {
           analytics: { title: 'Analitica', description: 'Ci aiuta a capire come viene utilizzato il sito (PostHog).' },
           advertising: { title: 'Pubblicità', description: 'Misura l\'efficacia delle nostre campagne (Meta Pixel, TikTok, Google Ads).' },
           session: { title: 'Miglioramento dell\'esperienza', description: 'Heatmap e registrazioni anonime di sessione (Microsoft Clarity).' }
         },
-        ok: 'Accetta tutto',
+        ok: 'Accetta',
         save: 'Salva le mie scelte',
-        decline: 'Rifiuta tutto',
+        decline: 'Rifiuta',
         close: 'Chiudi',
         acceptAll: 'Accetta tutto',
         acceptSelected: 'Salva le mie scelte',
@@ -307,17 +307,17 @@
         },
         consentNotice: {
           changeDescription: 'Houve alterações desde sua última visita. Por favor, renove o consentimento.',
-          description: 'Usamos cookies para analisar o tráfego e medir nossas campanhas. Você pode <button class="cm-link cn-learn-more">escolher</button> o que ativar ou aceitar tudo.',
-          learnMore: 'Personalizar'
+          description: 'Usamos cookies para medir as visitas, ver como o site é usado e saber quais anúncios funcionam. Com a sua permissão, eles nos ajudam a melhorar o iDisko.',
+          learnMore: 'Escolher o que ativar'
         },
         purposes: {
           analytics: { title: 'Análise', description: 'Nos ajuda a entender como o site é usado (PostHog).' },
           advertising: { title: 'Publicidade', description: 'Mede a eficácia das nossas campanhas (Meta Pixel, TikTok, Google Ads).' },
           session: { title: 'Melhoria da experiência', description: 'Mapas de calor e gravações anônimas de sessão (Microsoft Clarity).' }
         },
-        ok: 'Aceitar tudo',
+        ok: 'Aceitar',
         save: 'Salvar minhas escolhas',
-        decline: 'Recusar tudo',
+        decline: 'Recusar',
         close: 'Fechar',
         acceptAll: 'Aceitar tudo',
         acceptSelected: 'Salvar minhas escolhas',
