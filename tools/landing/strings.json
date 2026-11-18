@@ -30,7 +30,7 @@
         { "t": "Solo mayores de 18", "d": "iDisko es una app para adultos." },
         { "t": "Cámara opcional y verificada", "d": "Solo existe en las salas VIP y en Shuffle. Para encenderla verificás tu edad una vez con Yoti, y no guardamos tu selfi." },
         { "t": "Moderación en la cámara", "d": "Un sistema automático modera las cámaras. Si te bloquea por error, nos escribís y una persona revisa tu caso." },
-        { "t": "Reportá o bloqueá", "d": "En dos toques, desde el perfil o el chat." }
+        { "t": "Reportá o bloqueá", "d": "Desde su perfil, cuando quieras." }
       ]
     },
     "plans": {
@@ -100,7 +100,7 @@
         { "t": "Adults only (18+)", "d": "iDisko is an app for adults." },
         { "t": "Optional, age-verified camera", "d": "It only exists in VIP rooms and Shuffle. To turn it on you verify your age once with Yoti, and we don't keep your selfie." },
         { "t": "Camera moderation", "d": "An automated system moderates cameras. If it blocks you by mistake, write to us and a person reviews your case." },
-        { "t": "Report or block", "d": "In two taps, from the profile or the chat." }
+        { "t": "Report or block", "d": "From their profile, at any time." }
       ]
     },
     "plans": {
@@ -170,7 +170,7 @@
         { "t": "Réservé aux plus de 18 ans", "d": "iDisko est une appli pour adultes." },
         { "t": "Caméra facultative et vérifiée", "d": "Elle n'existe que dans les salons VIP et dans Shuffle. Pour l'activer, tu vérifies ton âge une seule fois avec Yoti, et nous ne conservons pas ton selfie." },
         { "t": "Modération de la caméra", "d": "Un système automatique modère les caméras. S'il te bloque par erreur, écris-nous et une personne réexamine ton cas." },
-        { "t": "Signale ou bloque", "d": "En deux gestes, depuis le profil ou la discussion." }
+        { "t": "Signale ou bloque", "d": "Depuis son profil, à tout moment." }
       ]
     },
     "plans": {
@@ -240,7 +240,7 @@
         { "t": "Solo maggiorenni", "d": "iDisko è un'app per adulti." },
         { "t": "Videocamera facoltativa e verificata", "d": "Esiste solo nelle stanze VIP e in Shuffle. Per accenderla verifichi la tua età una sola volta con Yoti, e non conserviamo il tuo selfie." },
         { "t": "Moderazione della videocamera", "d": "Un sistema automatico modera le videocamere. Se ti blocca per errore, scrivici e una persona riesamina il tuo caso." },
-        { "t": "Segnala o blocca", "d": "In due tocchi, dal profilo o dalla chat." }
+        { "t": "Segnala o blocca", "d": "Dal suo profilo, in qualsiasi momento." }
       ]
     },
     "plans": {
@@ -310,7 +310,7 @@
         { "t": "Só para maiores de 18", "d": "iDisko é um app para adultos." },
         { "t": "Câmera opcional e verificada", "d": "Ela só existe nas salas VIP e no Shuffle. Para ligar, você verifica sua idade uma única vez com a Yoti, e não guardamos sua selfie." },
         { "t": "Moderação da câmera", "d": "Um sistema automático modera as câmeras. Se ele bloquear você por engano, escreva para nós e uma pessoa revisa o seu caso." },
-        { "t": "Denuncie ou bloqueie", "d": "Em dois toques, pelo perfil ou pelo chat." }
+        { "t": "Denuncie ou bloqueie", "d": "Pelo perfil da pessoa, a qualquer momento." }
       ]
     },
     "plans": {
