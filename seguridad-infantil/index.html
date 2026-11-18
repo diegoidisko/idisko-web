@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<base href="/" />
+<meta name="theme-color" content="#000214" />
+<title>Seguridad infantil · Child safety standards · iDisko</title>
+<meta name="description" content="iDisko child safety standards: zero tolerance for child sexual abuse and exploitation (CSAE/CSAM), how to report, and our point of contact." />
+<meta name="robots" content="index, follow" />
+
+<link rel="icon" href="assets/logo.png" />
+
+<!-- Smart App Banner (iOS Safari only) -->
+<meta name="apple-itunes-app" content="app-id=6749269410, app-argument=https://www.idisko.com/" />
+
+<link rel="canonical" href="https://www.idisko.com/seguridad-infantil/" />
+
+<!-- Open Graph & Twitter -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="iDisko" />
+<meta property="og:url" content="https://www.idisko.com/seguridad-infantil/" />
+<meta property="og:title" content="iDisko · Seguridad infantil / Child safety standards" />
+<meta property="og:description" content="iDisko child safety standards: zero tolerance for child sexual abuse and exploitation (CSAE/CSAM), how to report, and our point of contact." />
+<meta property="og:image" content="https://www.idisko.com/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="iDisko · Seguridad infantil / Child safety standards" />
+<meta name="twitter:description" content="iDisko child safety standards: zero tolerance for child sexual abuse and exploitation (CSAE/CSAM), how to report, and our point of contact." />
+<meta name="twitter:image" content="https://www.idisko.com/assets/og-cover.png" />
+
+<style>
+/* ─── ClashDisplay (variable) ─────────────────────────────────────── */
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("assets/ClashDisplay.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Tokens (lifted from idisko-app design system) ───────────────── */
+:root {
+  --brand-primary-rgb: 135, 55, 220;
+  --brand-secondary-rgb: 223, 7, 255;
+  --status-success-rgb: 34, 255, 189;
+
+  --brand-primary: rgb(var(--brand-primary-rgb));
+  --brand-secondary: rgb(var(--brand-secondary-rgb));
+  --status-live: rgb(var(--status-success-rgb));
+
+  --bg: #000214;
+  --bg-surface: #0e0d1f;
+  --bg-subdued: #09091b;
+  --bg-card: rgba(14, 13, 31, 0.7);
+
+  --fg-1: #ffffff;
+  --fg-2: #e0e0e0;
+  --fg-3: #b5b3bd;
+  --fg-muted: #666672;
+
+  --line: #1a1632;
+  --line-strong: rgba(135, 55, 220, 0.25);
+  --line-accent: rgba(135, 55, 220, 0.4);
+
+  --gradient-primary: linear-gradient(128.46deg, #DF07FF 30.32%, #DF07FF 30.32%, #8737DC 59.37%);
+  --gradient-disko: radial-gradient(ellipse at 50% 0%, #2a0d4a 0%, #0a0a1e 55%, #000214 100%);
+
+  --shadow-secondary-btn: 0 4px 50px rgba(var(--brand-secondary-rgb), 0.25);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+  --font-display: "ClashDisplay", "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "ClashDisplay", "Inter", system-ui, -apple-system, sans-serif;
+
+  --t-fast: 150ms cubic-bezier(.2,.8,.2,1);
+  --t-med: 250ms cubic-bezier(.2,.8,.2,1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ambient glow behind page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(135, 55, 220, 0.22), transparent 60%),
+    radial-gradient(ellipse 45% 35% at 90% 25%, rgba(223, 7, 255, 0.10), transparent 60%);
+}
+
+a {
+  color: var(--brand-secondary);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+a:hover { color: #ffffff; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #2d2933; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #DF07FF, #8737DC); }
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(0, 2, 20, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(135, 55, 220, 0.12);
+  padding: 14px 0;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--fg-1);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.logo-link img {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+.lang-switch {
+  display: inline-flex;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.lang-btn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--fg-3);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--t-fast);
+}
+
+.lang-btn.active {
+  background: var(--gradient-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(var(--brand-secondary-rgb), 0.35);
+}
+
+.lang-btn:not(.active):hover { color: var(--fg-1); }
+
+.back-link {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--fg-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-link:hover { color: var(--brand-secondary); }
+
+/* ============ MAIN ============ */
+main { padding: 64px 0 96px; }
+
+.container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+/* Doc header */
+.doc-header {
+  padding-bottom: 40px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.doc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(223, 7, 255, 0.08);
+  border: 1px solid rgba(223, 7, 255, 0.3);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--brand-secondary);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.doc-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-secondary);
+  box-shadow: 0 0 10px var(--brand-secondary);
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 18px;
+  color: var(--fg-1);
+}
+
+.doc-meta {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--fg-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Doc content */
+.doc-content h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--fg-1);
+  margin-top: 56px;
+  margin-bottom: 18px;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  position: relative;
+}
+
+.doc-content h2::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  box-shadow: 0 0 12px rgba(var(--brand-secondary-rgb), 0.6);
+}
+
+.doc-content h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--brand-secondary);
+  margin-top: 36px;
+  margin-bottom: 12px;
+  letter-spacing: -0.005em;
+}
+
+.doc-content h4 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg-1);
+  margin-top: 22px;
+  margin-bottom: 10px;
+  letter-spacing: 0;
+}
+
+.doc-content p {
+  margin-bottom: 16px;
+  color: var(--fg-3);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.doc-content ul,
+.doc-content ol {
+  margin: 16px 0 22px 22px;
+  color: var(--fg-3);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.doc-content li {
+  margin-bottom: 8px;
+  padding-left: 6px;
+}
+
+.doc-content li::marker { color: var(--brand-secondary); }
+
+.doc-content strong {
+  color: var(--fg-1);
+  font-weight: 600;
+}
+
+/* Info / call-out boxes */
+.info-box {
+  position: relative;
+  background: linear-gradient(180deg, rgba(135, 55, 220, 0.08), rgba(135, 55, 220, 0.03));
+  border: 1px solid rgba(135, 55, 220, 0.25);
+  border-left: 3px solid var(--brand-secondary);
+  border-radius: 0 14px 14px 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-size: 14px;
+  box-shadow: 0 0 60px rgba(var(--brand-secondary-rgb), 0.06);
+}
+
+.info-box p { margin-bottom: 10px; color: var(--fg-1); line-height: 1.6; }
+.info-box p:last-child { margin-bottom: 0; }
+
+/* Tables: card style */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 24px 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  font-size: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+thead th {
+  background: linear-gradient(180deg, rgba(223, 7, 255, 0.10), rgba(135, 55, 220, 0.06));
+  color: var(--brand-secondary);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line-accent);
+}
+
+tbody td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg-3);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+tbody td:first-child {
+  color: var(--fg-1);
+  font-weight: 500;
+  font-family: var(--font-display);
+}
+
+tbody tr:last-child td { border-bottom: none; }
+
+/* Language toggle */
+.lang-content { display: none; }
+.lang-content.active { display: block; }
+
+/* ============ FOOTER ============ */
+footer {
+  border-top: 1px solid var(--line);
+  background: var(--bg-subdued);
+  padding: 56px 0 32px;
+  margin-top: 80px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand img {
+  height: 24px;
+  width: auto;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.footer-brand p {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--fg-3);
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.footer-col-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  margin-bottom: 18px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a, .footer-links button.linklike {
+  color: var(--fg-2);
+  font-size: 14px;
+  font-family: var(--font-body);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--t-fast);
+}
+
+.footer-links a:hover, .footer-links button.linklike:hover { color: var(--brand-secondary); }
+
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 720px) {
+  .nav-inner { padding: 0 20px; flex-wrap: wrap; gap: 12px; }
+  .back-link { display: none; }
+  main { padding: 40px 0 64px; }
+  .container { padding: 0 20px; }
+  .doc-content h2 { font-size: 22px; margin-top: 40px; }
+  .doc-content h2::before { left: -14px; top: 9px; width: 6px; height: 6px; }
+  .doc-content h3 { font-size: 16px; }
+  table { font-size: 13px; }
+  thead th, tbody td { padding: 11px 13px; }
+  tbody td:first-child { white-space: normal; }
+  .footer-inner { padding: 0 20px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link" aria-label="iDisko home">
+      <img src="assets/logo.png" alt="iDisko" />
+      <span>iDisko</span>
+    </a>
+
+    <div class="lang-switch" role="tablist" aria-label="Language">
+      <button class="lang-btn active" data-lang="es" role="tab">ES</button>
+      <button class="lang-btn" data-lang="en" role="tab">EN</button>
+      <button class="lang-btn" data-lang="fr" role="tab">FR</button>
+      <button class="lang-btn" data-lang="it" role="tab">IT</button>
+      <button class="lang-btn" data-lang="pt" role="tab">PT</button>
+    </div>
+
+    <a href="index.html" class="back-link"><span aria-hidden="true">←</span> <span data-i18n="back">volver al inicio</span></a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <div class="doc-header">
+      <div class="doc-tag" data-i18n="tag">Legal · Seguridad</div>
+      <h1 data-i18n="title">Seguridad infantil</h1>
+      <div class="doc-meta">
+        <span data-i18n="updated">Última actualización</span>: 19/11/2026
+      </div>
+    </div>
+
+    <!-- ============= ES ============= -->
+    <div class="lang-content active doc-content" id="content-es">
+
+      <p>iDisko, la aplicación editada por DS Connect, está reservada a personas mayores de edad. Esta página presenta nuestras normas contra la explotación y el abuso sexual infantil, cómo avisarnos de un problema y qué hacemos después.</p>
+      <div class="info-box">
+        <p><strong>Tolerancia cero.</strong> Todo material de abuso sexual infantil (CSAM) y todo comportamiento de explotación o abuso sexual de un menor (CSAE) están prohibidos en iDisko, sin excepción.</p>
+      </div>
+
+      <h2>Una aplicación solo para adultos</h2>
+      <p>iDisko está dirigida únicamente a personas de 18 años o más. Los menores no pueden crear una cuenta. Toda cuenta cuyo titular resulte ser menor se elimina. Para activar la cámara, que solo existe en las salas VIP y en Shuffle, se exige una verificación de edad por estimación facial (YOTI).</p>
+
+      <h2>Qué está prohibido</h2>
+      <ul>
+        <li>Todo contenido de carácter sexual que muestre o implique a un menor, real o representado.</li>
+        <li>Toda solicitación de un menor, todo contacto con fines sexuales (grooming) y toda sextorsión.</li>
+        <li>Todo contenido que sexualice a menores, fomente o trivialice estos actos, o facilite el acceso a ese tipo de contenido.</li>
+        <li>La trata o cualquier otra forma de explotación de un menor.</li>
+      </ul>
+
+      <h2>Cómo reportar</h2>
+      <ul>
+        <li><strong>En la aplicación.</strong> Desde el perfil de la persona en cuestión, elija «Bloquear y reportar» y luego el motivo que corresponda, por ejemplo «Podría ser una persona menor de 18 años». Puede añadir una descripción. El reporte también bloquea a esa persona.</li>
+        <li><strong>Por correo electrónico.</strong> Escriba a <a href="mailto:contact@idisko.com">contact@idisko.com</a> indicando el nombre de usuario en cuestión, la fecha y lo que observó. No hace falta tener una cuenta.</li>
+      </ul>
+      <p>No nos envíe nunca imágenes ni vídeos que muestren abuso de un menor: describa los hechos y nosotros haremos lo necesario. Si un niño corre peligro inmediato, contacte primero a los servicios de emergencia o a la policía de su país.</p>
+
+      <h2>Qué hacemos</h2>
+      <ul>
+        <li>Una persona de nuestro equipo examina cada reporte.</li>
+        <li>El contenido se retira y la cuenta se cierra; impedimos que vuelva a crearse con los mismos identificadores.</li>
+        <li>Conservamos las pruebas necesarias y denunciamos los hechos ante las autoridades competentes. En Francia, esa denuncia se hace a través de la plataforma PHAROS (<a href="https://www.internet-signalement.gouv.fr" target="_blank" rel="noopener">internet-signalement.gouv.fr</a>).</li>
+        <li>Cooperamos con las autoridades en el marco previsto por la ley.</li>
+      </ul>
+
+      <h2>Nuestros medios de prevención</h2>
+      <ul>
+        <li>Las fotos de perfil se analizan automáticamente antes de ser visibles y, en caso de duda, las revisa una persona.</li>
+        <li>Cuando la cámara está activada, se analizan automáticamente imágenes del vídeo para detectar desnudez; en ese caso la cámara se desactiva.</li>
+        <li>Cualquier usuario puede bloquear y reportar a otro usuario desde su perfil.</li>
+      </ul>
+
+      <h2>Punto de contacto</h2>
+      <p>Para cualquier consulta sobre la seguridad infantil en iDisko, incluidas las de las autoridades: <a href="mailto:contact@idisko.com">contact@idisko.com</a>. DS Connect cumple las leyes aplicables en materia de protección de menores.</p>
+      <p>Véase también la sección 7 de nuestros <a href="/cgu/">Términos de Uso</a> y nuestra <a href="/politique-de-confidentialite/">Política de Protección de Datos Personales</a>.</p>
+
+      <div class="info-box">
+        <p><strong>Nota sobre la versión:</strong> la versión oficial es la redactada en francés. Esta versión en español es una traducción a título informativo.</p>
+      </div>
+    </div>
+
+    <!-- ============= EN ============= -->
+    <div class="lang-content doc-content" id="content-en">
+
+      <p>iDisko, the application published by DS Connect, is reserved for adults. This page sets out our standards against child sexual abuse and exploitation, how to report a problem to us and what we do next.</p>
+      <div class="info-box">
+        <p><strong>Zero tolerance.</strong> Child sexual abuse material (CSAM) and any behaviour amounting to child sexual abuse or exploitation (CSAE) are prohibited on iDisko, without exception.</p>
+      </div>
+
+      <h2>An app for adults only</h2>
+      <p>iDisko is intended only for people aged 18 or over. Minors are not allowed to create an account. Any account whose holder turns out to be a minor is deleted. To turn on the camera, which is only possible in VIP rooms and in Shuffle, an age check based on facial age estimation (YOTI) is required.</p>
+
+      <h2>What is prohibited</h2>
+      <ul>
+        <li>Any sexual content showing or involving a minor, whether real or depicted.</li>
+        <li>Any solicitation of a minor, any contact for sexual purposes (grooming) and any sextortion.</li>
+        <li>Any content that sexualises minors, encourages or trivialises such acts, or makes it easier to access such content.</li>
+        <li>Trafficking or any other form of exploitation of a minor.</li>
+      </ul>
+
+      <h2>How to report</h2>
+      <ul>
+        <li><strong>In the app.</strong> From the profile of the person concerned, choose “Block and report”, then the relevant reason, for example “This may be a person under 18 years old”. You can add a description. Reporting also blocks that person.</li>
+        <li><strong>By email.</strong> Write to <a href="mailto:contact@idisko.com">contact@idisko.com</a> stating the username concerned, the date and what you observed. You do not need an account.</li>
+      </ul>
+      <p>Never send us images or videos showing the abuse of a minor: describe the facts and we will do what is needed. If a child is in immediate danger, first contact the emergency services or the police in your country.</p>
+
+      <h2>What we do</h2>
+      <ul>
+        <li>Every report is reviewed by a member of our team.</li>
+        <li>The content is removed and the account is closed; we prevent it from being created again with the same identifiers.</li>
+        <li>We keep the necessary evidence and report the facts to the competent authorities. In France, this report is made through the PHAROS platform (<a href="https://www.internet-signalement.gouv.fr" target="_blank" rel="noopener">internet-signalement.gouv.fr</a>).</li>
+        <li>We cooperate with authorities within the framework provided by law.</li>
+      </ul>
+
+      <h2>How we prevent it</h2>
+      <ul>
+        <li>Profile photos are analysed automatically before they become visible, and reviewed by a person in case of doubt.</li>
+        <li>When the camera is on, images from the video stream are analysed automatically to detect nudity; the camera is then turned off.</li>
+        <li>Any user can block and report another user from their profile.</li>
+      </ul>
+
+      <h2>Point of contact</h2>
+      <p>For any question about child safety on iDisko, including from authorities: <a href="mailto:contact@idisko.com">contact@idisko.com</a>. DS Connect complies with applicable child safety laws.</p>
+      <p>See also section 7 of our <a href="/cgu/">Terms of Use</a> and our <a href="/politique-de-confidentialite/">Personal Data Protection Policy</a>.</p>
+
+      <div class="info-box">
+        <p><strong>Note on this version:</strong> the official version is the one written in French. This English version is a translation provided for information.</p>
+      </div>
+    </div>
+
+    <!-- ============= FR ============= -->
+    <div class="lang-content doc-content" id="content-fr">
+
+      <p>iDisko, l'application éditée par DS Connect, est réservée aux personnes majeures. Cette page présente nos règles contre l'exploitation et les abus sexuels sur mineurs, la manière de nous signaler un problème et ce que nous faisons ensuite.</p>
+      <div class="info-box">
+        <p><strong>Tolérance zéro.</strong> Tout contenu d'abus sexuel sur mineur (CSAM) et tout comportement d'exploitation ou d'abus sexuel d'un mineur (CSAE) sont interdits sur iDisko, sans exception.</p>
+      </div>
+
+      <h2>Une application réservée aux adultes</h2>
+      <p>iDisko est destinée uniquement aux personnes de 18 ans ou plus. Les mineurs ne sont pas autorisés à créer un compte. Tout compte dont le titulaire s'avère mineur est supprimé. Pour activer la caméra, possible uniquement dans les salles VIP et en Shuffle, une vérification de l'âge par estimation faciale (YOTI) est exigée.</p>
+
+      <h2>Ce qui est interdit</h2>
+      <ul>
+        <li>Tout contenu à caractère sexuel montrant ou impliquant un mineur, réel ou représenté.</li>
+        <li>Toute sollicitation d'un mineur, toute prise de contact à des fins sexuelles (pédopiégeage) et toute sextorsion.</li>
+        <li>Tout contenu qui sexualise des mineurs, encourage ou banalise ces actes, ou facilite l'accès à de tels contenus.</li>
+        <li>La traite ou toute autre forme d'exploitation d'un mineur.</li>
+      </ul>
+
+      <h2>Comment signaler</h2>
+      <ul>
+        <li><strong>Dans l'application.</strong> Depuis le profil de la personne concernée, choisissez « Bloquer et signaler », puis le motif adapté, par exemple « Il s'agit peut-être d'une personne de moins de 18 ans ». Vous pouvez ajouter une description. Le signalement bloque aussi cette personne.</li>
+        <li><strong>Par e-mail.</strong> Écrivez à <a href="mailto:contact@idisko.com">contact@idisko.com</a> en indiquant le nom d'utilisateur concerné, la date et ce que vous avez constaté. Il n'est pas nécessaire d'avoir un compte.</li>
+      </ul>
+      <p>Ne nous envoyez jamais d'images ou de vidéos montrant un abus sur mineur : décrivez les faits, nous ferons le nécessaire. En cas de danger immédiat pour un enfant, contactez d'abord les services d'urgence ou la police de votre pays.</p>
+
+      <h2>Ce que nous faisons</h2>
+      <ul>
+        <li>Chaque signalement est examiné par une personne de notre équipe.</li>
+        <li>Le contenu concerné est retiré et le compte est fermé ; nous empêchons sa recréation avec les mêmes identifiants.</li>
+        <li>Nous conservons les éléments de preuve nécessaires et nous signalons les faits aux autorités compétentes. En France, ce signalement passe par la plateforme PHAROS (<a href="https://www.internet-signalement.gouv.fr" target="_blank" rel="noopener">internet-signalement.gouv.fr</a>).</li>
+        <li>Nous coopérons avec les autorités dans le cadre prévu par la loi.</li>
+      </ul>
+
+      <h2>Nos moyens de prévention</h2>
+      <ul>
+        <li>Les photos de profil sont analysées automatiquement avant d'être visibles, puis revues par une personne en cas de doute.</li>
+        <li>Lorsque la caméra est activée, des images du flux vidéo sont analysées automatiquement pour détecter la nudité ; la caméra est alors désactivée.</li>
+        <li>Tout utilisateur peut bloquer et signaler un autre utilisateur depuis son profil.</li>
+      </ul>
+
+      <h2>Point de contact</h2>
+      <p>Pour toute question relative à la protection de l'enfance sur iDisko, y compris de la part des autorités : <a href="mailto:contact@idisko.com">contact@idisko.com</a>. DS Connect se conforme aux lois applicables en matière de protection des mineurs.</p>
+      <p>Voir aussi la section 7 de nos <a href="/cgu/">Conditions Générales d'Utilisation</a> et notre <a href="/politique-de-confidentialite/">Politique de protection des données personnelles</a>.</p>
+    </div>
+
+    <!-- ============= IT ============= -->
+    <div class="lang-content doc-content" id="content-it">
+
+      <p>iDisko, l'applicazione pubblicata da DS Connect, è riservata alle persone maggiorenni. Questa pagina presenta le nostre regole contro lo sfruttamento e l'abuso sessuale dei minori, come segnalarci un problema e che cosa facciamo dopo.</p>
+      <div class="info-box">
+        <p><strong>Tolleranza zero.</strong> Qualsiasi materiale di abuso sessuale su minori (CSAM) e qualsiasi comportamento di sfruttamento o abuso sessuale di un minore (CSAE) sono vietati su iDisko, senza eccezioni.</p>
+      </div>
+
+      <h2>Un'app riservata agli adulti</h2>
+      <p>iDisko è destinata esclusivamente a persone di almeno 18 anni. I minori non possono creare un account. Qualsiasi account il cui titolare risulti minorenne viene eliminato. Per attivare la videocamera, possibile solo nelle stanze VIP e in Shuffle, è richiesta una verifica dell'età tramite stima facciale (YOTI).</p>
+
+      <h2>Che cosa è vietato</h2>
+      <ul>
+        <li>Qualsiasi contenuto a carattere sessuale che mostri o coinvolga un minore, reale o rappresentato.</li>
+        <li>Qualsiasi adescamento di un minore, qualsiasi contatto a fini sessuali (grooming) e qualsiasi sextortion.</li>
+        <li>Qualsiasi contenuto che sessualizzi i minori, incoraggi o banalizzi questi atti, o faciliti l'accesso a tali contenuti.</li>
+        <li>La tratta o qualsiasi altra forma di sfruttamento di un minore.</li>
+      </ul>
+
+      <h2>Come segnalare</h2>
+      <ul>
+        <li><strong>Nell'app.</strong> Dal profilo della persona interessata, scegli «Blocca e segnala» e poi il motivo adatto, ad esempio «Potrebbe essere una persona minore di 18 anni». Puoi aggiungere una descrizione. La segnalazione blocca anche quella persona.</li>
+        <li><strong>Via email.</strong> Scrivi a <a href="mailto:contact@idisko.com">contact@idisko.com</a> indicando il nome utente interessato, la data e ciò che hai osservato. Non è necessario avere un account.</li>
+      </ul>
+      <p>Non inviarci mai immagini o video che mostrino l'abuso di un minore: descrivi i fatti e faremo il necessario. In caso di pericolo immediato per un bambino, contatta prima i servizi di emergenza o la polizia del tuo paese.</p>
+
+      <h2>Che cosa facciamo</h2>
+      <ul>
+        <li>Ogni segnalazione viene esaminata da una persona del nostro team.</li>
+        <li>Il contenuto viene rimosso e l'account viene chiuso; impediamo che venga ricreato con gli stessi identificativi.</li>
+        <li>Conserviamo gli elementi di prova necessari e segnaliamo i fatti alle autorità competenti. In Francia, la segnalazione avviene tramite la piattaforma PHAROS (<a href="https://www.internet-signalement.gouv.fr" target="_blank" rel="noopener">internet-signalement.gouv.fr</a>).</li>
+        <li>Collaboriamo con le autorità nel quadro previsto dalla legge.</li>
+      </ul>
+
+      <h2>I nostri strumenti di prevenzione</h2>
+      <ul>
+        <li>Le foto del profilo vengono analizzate automaticamente prima di essere visibili e, in caso di dubbio, riviste da una persona.</li>
+        <li>Quando la videocamera è attiva, immagini del flusso video vengono analizzate automaticamente per rilevare la nudità; in tal caso la videocamera viene disattivata.</li>
+        <li>Ogni utente può bloccare e segnalare un altro utente dal suo profilo.</li>
+      </ul>
+
+      <h2>Punto di contatto</h2>
+      <p>Per qualsiasi domanda sulla tutela dei minori su iDisko, anche da parte delle autorità: <a href="mailto:contact@idisko.com">contact@idisko.com</a>. DS Connect rispetta le leggi applicabili in materia di tutela dei minori.</p>
+      <p>Vedi anche la sezione 7 dei nostri <a href="/cgu/">Termini di Utilizzo</a> e la nostra <a href="/politique-de-confidentialite/">Politica di protezione dei dati personali</a>.</p>
+
+      <div class="info-box">
+        <p><strong>Nota sulla versione:</strong> la versione ufficiale è quella redatta in francese. Questa versione italiana è una traduzione fornita a titolo informativo.</p>
+      </div>
+    </div>
+
+    <!-- ============= PT ============= -->
+    <div class="lang-content doc-content" id="content-pt">
+
+      <p>O iDisko, aplicativo publicado pela DS Connect, é reservado a pessoas maiores de idade. Esta página apresenta nossas regras contra a exploração e o abuso sexual infantil, como nos avisar de um problema e o que fazemos em seguida.</p>
+      <div class="info-box">
+        <p><strong>Tolerância zero.</strong> Todo material de abuso sexual infantil (CSAM) e todo comportamento de exploração ou abuso sexual de um menor (CSAE) são proibidos no iDisko, sem exceção.</p>
+      </div>
+
+      <h2>Um aplicativo só para adultos</h2>
+      <p>O iDisko é destinado apenas a pessoas com 18 anos ou mais. Menores não podem criar uma conta. Toda conta cujo titular se revele menor é excluída. Para ativar a câmera, possível apenas nas salas VIP e no Shuffle, é exigida uma verificação de idade por estimativa facial (YOTI).</p>
+
+      <h2>O que é proibido</h2>
+      <ul>
+        <li>Todo conteúdo de caráter sexual que mostre ou envolva um menor, real ou representado.</li>
+        <li>Todo aliciamento de um menor, todo contato com fins sexuais (grooming) e toda sextorsão.</li>
+        <li>Todo conteúdo que sexualize menores, incentive ou banalize esses atos, ou facilite o acesso a esse tipo de conteúdo.</li>
+        <li>O tráfico ou qualquer outra forma de exploração de um menor.</li>
+      </ul>
+
+      <h2>Como denunciar</h2>
+      <ul>
+        <li><strong>No aplicativo.</strong> No perfil da pessoa em questão, escolha «Bloquear e reportar» e depois o motivo adequado, por exemplo «Pode ser uma pessoa menor de 18 anos». Você pode acrescentar uma descrição. A denúncia também bloqueia essa pessoa.</li>
+        <li><strong>Por e-mail.</strong> Escreva para <a href="mailto:contact@idisko.com">contact@idisko.com</a> indicando o nome de usuário em questão, a data e o que você observou. Não é preciso ter uma conta.</li>
+      </ul>
+      <p>Nunca nos envie imagens ou vídeos que mostrem abuso de um menor: descreva os fatos e faremos o necessário. Se uma criança estiver em perigo imediato, procure primeiro os serviços de emergência ou a polícia do seu país.</p>
+
+      <h2>O que fazemos</h2>
+      <ul>
+        <li>Cada denúncia é analisada por uma pessoa da nossa equipe.</li>
+        <li>O conteúdo é removido e a conta é encerrada; impedimos que seja recriada com os mesmos identificadores.</li>
+        <li>Conservamos as provas necessárias e denunciamos os fatos às autoridades competentes. Na França, essa denúncia é feita pela plataforma PHAROS (<a href="https://www.internet-signalement.gouv.fr" target="_blank" rel="noopener">internet-signalement.gouv.fr</a>).</li>
+        <li>Cooperamos com as autoridades no quadro previsto em lei.</li>
+      </ul>
+
+      <h2>Nossos meios de prevenção</h2>
+      <ul>
+        <li>As fotos de perfil são analisadas automaticamente antes de ficarem visíveis e, em caso de dúvida, revistas por uma pessoa.</li>
+        <li>Quando a câmera está ativada, imagens do vídeo são analisadas automaticamente para detectar nudez; nesse caso, a câmera é desativada.</li>
+        <li>Qualquer usuário pode bloquear e reportar outro usuário a partir do perfil dele.</li>
+      </ul>
+
+      <h2>Ponto de contato</h2>
+      <p>Para qualquer dúvida sobre segurança infantil no iDisko, inclusive por parte das autoridades: <a href="mailto:contact@idisko.com">contact@idisko.com</a>. A DS Connect cumpre as leis aplicáveis de proteção de menores.</p>
+      <p>Veja também a seção 7 dos nossos <a href="/cgu/">Termos de Uso</a> e a nossa <a href="/politique-de-confidentialite/">Política de Proteção de Dados Pessoais</a>.</p>
+
+      <div class="info-box">
+        <p><strong>Nota sobre a versão:</strong> a versão oficial é a redigida em francês. Esta versão em português é uma tradução fornecida a título informativo.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="iDisko" />
+        <p data-i18n="footerTagline">La app social impulsada por la música. Conocé gente del mundo mientras escuchás tu música favorita: trabajando, cocinando, relajando, saliendo.</p>
+      </div>
+      <div>
+        <div class="footer-col-title" data-i18n="footerLegalCol">Legal</div>
+        <div class="footer-links">
+          <a href="/politique-de-confidentialite/" data-i18n="footerPrivacy">Privacidad</a>
+          <a href="/cgu/" data-i18n="footerTerms">Términos</a>
+          <a href="/cookies/" data-i18n="footerCookies">Cookies</a>
+          <a href="/mentions-legales/" data-i18n="footerLegal">Aviso Legal</a>
+          <a href="/faq/" data-i18n="footerFaq">FAQ</a>
+          <a href="/eliminar-cuenta/" data-i18n="footerDelete">Eliminar cuenta</a>
+          <a href="/seguridad-infantil/" data-i18n="footerChild">Seguridad infantil</a>
+          <button type="button" class="linklike" data-i18n="footerManageCookies" onclick="window.klaro && window.klaro.show();">Gestionar cookies</button>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-i18n="footerCompanyCol">Company</div>
+        <div class="footer-links">
+          <a href="index.html" data-i18n="footerHome">Inicio</a>
+          <a href="https://app.idisko.com" data-i18n="footerWebApp">Web app</a>
+          <a href="mailto:contact@idisko.com">contact@idisko.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DS CONNECT · RCS Montpellier 941 864 985</span>
+      <span data-i18n="footerMade">Made for people who love music.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Klaro consent manager (loaded on every page) -->
+<link rel="stylesheet" href="assets/klaro.min.css" />
+<script defer src="assets/klaro-config.js"></script>
+<script defer src="assets/klaro.no-css.js"></script>
+<script defer src="assets/klaro-trackers.js"></script>
+
+<script>
+// i18n for UI labels
+var UI = {
+  es: {
+    tag: "Legal · Seguridad",
+    title: "Seguridad infantil",
+    updated: "Última actualización",
+    back: "volver al inicio",
+    footerTagline: "La app social impulsada por la música. Conocé gente del mundo mientras escuchás tu música favorita: trabajando, cocinando, relajando, saliendo.",
+    footerLegalCol: "Legal",
+    footerCompanyCol: "Empresa",
+    footerPrivacy: "Privacidad",
+    footerTerms: "Términos",
+    footerCookies: "Cookies",
+    footerLegal: "Aviso Legal",
+    footerFaq: "FAQ",
+    footerDelete: "Eliminar cuenta",
+    footerChild: "Seguridad infantil",
+    footerManageCookies: "Gestionar cookies",
+    footerHome: "Inicio",
+    footerWebApp: "Web app",
+    footerMade: "Hecho para los que aman la música."
+  },
+  en: {
+    tag: "Legal · Safety",
+    title: "Child safety standards",
+    updated: "Last updated",
+    back: "back to home",
+    footerTagline: "The social app powered by music. Discover people around the world while listening to your favorite music: working, cooking, chilling, going out.",
+    footerLegalCol: "Legal",
+    footerCompanyCol: "Company",
+    footerPrivacy: "Privacy",
+    footerTerms: "Terms",
+    footerCookies: "Cookies",
+    footerLegal: "Legal Notice",
+    footerFaq: "FAQ",
+    footerDelete: "Delete account",
+    footerChild: "Child safety",
+    footerManageCookies: "Manage cookies",
+    footerHome: "Home",
+    footerWebApp: "Web app",
+    footerMade: "Made for people who love music."
+  },
+  fr: {
+    tag: "Légal · Sécurité",
+    title: "Protection de l'enfance",
+    updated: "Dernière mise à jour",
+    back: "retour à l'accueil",
+    footerTagline: "L'app sociale propulsée par la musique. Découvre des gens du monde entier en écoutant ta musique préférée : au travail, en cuisinant, en chillant, en sortant.",
+    footerLegalCol: "Légal",
+    footerCompanyCol: "Entreprise",
+    footerPrivacy: "Confidentialité",
+    footerTerms: "Conditions",
+    footerCookies: "Cookies",
+    footerLegal: "Mentions Légales",
+    footerFaq: "FAQ",
+    footerDelete: "Supprimer mon compte",
+    footerChild: "Protection de l'enfance",
+    footerManageCookies: "Gérer les cookies",
+    footerHome: "Accueil",
+    footerWebApp: "Web app",
+    footerMade: "Conçu pour celles et ceux qui aiment la musique."
+  },
+  it: {
+    tag: "Legale · Sicurezza",
+    title: "Tutela dei minori",
+    updated: "Ultimo aggiornamento",
+    back: "torna alla home",
+    footerTagline: "L'app sociale alimentata dalla musica. Scopri persone in tutto il mondo mentre ascolti la tua musica preferita: al lavoro, cucinando, rilassandoti, uscendo.",
+    footerLegalCol: "Legale",
+    footerCompanyCol: "Azienda",
+    footerPrivacy: "Privacy",
+    footerTerms: "Termini",
+    footerCookies: "Cookie",
+    footerLegal: "Note Legali",
+    footerFaq: "FAQ",
+    footerDelete: "Elimina account",
+    footerChild: "Tutela dei minori",
+    footerManageCookies: "Gestisci i cookie",
+    footerHome: "Home",
+    footerWebApp: "Web app",
+    footerMade: "Pensato per chi ama la musica."
+  },
+  pt: {
+    tag: "Legal · Segurança",
+    title: "Segurança infantil",
+    updated: "Última atualização",
+    back: "voltar ao início",
+    footerTagline: "O app social movido a música. Descubra pessoas pelo mundo enquanto ouve sua música favorita: trabalhando, cozinhando, relaxando, saindo.",
+    footerLegalCol: "Legal",
+    footerCompanyCol: "Empresa",
+    footerPrivacy: "Privacidade",
+    footerTerms: "Termos",
+    footerCookies: "Cookies",
+    footerLegal: "Aviso Legal",
+    footerFaq: "FAQ",
+    footerDelete: "Excluir conta",
+    footerChild: "Segurança infantil",
+    footerManageCookies: "Gerenciar cookies",
+    footerHome: "Início",
+    footerWebApp: "Web app",
+    footerMade: "Feito para quem ama música."
+  }
+};
+
+function applyLang(lang) {
+  // Show/hide content blocks
+  var contents = document.querySelectorAll('.lang-content');
+  for (var i = 0; i < contents.length; i++) contents[i].classList.remove('active');
+  var active = document.getElementById('content-' + lang);
+  if (active) active.classList.add('active');
+
+  // Update UI strings
+  var dict = UI[lang] || UI.es;
+  var nodes = document.querySelectorAll('[data-i18n]');
+  for (var j = 0; j < nodes.length; j++) {
+    var key = nodes[j].getAttribute('data-i18n');
+    if (dict[key] !== undefined) nodes[j].textContent = dict[key];
+  }
+
+  document.documentElement.lang = lang;
+  try { localStorage.setItem('idisko_lang', lang); } catch (e) {}
+}
+
+// Bind lang buttons
+var langBtns = document.querySelectorAll('.lang-btn');
+for (var k = 0; k < langBtns.length; k++) {
+  langBtns[k].addEventListener('click', function () {
+    var newLang = this.getAttribute('data-lang');
+    var all = document.querySelectorAll('.lang-btn');
+    for (var m = 0; m < all.length; m++) all[m].classList.remove('active');
+    this.classList.add('active');
+    applyLang(newLang);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// Initial language
+var savedLang = null;
+try { savedLang = localStorage.getItem('idisko_lang'); } catch (e) {}
+var browserLang = (navigator.language || 'es').slice(0, 2);
+var initialLang = savedLang || (UI[browserLang] ? browserLang : 'es');
+applyLang(initialLang);
+for (var n = 0; n < langBtns.length; n++) {
+  langBtns[n].classList.remove('active');
+  if (langBtns[n].getAttribute('data-lang') === initialLang) {
+    langBtns[n].classList.add('active');
+  }
+}
+</script>
+
+</body>
+</html>
