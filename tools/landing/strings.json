@@ -1,0 +1,352 @@
+{
+  "es": {
+    "locale": "es_ES",
+    "meta": {
+      "title": "iDisko | Conocé gente a través de la música",
+      "desc": "iDisko es la app social de música para conocer gente por lo que escucha. Disko Room, mensajes con canciones, Shuffle y salas VIP. Para mayores de 18.",
+      "ogTitle": "iDisko: vida social sin salir de casa",
+      "ogDesc": "Ponés un tema y terminás charlando con gente interesante. Gratis en iPhone, Android y web."
+    },
+    "nav": { "how": "Cómo funciona", "safety": "Seguridad", "pricing": "Precios", "faq": "Preguntas", "openWeb": "Abrir en la web", "download": "Descargar", "lang": "Idioma" },
+    "hero": {
+      "h1a": "Vida social", "h1b": "sin salir de casa",
+      "sub": "Ponés un tema y terminás charlando con gente interesante.",
+      "ctaStore": "Descargar gratis", "ctaWeb": "Probalo en la web",
+      "orWeb": "o usala en la web", "orApp": "O bajá la app",
+      "proof": "<b>Más de 40.000 personas</b> ya se sumaron",
+      "imgAlt": "Silvia, en línea en iDisko, escuchando Me gustas tú de Manu Chao"
+    },
+    "store": { "appCap": "Descargá en el", "appLabel": "App Store", "playCap": "Disponible en", "playLabel": "Google Play" },
+    "how": { "eyebrow": "Cómo funciona", "title": "Entrás, escuchás y charlás" },
+    "features": [
+      { "id": "disko-room", "tag": "Disko Room", "h": "Hay gente|en línea ahora", "body": "Entrás a la Disko Room y ves quién está y qué escucha. Podés filtrar por edad y profesión. Con Premium, también por país y género.", "alt": "La Disko Room de iDisko con personas en línea y la canción que escucha cada una" },
+      { "id": "mensajes", "tag": "Mensajes", "h": "La música|te da el pie", "body": "No hace falta saber qué decir: mandás un tema con un mensaje corto. Si te responde, la charla ya arrancó.", "alt": "Una charla en iDisko que empieza con una canción" },
+      { "id": "shuffle", "tag": "Shuffle", "h": "Si pega,|pega.", "body": "Activás Shuffle y te presentamos a otra persona que también lo activó. Si no pega, pasás y listo. Sin compromiso.", "alt": "Pantalla de Shuffle de iDisko que presenta a otra persona" },
+      { "id": "sala-vip", "tag": "Sala VIP", "h": "Vos y yo,|la misma canción", "body": "Invitás a alguien a una sala privada. Si acepta, escuchan lo mismo al mismo tiempo: si cambio de tema, te cambia a vos también. La cámara es opcional.", "alt": "Sala VIP de iDisko: dos personas escuchando la misma canción" }
+    ],
+    "safety": {
+      "eyebrow": "Seguridad", "h": "Charlá|con confianza",
+      "items": [
+        { "t": "Solo mayores de 18", "d": "iDisko es una app para adultos." },
+        { "t": "Cámara opcional y verificada", "d": "Solo existe en las salas VIP y en Shuffle. Para encenderla verificás tu edad una vez con Yoti, y no guardamos tu selfi." },
+        { "t": "Moderación en la cámara", "d": "Un sistema automático modera las cámaras. Si te bloquea por error, nos escribís y una persona revisa tu caso." },
+        { "t": "Reportá o bloqueá", "d": "En dos toques, desde el perfil o el chat." }
+      ]
+    },
+    "plans": {
+      "eyebrow": "Precios", "h": "Gratis|para empezar",
+      "freeName": "Gratis",
+      "freeItems": ["Disko Room, mensajes con canciones y Shuffle", "10 invitaciones VIP por día", "Filtros por edad y profesión"],
+      "premiumName": "Premium", "premiumBadge": "7 días de prueba gratis",
+      "premiumItems": ["Invitaciones VIP sin límite", "Filtros por país y género", "Mirá quién abrió tu perfil"],
+      "note": "La publicidad de YouTube la muestra el reproductor de YouTube. iDisko no la quita."
+    },
+    "faq": {
+      "eyebrow": "Preguntas", "title": "Preguntas frecuentes",
+      "items": [
+        { "q": "¿iDisko es gratis?", "a": "Sí. Lo esencial es gratis. Premium, con 7 días de prueba gratis, suma invitaciones VIP sin límite (gratis tenés 10 por día), los filtros por país y género, y te muestra quién abrió tu perfil. La publicidad de YouTube la muestra el reproductor de YouTube y iDisko no la quita." },
+        { "q": "¿Tengo que mostrar la cámara?", "a": "No. La cámara es opcional y solo existe en las salas VIP y en Shuffle. Para encenderla verificás tu edad una sola vez." },
+        { "q": "¿Es una app de citas?", "a": "No exactamente. En iDisko conocés gente por la música que está escuchando. Hay quien hace amigos, quien encuentra pareja y quien solo quiere compañía mientras cocina." },
+        { "q": "¿Qué música puedo escuchar?", "a": "La de YouTube y la de Jamendo, que es música libre de derechos. Podés buscar un tema o elegir una playlist ya armada." },
+        { "q": "¿Es privado?", "a": "Las salas no se graban. La cámara se modera con capturas automáticas: si el sistema detecta desnudez, la cámara se apaga y guardamos una captura para revisar el caso. Si creés que fue un error, escribinos a contact@idisko.com y una persona lo revisa." },
+        { "q": "¿Dónde puedo usar iDisko?", "a": "En iPhone, en Android y en la web, con la misma cuenta." },
+        { "q": "¿Cómo elimino mi cuenta?", "a": "Desde la app, en los ajustes de tu cuenta, o siguiendo los pasos de la página <a href=\"/eliminar-cuenta/\">Eliminar cuenta</a>." }
+      ]
+    },
+    "final": { "h": "Tu próxima charla|empieza con una canción", "body": "Bajá iDisko gratis o abrilo en la web. La misma cuenta en los dos." },
+    "news": {
+      "title": "Enterate primero", "body": "Dejá tu email y te avisamos cuando haya novedades. Nada de spam.",
+      "placeholder": "tu@email.com", "cta": "Avisame", "sending": "Enviando…",
+      "consent": "Al suscribirte aceptás nuestra", "consentLink": "Política de Privacidad",
+      "successTitle": "Revisá tu casilla.", "successBody": "Te mandamos un enlace de confirmación. Tocalo y listo.",
+      "already": "Ya estás suscripto. Gracias.", "invalid": "Ese email no parece válido.", "network": "Algo salió mal. Probá de nuevo en un momento."
+    },
+    "footer": {
+      "tagline": "La app social impulsada por la música.",
+      "product": "Producto", "company": "Empresa", "legal": "Legal",
+      "webApp": "Web app", "office": "iDisko Office", "contact": "Contacto",
+      "privacy": "Privacidad", "terms": "Términos", "legalNotice": "Aviso legal", "cookies": "Cookies", "faq": "Preguntas",
+      "deleteAccount": "Eliminar cuenta", "childSafety": "Seguridad infantil", "cookiePrefs": "Preferencias de cookies"
+    }
+  },
+  "en": {
+    "locale": "en_US",
+    "meta": {
+      "title": "iDisko | Meet People Through Music",
+      "desc": "iDisko is the social music app to meet people through what they listen to. Disko Room, song messages, Shuffle and VIP rooms. For adults 18+.",
+      "ogTitle": "iDisko: a social life without leaving home",
+      "ogDesc": "Play a song and end up chatting with interesting people. Free on iPhone, Android and web."
+    },
+    "nav": { "how": "How it works", "safety": "Safety", "pricing": "Pricing", "faq": "FAQ", "openWeb": "Open on the web", "download": "Download", "lang": "Language" },
+    "hero": {
+      "h1a": "A social life", "h1b": "without leaving home",
+      "sub": "Play a song and end up chatting with interesting people.",
+      "ctaStore": "Download free", "ctaWeb": "Try it on the web",
+      "orWeb": "or use it on the web", "orApp": "Or get the app",
+      "proof": "<b>Over 40,000 people</b> have already joined",
+      "imgAlt": "Silvia, online on iDisko, listening to Me gustas tú by Manu Chao"
+    },
+    "store": { "appCap": "Download on the", "appLabel": "App Store", "playCap": "Get it on", "playLabel": "Google Play" },
+    "how": { "eyebrow": "How it works", "title": "Join, listen and chat" },
+    "features": [
+      { "id": "disko-room", "tag": "Disko Room", "h": "People are|online right now", "body": "Open the Disko Room and see who's there and what they're playing. You can filter by age and profession. With Premium, by country and gender too.", "alt": "The iDisko Disko Room with people online and the song each one is playing" },
+      { "id": "mensajes", "tag": "Messages", "h": "Music gives you|the opening line", "body": "No need to know what to say: send a song with a short message. If they reply, the chat has already started.", "alt": "An iDisko chat that starts with a song" },
+      { "id": "shuffle", "tag": "Shuffle", "h": "If it clicks,|it clicks.", "body": "Turn on Shuffle and we introduce you to someone who turned it on too. If it doesn't click, you skip. No strings attached.", "alt": "The iDisko Shuffle screen introducing another person" },
+      { "id": "sala-vip", "tag": "VIP room", "h": "You and me,|the same song", "body": "Invite someone to a private room. If they accept, you both hear the same thing at the same time: when one changes the song, it changes for both. The camera is optional.", "alt": "An iDisko VIP room: two people listening to the same song" }
+    ],
+    "safety": {
+      "eyebrow": "Safety", "h": "Chat|with confidence",
+      "items": [
+        { "t": "Adults only (18+)", "d": "iDisko is an app for adults." },
+        { "t": "Optional, age-verified camera", "d": "It only exists in VIP rooms and Shuffle. To turn it on you verify your age once with Yoti, and we don't keep your selfie." },
+        { "t": "Camera moderation", "d": "An automated system moderates cameras. If it blocks you by mistake, write to us and a person reviews your case." },
+        { "t": "Report or block", "d": "In two taps, from the profile or the chat." }
+      ]
+    },
+    "plans": {
+      "eyebrow": "Pricing", "h": "Free|to start",
+      "freeName": "Free",
+      "freeItems": ["Disko Room, song messages and Shuffle", "10 VIP invitations per day", "Filters by age and profession"],
+      "premiumName": "Premium", "premiumBadge": "7-day free trial",
+      "premiumItems": ["Unlimited VIP invitations", "Filters by country and gender", "See who opened your profile"],
+      "note": "YouTube ads are shown by YouTube's player. iDisko does not remove them."
+    },
+    "faq": {
+      "eyebrow": "FAQ", "title": "Frequently asked questions",
+      "items": [
+        { "q": "Is iDisko free?", "a": "Yes. The essentials are free. Premium, with a 7-day free trial, adds unlimited VIP invitations (you get 10 per day for free), the country and gender filters, and shows you who opened your profile. YouTube ads are shown by YouTube's player and iDisko does not remove them." },
+        { "q": "Do I have to show my camera?", "a": "No. The camera is optional and only exists in VIP rooms and Shuffle. To turn it on you verify your age once." },
+        { "q": "Is it a dating app?", "a": "Not exactly. On iDisko you meet people through the music they're listening to. Some make friends, some find a partner, and some just want company while they cook." },
+        { "q": "What music can I listen to?", "a": "Music from YouTube and from Jamendo, which is royalty-free music. You can search for a song or pick a ready-made playlist." },
+        { "q": "Is it private?", "a": "Rooms are not recorded. The camera is moderated with automatic snapshots: if the system detects nudity, the camera is turned off and we keep one snapshot to review the case. If you think it was a mistake, write to contact@idisko.com and a person will review it." },
+        { "q": "Where can I use iDisko?", "a": "On iPhone, on Android and on the web, with the same account." },
+        { "q": "How do I delete my account?", "a": "From the app, in your account settings, or by following the steps on the <a href=\"/eliminar-cuenta/\">Delete account</a> page." }
+      ]
+    },
+    "final": { "h": "Your next chat|starts with a song", "body": "Get iDisko for free or open it on the web. The same account on both." },
+    "news": {
+      "title": "Be the first to know", "body": "Leave your email and we'll let you know when there's news. No spam.",
+      "placeholder": "you@email.com", "cta": "Notify me", "sending": "Sending…",
+      "consent": "By subscribing you accept our", "consentLink": "Privacy Policy",
+      "successTitle": "Check your inbox.", "successBody": "We sent you a confirmation link. Tap it and you're done.",
+      "already": "You're already subscribed. Thank you.", "invalid": "That email doesn't look valid.", "network": "Something went wrong. Try again in a moment."
+    },
+    "footer": {
+      "tagline": "The social app powered by music.",
+      "product": "Product", "company": "Company", "legal": "Legal",
+      "webApp": "Web app", "office": "iDisko Office", "contact": "Contact",
+      "privacy": "Privacy", "terms": "Terms", "legalNotice": "Legal notice", "cookies": "Cookies", "faq": "FAQ",
+      "deleteAccount": "Delete account", "childSafety": "Child safety", "cookiePrefs": "Cookie preferences"
+    }
+  },
+  "fr": {
+    "locale": "fr_FR",
+    "meta": {
+      "title": "iDisko | Rencontre des gens grâce à la musique",
+      "desc": "iDisko est l'appli sociale musicale pour rencontrer des gens à travers ce qu'ils écoutent. Disko Room, messages en chanson, Shuffle et salons VIP. Réservée aux plus de 18 ans.",
+      "ogTitle": "iDisko : une vie sociale sans sortir de chez toi",
+      "ogDesc": "Tu lances un titre et tu finis par discuter avec des gens intéressants. Gratuit sur iPhone, Android et web."
+    },
+    "nav": { "how": "Comment ça marche", "safety": "Sécurité", "pricing": "Tarifs", "faq": "FAQ", "openWeb": "Ouvrir sur le web", "download": "Télécharger", "lang": "Langue" },
+    "hero": {
+      "h1a": "Une vie sociale", "h1b": "sans sortir de chez toi",
+      "sub": "Tu lances un titre et tu finis par discuter avec des gens intéressants.",
+      "ctaStore": "Télécharger gratuitement", "ctaWeb": "Essayer sur le web",
+      "orWeb": "ou utilise-la sur le web", "orApp": "Ou télécharge l'appli",
+      "proof": "<b>Plus de 40 000 personnes</b> nous ont déjà rejoints",
+      "imgAlt": "Silvia, en ligne sur iDisko, en train d'écouter Me gustas tú de Manu Chao"
+    },
+    "store": { "appCap": "Télécharger dans l'", "appLabel": "App Store", "playCap": "Disponible sur", "playLabel": "Google Play" },
+    "how": { "eyebrow": "Comment ça marche", "title": "Tu entres, tu écoutes, tu discutes" },
+    "features": [
+      { "id": "disko-room", "tag": "Disko Room", "h": "Il y a du monde|en ligne maintenant", "body": "Tu entres dans la Disko Room et tu vois qui est là et ce que chacun écoute. Tu peux filtrer par âge et par métier. Avec Premium, aussi par pays et par genre.", "alt": "La Disko Room d'iDisko avec des personnes en ligne et le titre que chacune écoute" },
+      { "id": "mensajes", "tag": "Messages", "h": "La musique|lance la conversation", "body": "Pas besoin de savoir quoi dire : tu envoies un titre avec un petit message. Si on te répond, la discussion est lancée.", "alt": "Une discussion sur iDisko qui commence par une chanson" },
+      { "id": "shuffle", "tag": "Shuffle", "h": "Si ça matche,|ça matche.", "body": "Tu actives Shuffle et on te présente une autre personne qui l'a activé aussi. Si ça ne prend pas, tu passes. Sans engagement.", "alt": "L'écran Shuffle d'iDisko qui présente une autre personne" },
+      { "id": "sala-vip", "tag": "Salon VIP", "h": "Toi et moi,|la même chanson", "body": "Tu invites quelqu'un dans un salon privé. S'il accepte, vous écoutez la même chose au même moment : si je change de titre, ça change aussi pour toi. La caméra est facultative.", "alt": "Un salon VIP d'iDisko : deux personnes écoutent la même chanson" }
+    ],
+    "safety": {
+      "eyebrow": "Sécurité", "h": "Discute|en confiance",
+      "items": [
+        { "t": "Réservé aux plus de 18 ans", "d": "iDisko est une appli pour adultes." },
+        { "t": "Caméra facultative et vérifiée", "d": "Elle n'existe que dans les salons VIP et dans Shuffle. Pour l'activer, tu vérifies ton âge une seule fois avec Yoti, et nous ne conservons pas ton selfie." },
+        { "t": "Modération de la caméra", "d": "Un système automatique modère les caméras. S'il te bloque par erreur, écris-nous et une personne réexamine ton cas." },
+        { "t": "Signale ou bloque", "d": "En deux gestes, depuis le profil ou la discussion." }
+      ]
+    },
+    "plans": {
+      "eyebrow": "Tarifs", "h": "Gratuit|pour commencer",
+      "freeName": "Gratuit",
+      "freeItems": ["Disko Room, messages en chanson et Shuffle", "10 invitations VIP par jour", "Filtres par âge et par métier"],
+      "premiumName": "Premium", "premiumBadge": "7 jours d'essai gratuit",
+      "premiumItems": ["Invitations VIP illimitées", "Filtres par pays et par genre", "Vois qui a ouvert ton profil"],
+      "note": "La publicité YouTube est affichée par le lecteur YouTube. iDisko ne la retire pas."
+    },
+    "faq": {
+      "eyebrow": "FAQ", "title": "Questions fréquentes",
+      "items": [
+        { "q": "iDisko est-il gratuit ?", "a": "Oui. L'essentiel est gratuit. Premium, avec 7 jours d'essai gratuit, ajoute les invitations VIP illimitées (tu en as 10 par jour gratuitement), les filtres par pays et par genre, et te montre qui a ouvert ton profil. La publicité YouTube est affichée par le lecteur YouTube et iDisko ne la retire pas." },
+        { "q": "Dois-je montrer ma caméra ?", "a": "Non. La caméra est facultative et n'existe que dans les salons VIP et dans Shuffle. Pour l'activer, tu vérifies ton âge une seule fois." },
+        { "q": "Est-ce une appli de rencontres ?", "a": "Pas exactement. Sur iDisko, tu rencontres des gens à travers la musique qu'ils écoutent. Certains se font des amis, d'autres trouvent l'amour, d'autres veulent juste de la compagnie en cuisinant." },
+        { "q": "Quelle musique puis-je écouter ?", "a": "Celle de YouTube et celle de Jamendo, de la musique libre de droits. Tu peux chercher un titre ou choisir une playlist déjà prête." },
+        { "q": "Est-ce privé ?", "a": "Les salons ne sont pas enregistrés. La caméra est modérée par des captures automatiques : si le système détecte de la nudité, la caméra est coupée et nous conservons une capture pour examiner le cas. Si tu penses que c'est une erreur, écris à contact@idisko.com et une personne le réexamine." },
+        { "q": "Où puis-je utiliser iDisko ?", "a": "Sur iPhone, sur Android et sur le web, avec le même compte." },
+        { "q": "Comment supprimer mon compte ?", "a": "Depuis l'appli, dans les réglages de ton compte, ou en suivant les étapes de la page <a href=\"/eliminar-cuenta/\">Supprimer mon compte</a>." }
+      ]
+    },
+    "final": { "h": "Ta prochaine discussion|commence par une chanson", "body": "Télécharge iDisko gratuitement ou ouvre-le sur le web. Le même compte partout." },
+    "news": {
+      "title": "Sois au courant en premier", "body": "Laisse ton e-mail et on te prévient quand il y a du nouveau. Pas de spam.",
+      "placeholder": "toi@email.com", "cta": "Préviens-moi", "sending": "Envoi…",
+      "consent": "En t'abonnant, tu acceptes notre", "consentLink": "Politique de confidentialité",
+      "successTitle": "Regarde ta boîte mail.", "successBody": "On t'a envoyé un lien de confirmation. Clique dessus et c'est fait.",
+      "already": "Tu es déjà abonné. Merci.", "invalid": "Cet e-mail ne semble pas valide.", "network": "Une erreur s'est produite. Réessaie dans un instant."
+    },
+    "footer": {
+      "tagline": "L'appli sociale portée par la musique.",
+      "product": "Produit", "company": "Entreprise", "legal": "Légal",
+      "webApp": "Web app", "office": "iDisko Office", "contact": "Contact",
+      "privacy": "Confidentialité", "terms": "Conditions", "legalNotice": "Mentions légales", "cookies": "Cookies", "faq": "FAQ",
+      "deleteAccount": "Supprimer mon compte", "childSafety": "Protection des mineurs", "cookiePrefs": "Préférences de cookies"
+    }
+  },
+  "it": {
+    "locale": "it_IT",
+    "meta": {
+      "title": "iDisko | Conosci gente attraverso la musica",
+      "desc": "iDisko è l'app social musicale per conoscere persone attraverso ciò che ascoltano. Disko Room, messaggi con canzoni, Shuffle e stanze VIP. Solo per maggiori di 18 anni.",
+      "ogTitle": "iDisko: vita sociale senza uscire di casa",
+      "ogDesc": "Metti un brano e finisci a chiacchierare con persone interessanti. Gratis su iPhone, Android e web."
+    },
+    "nav": { "how": "Come funziona", "safety": "Sicurezza", "pricing": "Prezzi", "faq": "FAQ", "openWeb": "Apri sul web", "download": "Scarica", "lang": "Lingua" },
+    "hero": {
+      "h1a": "Vita sociale", "h1b": "senza uscire di casa",
+      "sub": "Metti un brano e finisci a chiacchierare con persone interessanti.",
+      "ctaStore": "Scarica gratis", "ctaWeb": "Provala sul web",
+      "orWeb": "oppure usala sul web", "orApp": "Oppure scarica l'app",
+      "proof": "<b>Oltre 40.000 persone</b> si sono già unite",
+      "imgAlt": "Silvia, online su iDisko, mentre ascolta Me gustas tú di Manu Chao"
+    },
+    "store": { "appCap": "Scarica su", "appLabel": "App Store", "playCap": "Disponibile su", "playLabel": "Google Play" },
+    "how": { "eyebrow": "Come funziona", "title": "Entri, ascolti e chiacchieri" },
+    "features": [
+      { "id": "disko-room", "tag": "Disko Room", "h": "C'è gente|online adesso", "body": "Entri nella Disko Room e vedi chi c'è e cosa ascolta. Puoi filtrare per età e professione. Con Premium, anche per paese e genere.", "alt": "La Disko Room di iDisko con persone online e il brano che ognuna ascolta" },
+      { "id": "mensajes", "tag": "Messaggi", "h": "La musica|rompe il ghiaccio", "body": "Non serve sapere cosa dire: mandi un brano con un breve messaggio. Se ti rispondono, la chiacchierata è partita.", "alt": "Una chat su iDisko che inizia con una canzone" },
+      { "id": "shuffle", "tag": "Shuffle", "h": "Se scatta,|scatta.", "body": "Attivi Shuffle e ti presentiamo un'altra persona che l'ha attivato. Se non scatta, passi oltre. Senza impegno.", "alt": "La schermata Shuffle di iDisko che presenta un'altra persona" },
+      { "id": "sala-vip", "tag": "Stanza VIP", "h": "Io e te,|la stessa canzone", "body": "Inviti qualcuno in una stanza privata. Se accetta, ascoltate la stessa cosa nello stesso momento: se cambio brano, cambia anche per te. La videocamera è facoltativa.", "alt": "Una stanza VIP di iDisko: due persone ascoltano la stessa canzone" }
+    ],
+    "safety": {
+      "eyebrow": "Sicurezza", "h": "Chiacchiera|in tranquillità",
+      "items": [
+        { "t": "Solo maggiorenni", "d": "iDisko è un'app per adulti." },
+        { "t": "Videocamera facoltativa e verificata", "d": "Esiste solo nelle stanze VIP e in Shuffle. Per accenderla verifichi la tua età una sola volta con Yoti, e non conserviamo il tuo selfie." },
+        { "t": "Moderazione della videocamera", "d": "Un sistema automatico modera le videocamere. Se ti blocca per errore, scrivici e una persona riesamina il tuo caso." },
+        { "t": "Segnala o blocca", "d": "In due tocchi, dal profilo o dalla chat." }
+      ]
+    },
+    "plans": {
+      "eyebrow": "Prezzi", "h": "Gratis|per iniziare",
+      "freeName": "Gratis",
+      "freeItems": ["Disko Room, messaggi con canzoni e Shuffle", "10 inviti VIP al giorno", "Filtri per età e professione"],
+      "premiumName": "Premium", "premiumBadge": "7 giorni di prova gratuita",
+      "premiumItems": ["Inviti VIP illimitati", "Filtri per paese e genere", "Scopri chi ha aperto il tuo profilo"],
+      "note": "La pubblicità di YouTube è mostrata dal player di YouTube. iDisko non la rimuove."
+    },
+    "faq": {
+      "eyebrow": "FAQ", "title": "Domande frequenti",
+      "items": [
+        { "q": "iDisko è gratis?", "a": "Sì. L'essenziale è gratis. Premium, con 7 giorni di prova gratuita, aggiunge inviti VIP illimitati (gratis ne hai 10 al giorno), i filtri per paese e genere, e ti mostra chi ha aperto il tuo profilo. La pubblicità di YouTube è mostrata dal player di YouTube e iDisko non la rimuove." },
+        { "q": "Devo mostrare la videocamera?", "a": "No. La videocamera è facoltativa ed esiste solo nelle stanze VIP e in Shuffle. Per accenderla verifichi la tua età una sola volta." },
+        { "q": "È un'app di incontri?", "a": "Non esattamente. Su iDisko conosci persone attraverso la musica che stanno ascoltando. C'è chi fa amicizia, chi trova l'amore e chi vuole solo compagnia mentre cucina." },
+        { "q": "Che musica posso ascoltare?", "a": "Quella di YouTube e quella di Jamendo, musica libera da diritti. Puoi cercare un brano o scegliere una playlist già pronta." },
+        { "q": "È privato?", "a": "Le stanze non vengono registrate. La videocamera è moderata con catture automatiche: se il sistema rileva nudità, la videocamera viene spenta e conserviamo una cattura per esaminare il caso. Se pensi che sia un errore, scrivi a contact@idisko.com e una persona lo riesamina." },
+        { "q": "Dove posso usare iDisko?", "a": "Su iPhone, su Android e sul web, con lo stesso account." },
+        { "q": "Come elimino il mio account?", "a": "Dall'app, nelle impostazioni del tuo account, oppure seguendo i passaggi della pagina <a href=\"/eliminar-cuenta/\">Elimina account</a>." }
+      ]
+    },
+    "final": { "h": "La tua prossima chiacchierata|inizia con una canzone", "body": "Scarica iDisko gratis o aprilo sul web. Lo stesso account ovunque." },
+    "news": {
+      "title": "Scoprilo per primo", "body": "Lascia la tua email e ti avvisiamo quando ci sono novità. Niente spam.",
+      "placeholder": "tu@email.com", "cta": "Avvisami", "sending": "Invio…",
+      "consent": "Iscrivendoti accetti la nostra", "consentLink": "Informativa sulla privacy",
+      "successTitle": "Controlla la tua casella.", "successBody": "Ti abbiamo inviato un link di conferma. Toccalo e hai finito.",
+      "already": "Sei già iscritto. Grazie.", "invalid": "Questa email non sembra valida.", "network": "Qualcosa è andato storto. Riprova tra un momento."
+    },
+    "footer": {
+      "tagline": "L'app social guidata dalla musica.",
+      "product": "Prodotto", "company": "Azienda", "legal": "Legale",
+      "webApp": "Web app", "office": "iDisko Office", "contact": "Contatto",
+      "privacy": "Privacy", "terms": "Termini", "legalNotice": "Note legali", "cookies": "Cookie", "faq": "FAQ",
+      "deleteAccount": "Elimina account", "childSafety": "Tutela dei minori", "cookiePrefs": "Preferenze cookie"
+    }
+  },
+  "pt": {
+    "locale": "pt_BR",
+    "meta": {
+      "title": "iDisko | Conheça pessoas através da música",
+      "desc": "iDisko é o app social de música para conhecer pessoas pelo que elas escutam. Disko Room, mensagens com músicas, Shuffle e salas VIP. Para maiores de 18 anos.",
+      "ogTitle": "iDisko: vida social sem sair de casa",
+      "ogDesc": "Você coloca uma música e acaba conversando com gente interessante. Grátis no iPhone, no Android e na web."
+    },
+    "nav": { "how": "Como funciona", "safety": "Segurança", "pricing": "Preços", "faq": "FAQ", "openWeb": "Abrir na web", "download": "Baixar", "lang": "Idioma" },
+    "hero": {
+      "h1a": "Vida social", "h1b": "sem sair de casa",
+      "sub": "Você coloca uma música e acaba conversando com gente interessante.",
+      "ctaStore": "Baixar grátis", "ctaWeb": "Experimente na web",
+      "orWeb": "ou use na web", "orApp": "Ou baixe o app",
+      "proof": "<b>Mais de 40.000 pessoas</b> já entraram",
+      "imgAlt": "Silvia, online no iDisko, ouvindo Me gustas tú, de Manu Chao"
+    },
+    "store": { "appCap": "Baixar na", "appLabel": "App Store", "playCap": "Disponível no", "playLabel": "Google Play" },
+    "how": { "eyebrow": "Como funciona", "title": "Entre, escute e converse" },
+    "features": [
+      { "id": "disko-room", "tag": "Disko Room", "h": "Tem gente|online agora", "body": "Você entra na Disko Room e vê quem está lá e o que está ouvindo. Dá para filtrar por idade e profissão. Com o Premium, também por país e gênero.", "alt": "A Disko Room do iDisko com pessoas online e a música que cada uma está ouvindo" },
+      { "id": "mensajes", "tag": "Mensagens", "h": "A música|puxa o assunto", "body": "Não precisa saber o que dizer: você manda uma música com uma mensagem curta. Se a pessoa responder, a conversa já começou.", "alt": "Uma conversa no iDisko que começa com uma música" },
+      { "id": "shuffle", "tag": "Shuffle", "h": "Se rolar,|rolou.", "body": "Você ativa o Shuffle e apresentamos outra pessoa que também ativou. Se não rolar, é só passar. Sem compromisso.", "alt": "A tela do Shuffle do iDisko apresentando outra pessoa" },
+      { "id": "sala-vip", "tag": "Sala VIP", "h": "Você e eu,|a mesma música", "body": "Você convida alguém para uma sala privada. Se a pessoa aceitar, vocês ouvem a mesma coisa ao mesmo tempo: se eu troco a música, troca para você também. A câmera é opcional.", "alt": "Uma sala VIP do iDisko: duas pessoas ouvindo a mesma música" }
+    ],
+    "safety": {
+      "eyebrow": "Segurança", "h": "Converse|com confiança",
+      "items": [
+        { "t": "Só para maiores de 18", "d": "iDisko é um app para adultos." },
+        { "t": "Câmera opcional e verificada", "d": "Ela só existe nas salas VIP e no Shuffle. Para ligar, você verifica sua idade uma única vez com a Yoti, e não guardamos sua selfie." },
+        { "t": "Moderação da câmera", "d": "Um sistema automático modera as câmeras. Se ele bloquear você por engano, escreva para nós e uma pessoa revisa o seu caso." },
+        { "t": "Denuncie ou bloqueie", "d": "Em dois toques, pelo perfil ou pelo chat." }
+      ]
+    },
+    "plans": {
+      "eyebrow": "Preços", "h": "Grátis|para começar",
+      "freeName": "Grátis",
+      "freeItems": ["Disko Room, mensagens com músicas e Shuffle", "10 convites VIP por dia", "Filtros por idade e profissão"],
+      "premiumName": "Premium", "premiumBadge": "7 dias de teste grátis",
+      "premiumItems": ["Convites VIP ilimitados", "Filtros por país e gênero", "Veja quem abriu seu perfil"],
+      "note": "Os anúncios do YouTube são exibidos pelo player do YouTube. O iDisko não os remove."
+    },
+    "faq": {
+      "eyebrow": "FAQ", "title": "Perguntas frequentes",
+      "items": [
+        { "q": "O iDisko é grátis?", "a": "Sim. O essencial é grátis. O Premium, com 7 dias de teste grátis, traz convites VIP ilimitados (no grátis você tem 10 por dia), os filtros por país e gênero, e mostra quem abriu seu perfil. Os anúncios do YouTube são exibidos pelo player do YouTube e o iDisko não os remove." },
+        { "q": "Preciso mostrar a câmera?", "a": "Não. A câmera é opcional e só existe nas salas VIP e no Shuffle. Para ligar, você verifica sua idade uma única vez." },
+        { "q": "É um app de namoro?", "a": "Não exatamente. No iDisko você conhece pessoas pela música que elas estão ouvindo. Tem quem faça amigos, quem encontre um par e quem só queira companhia enquanto cozinha." },
+        { "q": "Que música posso ouvir?", "a": "A do YouTube e a do Jamendo, que é música livre de direitos. Você pode buscar uma música ou escolher uma playlist pronta." },
+        { "q": "É privado?", "a": "As salas não são gravadas. A câmera é moderada com capturas automáticas: se o sistema detectar nudez, a câmera é desligada e guardamos uma captura para analisar o caso. Se você achar que foi um erro, escreva para contact@idisko.com e uma pessoa revisa." },
+        { "q": "Onde posso usar o iDisko?", "a": "No iPhone, no Android e na web, com a mesma conta." },
+        { "q": "Como excluo minha conta?", "a": "Pelo app, nas configurações da sua conta, ou seguindo os passos da página <a href=\"/eliminar-cuenta/\">Excluir conta</a>." }
+      ]
+    },
+    "final": { "h": "Sua próxima conversa|começa com uma música", "body": "Baixe o iDisko grátis ou abra na web. A mesma conta nos dois." },
+    "news": {
+      "title": "Saiba primeiro", "body": "Deixe seu email e avisamos quando houver novidades. Sem spam.",
+      "placeholder": "voce@email.com", "cta": "Me avise", "sending": "Enviando…",
+      "consent": "Ao se inscrever você aceita nossa", "consentLink": "Política de Privacidade",
+      "successTitle": "Confira sua caixa de entrada.", "successBody": "Enviamos um link de confirmação. Toque nele e pronto.",
+      "already": "Você já está inscrito. Obrigado.", "invalid": "Esse email não parece válido.", "network": "Algo deu errado. Tente de novo em instantes."
+    },
+    "footer": {
+      "tagline": "O app social movido a música.",
+      "product": "Produto", "company": "Empresa", "legal": "Legal",
+      "webApp": "Web app", "office": "iDisko Office", "contact": "Contato",
+      "privacy": "Privacidade", "terms": "Termos", "legalNotice": "Aviso legal", "cookies": "Cookies", "faq": "FAQ",
+      "deleteAccount": "Excluir conta", "childSafety": "Segurança infantil", "cookiePrefs": "Preferências de cookies"
+    }
+  }
+}
