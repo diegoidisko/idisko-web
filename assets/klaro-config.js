@@ -1,4 +1,4 @@
-/* iDisko — Klaro consent manager configuration
+/* iDisko: Klaro consent manager configuration
  * https://klaro.org
  *
  * Loaded BEFORE klaro.no-css.js. Defines the consent banner content,
@@ -8,7 +8,7 @@
  * The actual tracker scripts are loaded by assets/klaro-trackers.js,
  * which listens for klaro's `consents-updated` event.
  *
- * IMPORTANT — fill in the IDs marked TODO before deploying:
+ * IMPORTANT: fill in the IDs marked TODO before deploying:
  *   - META_PIXEL_ID  (Meta Events Manager → Pixels → ID)
  *   - POSTHOG_KEY    (PostHog → Project Settings → Project API Key, "phc_...")
  *   - CLARITY_ID     (clarity.microsoft.com → Settings → Setup → Project ID)
@@ -36,7 +36,7 @@
     default: false,         // services off by default until consent
     mustConsent: false,     // banner is dismissable; user can ignore
     acceptAll: true,        // shows "Accept all" button
-    hideDeclineAll: false,  // shows "Decline all" — REQUIRED by CNIL
+    hideDeclineAll: false,  // shows "Decline all", REQUIRED by CNIL
     hideLearnMore: false,
     noticeAsModal: false,
     lang: lang,
@@ -95,7 +95,7 @@
       },
       // Declared on the landing only so the shared klaro cookie carries the
       // exact same service keys as app.idisko.com. The landing never loads
-      // TikTok or Google scripts — see assets/klaro-trackers.js.
+      // TikTok or Google scripts, see assets/klaro-trackers.js.
       {
         name: 'tiktok-pixel',
         title: 'TikTok Pixel',

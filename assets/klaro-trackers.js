@@ -1,11 +1,11 @@
-/* iDisko — Tracker loaders gated by Klaro consent
+/* iDisko: Tracker loaders gated by Klaro consent
  *
  * Listens for Klaro's `consents-updated` event and loads the tracker
  * SDKs only if the user has consented. Also exposes a small `idisko.track()`
  * helper that page-level code (e.g. newsletter form) can call to send
  * conversion events to all consented platforms.
  *
- * IMPORTANT — replace the placeholders below with real IDs:
+ * IMPORTANT: replace the placeholders below with real IDs:
  *   - META_PIXEL_ID
  *   - POSTHOG_KEY
  *   - CLARITY_ID
@@ -14,7 +14,7 @@
   'use strict';
 
   // ────────────────────────────────────────────────────────────
-  //  IDs — REPLACE WITH PRODUCTION VALUES
+  //  IDs: REPLACE WITH PRODUCTION VALUES
   // ────────────────────────────────────────────────────────────
   var META_PIXEL_ID = window.IDISKO_META_PIXEL_ID || '1941055043153888';
   var POSTHOG_KEY   = window.IDISKO_POSTHOG_KEY   || 'phc_oVEhScOA5bOeDvdIVeaN9YnuZPgGxSSv6a5xGaSeGx5';
@@ -40,7 +40,7 @@
       // Share distinct_id across www.idisko.com and app.idisko.com.
       cross_subdomain_cookie: true,
       persistence: 'localStorage+cookie',
-      // utm_id is missing from posthog-js IAB whitelist — add it explicitly:
+      // utm_id is missing from posthog-js IAB whitelist, add it explicitly:
       custom_campaign_params: ['utm_id']
     });
   }
@@ -92,7 +92,7 @@
   function init() {
     var manager = window.klaro && window.klaro.getManager && window.klaro.getManager();
     if (!manager) {
-      // Klaro not yet loaded — try again shortly
+      // Klaro not yet loaded, try again shortly
       setTimeout(init, 200);
       return;
     }
@@ -135,7 +135,7 @@
           'app_store_click': 'InitiateCheckout',
           'play_store_click': 'InitiateCheckout'
         };
-        // Meta's set of standard events — only these are 'track', everything else 'trackCustom'.
+        // Meta's set of standard events, only these are 'track', everything else 'trackCustom'.
         var metaStandardEvents = {
           AddPaymentInfo:1, AddToCart:1, AddToWishlist:1, CompleteRegistration:1, Contact:1,
           CustomizeProduct:1, Donate:1, FindLocation:1, InitiateCheckout:1, Lead:1, Purchase:1,
